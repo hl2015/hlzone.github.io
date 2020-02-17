@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-17T06:20:53.000Z">
-<meta property="article:modified_time" content="2020-02-17T06:28:03.226Z">
+<meta property="article:modified_time" content="2020-02-17T06:36:40.772Z">
 <meta property="article:author" content="hl">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
@@ -177,26 +177,26 @@
 <hr>
 <h2 id="量子线路模型的关键要素"><a href="#量子线路模型的关键要素" class="headerlink" title="量子线路模型的关键要素"></a>量子线路模型的关键要素</h2><ul>
 <li>经典资源。量子计算机包括两部分，经典计算部分和量子计算部分。在计算中允许部分计算以经典的方式进行，某些任务的完成将容易得多。</li>
-<li>适当的状态空间。量子线路在某个数目为n的量子比特组上进行操作，因此状态空间是$2^n$维复Hilbert空间。积形式$ |x_1,\cdots,x_n&gt; $，其中$x_i = 0,1$的状态称为计算机的计算基态。$|x&gt;$表示一个计算基态，其中$x$是二进制表示为$x_1 \cdots x_n$的数。</li>
+<li>适当的状态空间。量子线路在某个数目为n的量子比特组上进行操作，因此状态空间是$2^n$维复Hilbert空间。积形式$|x_1,\cdots,x_n&gt;$，其中$x_i = 0,1$的状态称为计算机的计算基态。$|x&gt;$表示一个计算基态，其中$x$是二进制表示为$x_1 \cdots x_n$的数。</li>
 <li>将状态置于计算基中的能力。假设任何的计算基态$|x_1,\cdots,x_n&gt;$可以在至多n步内制备出来。</li>
 <li>进行量子门运算的能力。门可以随意应用到量子比特的任意子集，并可以实现一组通用门。例如，在量子计算机上可以把受控非门用到任何一对量子比特上，Hadamard门、相位、受控非门和$\pi/8$门构成一组可以近似任意酉运算的门，因此是一组通用门，还存在其他的通用类。</li>
 <li>在计算基中测量的能力，计算机中可以进行在计算基中一个或多个量子比特的测量。</li>
 </ul>
 <hr>
-<h2 id="量子系统的仿真"><a href="#量子系统的仿真" class="headerlink" title="量子系统的仿真"></a>量子系统的仿真</h2><h4 id="仿真原理"><a href="#仿真原理" class="headerlink" title="仿真原理"></a>仿真原理</h4><p>用经典计算机模拟量子系统是可能的，但一般而言不是很有效。许多简单量子系统的动态行为服从Schrodinger方程<br>$$ i\hbar \frac{d}{dt} | \psi&gt; = H | \psi&gt;$$<br>我们常常将$ \hbar $放入$ H $中。对于一个研究空间中实际粒子的物理学家感兴趣的Hamilton量，这个方程可以简化为<br>$$ i\frac{\partial}{\partial t} \psi(x) = [-\frac{1}{2m}\frac{\partial^2}{\partial x^2} + V(x)]\psi(x) $$<br>其中使用了称为位置表示的约定$ &lt;x|\psi&gt; = \psi (x) $。</p>
+<h2 id="量子系统的仿真"><a href="#量子系统的仿真" class="headerlink" title="量子系统的仿真"></a>量子系统的仿真</h2><h4 id="仿真原理"><a href="#仿真原理" class="headerlink" title="仿真原理"></a>仿真原理</h4><p>用经典计算机模拟量子系统是可能的，但一般而言不是很有效。许多简单量子系统的动态行为服从Schrodinger方程<br>$$i\hbar \frac{d}{dt} | \psi&gt; = H | \psi&gt;$$<br>我们常常将$\hbar$放入$H$中。对于一个研究空间中实际粒子的物理学家感兴趣的Hamilton量，这个方程可以简化为<br>$$i\frac{\partial}{\partial t} \psi(x) = [-\frac{1}{2m}\frac{\partial^2}{\partial x^2} + V(x)]\psi(x)$$<br>其中使用了称为位置表示的约定$&lt;x|\psi&gt; = \psi (x)$。</p>
 <p>仿真Schrodinger方程并不是模拟量子系统中面临的特殊困难。<code>模拟量子系统的关键挑战是，必须求解的微分方程为指数数目</code>。对$n$量子比特的系统，必须求解$2^n$个方程。有时具有洞察力的近似可以减少方程个数，从而使这种量子系统的经典仿真成为可行。然而，有许多物理上有意义的量子系统，人们尚不知道它们的这类近似。</p>
 <h4 id="量子仿真算法"><a href="#量子仿真算法" class="headerlink" title="量子仿真算法"></a>量子仿真算法</h4><p>量子仿真算法的核心是渐近近似定理。</p>
 <p>(Trotter公式) 令$A$和$B$是Hermite算子，则对任意实数$t$，有<br>$${\lim_{n \to +\infty}}(e^{iAt/n}e^{iBt/n})^n = e^{i(A+B)t/n}$$<br>注意，即使对$A$和$B$不对易的情况也是成立的。</p>
 <p><em>算法 量子仿真</em></p>
 <ul>
-<li><strong>输入</strong> （1）作用在N维系统上的Hamilton量$ H = \sum_{k} H_k $，其中每个$H_k$作用在规模独立于N的小的子系统上；（2）系统在$t=0$时刻的初态$| \psi_0&gt;$；（3）正的非零精度$ \delta $；（4）获得期望状态的时间$ t_f $。</li>
-<li><strong>输出</strong> 状态$ |\widetilde{\psi}(t_f)&gt;$，使得$ |&lt;\widetilde{\psi}(t_f)|e^{-iHt_f}|\psi_0&gt;|^2 \geq 1-\delta $。</li>
-<li><strong>运行时间</strong> $ O(poly(1/\delta))$数目的操作。</li>
-<li><strong>过程</strong> 选择一个表示，使得$ n=poly(logN)$量子比特的状态$| \widetilde{\psi}&gt;$能近似系统状态，且算子$ e^{-iH_k \Delta t} $有有效的量子线路近似。选择一个近似方法和$ \Delta $，使得期望误差是可接受的（并且对某个整数$j$，$j\Delta t = t_f$），为迭代构造一个相应的量子线路$ U_{\Delta t}$，并且执行：<ol>
-<li>$ |\widetilde{\psi}_0&gt; \leftarrow |\psi_0&gt;$；$ j=0 $   //状态初始化</li>
-<li>$ \rightarrow |\widetilde{\psi}<em>{j+1}&gt; = U</em>{\Delta t}|\widetilde{\psi}_{j}&gt; $ //迭代更新</li>
-<li>$ \rightarrow j=j+1$，转到（2）直到$ j\Delta t \geq t_f $  //循环</li>
-<li>$ \rightarrow |\widetilde{\psi}(t_f)&gt; = |\widetilde{\psi}_{j}&gt;$  //最终结果</li>
+<li><strong>输入</strong> （1）作用在N维系统上的Hamilton量$H = \sum_{k} H_k$，其中每个$H_k$作用在规模独立于N的小的子系统上；（2）系统在$t=0$时刻的初态$| \psi_0&gt;$；（3）正的非零精度$\delta $；（4）获得期望状态的时间$ t_f $。</li>
+<li><strong>输出</strong> 状态$|\widetilde{\psi}(t_f)&gt;$，使得$|&lt;\widetilde{\psi}(t_f)|e^{-iHt_f}|\psi_0&gt;|^2 \geq 1-\delta$。</li>
+<li><strong>运行时间</strong> $O(poly(1/\delta))$数目的操作。</li>
+<li><strong>过程</strong> 选择一个表示，使得$n=poly(logN)$量子比特的状态$| \widetilde{\psi}&gt;$能近似系统状态，且算子$e^{-iH_k \Delta t}$有有效的量子线路近似。选择一个近似方法和$\Delta$，使得期望误差是可接受的（并且对某个整数$j$，$j\Delta t = t_f$），为迭代构造一个相应的量子线路$ U_{\Delta t}$，并且执行：<ol>
+<li>$|\widetilde{\psi}_0&gt; \leftarrow |\psi_0&gt;$；$j=0$   //状态初始化</li>
+<li>$\rightarrow |\widetilde{\psi}<em>{j+1}&gt; = U</em>{\Delta t}|\widetilde{\psi}_{j}&gt;$ //迭代更新</li>
+<li>$\rightarrow j=j+1$，转到（2）直到$j\Delta t \geq t_f$  //循环</li>
+<li>$\rightarrow |\widetilde{\psi}(t_f)&gt; = |\widetilde{\psi}_{j}&gt;$  //最终结果</li>
 </ol>
 </li>
 </ul>
