@@ -10,16 +10,16 @@
 <title>量子线路 - hlzone</title>
 
 
-    <meta name="description" content="计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ——-David Deutsch  量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组离散元件的集合。这个工具将使我们能够用类似于需要的门的总数或线路深度来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易从">
+    <meta name="description" content="计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ———-David Deutsch  量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组离散元件的集合。这个工具将使我们能够用类似于需要的门的总数或线路深度来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易">
 <meta property="og:type" content="article">
 <meta property="og:title" content="量子线路">
 <meta property="og:url" content="http://yoursite.com/2020/02/17/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ——-David Deutsch  量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组离散元件的集合。这个工具将使我们能够用类似于需要的门的总数或线路深度来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易从">
+<meta property="og:description" content="计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ———-David Deutsch  量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组离散元件的集合。这个工具将使我们能够用类似于需要的门的总数或线路深度来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-17T06:20:53.000Z">
-<meta property="article:modified_time" content="2020-02-18T13:56:02.074Z">
+<meta property="article:modified_time" content="2020-02-19T12:56:37.662Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="量子线路">
 <meta name="twitter:card" content="summary">
@@ -117,6 +117,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -161,15 +165,44 @@
             
         </h1>
         <div class="content">
-            <p><em>计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ——-David Deutsch</em></p>
+            <p><em>计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ———-David Deutsch</em></p>
 <hr>
 <p>量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组<code>离散</code>元件的集合。这个工具将使我们能够用类似于需要的门的<code>总数</code>或<code>线路深度</code>来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易从概念上形象的认识算法。</p>
 <a id="more"></a>
-
-
-<h2 id="单量子比特计算"><a href="#单量子比特计算" class="headerlink" title="单量子比特计算"></a>单量子比特计算</h2><p>单量子比特表示<br>$$<br>|\psi\rangle = a|0\rangle+b|1\rangle<br>\qquad其中，复数a,b满足 \quad{|a|}^2+|b|^2=1<br>$$</p>
-<p>一些重要矩阵，Pauli矩阵：<br>$$<br>X\equiv\begin{bmatrix}<br>0 &amp; 1 \<br>1 &amp; 0<br>\end{bmatrix}<br>,<br>Y\equiv\begin{bmatrix}<br>0 &amp; -i \<br>i &amp; 0<br>\end{bmatrix}<br>,<br>Z\equiv\begin{bmatrix}<br>1 &amp; 0 \<br>0 &amp; -1<br>\end{bmatrix}<br>$$<br>Hadamard门、Phase gate和$\pi/8$门：<br>$$<br>H=\frac{1}{\sqrt{2}}\begin{bmatrix}<br>0 &amp; 1 \<br>1 &amp; 0<br>\end{bmatrix}<br>,<br>S=\begin{bmatrix}<br>1 &amp; 0 \<br>0 &amp; i<br>\end{bmatrix}<br>,<br>T=\begin{bmatrix}<br>1 &amp; 0 \<br>0 &amp; exp(i\pi/4)<br>\end{bmatrix}<br>$$</p>
-<p>旋转算子定义如下：</p>
+<h2 id="单量子比特计算"><a href="#单量子比特计算" class="headerlink" title="单量子比特计算"></a>单量子比特计算</h2><p>单量子比特表示</p>
+<script type="math/tex; mode=display">
+|\psi\rangle = a|0\rangle+b|1\rangle
+\qquad其中，复数a,b满足 \quad{|a|}^2+|b|^2=1</script><p>一些重要矩阵，Pauli矩阵：</p>
+<script type="math/tex; mode=display">
+X\equiv\begin{bmatrix}
+0 & 1 \\ 
+1 & 0 
+\end{bmatrix}
+,
+Y\equiv\begin{bmatrix} 
+0 & -i \\ 
+i & 0 
+\end{bmatrix}
+,
+Z\equiv\begin{bmatrix} 
+1 & 0 \\ 
+0 & -1 
+\end{bmatrix}</script><p>Hadamard门、Phase gate和$\pi/8$门：</p>
+<script type="math/tex; mode=display">
+H=\frac{1}{\sqrt{2}}\begin{bmatrix} 
+0 & 1 \\ 
+1 & 0 
+\end{bmatrix}
+,
+S=\begin{bmatrix} 
+1 & 0 \\ 
+0 & i 
+\end{bmatrix}
+,
+T=\begin{bmatrix} 
+1 & 0 \\ 
+0 & exp(i\pi/4) 
+\end{bmatrix}</script><p>旋转算子定义如下：</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200218124851.png" alt=""></p>
 <h4 id="练习4-1"><a href="#练习4-1" class="headerlink" title="练习4.1"></a>练习4.1</h4><h2 id="受控运算"><a href="#受控运算" class="headerlink" title="受控运算"></a>受控运算</h2><p>本节说明，如何从基本运算基础搭建起来的量子线路实现复杂的受控运算。</p>
 <p>CNOT</p>
@@ -177,8 +210,8 @@
 <p><em>controlled</em>-U</p>
 <p>相当于$|c\rangle |t\rangle \rightarrow |c\rangle U^c |t\rangle$</p>
 <h2 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h2><p>量子线路测量有两个重要原理值得记住。</p>
-<p><em>推迟测量原理(principle of deferred measurement)</em><br>总可以把测量从量子线路的中间步骤移到线路的末端；如果测量的结果被用于线路的某些阶段，则经典的运算可以被条件量子运算代替。<br><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200212115528.png" alt=""></p>
-<p>\langle !– more –&gt;</p>
+<p>_推迟测量原理(principle of deferred measurement)_<br>总可以把测量从量子线路的中间步骤移到线路的末端；如果测量的结果被用于线路的某些阶段，则经典的运算可以被条件量子运算代替。<br><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200212115528.png" alt=""></p>
+<p>\langle !— more —&gt;</p>
 <p><em>隐含测量原理（principle of implicit measurement)</em><br>不失一般性，量子线路中任何未终结的量子连线（未被测量的量子比特）总可以假设为被测量。</p>
 <p><em>测量的一个普遍特点</em>——为使一个测量是可逆的，它一定不能揭示被测量子状态的任何信息</p>
 <hr>
@@ -199,10 +232,13 @@
 <li>在计算基中测量的能力，计算机中可以进行在计算基中一个或多个量子比特的测量。</li>
 </ul>
 <hr>
-<h2 id="量子系统的仿真"><a href="#量子系统的仿真" class="headerlink" title="量子系统的仿真"></a>量子系统的仿真</h2><h4 id="仿真原理"><a href="#仿真原理" class="headerlink" title="仿真原理"></a>仿真原理</h4><p>用经典计算机模拟量子系统是可能的，但一般而言不是很有效。许多简单量子系统的动态行为服从Schrodinger方程<br>$$i\hbar \frac{d}{dt} | \psi\rangle = H | \psi\rangle$$<br>我们常常将$\hbar$放入$H$中。对于一个研究空间中实际粒子的物理学家感兴趣的Hamilton量，这个方程可以简化为<br>$$i\frac{\partial}{\partial t} \psi(x) = [-\frac{1}{2m}\frac{\partial^2}{\partial x^2} + V(x)]\psi(x)$$<br>其中使用了称为位置表示的约定$\langle x|\psi\rangle = \psi (x)$。</p>
+<h2 id="量子系统的仿真"><a href="#量子系统的仿真" class="headerlink" title="量子系统的仿真"></a>量子系统的仿真</h2><h4 id="仿真原理"><a href="#仿真原理" class="headerlink" title="仿真原理"></a>仿真原理</h4><p>用经典计算机模拟量子系统是可能的，但一般而言不是很有效。许多简单量子系统的动态行为服从Schrodinger方程</p>
+<script type="math/tex; mode=display">i\hbar \frac{d}{dt} | \psi\rangle = H | \psi\rangle</script><p>我们常常将$\hbar$放入$H$中。对于一个研究空间中实际粒子的物理学家感兴趣的Hamilton量，这个方程可以简化为</p>
+<script type="math/tex; mode=display">i\frac{\partial}{\partial t} \psi(x) = [-\frac{1}{2m}\frac{\partial^2}{\partial x^2} + V(x)]\psi(x)</script><p>其中使用了称为位置表示的约定$\langle x|\psi\rangle = \psi (x)$。</p>
 <p>仿真Schrodinger方程并不是模拟量子系统中面临的特殊困难。<code>模拟量子系统的关键挑战是，必须求解的微分方程为指数数目</code>。对$n$量子比特的系统，必须求解$2^n$个方程。有时具有洞察力的近似可以减少方程个数，从而使这种量子系统的经典仿真成为可行。然而，有许多物理上有意义的量子系统，人们尚不知道它们的这类近似。</p>
 <h4 id="量子仿真算法"><a href="#量子仿真算法" class="headerlink" title="量子仿真算法"></a>量子仿真算法</h4><p>量子仿真算法的核心是渐近近似定理。</p>
-<p>(Trotter公式) 令$A$和$B$是Hermite算子，则对任意实数$t$，有<br>$${\lim_{n \to +\infty}}(e^{iAt/n}e^{iBt/n})^n = e^{i(A+B)t/n}$$<br>注意，即使对$A$和$B$不对易的情况也是成立的。</p>
+<p>(Trotter公式) 令$A$和$B$是Hermite算子，则对任意实数$t$，有</p>
+<script type="math/tex; mode=display">{\lim_{n \to +\infty}}(e^{iAt/n}e^{iBt/n})^n = e^{i(A+B)t/n}</script><p>注意，即使对$A$和$B$不对易的情况也是成立的。</p>
 <p><em>算法 量子仿真</em></p>
 <ul>
 <li><strong>输入</strong> （1）作用在N维系统上的Hamilton量$H = \sum_{k} H_k$，其中每个$H_k$作用在规模独立于N的小的子系统上；（2）系统在$t=0$时刻的初态$| \psi_0\rangle$；（3）正的非零精度$\delta $；（4）获得期望状态的时间$ t_f $。</li>
@@ -210,7 +246,7 @@
 <li><strong>运行时间</strong> $O(poly(1/\delta))$数目的操作。</li>
 <li><strong>过程</strong> 选择一个表示，使得$n=poly(logN)$量子比特的状态$| \widetilde{\psi}\rangle$能近似系统状态，且算子$e^{-iH_k \Delta t}$有有效的量子线路近似。选择一个近似方法和$\Delta$，使得期望误差是可接受的（并且对某个整数$j$，$j\Delta t = t_f$），为迭代构造一个相应的量子线路$ U_{\Delta t}$，并且执行：<ol>
 <li>$|\widetilde{\psi}_0\rangle \leftarrow |\psi_0\rangle$；$j=0$   //状态初始化</li>
-<li>$\rightarrow |\widetilde<em>{j+1}\rangle = U</em>{\Delta}|\widetilde_{j}\rangle$ //迭代更新</li>
+<li>$\rightarrow |\widetilde{ {\psi} }_{j+1}\rangle =U_{\Delta}|\widetilde{ {\psi} }_{j}\rangle$ //迭代更新</li>
 <li>$\rightarrow j=j+1$，转到（2）直到$j\Delta t \geq t_f$  //循环</li>
 <li>$\rightarrow |\widetilde{\psi}(t_f)\rangle = |\widetilde{\psi}_{j}\rangle$  //最终结果</li>
 </ol>
@@ -283,6 +319,10 @@
                     </p>
                     
                     
+                    <p class="is-size-6 is-block">
+                        尽人事，听天命
+                    </p>
+                    
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
@@ -300,7 +340,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            8
+                            9
                         </p>
                     </a>
                 </div>
@@ -337,6 +377,54 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#单量子比特计算">
+        <span class="has-mr-6">1</span>
+        <span>单量子比特计算</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#练习4-1">
+        <span class="has-mr-6">1.1</span>
+        <span>练习4.1</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#受控运算">
+        <span class="has-mr-6">2</span>
+        <span>受控运算</span>
+        </a></li><li>
+        <a class="is-flex" href="#测量">
+        <span class="has-mr-6">3</span>
+        <span>测量</span>
+        </a></li><li>
+        <a class="is-flex" href="#通用量子门">
+        <span class="has-mr-6">4</span>
+        <span>通用量子门</span>
+        </a></li><li>
+        <a class="is-flex" href="#量子线路模型的关键要素">
+        <span class="has-mr-6">5</span>
+        <span>量子线路模型的关键要素</span>
+        </a></li><li>
+        <a class="is-flex" href="#量子系统的仿真">
+        <span class="has-mr-6">6</span>
+        <span>量子系统的仿真</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#仿真原理">
+        <span class="has-mr-6">6.1</span>
+        <span>仿真原理</span>
+        </a></li><li>
+        <a class="is-flex" href="#量子仿真算法">
+        <span class="has-mr-6">6.2</span>
+        <span>量子仿真算法</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -369,6 +457,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/19/tensor-network-and-quantum-information/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="tensor network and quantum information">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T12:59:46.000Z">2020-02-19</time></div>
+                    <a href="/2020/02/19/tensor-network-and-quantum-information/" class="title has-link-black-ter is-size-6 has-text-weight-normal">tensor network and quantum information</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -446,25 +553,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="论文修改意见">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T06:50:53.000Z">2020-02-17</time></div>
-                    <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">论文修改意见</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -482,7 +570,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -503,7 +591,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TensorNetwowrk/">
                         <span class="tag">TensorNetwowrk</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -566,6 +654,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/19/tensor-network-and-quantum-information/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="tensor network and quantum information">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T12:59:46.000Z">2020-02-19</time></div>
+                    <a href="/2020/02/19/tensor-network-and-quantum-information/" class="title has-link-black-ter is-size-6 has-text-weight-normal">tensor network and quantum information</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/18/Introduction-to-tensor-network-notation/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Introduction to tensor network notation">
@@ -640,25 +747,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="论文修改意见">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T06:50:53.000Z">2020-02-17</time></div>
-                    <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">论文修改意见</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -676,7 +764,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -697,7 +785,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TensorNetwowrk/">
                         <span class="tag">TensorNetwowrk</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 

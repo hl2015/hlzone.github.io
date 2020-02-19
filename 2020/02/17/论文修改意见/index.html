@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-17T06:50:53.000Z">
-<meta property="article:modified_time" content="2020-02-17T07:23:26.646Z">
+<meta property="article:modified_time" content="2020-02-19T12:56:51.831Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="论文">
 <meta name="twitter:card" content="summary">
@@ -117,6 +117,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -162,7 +166,6 @@
         </h1>
         <div class="content">
             <h2 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h2><a id="more"></a>
-
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/TIM%E6%88%AA%E5%9B%BE20200209215522.png" alt="abstract"></p>
 <p>先说了最近提出的一种gate model架构有什么，这个架构有什么作用（写得比较大概）。然后提出架构还应能支持波形补偿和波形标定。因此，文章提出了一种关于电极事件队列的用于超导控制的微架构。它有两个核心：1、电极事件操作单元。2、局部和全局事件的混合电路描述方法。（这里加上这个架构的效果如何，对上面提出问题的解决效果如何）（最后结束的两句话感觉有一些突兀，用FPGA实现可以放到前面，FPGA用缩写就可以）</p>
 <p>总的来说，写得有些简略。可以再思考下重点和创新之处如何体现，可以对这些内容多叙述一些。</p>
@@ -305,6 +308,10 @@
                     </p>
                     
                     
+                    <p class="is-size-6 is-block">
+                        尽人事，听天命
+                    </p>
+                    
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
@@ -322,7 +329,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            8
+                            9
                         </p>
                     </a>
                 </div>
@@ -359,6 +366,74 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#ABSTRACT">
+        <span class="has-mr-6">1</span>
+        <span>ABSTRACT</span>
+        </a></li><li>
+        <a class="is-flex" href="#INTRODUCTION">
+        <span class="has-mr-6">2</span>
+        <span>INTRODUCTION</span>
+        </a></li><li>
+        <a class="is-flex" href="#RELATED-WORKS">
+        <span class="has-mr-6">3</span>
+        <span>RELATED WORKS</span>
+        </a></li><li>
+        <a class="is-flex" href="#MICROARCHITECTURAL-CHALLENGES">
+        <span class="has-mr-6">4</span>
+        <span>MICROARCHITECTURAL CHALLENGES</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Limitations-Of-The-Gate-Model">
+        <span class="has-mr-6">4.1</span>
+        <span>Limitations Of The Gate Model</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Waveform-compensation">
+        <span class="has-mr-6">4.1.1</span>
+        <span>Waveform compensation</span>
+        </a></li><li>
+        <a class="is-flex" href="#Calibration-experiment">
+        <span class="has-mr-6">4.1.2</span>
+        <span>Calibration experiment</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Description-Of-High-Gate-Diversity-Circuit">
+        <span class="has-mr-6">4.2</span>
+        <span>Description Of High Gate Diversity Circuit</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#QUANTUM-MICROARCHITECTURE">
+        <span class="has-mr-6">5</span>
+        <span>QUANTUM MICROARCHITECTURE</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Electrode-Based-Quantum-Operation-Unit">
+        <span class="has-mr-6">5.1</span>
+        <span>Electrode Based Quantum Operation Unit</span>
+        </a></li><li>
+        <a class="is-flex" href="#Hybrid-Event-Description-Scheme">
+        <span class="has-mr-6">5.2</span>
+        <span>Hybrid Event Description Scheme</span>
+        </a></li><li>
+        <a class="is-flex" href="#Multi-level-Compilation-Scheme">
+        <span class="has-mr-6">5.3</span>
+        <span>Multi-level Compilation Scheme</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#IMPLEMENTATION">
+        <span class="has-mr-6">6</span>
+        <span>IMPLEMENTATION</span>
+        </a></li><li>
+        <a class="is-flex" href="#EVALUATION">
+        <span class="has-mr-6">7</span>
+        <span>EVALUATION</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -391,6 +466,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/19/tensor-network-and-quantum-information/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="tensor network and quantum information">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T12:59:46.000Z">2020-02-19</time></div>
+                    <a href="/2020/02/19/tensor-network-and-quantum-information/" class="title has-link-black-ter is-size-6 has-text-weight-normal">tensor network and quantum information</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -468,25 +562,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="论文修改意见">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T06:50:53.000Z">2020-02-17</time></div>
-                    <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">论文修改意见</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -504,7 +579,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -525,7 +600,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TensorNetwowrk/">
                         <span class="tag">TensorNetwowrk</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -588,6 +663,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/19/tensor-network-and-quantum-information/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="tensor network and quantum information">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T12:59:46.000Z">2020-02-19</time></div>
+                    <a href="/2020/02/19/tensor-network-and-quantum-information/" class="title has-link-black-ter is-size-6 has-text-weight-normal">tensor network and quantum information</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/18/Introduction-to-tensor-network-notation/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Introduction to tensor network notation">
@@ -662,25 +756,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="论文修改意见">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T06:50:53.000Z">2020-02-17</time></div>
-                    <a href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">论文修改意见</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -698,7 +773,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -719,7 +794,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TensorNetwowrk/">
                         <span class="tag">TensorNetwowrk</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
