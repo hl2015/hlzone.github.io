@@ -10,16 +10,16 @@
 <title>tensor network and quantum information - hlzone</title>
 
 
-    <meta name="description" content="在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。">
+    <meta name="description" content="​        在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tensor network and quantum information">
 <meta property="og:url" content="http://yoursite.com/2020/02/19/tensor-network-and-quantum-information/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。">
+<meta property="og:description" content="​        在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-19T12:59:46.000Z">
-<meta property="article:modified_time" content="2020-02-19T14:04:13.144Z">
+<meta property="article:modified_time" content="2020-02-20T12:20:00.959Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="TensorNetwowrk">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 301 个字)
+                    9 分钟 读完 (大约 1337 个字)
                 </span>
                 
                 
@@ -165,23 +165,61 @@
             
         </h1>
         <div class="content">
-            <p>在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。</p>
+            <p>​        在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。</p>
 <a id="more"></a>
-<h2 id="Bell-state-and-the-Bell-basis"><a href="#Bell-state-and-the-Bell-basis" class="headerlink" title="Bell state and the Bell basis"></a>Bell state and the Bell basis</h2><p>贝尔基(Bell basis)构成了两粒子最大纠缠态的正交集合。</p>
-<p>贝尔基标准的标记如下：</p>
+<h2 id="Bell-state-and-the-Bell-basis"><a href="#Bell-state-and-the-Bell-basis" class="headerlink" title="Bell state and the Bell basis"></a>Bell state and the Bell basis</h2><p>​        Bell基(Bell basis)构成了两粒子最大纠缠态的正交集合。Bell基标准的标记如下：</p>
 <script type="math/tex; mode=display">
 |\Phi^{\pm}\rangle :=(|0\rangle \otimes |0\rangle \pm |1\rangle \otimes |1\rangle)/\sqrt{2}\\
-|\Psi^{\pm}\rangle :=(|0\rangle \otimes |1\rangle \pm |1\rangle \otimes |0\rangle)/\sqrt{2}\\</script><p>对于第一个基$|\Phi^{+}\rangle$，称为贝尔态(Bell state)，用$|\Omega\rangle$表示。</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200219211634.png" alt=""></p>
-<p>在张量网络符号中，它被简单地表示为一条连接两条腿的线。</p>
+|\Psi^{\pm}\rangle :=(|0\rangle \otimes |1\rangle \pm |1\rangle \otimes |0\rangle)/\sqrt{2}\\</script><p>对于第一个基$|\Phi^{+}\rangle$，称为Bell态(Bell state)，用$|\Omega\rangle$表示。</p>
+<script type="math/tex; mode=display">
+|\Omega \rangle = \frac{1}{\sqrt{2} } 
+\begin{pmatrix} 1 \\ 0 \\ 0 \\ 1 \end{pmatrix} \quad
+\mathop{\rightleftharpoons}_{Vectorise}^{Matricise} \quad
+\frac{1}{\sqrt{2} } \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+=\frac{I}{\sqrt{2} }</script><p>在张量网络符号中，它被简单地表示为一条连接两条腿的线。</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200219213651.png" alt=""></p>
-<p>定义$|\Omega(\Omicron)\rangle=(\Omicron\otimes I)|\Omega\rangle$。根据这个定义，我们可以看到贝尔基简单地对应着泡利算子的向量化。</p>
+<p>​        要注意，这样一个表示包含很深刻的意义，如果将线的末端视为两个比特，对一个比特执行操作相当与对另一个比特执行转置操作，这很容易验证。那么，连线就意味着比特的纠缠。</p>
+<p>​        定义$|\Omega(\Omicron)\rangle=(\Omicron\otimes I)|\Omega\rangle$。根据这个定义，我们可以看到Bell基简单的对应着泡利算子的向量化。</p>
 <script type="math/tex; mode=display">
 |\Phi^+ \rangle = |\Omega(I)\rangle,\quad 
 |\Phi^- \rangle = |\Omega(Z)\rangle, \quad
 |\Psi^+ \rangle = |\Omega(X)\rangle, \quad
-|\Psi^- \rangle \propto |\Omega(Y)\rangle \quad</script><p>因此，可以看到贝尔基与泡利算符密切相关，在贝尔基上的欧几里德内积(Euclidean inner product)状态对应于上泡利算子的希伯特-施密特内积(Hilbert-Schmidt inner product)。</p>
-<h2 id="Quantum-teleportation"><a href="#Quantum-teleportation" class="headerlink" title="Quantum teleportation"></a>Quantum teleportation</h2><h2 id="Purification"><a href="#Purification" class="headerlink" title="Purification"></a>Purification</h2><h2 id="Stinespring’s-Dilation-theorem"><a href="#Stinespring’s-Dilation-theorem" class="headerlink" title="Stinespring’s Dilation theorem"></a>Stinespring’s Dilation theorem</h2>
+|\Psi^- \rangle \propto |\Omega(Y)\rangle \quad</script><p>​        因此，可以看到Bell基与Pauli算符密切相关，在Bell基上的欧几里德内积(Euclidean inner product)状态对应于上Pauli算符的希伯特-施密特内积(Hilbert-Schmidt inner product)。</p>
+<h2 id="Quantum-teleportation"><a href="#Quantum-teleportation" class="headerlink" title="Quantum teleportation"></a>Quantum teleportation</h2><p>​        给定上面的Bell基标记，我们就可以用TNN来表示和理解量子隐态传输。</p>
+<script type="math/tex; mode=display">
+|\phi_B\rangle = \mathop{\overbrace{(p_B)}}^{Correction}
+\mathop{\overbrace{(\langle\Omega_{A_1A_2}(p))}}^{Teleportation}
+\mathop{\overbrace{(|\psi_{A_1}\rangle \otimes |\Omega_{A_2B}\rangle)}}^{Setup} 
+= |\psi_B\rangle/2</script><p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220102701.png" alt=""></p>
+<p>​        可以看到公式与TNN相对应，公式和TNN都从右往左看。在TNN上用一条竖线往下画，可以截断3条横线，这三条并列的横线与Setup相对应。Teleportation过程相作用了一个左矢，相当于在TNN作用一个开口向右的弧线，将腿的数量减少到1。最后Correction的过程，在B上作用一个$p$。可以看到B最后可以得到$|\psi\rangle/2$。然后要验证一下，隐态传输算法中，$p$是否满足如上的关系，确定这TNN表达的合理性。</p>
+<h3 id="Gate-teleportation"><a href="#Gate-teleportation" class="headerlink" title="Gate teleportation"></a>Gate teleportation</h3><script type="math/tex; mode=display">
+|\phi\rangle = \mathop{\overbrace{(C_p)}}^{Correction}
+\mathop{\overbrace{(\langle\Omega_{A_1A_2}(p))}}^{Teleportation}
+\mathop{\overbrace{(|\psi_{A_1}\rangle \otimes |\Omega_{A_2B}(U^T)\rangle)}}^{Setup}
+=C_pUp^{\dagger}|\psi\rangle/2</script><p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220113441.png" alt=""></p>
+<p>​        如果令$C_p:=UpU^\dagger$，那么Bob总是可以得到$U|\psi\rangle$。如果$U$是Clifford操作(Clifford群是将Paulis映射到Paulis的操作群)，这个修正也是一个泡利，这个传送过程在传送门的使用上并不比标准的传送需要更多的资源。</p>
+<h2 id="Purification"><a href="#Purification" class="headerlink" title="Purification"></a>Purification</h2><p>​        对于一个混合态$\rho$，提纯(purification)就是一个将原系统拓展到更大系统(添加的系统称为提纯系统)的纯态(pure state)$|\psi \rangle$，以减少原系统$\rho$的密度。这样的提纯可以给出为$|\psi\rangle \propto (\sqrt{\rho} \otimes I)|\Omega \rangle = |\Omega (\sqrt{\rho})\rangle$。</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220124722.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220124800.png" alt=""></p>
+<p>​        通过维度计数，可以看出上述提纯在提纯系统的等轴自由度范围内是唯一的，所以的提纯都是$(\sqrt{\rho} \otimes U)|\Omega \rangle$的形式，其中$U^\dagger U= 1$，即所有的提纯正比于$(\sqrt{\rho} \otimes I)|\Omega \rangle$，$|\Omega\rangle$可以是其他最大纠缠态。</p>
+<h2 id="Stinespring’s-Dilation-theorem"><a href="#Stinespring’s-Dilation-theorem" class="headerlink" title="Stinespring’s Dilation theorem"></a>Stinespring’s Dilation theorem</h2><p>​        Stinespring’s Theorem指出，任意量子通道$\varepsilon$，即一个完全的正保迹映射(completely positive trace preserving map(CPTP))，可以被表示为一个幺正算符作用在更大的系统上，再取偏迹。</p>
+<script type="math/tex; mode=display">
+\varepsilon(\rho) = Tr_1[V^\dagger(\rho \otimes|0\rangle\langle0|)V]</script><p>在物理上，这意味着，一个动态的开放系统等价于一个更大的封闭系统的子系统。</p>
+<p>​        任意CPTP映射可以被表示为Kraus操作$K_i$的集合：</p>
+<script type="math/tex; mode=display">
+\varepsilon(\rho)=\sum_i K_i^\dagger \rho K_i,\quad 其中\sum_i K_iK_i^\dagger=I.</script><p>其TNN表示为<br><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220155953.png" alt=""></p>
+<p>接着定义张量$U$为</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220160552.png" alt=""></p>
+<p>可以看到$U$满足$U^\dagger U=I$，可将其视为$V$加上一个附加比特</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220160905.png" alt=""></p>
+<p>​        通过这样的表示，再对上指标取偏迹，Stinespring Dilation Theorem可以表示为：</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220161132.png" alt=""></p>
+<h2 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h2><p>1.考虑隐态传输的反向。Alice想要将一个经典比特发送给Bob，且她有一个可以传输量子比特的通道。那么单量子比特可以传输多少比特的信息呢？为了简单考虑，只考虑Bob可以执行投影测量的情况。</p>
+<hr>
+<p>2.假设Alice和Bob初始共享一个Bell对。这个提前共享的纠缠资源是否可以增加成功传输的经典信息的数量，如果可以的话，增加了多少呢？</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200220162804.png" alt=""></p>
+<p><em>superdense coding</em></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -204,6 +242,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/20/Matrix-product-states/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Matrix product states</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -262,7 +307,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            9
+                            10
                         </p>
                     </a>
                 </div>
@@ -314,7 +359,11 @@
         <a class="is-flex" href="#Quantum-teleportation">
         <span class="has-mr-6">2</span>
         <span>Quantum teleportation</span>
-        </a></li><li>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Gate-teleportation">
+        <span class="has-mr-6">2.1</span>
+        <span>Gate teleportation</span>
+        </a></li></ul></li><li>
         <a class="is-flex" href="#Purification">
         <span class="has-mr-6">3</span>
         <span>Purification</span>
@@ -322,6 +371,10 @@
         <a class="is-flex" href="#Stinespring’s-Dilation-theorem">
         <span class="has-mr-6">4</span>
         <span>Stinespring’s Dilation theorem</span>
+        </a></li><li>
+        <a class="is-flex" href="#Problems">
+        <span class="has-mr-6">5</span>
+        <span>Problems</span>
         </a></li></ul>
             </div>
         </div>
@@ -359,6 +412,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/20/Matrix-product-states/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Matrix product states">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
+                    <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -436,25 +508,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/17/%E9%93%BE%E6%8E%A5%E6%95%B4%E7%90%86/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="链接整理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T11:56:28.000Z">2020-02-17</time></div>
-                    <a href="/2020/02/17/%E9%93%BE%E6%8E%A5%E6%95%B4%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链接整理</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -472,7 +525,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -493,7 +546,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TensorNetwowrk/">
                         <span class="tag">TensorNetwowrk</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -556,6 +609,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/20/Matrix-product-states/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Matrix product states">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
+                    <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/19/tensor-network-and-quantum-information/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="tensor network and quantum information">
@@ -630,25 +702,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/17/%E9%93%BE%E6%8E%A5%E6%95%B4%E7%90%86/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="链接整理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T11:56:28.000Z">2020-02-17</time></div>
-                    <a href="/2020/02/17/%E9%93%BE%E6%8E%A5%E6%95%B4%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">链接整理</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -666,7 +719,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">9</span>
+                    <span class="level-item tag">10</span>
                 </span>
             </a>
         </li>
@@ -687,7 +740,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/TensorNetwowrk/">
                         <span class="tag">TensorNetwowrk</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
