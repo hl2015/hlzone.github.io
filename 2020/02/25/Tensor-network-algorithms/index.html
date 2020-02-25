@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-25T06:24:21.000Z">
-<meta property="article:modified_time" content="2020-02-25T14:39:38.259Z">
+<meta property="article:modified_time" content="2020-02-25T15:03:22.654Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    16 分钟 读完 (大约 2456 个字)
+                    16 分钟 读完 (大约 2449 个字)
                 </span>
                 
                 
@@ -179,16 +179,16 @@
 <p>需要注意的是，虽然DMRG算法只计算基态，但相关的归纳可以用来模拟激发态、动力学等。</p>
 <h3 id="One-site"><a href="#One-site" class="headerlink" title="One-site"></a>One-site</h3><p>对上述DMRG简图的最简单解释是DMRG1(或单点DMRG)。对于一个固定的点$i$，依次对这个点以为的MPS张量进行优化</p>
 <script type="math/tex; mode=display">
-A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle \psi(A_i) | H | \psi(A_i)}{\langle \psi (A_i) | \psi(A_i) \rangle}</script><p>在TNN中，这样的步骤表现为</p>
+A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle \psi(A_i) | H | \psi(A_i) \rangle}{\langle \psi (A_i) | \psi(A_i) \rangle}</script><p>在TNN中，这样的步骤表现为</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225163635.png" alt=""></p>
 <p>接着，定义环境张量</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225163858.png" alt=""></p>
 <p>它对应于取封闭的张量网络，分别取$H$和$I$的期望值，然后去掉目标张量。在这样的环境下，6.4图变为</p>
-<p><img src="C:\Users\hlei1\AppData\Roaming\Typora\typora-user-images\image-20200225164317000.png" alt="image-20200225164317000"></p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225230125.png" alt=""></p>
 <p>向量化这个方程会得到结果</p>
 <script type="math/tex; mode=display">
 A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle A_i | H_i | A_i \rangle}{\langle A_i | L_i | A_i \rangle}</script><p>最后，我们可以简化这个目标函数的分母，适当地将MPS确定为标准形式。通过将站点左侧的MPS部分以左正则形式显示，将右侧的MPS部分以右正则形式显示，我们可以得到$L_i$简化为恒等式：</p>
-<p><img src="C:\Users\hlei1\AppData\Roaming\Typora\typora-user-images\image-20200225164954290.png" alt="image-20200225164954290"></p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225230207.png" alt=""></p>
 <p>考虑到这种规范化，问题就简化为</p>
 <script type="math/tex; mode=display">
 A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle A_i | H_i | A_i \rangle}{\langle A_i | A_i \rangle}</script><p>因为$H_i$是厄米的，这个优化有一个由$H_i$的最小特征向量给出的闭合解。通过沿着链来回扫描，解决这个局部特征向量问题，然后根据需要沿着规范化移动，我们完成了对算法的描述。</p>
