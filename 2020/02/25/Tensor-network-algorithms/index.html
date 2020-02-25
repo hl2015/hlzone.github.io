@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>量子线路 - hlzone</title>
+<title>Tensor network algorithms - hlzone</title>
 
 
-    <meta name="description" content="计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ———-David Deutsch  量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组离散元件的集合。这个工具将使我们能够用类似于需要的门的总数或线路深度来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易">
+    <meta name="description" content="张量网络在凝聚态系统的低温模拟方面取得了非凡的实际成功。一个比较容易理解的玩具模型是寻找一维旋转系统的基态。即使是在假设的局域哈密顿函数，这个看起来很窄的问题也保留了QMA -completeness，粉碎了通用模拟方法的希望，即使是在量子计算机上。虽然这乍一看似乎是一个重大的问题，但许多“物理现实”系统并没有表现出这种令人望而却步的复杂性。张量网络可以用来开发，并在一定程度上理解这种结构。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="量子线路">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/index.html">
+<meta property="og:title" content="Tensor network algorithms">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/Tensor-network-algorithms/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ———-David Deutsch  量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组离散元件的集合。这个工具将使我们能够用类似于需要的门的总数或线路深度来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易">
+<meta property="og:description" content="张量网络在凝聚态系统的低温模拟方面取得了非凡的实际成功。一个比较容易理解的玩具模型是寻找一维旋转系统的基态。即使是在假设的局域哈密顿函数，这个看起来很窄的问题也保留了QMA -completeness，粉碎了通用模拟方法的希望，即使是在量子计算机上。虽然这乍一看似乎是一个重大的问题，但许多“物理现实”系统并没有表现出这种令人望而却步的复杂性。张量网络可以用来开发，并在一定程度上理解这种结构。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-02-17T06:20:53.000Z">
-<meta property="article:modified_time" content="2020-02-19T12:56:37.662Z">
+<meta property="article:published_time" content="2020-02-25T06:24:21.000Z">
+<meta property="article:modified_time" content="2020-02-25T14:39:38.259Z">
 <meta property="article:author" content="hl">
-<meta property="article:tag" content="量子线路">
+<meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="量子线路" height="28">
+                <img src="/images/hlzone.png" alt="Tensor network algorithms" height="28">
             
             </a>
         </div>
@@ -141,13 +141,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-17T06:20:53.000Z">2020-02-17</time>
+                <time class="level-item has-text-grey" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    12 分钟 读完 (大约 1830 个字)
+                    16 分钟 读完 (大约 2456 个字)
                 </span>
                 
                 
@@ -161,97 +161,55 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                量子线路
+                Tensor network algorithms
             
         </h1>
         <div class="content">
-            <p><em>计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ———-David Deutsch</em></p>
-<hr>
-<p>量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组<code>离散</code>元件的集合。这个工具将使我们能够用类似于需要的门的<code>总数</code>或<code>线路深度</code>来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易从概念上形象的认识算法。</p>
+            <p>张量网络在凝聚态系统的低温模拟方面取得了非凡的实际成功。一个比较容易理解的玩具模型是寻找一维旋转系统的基态。即使是在假设的局域哈密顿函数，这个看起来很窄的问题也保留了QMA -completeness，粉碎了通用模拟方法的希望，即使是在量子计算机上。虽然这乍一看似乎是一个重大的问题，但许多“物理现实”系统并没有表现出这种令人望而却步的复杂性。张量网络可以用来开发，并在一定程度上理解这种结构。</p>
 <a id="more"></a>
-<h2 id="单量子比特计算"><a href="#单量子比特计算" class="headerlink" title="单量子比特计算"></a>单量子比特计算</h2><p>单量子比特表示</p>
+<p>就像前面讨论的，低纠缠态可以很好的用MPS来表达。如果考虑局部间隙哈密顿量，研究表明相关基态不可能高度纠缠。这种限制性纠缠意味着这些的态允许有效的MPS近似，表明缺口(gap)的存在导致复杂性从QMA-complete一路下降到P，消除了模拟的复杂性障碍。我们注意到，尽管在将MPS应用于无gapless模型时存在复杂性理论和物理上的挑战，但也有一些成功的例子的。</p>
+<p>更详细的是，在限制域$D$中用最小化哈密顿量$H$的Rayleigh quotient方法来近似基态$| \Gamma \rangle$</p>
 <script type="math/tex; mode=display">
-|\psi\rangle = a|0\rangle+b|1\rangle
-\qquad其中，复数a,b满足 \quad{|a|}^2+|b|^2=1</script><p>一些重要矩阵，Pauli矩阵：</p>
+| \Gamma \rangle : = \mathop{arg \ min}_{| \psi \rangle \in D} \frac{\langle \psi | H | \psi \rangle}{\langle \psi | \psi \rangle}</script><p>我们知道MPS很好地逼近了精确解，限制在有界键维的MPS的定义域$D$上。DMRG和TEBD是在一些MPS状态下开始，然后沿着这个区域变化移动，在移动过程中最小化能量。两种方法的区别在于执行这个变化步骤的方式，DMRG和TEBD分别采用了更多的计算的方法和物理的方法。</p>
+<p>虽然我们在这里讨论的算法是为寻找MPS基态而设计的，但是它们可以被用来模拟时间演化，找到Gibbs states，或者优化其他操作符。</p>
+<h2 id="DMRG-the-computer-scientist’s-approach"><a href="#DMRG-the-computer-scientist’s-approach" class="headerlink" title="DMRG(the computer scientist’s approach)"></a>DMRG(the computer scientist’s approach)</h2><p>DMRG是目前该领域研究最多、最成功的算法。为了清楚起见，我们限制在有限的DMRG上，尽管确实存在热力学变量。DMRG是一个包含多个类似算法的概括性术语，在这里讨论的算法是一个简化但仍然有效的示例。由于该算法的提出要早于TNN，它的描述在历史上一直是以一种更有物理动机和技术上更复杂的方式呈现的。由于在解释上的相应转变，最初的缩略语现在与DMRG的现代张量网络解释几乎没有关联，因此为了清楚起见，我们有意省略了精确地将DMRG的扩展定义为缩略语。</p>
+<p>用MPO表示哈密顿函数，在MPS上优化Rayleigh quotient的过程如下:</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225152738.png" alt=""></p>
+<p>困难在于我们需要这些MPS张量的压缩;整体目标函数是高度非线性的，但它确实只是二次地依赖于每个张量。DMRG背后的关键启发是利用这些局部问题的简单性，通过迭代单变量(单张量)优化逼近多元(多张量)优化。</p>
+<p>需要注意的是，虽然DMRG算法只计算基态，但相关的归纳可以用来模拟激发态、动力学等。</p>
+<h3 id="One-site"><a href="#One-site" class="headerlink" title="One-site"></a>One-site</h3><p>对上述DMRG简图的最简单解释是DMRG1(或单点DMRG)。对于一个固定的点$i$，依次对这个点以为的MPS张量进行优化</p>
 <script type="math/tex; mode=display">
-X\equiv\begin{bmatrix}
-0 & 1 \\ 
-1 & 0 
-\end{bmatrix}
-,
-Y\equiv\begin{bmatrix} 
-0 & -i \\ 
-i & 0 
-\end{bmatrix}
-,
-Z\equiv\begin{bmatrix} 
-1 & 0 \\ 
-0 & -1 
-\end{bmatrix}</script><p>Hadamard门、Phase gate和$\pi/8$门：</p>
+A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle \psi(A_i) | H | \psi(A_i)}{\langle \psi (A_i) | \psi(A_i) \rangle}</script><p>在TNN中，这样的步骤表现为</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225163635.png" alt=""></p>
+<p>接着，定义环境张量</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225163858.png" alt=""></p>
+<p>它对应于取封闭的张量网络，分别取$H$和$I$的期望值，然后去掉目标张量。在这样的环境下，6.4图变为</p>
+<p><img src="C:\Users\hlei1\AppData\Roaming\Typora\typora-user-images\image-20200225164317000.png" alt="image-20200225164317000"></p>
+<p>向量化这个方程会得到结果</p>
 <script type="math/tex; mode=display">
-H=\frac{1}{\sqrt{2}}\begin{bmatrix} 
-0 & 1 \\ 
-1 & 0 
-\end{bmatrix}
-,
-S=\begin{bmatrix} 
-1 & 0 \\ 
-0 & i 
-\end{bmatrix}
-,
-T=\begin{bmatrix} 
-1 & 0 \\ 
-0 & exp(i\pi/4) 
-\end{bmatrix}</script><p>旋转算子定义如下：</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200218124851.png" alt=""></p>
-<h4 id="练习4-1"><a href="#练习4-1" class="headerlink" title="练习4.1"></a>练习4.1</h4><h2 id="受控运算"><a href="#受控运算" class="headerlink" title="受控运算"></a>受控运算</h2><p>本节说明，如何从基本运算基础搭建起来的量子线路实现复杂的受控运算。</p>
-<p>CNOT</p>
-<p>相当于$|c\rangle|t\rangle \rightarrow |c\rangle|t\bigoplus c\rangle$</p>
-<p><em>controlled</em>-U</p>
-<p>相当于$|c\rangle |t\rangle \rightarrow |c\rangle U^c |t\rangle$</p>
-<h2 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h2><p>量子线路测量有两个重要原理值得记住。</p>
-<p>_推迟测量原理(principle of deferred measurement)_<br>总可以把测量从量子线路的中间步骤移到线路的末端；如果测量的结果被用于线路的某些阶段，则经典的运算可以被条件量子运算代替。<br><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200212115528.png" alt=""></p>
-<p>\langle !— more —&gt;</p>
-<p><em>隐含测量原理（principle of implicit measurement)</em><br>不失一般性，量子线路中任何未终结的量子连线（未被测量的量子比特）总可以假设为被测量。</p>
-<p><em>测量的一个普遍特点</em>——为使一个测量是可逆的，它一定不能揭示被测量子状态的任何信息</p>
-<hr>
-<h2 id="通用量子门"><a href="#通用量子门" class="headerlink" title="通用量子门"></a>通用量子门</h2><p><em>Two-level unitary gates are universal</em></p>
-<p>对于作用在d维Hilbert空间上的酉矩阵U，可以分解非两级酉矩阵的乘积，即只不平凡地作用在向量的一个或两个分量上的酉矩阵，</p>
-<p><em>Single qubit and CNOT gates are universal</em></p>
-<p>单量子比特门和受控非门可以实现n量子比特状态空间上的任意两级酉运算。因此，结合前一条结论，单量子比特门和受控非门可以实现n量子比特状态空间上的任意酉运算，于是它们对量子计算是通用的。</p>
-<p><em>A discrete set of universal operations</em></p>
-<p>门的离散集合不可能精确实现任意的酉运算，因为酉运算的集合是连续的。然而，可以用一个离散的集合去近似任意的酉运算。</p>
-<p>Hadamard + phase + CNOT + π/8 是一个通用门集合。</p>
-<p>但是要注意的是近似任意酉门通常是难的。</p>
-<hr>
-<h2 id="量子线路模型的关键要素"><a href="#量子线路模型的关键要素" class="headerlink" title="量子线路模型的关键要素"></a>量子线路模型的关键要素</h2><ul>
-<li>经典资源。量子计算机包括两部分，经典计算部分和量子计算部分。在计算中允许部分计算以经典的方式进行，某些任务的完成将容易得多。</li>
-<li>适当的状态空间。量子线路在某个数目为n的量子比特组上进行操作，因此状态空间是$2^n$维复Hilbert空间。积形式$|x_1,\cdots,x_n\rangle$，其中$x_i = 0,1$的状态称为计算机的计算基态。$|x\rangle$表示一个计算基态，其中$x$是二进制表示为$x_1 \cdots x_n$的数。</li>
-<li>将状态置于计算基中的能力。假设任何的计算基态$|x_1,\cdots,x_n\rangle$可以在至多n步内制备出来。</li>
-<li>进行量子门运算的能力。门可以随意应用到量子比特的任意子集，并可以实现一组通用门。例如，在量子计算机上可以把受控非门用到任何一对量子比特上，Hadamard门、相位、受控非门和$\pi/8$门构成一组可以近似任意酉运算的门，因此是一组通用门，还存在其他的通用类。</li>
-<li>在计算基中测量的能力，计算机中可以进行在计算基中一个或多个量子比特的测量。</li>
-</ul>
-<hr>
-<h2 id="量子系统的仿真"><a href="#量子系统的仿真" class="headerlink" title="量子系统的仿真"></a>量子系统的仿真</h2><h4 id="仿真原理"><a href="#仿真原理" class="headerlink" title="仿真原理"></a>仿真原理</h4><p>用经典计算机模拟量子系统是可能的，但一般而言不是很有效。许多简单量子系统的动态行为服从Schrodinger方程</p>
-<script type="math/tex; mode=display">i\hbar \frac{d}{dt} | \psi\rangle = H | \psi\rangle</script><p>我们常常将$\hbar$放入$H$中。对于一个研究空间中实际粒子的物理学家感兴趣的Hamilton量，这个方程可以简化为</p>
-<script type="math/tex; mode=display">i\frac{\partial}{\partial t} \psi(x) = [-\frac{1}{2m}\frac{\partial^2}{\partial x^2} + V(x)]\psi(x)</script><p>其中使用了称为位置表示的约定$\langle x|\psi\rangle = \psi (x)$。</p>
-<p>仿真Schrodinger方程并不是模拟量子系统中面临的特殊困难。<code>模拟量子系统的关键挑战是，必须求解的微分方程为指数数目</code>。对$n$量子比特的系统，必须求解$2^n$个方程。有时具有洞察力的近似可以减少方程个数，从而使这种量子系统的经典仿真成为可行。然而，有许多物理上有意义的量子系统，人们尚不知道它们的这类近似。</p>
-<h4 id="量子仿真算法"><a href="#量子仿真算法" class="headerlink" title="量子仿真算法"></a>量子仿真算法</h4><p>量子仿真算法的核心是渐近近似定理。</p>
-<p>(Trotter公式) 令$A$和$B$是Hermite算子，则对任意实数$t$，有</p>
-<script type="math/tex; mode=display">{\lim_{n \to +\infty}}(e^{iAt/n}e^{iBt/n})^n = e^{i(A+B)t/n}</script><p>注意，即使对$A$和$B$不对易的情况也是成立的。</p>
-<p><em>算法 量子仿真</em></p>
-<ul>
-<li><strong>输入</strong> （1）作用在N维系统上的Hamilton量$H = \sum_{k} H_k$，其中每个$H_k$作用在规模独立于N的小的子系统上；（2）系统在$t=0$时刻的初态$| \psi_0\rangle$；（3）正的非零精度$\delta $；（4）获得期望状态的时间$ t_f $。</li>
-<li><strong>输出</strong> 状态$|\widetilde{\psi}(t_f)\rangle$，使得$|\langle \widetilde{\psi}(t_f)|e^{-iHt_f}|\psi_0\rangle|^2 \geq 1-\delta$。</li>
-<li><strong>运行时间</strong> $O(poly(1/\delta))$数目的操作。</li>
-<li><strong>过程</strong> 选择一个表示，使得$n=poly(logN)$量子比特的状态$| \widetilde{\psi}\rangle$能近似系统状态，且算子$e^{-iH_k \Delta t}$有有效的量子线路近似。选择一个近似方法和$\Delta$，使得期望误差是可接受的（并且对某个整数$j$，$j\Delta t = t_f$），为迭代构造一个相应的量子线路$ U_{\Delta t}$，并且执行：<ol>
-<li>$|\widetilde{\psi}_0\rangle \leftarrow |\psi_0\rangle$；$j=0$   //状态初始化</li>
-<li>$\rightarrow |\widetilde{ {\psi} }_{j+1}\rangle =U_{\Delta}|\widetilde{ {\psi} }_{j}\rangle$ //迭代更新</li>
-<li>$\rightarrow j=j+1$，转到（2）直到$j\Delta t \geq t_f$  //循环</li>
-<li>$\rightarrow |\widetilde{\psi}(t_f)\rangle = |\widetilde{\psi}_{j}\rangle$  //最终结果</li>
-</ol>
-</li>
-</ul>
+A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle A_i | H_i | A_i \rangle}{\langle A_i | L_i | A_i \rangle}</script><p>最后，我们可以简化这个目标函数的分母，适当地将MPS确定为标准形式。通过将站点左侧的MPS部分以左正则形式显示，将右侧的MPS部分以右正则形式显示，我们可以得到$L_i$简化为恒等式：</p>
+<p><img src="C:\Users\hlei1\AppData\Roaming\Typora\typora-user-images\image-20200225164954290.png" alt="image-20200225164954290"></p>
+<p>考虑到这种规范化，问题就简化为</p>
+<script type="math/tex; mode=display">
+A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle A_i | H_i | A_i \rangle}{\langle A_i | A_i \rangle}</script><p>因为$H_i$是厄米的，这个优化有一个由$H_i$的最小特征向量给出的闭合解。通过沿着链来回扫描，解决这个局部特征向量问题，然后根据需要沿着规范化移动，我们完成了对算法的描述。</p>
+<p>DMRG1的主要优点是状态保持在MPS流形内，键长不增加，这意味着算法是贪婪的。然而，这种对键的严格限制可能是一把双刃剑;这意味着在算法运行时，没有特别方便的方法来缓慢增长键的尺寸，关于键的尺寸选择的适当性，没有得到任何信息。这两个问题都通过改进来解决，尽管稍微复杂一些，导出DMRG2算法。</p>
+<h3 id="Two-site"><a href="#Two-site" class="headerlink" title="Two-site"></a>Two-site</h3><p>DMRG2的想法是将两个节点合并在一起，在DMRG1表示中执行优化，然后将两个位置分开。这种分裂过程赋予了DMRG2其能力，允许动态控制键的维度，并提供有关修剪所导致的误差量的信息，这有助于键维度的选择。</p>
+<p>首先进行优化</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225170416.png" alt=""></p>
+<p>可以再次通过取一个环境张量关于两个位置的最小特征向量来求解，$H_{i,i+1}$，同样是混合正则形式。在这之后，通过执行SVD和键切将两节点张量分解:</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225170732.png" alt=""></p>
+<p>这种裁剪的SVD有两个关键特性。首先，我们修剪的键的尺寸可以比我们最初开始时的尺寸大，这样我们就可以慢慢地扩展到更高的键尺寸MPS的空间。其次，我们可以使用截断的奇异值来量化与此投影相关的误差，使其回归到更低的键维空间，从而更好地告知我们对键维的选择。</p>
+<h2 id="TEBD-the-physicist’s-approach"><a href="#TEBD-the-physicist’s-approach" class="headerlink" title="TEBD (the physicist’s approach)"></a>TEBD (the physicist’s approach)</h2><p>时间演化合并抽取(time-evolving block decimation(TEBD))是一个张量网络算法，允许模拟一维自旋系统的动力学。通过模拟虚时间演化(imaginary-time-evolution)，还可以计算出基态等低温特征。</p>
+<p>为了模拟虚拟时间演化，我们需要近似虚时间演化算子$U(\tau) = \exp(-\tau H)$。这里的问题是，虽然我们可能有一个$H$的有效表示，但它的任何指数不一定有一个简洁的表示。以相应的虚时间演化的二体哈密顿函数为例</p>
+<script type="math/tex; mode=display">
+U(\tau)=e^{-\tau \sum_i h_i} \qquad H=\sum_i h_i</script><p>$h_i$是一个作用于自旋$i$和$i + 1$的相互作用项。同时$H$有恒定的Schmidt阶，可以有效的用MPO表示，$U(\tau)$一般对于所有的$\tau$都有指数的键维度。</p>
+<p>让$H_o(H_e)$分别表示奇(偶)指标$i$的$h_i$的和。因为所有的$H_o(H_e)$中的所有项都为对易的，$e^{-\tau H_o}(e^{-\tau itH_e})$可以被有效的计算和表达。近似$U(\tau)$的问题转变为当$e^{-\tau A}$和$e^{-\tau B}$都可计算时近似$e^{-t(A+B)}$的问题。</p>
+<p>TEBD的核心数学工具是指数积近似。这些近似的第一阶是Suzuki-Trotter公式，它通过简单地演化每个子系统来近似总的演化:</p>
+<script type="math/tex; mode=display">
+e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在这样的近似的整个家族，尽管我们的目的只是为了说明Suzuki-Trotter的过程。</p>
+<p>TEBD算法的工作原理是通过上述指数积公式近似虚时间演化算子，将其应用于给定的MPS，并调整键维以投射回MPS空间。我们对虚时间演化算符的近似是由只包含最近邻的两个位置算符的层的乘积给出的，这意味着我们只需要将这些算符压缩到我们的MPS中。假设我们想对$i$和$i + 1$处的自旋应用算子U。其思想是应用算符，把所有的量都压缩成一个张量，然后再一次使用SVD裁剪来截断键的维数。</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225223418.png" alt=""></p>
+<p>dmrg2的优点也体现在TEBD中，即控制键尺寸的增长和对修剪误差的量化。由于上面的过程是完全局域化的，TEBD也允许大量的并行处理，这是DMRG通常不支持的。</p>
 
         </div>
         
@@ -259,7 +217,7 @@ T=\begin{bmatrix}
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" rel="tag">量子线路</a>
+                    <a class="has-link-grey -link" href="/tags/Tensor-Netwowrk/" rel="tag">Tensor Netwowrk</a>
                 </div>
             </div>
         </div>
@@ -276,17 +234,10 @@ T=\begin{bmatrix}
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/17/%E8%AE%BA%E6%96%87%E4%BF%AE%E6%94%B9%E6%84%8F%E8%A7%81/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">论文修改意见</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/17/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95/">
-                <span class="level-item">本博客的搭建方法</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/24/Classifying-gapped-phases-in-1D/">
+                <span class="level-item">Classifying gapped phases in 1D</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -385,42 +336,22 @@ T=\begin{bmatrix}
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#单量子比特计算">
+        <a class="is-flex" href="#DMRG-the-computer-scientist’s-approach">
         <span class="has-mr-6">1</span>
-        <span>单量子比特计算</span>
+        <span>DMRG(the computer scientist’s approach)</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#练习4-1">
+        <a class="is-flex" href="#One-site">
         <span class="has-mr-6">1.1</span>
-        <span>练习4.1</span>
+        <span>One-site</span>
+        </a></li><li>
+        <a class="is-flex" href="#Two-site">
+        <span class="has-mr-6">1.2</span>
+        <span>Two-site</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#受控运算">
+        <a class="is-flex" href="#TEBD-the-physicist’s-approach">
         <span class="has-mr-6">2</span>
-        <span>受控运算</span>
-        </a></li><li>
-        <a class="is-flex" href="#测量">
-        <span class="has-mr-6">3</span>
-        <span>测量</span>
-        </a></li><li>
-        <a class="is-flex" href="#通用量子门">
-        <span class="has-mr-6">4</span>
-        <span>通用量子门</span>
-        </a></li><li>
-        <a class="is-flex" href="#量子线路模型的关键要素">
-        <span class="has-mr-6">5</span>
-        <span>量子线路模型的关键要素</span>
-        </a></li><li>
-        <a class="is-flex" href="#量子系统的仿真">
-        <span class="has-mr-6">6</span>
-        <span>量子系统的仿真</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#仿真原理">
-        <span class="has-mr-6">6.1</span>
-        <span>仿真原理</span>
-        </a></li><li>
-        <a class="is-flex" href="#量子仿真算法">
-        <span class="has-mr-6">6.2</span>
-        <span>量子仿真算法</span>
-        </a></li></ul></li></ul>
+        <span>TEBD (the physicist’s approach)</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
@@ -841,7 +772,7 @@ T=\begin{bmatrix}
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="量子线路" height="28">
+                    <img src="/images/hlzone.png" alt="Tensor network algorithms" height="28">
                 
                 </a>
                 <p class="is-size-7">

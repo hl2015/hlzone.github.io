@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-20T08:29:54.000Z">
-<meta property="article:modified_time" content="2020-02-22T03:31:28.663Z">
+<meta property="article:modified_time" content="2020-02-23T13:10:32.084Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    27 分钟 读完 (大约 4089 个字)
+                    28 分钟 读完 (大约 4214 个字)
                 </span>
                 
                 
@@ -224,12 +224,12 @@ A_1 = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}.</script><p>选择MPS的边�
 A_0 = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad 
 A_1 = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}.</script><p>可以得到Greenberger-Horne-Zeilinger(GHZ)态</p>
 <script type="math/tex; mode=display">
-|GHZ\rangle = |00\ldots 0\rangle + |11\ldots 1\rangle .</script><h3 id="AKLT-state"><a href="#AKLT-state" class="headerlink" title="AKLT state"></a>AKLT state</h3><p>假设要构建一个$SO(3)$对称自旋单态(spin-1 state)。令$|\phi\rangle = |01\rangle - |10\rangle$为$SO(3)$的不变单重态，$P:\mathbb{C}^{2 \times 2} \rightarrow \mathbb{C}^3$为作用到自旋单态子空间上的投影。</p>
+|GHZ\rangle = |00\ldots 0\rangle + |11\ldots 1\rangle .</script><h3 id="AKLT-state"><a href="#AKLT-state" class="headerlink" title="AKLT state"></a>AKLT state</h3><p>假设要构建一个$SO(3)$对称自旋单态(spin-1 state)。令$|\phi\rangle = |01\rangle - |10\rangle$为$SO(3)$的不变单重态，$P:\mathbb{C}^{2 \times 2} \rightarrow \mathbb{C}^3$为作用到自旋单态子空间上的投影算符。</p>
 <script type="math/tex; mode=display">
-P = |\tilde 1 \rangle \langle 00 | + |\tilde0 \rangle \frac{\langle 01 | + \langle 10|}{\sqrt2} + |- \tilde1 \rangle \langle 11|</script><p>这样做的好处是，对应系统上的自旋算符通过$P$，意味着它与旋转交换。令$(S_x,S_y,S_Z)$为自旋单粒子的自旋向量，$(X_i,Y_i,Z_i)/2$为第$i$的比特上的自旋向量，这意味着：</p>
+P = |\tilde 1 \rangle \langle 00 | + |\tilde0 \rangle \frac{\langle 01 | + \langle 10|}{\sqrt2} + |- \tilde1 \rangle \langle 11|</script><p>这样做的好处是，对应系统上的自旋算符通过$P$，意味着它与旋转交换。令$(S_x,S_y,S_z)$为自旋单粒子的自旋向量，$(X_i,Y_i,Z_i)/2$为第$i$的比特上的自旋向量，这意味着：</p>
 <script type="math/tex; mode=display">
 \begin{align}
-S_zP &= (|\tilde1\rangle \langle \tilde1|-|-\tilde1\rangle\langle - \tilde1|)(|\tilde 1 \rangle \langle 00 | + |\tilde0 \rangle \frac{\langle 01 | + \langle 10|}{\sqrt2} + |- \tilde1 \rangle \langle 11|) \\
+S_ZP &= (|\tilde1\rangle \langle \tilde1|-|-\tilde1\rangle\langle - \tilde1|)(|\tilde 1 \rangle \langle 00 | + |\tilde0 \rangle \frac{\langle 01 | + \langle 10|}{\sqrt2} + |- \tilde1 \rangle \langle 11|) \\
 &=|\tilde1\rangle\langle00|-|-\tilde1\rangle\langle11| \\
 &=P\frac{Z_1+Z_2}{2}
 \end{align}</script><script type="math/tex; mode=display">
@@ -279,7 +279,7 @@ H' &= -\sum_j (Z_{2j-1}X_{2j}Z_{2j+1}+Z_{2j}X_{2j+1}Z_{2j+2}) \\
 <script type="math/tex; mode=display">
 \langle \psi [A]| O_0 O_{j+1} | \psi[A] \rangle
 =Tr(\mathbb{E}^{\infty} \mathbb{E}_{O_0} \mathbb{E}^j \mathbb{E}_{O_{j+1}} \mathbb{E}^\infty) \qquad \propto V_L^\dagger \mathbb{E}^j V_R</script><p>其中$V_L$和$V_R$分别是$\mathbb{E}$的左右主特征值。在计算较长距离相关器时，唯一需要做的改变是在方程中插入$\mathbb{E}$的较高次幂。$\mathbb{E}$的特征值可以控制相关因子的衰减。我们可以将$A$归一化，使得$E$的主特征值为1，其余的在单位圆内。因此任意相关因子要么随距离呈指数衰减，要么保持恒定。因此我们看到MPS只能捕获指数衰减相关的状态</p>
-<h3 id="Gauge-freedom"><a href="#Gauge-freedom" class="headerlink" title="Gauge freedom"></a>Gauge freedom</h3><p>不是所以的MPS都表达不同的物理状态。保持物理状态不变的描述的转换集称为规范转换(gauge transformations)。在MPS的情况下，这些对应于虚拟层上的基变换:</p>
+<h3 id="Gauge-freedom"><a href="#Gauge-freedom" class="headerlink" title="Gauge freedom"></a>Gauge freedom</h3><p>不是所以的MPS都表达不同的物理状态。保持物理状态不变的描述的转换集称为规范变换(gauge transformations)。在MPS的情况下，这些对应于虚拟层上的基变换:</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200221160242.png" alt=""></p>
 <p>其中$B_j = M A_j M^{-1}$。注意，M只需要有一个左逆，所以可以是矩形和放大键的维度。在更大的物理范围上，可以将几个MPS张量$A_{i_1},A_{i_2},\ldots,A_{i_j}$整合为单个有效张量$B_k$。</p>
 <p>存在一些规范的形式，其中部分为规范修正MPS描述。最常见的一种是左等距或左正则形式(与右等距或右正则类似地定义)。在这情况下MPS张量遵循</p>
@@ -347,11 +347,52 @@ v_R =
 <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>1.用张量描述MPS给出的状态</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200221194808.png" alt=""></p>
 <p>其中指标顺序在图中已经给出，指标1和指标2整合到一起。边界条件要求在结束周期性BCs之前插入泡利算符Z。</p>
+<p>解答：</p>
+<script type="math/tex; mode=display">
+A_0 =
+\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+\quad 
+A_1=
+\begin{pmatrix}
+1/2 & -1/2 \\
+1/2 & -1/2
+\end{pmatrix}</script><p>进行规范变换，得到</p>
+<script type="math/tex; mode=display">
+B_0 =
+\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+\quad 
+B_1=
+\begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix}</script><p>与W-state一致。</p>
 <hr>
 <p>2.描述只有非零分量的MPS给出的状态</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200221195311.png" alt=""></p>
 <p>其中左右边界的状态为$|0\rangle$。</p>
-<hr>
+<p>解答：</p>
+<p>可以看到</p>
+<script type="math/tex; mode=display">
+A_0 =
+\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+=1, \quad 
+A_1=
+\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}
+= X.</script><p>那么只有插入偶数个$A_1$的情况下，得到的系数才不为0</p>
+<script type="math/tex; mode=display">
+| \psi[A] \rangle = \sum |even\ number \ of \ 1s \rangle</script><hr>
 <p>3.描述MPS给出的qudit态</p>
 <p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200221200110.png" alt=""></p>
 <p>其中$i,j \in \mathbb{Z}_d$，$\oplus$表示模$d$运算，左边界条件为$|0 \rangle$，右边界为$|q \rangle$，$q \in \mathbb{Z}_d$。</p>
@@ -366,8 +407,26 @@ v_R =
 <hr>
 <p>6.写出transverse-field-cluster Hamiltonian的MPO</p>
 <script type="math/tex; mode=display">
-H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
+H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><p>解答：</p>
+<script type="math/tex; mode=display">
+M =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+Z & 0 & 0 & 0 \\
+0 & X & 0 & 0 \\
+-hX & 0 & -JZ & 1 \\
+\end{pmatrix}</script><script type="math/tex; mode=display">
+L =
+\begin{pmatrix}
+0 & 0 & 0 & 1 \\
+\end{pmatrix}  
+\qquad 
+R =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+\end{pmatrix} ^T</script><hr>
 <p>7.利用MPSs和MPOs的思想，证明了对数深度量子电路可以在经典计算机上有效的模拟。</p>
+<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200223210947.png" alt=""></p>
 
         </div>
         
@@ -456,7 +515,7 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            11
+                            13
                         </p>
                     </a>
                 </div>
@@ -592,6 +651,44 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
         
         <article class="media">
             
+            <a href="/2020/02/25/Tensor-network-algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor network algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
+                    <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classifying gapped phases in 1D">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
+                    <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/22/TensorNetwork-google/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorNetwork--a open source library">
@@ -647,44 +744,6 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/18/Introduction-to-tensor-network-notation/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Introduction to tensor network notation">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-18T10:02:22.000Z">2020-02-18</time></div>
-                    <a href="/2020/02/18/Introduction-to-tensor-network-notation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Introduction to tensor network notation</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/18/TensorNetwork/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-18T07:09:14.000Z">2020-02-18</time></div>
-                    <a href="/2020/02/18/TensorNetwork/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -702,7 +761,7 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -723,7 +782,7 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
                         <span class="tag">Tensor Netwowrk</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -786,6 +845,44 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
         
         <article class="media">
             
+            <a href="/2020/02/25/Tensor-network-algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor network algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
+                    <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classifying gapped phases in 1D">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
+                    <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/22/TensorNetwork-google/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorNetwork--a open source library">
@@ -841,44 +938,6 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/18/Introduction-to-tensor-network-notation/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Introduction to tensor network notation">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-18T10:02:22.000Z">2020-02-18</time></div>
-                    <a href="/2020/02/18/Introduction-to-tensor-network-notation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Introduction to tensor network notation</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/18/TensorNetwork/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-18T07:09:14.000Z">2020-02-18</time></div>
-                    <a href="/2020/02/18/TensorNetwork/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -896,7 +955,7 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -917,7 +976,7 @@ H = -J \sum_j Z_{j-1}X_jZ_{j+1} - h\sum_j X_j</script><hr>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
                         <span class="tag">Tensor Netwowrk</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
