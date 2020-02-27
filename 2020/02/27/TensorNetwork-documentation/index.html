@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>TensorNetwork documentation - hlzone</title>
+
+
+    <meta name="description" content="这是阅读TensorNetwork documentation的一些简单记录，因为原文档的类操作没有目录。这里用目录的形式记录方便查询，详细的内容要看原文档。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorNetwork documentation">
+<meta property="og:url" content="http://yoursite.com/2020/02/27/TensorNetwork-documentation/index.html">
+<meta property="og:site_name" content="hlzone">
+<meta property="og:description" content="这是阅读TensorNetwork documentation的一些简单记录，因为原文档的类操作没有目录。这里用目录的形式记录方便查询，详细的内容要看原文档。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-02-27T13:07:22.000Z">
+<meta property="article:modified_time" content="2020-02-27T15:09:36.542Z">
+<meta property="article:author" content="hl">
+<meta property="article:tag" content="Tensor Netwowrk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/L.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/hlzone.png" alt="TensorNetwork documentation" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/catagories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/hlzone">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 分钟 读完 (大约 757 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                TensorNetwork documentation
+            
+        </h1>
+        <div class="content">
+            <p>这是阅读<a href="https://tensornetwork.readthedocs.io/en/latest/index.html">TensorNetwork documentation</a>的一些简单记录，因为原文档的类操作没有目录。这里用目录的形式记录方便查询，详细的内容要看原文档。</p>
+<a id="more"></a>
+<h2 id="TensorNetwork"><a href="#TensorNetwork" class="headerlink" title="TensorNetwork"></a>TensorNetwork</h2><p><em>注意，对节点的操作都是生成新节点，而不是在原节点上操作。</em></p>
+<h3 id="tensornetwork-conj"><a href="#tensornetwork-conj" class="headerlink" title="tensornetwork.conj"></a>tensornetwork.conj</h3><p>共轭</p>
+<h3 id="tensornetwork-copy"><a href="#tensornetwork-copy" class="headerlink" title="tensornetwork.copy"></a>tensornetwork.copy</h3><p>复制</p>
+<h3 id="tensornetwork-transpose"><a href="#tensornetwork-transpose" class="headerlink" title="tensornetwork.transpose"></a>tensornetwork.transpose</h3><p>转置</p>
+<h3 id="tensornetwork-reachable"><a href="#tensornetwork-reachable" class="headerlink" title="tensornetwork.reachable"></a>tensornetwork.reachable</h3><p>计算从节点或边缘可到达的所有节点</p>
+<h3 id="tensornetwork-remove-node"><a href="#tensornetwork-remove-node" class="headerlink" title="tensornetwork.remove_node"></a>tensornetwork.remove_node</h3><p>从网络中删除一个节点</p>
+<hr>
+<h3 id="tensornetwork-split"><a href="#tensornetwork-split" class="headerlink" title="tensornetwork.split"></a>tensornetwork.split</h3><h4 id="tensornetwork-split-node"><a href="#tensornetwork-split-node" class="headerlink" title="tensornetwork.split_node"></a>tensornetwork.split_node</h4><p>奇异值分解</p>
+<h4 id="tensornetwork-split-node-qr"><a href="#tensornetwork-split-node-qr" class="headerlink" title="tensornetwork.split_node_qr"></a>tensornetwork.split_node_qr</h4><p>QR分解</p>
+<h4 id="tensornetwork-split-node-rq"><a href="#tensornetwork-split-node-rq" class="headerlink" title="tensornetwork.split_node_rq"></a>tensornetwork.split_node_rq</h4><p>RQ分解</p>
+<h4 id="tensornetwork-split-node-full-svd"><a href="#tensornetwork-split-node-full-svd" class="headerlink" title="tensornetwork.split_node_full_svd"></a>tensornetwork.split_node_full_svd</h4><p>全奇异值分解</p>
+<hr>
+<h3 id="tensornetwork-check"><a href="#tensornetwork-check" class="headerlink" title="tensornetwork.check"></a>tensornetwork.check</h3><h4 id="tensornetwork-check-connected"><a href="#tensornetwork-check-connected" class="headerlink" title="tensornetwork.check_connected"></a>tensornetwork.check_connected</h4><p>检查节点列表中的所有节点是否都连接了</p>
+<h4 id="tensornetwork-check-correct"><a href="#tensornetwork-check-correct" class="headerlink" title="tensornetwork.check_correct"></a>tensornetwork.check_correct</h4><p>检查节点定义的网络是否满足必要的一致性关系</p>
+<hr>
+<h3 id="tensornetwork-get"><a href="#tensornetwork-get" class="headerlink" title="tensornetwork.get"></a>tensornetwork.get</h3><h4 id="tensornetwork-get-all-nodes"><a href="#tensornetwork-get-all-nodes" class="headerlink" title="tensornetwork.get_all_nodes"></a>tensornetwork.get_all_nodes</h4><p>返回连接到边的节点集</p>
+<h4 id="tensornetwork-get-all-edges"><a href="#tensornetwork-get-all-edges" class="headerlink" title="tensornetwork.get_all_edges"></a>tensornetwork.get_all_edges</h4><p>返回所有节点的边集</p>
+<h4 id="tensornetwork-get-all-nondangling"><a href="#tensornetwork-get-all-nondangling" class="headerlink" title="tensornetwork.get_all_nondangling"></a>tensornetwork.get_all_nondangling</h4><p>返回所有非悬空边的集合</p>
+<h4 id="tensornetwork-get-all-dangling"><a href="#tensornetwork-get-all-dangling" class="headerlink" title="tensornetwork.get_all_dangling"></a>tensornetwork.get_all_dangling</h4><p>返回所有悬空边的集合</p>
+<h4 id="tensornetwork-get-parallel-edges"><a href="#tensornetwork-get-parallel-edges" class="headerlink" title="tensornetwork.get_parallel_edges"></a>tensornetwork.get_parallel_edges</h4><p>得到所有与给定边平行的边</p>
+<h4 id="tensornetwork-get-shared-edges"><a href="#tensornetwork-get-shared-edges" class="headerlink" title="tensornetwork.get_shared_edges"></a>tensornetwork.get_shared_edges</h4><p>获取两个节点之间共享的所有边</p>
+<hr>
+<h3 id="tensornetwork-contract"><a href="#tensornetwork-contract" class="headerlink" title="tensornetwork.contract"></a>tensornetwork.contract</h3><h4 id="tensornetwork-contract-trace-edges"><a href="#tensornetwork-contract-trace-edges" class="headerlink" title="tensornetwork.contract_trace_edges"></a>tensornetwork.contract_trace_edges</h4><p>缩并节点的所有迹边</p>
+<h4 id="tensornetwork-contract-1"><a href="#tensornetwork-contract-1" class="headerlink" title="tensornetwork.contract"></a>tensornetwork.contract</h4><p>缩并连接两个节点的边</p>
+<h4 id="tensornetwork-contract-copy-node"><a href="#tensornetwork-contract-copy-node" class="headerlink" title="tensornetwork.contract_copy_node"></a>tensornetwork.contract_copy_node</h4><p>在给定的复制节点上缩并所有的边</p>
+<h4 id="tensornetwork-contract-between"><a href="#tensornetwork-contract-between" class="headerlink" title="tensornetwork.contract_between"></a>tensornetwork.contract_between</h4><p>缩并两个给定节点之间的所有边</p>
+<h4 id="tensornetwork-contract-parallel"><a href="#tensornetwork-contract-parallel" class="headerlink" title="tensornetwork.contract_parallel"></a>tensornetwork.contract_parallel</h4><p>缩并所有与这条边平行的边。</p>
+<hr>
+<h3 id="tensornetwork-outer"><a href="#tensornetwork-outer" class="headerlink" title="tensornetwork.outer"></a>tensornetwork.outer</h3><h4 id="tensornetwork-outer-product"><a href="#tensornetwork-outer-product" class="headerlink" title="tensornetwork.outer_product"></a>tensornetwork.outer_product</h4><p>计算两个节点的外积</p>
+<h4 id="tensornetwork-outer-product-final-nodes"><a href="#tensornetwork-outer-product-final-nodes" class="headerlink" title="tensornetwork.outer_product_final_nodes"></a>tensornetwork.outer_product_final_nodes</h4><p>得到节点集的外积</p>
+<hr>
+<h3 id="tensornetwork-flatten"><a href="#tensornetwork-flatten" class="headerlink" title="tensornetwork.flatten"></a>tensornetwork.flatten</h3><h4 id="tensornetwork-flatten-edges"><a href="#tensornetwork-flatten-edges" class="headerlink" title="tensornetwork.flatten_edges"></a>tensornetwork.flatten_edges</h4><p>把边压扁成单边</p>
+<h4 id="tensornetwork-flatten-all-edges"><a href="#tensornetwork-flatten-all-edges" class="headerlink" title="tensornetwork.flatten_all_edges"></a>tensornetwork.flatten_all_edges</h4><p>将所有属于节点的边压平</p>
+<h4 id="tensornetwork-flatten-edges-between"><a href="#tensornetwork-flatten-edges-between" class="headerlink" title="tensornetwork.flatten_edges_between"></a>tensornetwork.flatten_edges_between</h4><p>将给定两个节点之间的所有边压平</p>
+<hr>
+<h2 id="Contractors"><a href="#Contractors" class="headerlink" title="Contractors"></a>Contractors</h2><h3 id="tensornetwork-contractors-greedy"><a href="#tensornetwork-contractors-greedy" class="headerlink" title="tensornetwork.contractors.greedy"></a>tensornetwork.contractors.greedy</h3><p>贪心缩并</p>
+<h3 id="tensornetwork-contractors-branch"><a href="#tensornetwork-contractors-branch" class="headerlink" title="tensornetwork.contractors.branch"></a>tensornetwork.contractors.branch</h3><p>分支缩并</p>
+<h3 id="tensornetwork-contractors-optimal"><a href="#tensornetwork-contractors-optimal" class="headerlink" title="tensornetwork.contractors.optimal"></a>tensornetwork.contractors.optimal</h3><p>最优缩并</p>
+<h3 id="tensornetwork-contractors-auto"><a href="#tensornetwork-contractors-auto" class="headerlink" title="tensornetwork.contractors.auto"></a>tensornetwork.contractors.auto</h3><p>根据网络大小自动选择上述算法之一</p>
+<h3 id="tensornetwork-contractors-custom"><a href="#tensornetwork-contractors-custom" class="headerlink" title="tensornetwork.contractors.custom"></a>tensornetwork.contractors.custom</h3><p>使用用户创建的自定义路径优化器来计算缩并路径</p>
+<hr>
+<h2 id="Nodes"><a href="#Nodes" class="headerlink" title="Nodes"></a>Nodes</h2><p><em>TensorNetwork的操作都是对边进行的，以下为节点类</em></p>
+<h3 id="class-tensornetwork-Node"><a href="#class-tensornetwork-Node" class="headerlink" title="class tensornetwork.Node"></a><em>class</em> tensornetwork.Node</h3><hr>
+<h3 id="class-tensornetwork-CopyNode"><a href="#class-tensornetwork-CopyNode" class="headerlink" title="class tensornetwork.CopyNode"></a><em>class</em> tensornetwork.CopyNode</h3><h4 id="compute-contracted-tensor"><a href="#compute-contracted-tensor" class="headerlink" title="compute_contracted_tensor"></a>compute_contracted_tensor</h4><hr>
+<h3 id="calss-tensornetwork-BaseNode"><a href="#calss-tensornetwork-BaseNode" class="headerlink" title="calss tensornetwork.BaseNode"></a><em>calss</em> tensornetwork.BaseNode</h3><p>节点的基类，可以从它派生出子类</p>
+<h4 id="add-axis-names"><a href="#add-axis-names" class="headerlink" title="add_axis_names"></a>add_axis_names</h4><h4 id="add-edge"><a href="#add-edge" class="headerlink" title="add_edge"></a>add_edge</h4><h4 id="get-all-dangling"><a href="#get-all-dangling" class="headerlink" title="get_all_dangling"></a>get_all_dangling</h4><h4 id="get-all-nondangling"><a href="#get-all-nondangling" class="headerlink" title="get_all_nondangling"></a>get_all_nondangling</h4><h4 id="get-axis-number"><a href="#get-axis-number" class="headerlink" title="get_axis_number"></a>get_axis_number</h4><h4 id="get-dimension"><a href="#get-dimension" class="headerlink" title="get_dimension"></a>get_dimension</h4><h4 id="get-rank"><a href="#get-rank" class="headerlink" title="get_rank"></a>get_rank</h4><h4 id="reorder-axes"><a href="#reorder-axes" class="headerlink" title="reorder_axes"></a>reorder_axes</h4><h4 id="reoder-edges"><a href="#reoder-edges" class="headerlink" title="reoder_edges"></a>reoder_edges</h4><h4 id="set-signature"><a href="#set-signature" class="headerlink" title="set_signature"></a>set_signature</h4><hr>
+<h2 id="Edges"><a href="#Edges" class="headerlink" title="Edges"></a>Edges</h2><h3 id="class-tensornetwork-Edge"><a href="#class-tensornetwork-Edge" class="headerlink" title="class tensornetwork.Edge"></a><em>class</em> tensornetwork.Edge</h3><h4 id="disconnect"><a href="#disconnect" class="headerlink" title="disconnect"></a>disconnect</h4><h4 id="get-nodes"><a href="#get-nodes" class="headerlink" title="get_nodes"></a>get_nodes</h4><h4 id="is-being-used"><a href="#is-being-used" class="headerlink" title="is_being_used"></a>is_being_used</h4><h4 id="is-dangling"><a href="#is-dangling" class="headerlink" title="is_dangling"></a>is_dangling</h4><h4 id="update-axis"><a href="#update-axis" class="headerlink" title="update_axis"></a>update_axis</h4><hr>
+<h2 id="Ncon"><a href="#Ncon" class="headerlink" title="Ncon"></a>Ncon</h2><h3 id="tensornetwork-ncon"><a href="#tensornetwork-ncon" class="headerlink" title="tensornetwork.ncon"></a>tensornetwork.ncon</h3><p>根据一个张量网络规范缩并张量或节点列表</p>
+<h3 id="tensornetwork-ncon-netwrok"><a href="#tensornetwork-ncon-netwrok" class="headerlink" title="tensornetwork.ncon_netwrok"></a>tensornetwork.ncon_netwrok</h3><p>根据张量从张量列表创建一个网络</p>
+<hr>
+<h2 id="Matrix-Product-States"><a href="#Matrix-Product-States" class="headerlink" title="Matrix Product States"></a>Matrix Product States</h2><h3 id="class-tensornetwork-matrixprductstates-base-mps-BaseMPS"><a href="#class-tensornetwork-matrixprductstates-base-mps-BaseMPS" class="headerlink" title="class tensornetwork.matrixprductstates.base_mps.BaseMPS"></a><em>class</em> tensornetwork.matrixprductstates.base_mps.BaseMPS</h3><p>MPS的基类。BaseMPS是一个有限单元的无限矩阵乘积状态。</p>
+<h4 id="apply-one-site-gate"><a href="#apply-one-site-gate" class="headerlink" title="apply_one_site_gate"></a>apply_one_site_gate</h4><h4 id="apply-transfer-operator"><a href="#apply-transfer-operator" class="headerlink" title="apply_transfer_operator"></a>apply_transfer_operator</h4><h4 id="apply-two-site-gate"><a href="#apply-two-site-gate" class="headerlink" title="apply_two_site_gate"></a>apply_two_site_gate</h4><h4 id="bond-dimension"><a href="#bond-dimension" class="headerlink" title="bond_dimension"></a>bond_dimension</h4><h4 id="check-orthonormality"><a href="#check-orthonormality" class="headerlink" title="check_orthonormality"></a>check_orthonormality</h4><h4 id="get-node"><a href="#get-node" class="headerlink" title="get_node"></a>get_node</h4><h4 id="measure-local-operator"><a href="#measure-local-operator" class="headerlink" title="measure_local_operator"></a>measure_local_operator</h4><h4 id="measure-two-body-correlator"><a href="#measure-two-body-correlator" class="headerlink" title="measure_two_body_correlator"></a>measure_two_body_correlator</h4><h4 id="physical-dimensions"><a href="#physical-dimensions" class="headerlink" title="physical_dimensions"></a>physical_dimensions</h4><h4 id="position"><a href="#position" class="headerlink" title="position"></a>position</h4><h4 id="switch-backend"><a href="#switch-backend" class="headerlink" title="switch_backend"></a>switch_backend</h4><hr>
+<h3 id="class-tensornetwork-matrixprductstates-finite-mps-FiniteMPS"><a href="#class-tensornetwork-matrixprductstates-finite-mps-FiniteMPS" class="headerlink" title="class tensornetwork.matrixprductstates.finite_mps.FiniteMPS"></a><em>class</em> tensornetwork.matrixprductstates.finite_mps.FiniteMPS</h3><p>表示有限系统的MPS类</p>
+<h4 id="canonicalize"><a href="#canonicalize" class="headerlink" title="canonicalize"></a>canonicalize</h4><h4 id="check-canonical"><a href="#check-canonical" class="headerlink" title="check_canonical"></a>check_canonical</h4><h4 id="left-envs"><a href="#left-envs" class="headerlink" title="left_envs"></a>left_envs</h4><h4 id="classmethod-random"><a href="#classmethod-random" class="headerlink" title="classmethod random"></a><em>classmethod</em> random</h4><h4 id="right-envs"><a href="#right-envs" class="headerlink" title="right_envs"></a>right_envs</h4><hr>
+<h3 id="class-tensornetwork-matrixprductstates-infinite-mps-InfiniteMPS"><a href="#class-tensornetwork-matrixprductstates-infinite-mps-InfiniteMPS" class="headerlink" title="class tensornetwork.matrixprductstates.infinite_mps.InfiniteMPS"></a><em>class</em> tensornetwork.matrixprductstates.infinite_mps.InfiniteMPS</h3><p>表示无限系统的MPS类</p>
+<h4 id="canonicalize-1"><a href="#canonicalize-1" class="headerlink" title="canonicalize"></a>canonicalize</h4><h4 id="classmethod-random-1"><a href="#classmethod-random-1" class="headerlink" title="classmethod random"></a><em>classmethod</em> random</h4><h4 id="transfer-matrix-eigs"><a href="#transfer-matrix-eigs" class="headerlink" title="transfer_matrix_eigs"></a>transfer_matrix_eigs</h4><hr>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Tensor-Netwowrk/" rel="tag">Tensor Netwowrk</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/25/Tensor-network-algorithms/">
+                <span class="level-item">Tensor network algorithms</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/lm.jpeg" alt="hl">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        hl
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        尽人事，听天命
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hefei,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            14
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            0
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            6
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#TensorNetwork">
+        <span class="has-mr-6">1</span>
+        <span>TensorNetwork</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-conj">
+        <span class="has-mr-6">1.1</span>
+        <span>tensornetwork.conj</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-copy">
+        <span class="has-mr-6">1.2</span>
+        <span>tensornetwork.copy</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-transpose">
+        <span class="has-mr-6">1.3</span>
+        <span>tensornetwork.transpose</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-reachable">
+        <span class="has-mr-6">1.4</span>
+        <span>tensornetwork.reachable</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-remove-node">
+        <span class="has-mr-6">1.5</span>
+        <span>tensornetwork.remove_node</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-split">
+        <span class="has-mr-6">1.6</span>
+        <span>tensornetwork.split</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-split-node">
+        <span class="has-mr-6">1.6.1</span>
+        <span>tensornetwork.split_node</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-split-node-qr">
+        <span class="has-mr-6">1.6.2</span>
+        <span>tensornetwork.split_node_qr</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-split-node-rq">
+        <span class="has-mr-6">1.6.3</span>
+        <span>tensornetwork.split_node_rq</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-split-node-full-svd">
+        <span class="has-mr-6">1.6.4</span>
+        <span>tensornetwork.split_node_full_svd</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#tensornetwork-check">
+        <span class="has-mr-6">1.7</span>
+        <span>tensornetwork.check</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-check-connected">
+        <span class="has-mr-6">1.7.1</span>
+        <span>tensornetwork.check_connected</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-check-correct">
+        <span class="has-mr-6">1.7.2</span>
+        <span>tensornetwork.check_correct</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#tensornetwork-get">
+        <span class="has-mr-6">1.8</span>
+        <span>tensornetwork.get</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-get-all-nodes">
+        <span class="has-mr-6">1.8.1</span>
+        <span>tensornetwork.get_all_nodes</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-get-all-edges">
+        <span class="has-mr-6">1.8.2</span>
+        <span>tensornetwork.get_all_edges</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-get-all-nondangling">
+        <span class="has-mr-6">1.8.3</span>
+        <span>tensornetwork.get_all_nondangling</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-get-all-dangling">
+        <span class="has-mr-6">1.8.4</span>
+        <span>tensornetwork.get_all_dangling</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-get-parallel-edges">
+        <span class="has-mr-6">1.8.5</span>
+        <span>tensornetwork.get_parallel_edges</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-get-shared-edges">
+        <span class="has-mr-6">1.8.6</span>
+        <span>tensornetwork.get_shared_edges</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#tensornetwork-contract">
+        <span class="has-mr-6">1.9</span>
+        <span>tensornetwork.contract</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-contract-trace-edges">
+        <span class="has-mr-6">1.9.1</span>
+        <span>tensornetwork.contract_trace_edges</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contract-1">
+        <span class="has-mr-6">1.9.2</span>
+        <span>tensornetwork.contract</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contract-copy-node">
+        <span class="has-mr-6">1.9.3</span>
+        <span>tensornetwork.contract_copy_node</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contract-between">
+        <span class="has-mr-6">1.9.4</span>
+        <span>tensornetwork.contract_between</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contract-parallel">
+        <span class="has-mr-6">1.9.5</span>
+        <span>tensornetwork.contract_parallel</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#tensornetwork-outer">
+        <span class="has-mr-6">1.10</span>
+        <span>tensornetwork.outer</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-outer-product">
+        <span class="has-mr-6">1.10.1</span>
+        <span>tensornetwork.outer_product</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-outer-product-final-nodes">
+        <span class="has-mr-6">1.10.2</span>
+        <span>tensornetwork.outer_product_final_nodes</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#tensornetwork-flatten">
+        <span class="has-mr-6">1.11</span>
+        <span>tensornetwork.flatten</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-flatten-edges">
+        <span class="has-mr-6">1.11.1</span>
+        <span>tensornetwork.flatten_edges</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-flatten-all-edges">
+        <span class="has-mr-6">1.11.2</span>
+        <span>tensornetwork.flatten_all_edges</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-flatten-edges-between">
+        <span class="has-mr-6">1.11.3</span>
+        <span>tensornetwork.flatten_edges_between</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#Contractors">
+        <span class="has-mr-6">2</span>
+        <span>Contractors</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-contractors-greedy">
+        <span class="has-mr-6">2.1</span>
+        <span>tensornetwork.contractors.greedy</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contractors-branch">
+        <span class="has-mr-6">2.2</span>
+        <span>tensornetwork.contractors.branch</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contractors-optimal">
+        <span class="has-mr-6">2.3</span>
+        <span>tensornetwork.contractors.optimal</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contractors-auto">
+        <span class="has-mr-6">2.4</span>
+        <span>tensornetwork.contractors.auto</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-contractors-custom">
+        <span class="has-mr-6">2.5</span>
+        <span>tensornetwork.contractors.custom</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Nodes">
+        <span class="has-mr-6">3</span>
+        <span>Nodes</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#class-tensornetwork-Node">
+        <span class="has-mr-6">3.1</span>
+        <span>class tensornetwork.Node</span>
+        </a></li><li>
+        <a class="is-flex" href="#class-tensornetwork-CopyNode">
+        <span class="has-mr-6">3.2</span>
+        <span>class tensornetwork.CopyNode</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#compute-contracted-tensor">
+        <span class="has-mr-6">3.2.1</span>
+        <span>compute_contracted_tensor</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#calss-tensornetwork-BaseNode">
+        <span class="has-mr-6">3.3</span>
+        <span>calss tensornetwork.BaseNode</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#add-axis-names">
+        <span class="has-mr-6">3.3.1</span>
+        <span>add_axis_names</span>
+        </a></li><li>
+        <a class="is-flex" href="#add-edge">
+        <span class="has-mr-6">3.3.2</span>
+        <span>add_edge</span>
+        </a></li><li>
+        <a class="is-flex" href="#get-all-dangling">
+        <span class="has-mr-6">3.3.3</span>
+        <span>get_all_dangling</span>
+        </a></li><li>
+        <a class="is-flex" href="#get-all-nondangling">
+        <span class="has-mr-6">3.3.4</span>
+        <span>get_all_nondangling</span>
+        </a></li><li>
+        <a class="is-flex" href="#get-axis-number">
+        <span class="has-mr-6">3.3.5</span>
+        <span>get_axis_number</span>
+        </a></li><li>
+        <a class="is-flex" href="#get-dimension">
+        <span class="has-mr-6">3.3.6</span>
+        <span>get_dimension</span>
+        </a></li><li>
+        <a class="is-flex" href="#get-rank">
+        <span class="has-mr-6">3.3.7</span>
+        <span>get_rank</span>
+        </a></li><li>
+        <a class="is-flex" href="#reorder-axes">
+        <span class="has-mr-6">3.3.8</span>
+        <span>reorder_axes</span>
+        </a></li><li>
+        <a class="is-flex" href="#reoder-edges">
+        <span class="has-mr-6">3.3.9</span>
+        <span>reoder_edges</span>
+        </a></li><li>
+        <a class="is-flex" href="#set-signature">
+        <span class="has-mr-6">3.3.10</span>
+        <span>set_signature</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#Edges">
+        <span class="has-mr-6">4</span>
+        <span>Edges</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#class-tensornetwork-Edge">
+        <span class="has-mr-6">4.1</span>
+        <span>class tensornetwork.Edge</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#disconnect">
+        <span class="has-mr-6">4.1.1</span>
+        <span>disconnect</span>
+        </a></li><li>
+        <a class="is-flex" href="#get-nodes">
+        <span class="has-mr-6">4.1.2</span>
+        <span>get_nodes</span>
+        </a></li><li>
+        <a class="is-flex" href="#is-being-used">
+        <span class="has-mr-6">4.1.3</span>
+        <span>is_being_used</span>
+        </a></li><li>
+        <a class="is-flex" href="#is-dangling">
+        <span class="has-mr-6">4.1.4</span>
+        <span>is_dangling</span>
+        </a></li><li>
+        <a class="is-flex" href="#update-axis">
+        <span class="has-mr-6">4.1.5</span>
+        <span>update_axis</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#Ncon">
+        <span class="has-mr-6">5</span>
+        <span>Ncon</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#tensornetwork-ncon">
+        <span class="has-mr-6">5.1</span>
+        <span>tensornetwork.ncon</span>
+        </a></li><li>
+        <a class="is-flex" href="#tensornetwork-ncon-netwrok">
+        <span class="has-mr-6">5.2</span>
+        <span>tensornetwork.ncon_netwrok</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Matrix-Product-States">
+        <span class="has-mr-6">6</span>
+        <span>Matrix Product States</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#class-tensornetwork-matrixprductstates-base-mps-BaseMPS">
+        <span class="has-mr-6">6.1</span>
+        <span>class tensornetwork.matrixprductstates.base_mps.BaseMPS</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#apply-one-site-gate">
+        <span class="has-mr-6">6.1.1</span>
+        <span>apply_one_site_gate</span>
+        </a></li><li>
+        <a class="is-flex" href="#apply-transfer-operator">
+        <span class="has-mr-6">6.1.2</span>
+        <span>apply_transfer_operator</span>
+        </a></li><li>
+        <a class="is-flex" href="#apply-two-site-gate">
+        <span class="has-mr-6">6.1.3</span>
+        <span>apply_two_site_gate</span>
+        </a></li><li>
+        <a class="is-flex" href="#bond-dimension">
+        <span class="has-mr-6">6.1.4</span>
+        <span>bond_dimension</span>
+        </a></li><li>
+        <a class="is-flex" href="#check-orthonormality">
+        <span class="has-mr-6">6.1.5</span>
+        <span>check_orthonormality</span>
+        </a></li><li>
+        <a class="is-flex" href="#get-node">
+        <span class="has-mr-6">6.1.6</span>
+        <span>get_node</span>
+        </a></li><li>
+        <a class="is-flex" href="#measure-local-operator">
+        <span class="has-mr-6">6.1.7</span>
+        <span>measure_local_operator</span>
+        </a></li><li>
+        <a class="is-flex" href="#measure-two-body-correlator">
+        <span class="has-mr-6">6.1.8</span>
+        <span>measure_two_body_correlator</span>
+        </a></li><li>
+        <a class="is-flex" href="#physical-dimensions">
+        <span class="has-mr-6">6.1.9</span>
+        <span>physical_dimensions</span>
+        </a></li><li>
+        <a class="is-flex" href="#position">
+        <span class="has-mr-6">6.1.10</span>
+        <span>position</span>
+        </a></li><li>
+        <a class="is-flex" href="#switch-backend">
+        <span class="has-mr-6">6.1.11</span>
+        <span>switch_backend</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#class-tensornetwork-matrixprductstates-finite-mps-FiniteMPS">
+        <span class="has-mr-6">6.2</span>
+        <span>class tensornetwork.matrixprductstates.finite_mps.FiniteMPS</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#canonicalize">
+        <span class="has-mr-6">6.2.1</span>
+        <span>canonicalize</span>
+        </a></li><li>
+        <a class="is-flex" href="#check-canonical">
+        <span class="has-mr-6">6.2.2</span>
+        <span>check_canonical</span>
+        </a></li><li>
+        <a class="is-flex" href="#left-envs">
+        <span class="has-mr-6">6.2.3</span>
+        <span>left_envs</span>
+        </a></li><li>
+        <a class="is-flex" href="#classmethod-random">
+        <span class="has-mr-6">6.2.4</span>
+        <span>classmethod random</span>
+        </a></li><li>
+        <a class="is-flex" href="#right-envs">
+        <span class="has-mr-6">6.2.5</span>
+        <span>right_envs</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#class-tensornetwork-matrixprductstates-infinite-mps-InfiniteMPS">
+        <span class="has-mr-6">6.3</span>
+        <span>class tensornetwork.matrixprductstates.infinite_mps.InfiniteMPS</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#canonicalize-1">
+        <span class="has-mr-6">6.3.1</span>
+        <span>canonicalize</span>
+        </a></li><li>
+        <a class="is-flex" href="#classmethod-random-1">
+        <span class="has-mr-6">6.3.2</span>
+        <span>classmethod random</span>
+        </a></li><li>
+        <a class="is-flex" href="#transfer-matrix-eigs">
+        <span class="has-mr-6">6.3.3</span>
+        <span>transfer_matrix_eigs</span>
+        </a></li></ul></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/27/TensorNetwork-documentation/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorNetwork documentation">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
+                    <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/25/Tensor-network-algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor network algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
+                    <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classifying gapped phases in 1D">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
+                    <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/TensorNetwork-google/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorNetwork--a open source library">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/20/Matrix-product-states/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Matrix product states">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
+                    <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E5%88%92/">
+                        <span class="tag">计划</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/27/TensorNetwork-documentation/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorNetwork documentation">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
+                    <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/25/Tensor-network-algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor network algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
+                    <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classifying gapped phases in 1D">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
+                    <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/TensorNetwork-google/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorNetwork--a open source library">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/20/Matrix-product-states/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Matrix product states">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
+                    <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E5%88%92/">
+                        <span class="tag">计划</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/hlzone.png" alt="TensorNetwork documentation" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 hl&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
