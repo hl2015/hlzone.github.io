@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-25T06:24:21.000Z">
-<meta property="article:modified_time" content="2020-02-25T15:03:22.654Z">
+<meta property="article:modified_time" content="2020-02-28T10:23:38.978Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
@@ -143,6 +143,10 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
@@ -174,30 +178,30 @@
 <p>虽然我们在这里讨论的算法是为寻找MPS基态而设计的，但是它们可以被用来模拟时间演化，找到Gibbs states，或者优化其他操作符。</p>
 <h2 id="DMRG-the-computer-scientist’s-approach"><a href="#DMRG-the-computer-scientist’s-approach" class="headerlink" title="DMRG(the computer scientist’s approach)"></a>DMRG(the computer scientist’s approach)</h2><p>DMRG是目前该领域研究最多、最成功的算法。为了清楚起见，我们限制在有限的DMRG上，尽管确实存在热力学变量。DMRG是一个包含多个类似算法的概括性术语，在这里讨论的算法是一个简化但仍然有效的示例。由于该算法的提出要早于TNN，它的描述在历史上一直是以一种更有物理动机和技术上更复杂的方式呈现的。由于在解释上的相应转变，最初的缩略语现在与DMRG的现代张量网络解释几乎没有关联，因此为了清楚起见，我们有意省略了精确地将DMRG的扩展定义为缩略语。</p>
 <p>用MPO表示哈密顿函数，在MPS上优化Rayleigh quotient的过程如下:</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225152738.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225152738.png" alt=""></p>
 <p>困难在于我们需要这些MPS张量的压缩;整体目标函数是高度非线性的，但它确实只是二次地依赖于每个张量。DMRG背后的关键启发是利用这些局部问题的简单性，通过迭代单变量(单张量)优化逼近多元(多张量)优化。</p>
 <p>需要注意的是，虽然DMRG算法只计算基态，但相关的归纳可以用来模拟激发态、动力学等。</p>
 <h3 id="One-site"><a href="#One-site" class="headerlink" title="One-site"></a>One-site</h3><p>对上述DMRG简图的最简单解释是DMRG1(或单点DMRG)。对于一个固定的点$i$，依次对这个点以为的MPS张量进行优化</p>
 <script type="math/tex; mode=display">
 A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle \psi(A_i) | H | \psi(A_i) \rangle}{\langle \psi (A_i) | \psi(A_i) \rangle}</script><p>在TNN中，这样的步骤表现为</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225163635.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225163635.png" alt=""></p>
 <p>接着，定义环境张量</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225163858.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225163858.png" alt=""></p>
 <p>它对应于取封闭的张量网络，分别取$H$和$I$的期望值，然后去掉目标张量。在这样的环境下，6.4图变为</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225230125.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225230125.png" alt=""></p>
 <p>向量化这个方程会得到结果</p>
 <script type="math/tex; mode=display">
 A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle A_i | H_i | A_i \rangle}{\langle A_i | L_i | A_i \rangle}</script><p>最后，我们可以简化这个目标函数的分母，适当地将MPS确定为标准形式。通过将站点左侧的MPS部分以左正则形式显示，将右侧的MPS部分以右正则形式显示，我们可以得到$L_i$简化为恒等式：</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225230207.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225230207.png" alt=""></p>
 <p>考虑到这种规范化，问题就简化为</p>
 <script type="math/tex; mode=display">
 A_i \leftarrow \mathop{arg \ min}_{A_i} \frac{\langle A_i | H_i | A_i \rangle}{\langle A_i | A_i \rangle}</script><p>因为$H_i$是厄米的，这个优化有一个由$H_i$的最小特征向量给出的闭合解。通过沿着链来回扫描，解决这个局部特征向量问题，然后根据需要沿着规范化移动，我们完成了对算法的描述。</p>
 <p>DMRG1的主要优点是状态保持在MPS流形内，键长不增加，这意味着算法是贪婪的。然而，这种对键的严格限制可能是一把双刃剑;这意味着在算法运行时，没有特别方便的方法来缓慢增长键的尺寸，关于键的尺寸选择的适当性，没有得到任何信息。这两个问题都通过改进来解决，尽管稍微复杂一些，导出DMRG2算法。</p>
 <h3 id="Two-site"><a href="#Two-site" class="headerlink" title="Two-site"></a>Two-site</h3><p>DMRG2的想法是将两个节点合并在一起，在DMRG1表示中执行优化，然后将两个位置分开。这种分裂过程赋予了DMRG2其能力，允许动态控制键的维度，并提供有关修剪所导致的误差量的信息，这有助于键维度的选择。</p>
 <p>首先进行优化</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225170416.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225170416.png" alt=""></p>
 <p>可以再次通过取一个环境张量关于两个位置的最小特征向量来求解，$H_{i,i+1}$，同样是混合正则形式。在这之后，通过执行SVD和键切将两节点张量分解:</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225170732.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225170732.png" alt=""></p>
 <p>这种裁剪的SVD有两个关键特性。首先，我们修剪的键的尺寸可以比我们最初开始时的尺寸大，这样我们就可以慢慢地扩展到更高的键尺寸MPS的空间。其次，我们可以使用截断的奇异值来量化与此投影相关的误差，使其回归到更低的键维空间，从而更好地告知我们对键维的选择。</p>
 <h2 id="TEBD-the-physicist’s-approach"><a href="#TEBD-the-physicist’s-approach" class="headerlink" title="TEBD (the physicist’s approach)"></a>TEBD (the physicist’s approach)</h2><p>时间演化合并抽取(time-evolving block decimation(TEBD))是一个张量网络算法，允许模拟一维自旋系统的动力学。通过模拟虚时间演化(imaginary-time-evolution)，还可以计算出基态等低温特征。</p>
 <p>为了模拟虚拟时间演化，我们需要近似虚时间演化算子$U(\tau) = \exp(-\tau H)$。这里的问题是，虽然我们可能有一个$H$的有效表示，但它的任何指数不一定有一个简洁的表示。以相应的虚时间演化的二体哈密顿函数为例</p>
@@ -208,7 +212,7 @@ U(\tau)=e^{-\tau \sum_i h_i} \qquad H=\sum_i h_i</script><p>$h_i$是一个作用
 <script type="math/tex; mode=display">
 e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在这样的近似的整个家族，尽管我们的目的只是为了说明Suzuki-Trotter的过程。</p>
 <p>TEBD算法的工作原理是通过上述指数积公式近似虚时间演化算子，将其应用于给定的MPS，并调整键维以投射回MPS空间。我们对虚时间演化算符的近似是由只包含最近邻的两个位置算符的层的乘积给出的，这意味着我们只需要将这些算符压缩到我们的MPS中。假设我们想对$i$和$i + 1$处的自旋应用算子U。其思想是应用算符，把所有的量都压缩成一个张量，然后再一次使用SVD裁剪来截断键的维数。</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200225223418.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200225223418.png" alt=""></p>
 <p>dmrg2的优点也体现在TEBD中，即控制键尺寸的增长和对修剪误差的量化。由于上面的过程是完全局域化的，TEBD也允许大量的并行处理，这是DMRG通常不支持的。</p>
 
         </div>
@@ -310,7 +314,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            0
+                            1
                         </p>
                     </a>
                 </div>
@@ -372,7 +376,15 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                 分类
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/Tensor-Netwowrk/">
+            <span class="level-start">
+                <span class="level-item">Tensor Netwowrk</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -409,7 +421,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
                     <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -428,7 +440,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
                     <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -447,7 +459,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
                     <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -466,7 +478,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
                     <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -485,7 +497,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
                     <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -603,7 +615,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
                     <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -622,7 +634,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
                     <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -641,7 +653,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
                     <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -660,7 +672,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
                     <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -679,7 +691,7 @@ e^{-\tau (A+B)} = e^{-\tau A}e^{- \tau B} +O(\tau^2)</script><p>结果是存在�
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
                     <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>

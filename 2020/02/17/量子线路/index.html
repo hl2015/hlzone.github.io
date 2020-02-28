@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-17T06:20:53.000Z">
-<meta property="article:modified_time" content="2020-02-19T12:56:37.662Z">
+<meta property="article:modified_time" content="2020-02-28T10:22:15.564Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="量子线路">
 <meta name="twitter:card" content="summary">
@@ -203,14 +203,14 @@ T=\begin{bmatrix}
 1 & 0 \\ 
 0 & exp(i\pi/4) 
 \end{bmatrix}</script><p>旋转算子定义如下：</p>
-<p><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200218124851.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200218124851.png" alt=""></p>
 <h4 id="练习4-1"><a href="#练习4-1" class="headerlink" title="练习4.1"></a>练习4.1</h4><h2 id="受控运算"><a href="#受控运算" class="headerlink" title="受控运算"></a>受控运算</h2><p>本节说明，如何从基本运算基础搭建起来的量子线路实现复杂的受控运算。</p>
 <p>CNOT</p>
 <p>相当于$|c\rangle|t\rangle \rightarrow |c\rangle|t\bigoplus c\rangle$</p>
 <p><em>controlled</em>-U</p>
 <p>相当于$|c\rangle |t\rangle \rightarrow |c\rangle U^c |t\rangle$</p>
 <h2 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h2><p>量子线路测量有两个重要原理值得记住。</p>
-<p>_推迟测量原理(principle of deferred measurement)_<br>总可以把测量从量子线路的中间步骤移到线路的末端；如果测量的结果被用于线路的某些阶段，则经典的运算可以被条件量子运算代替。<br><img src="https://raw.githubusercontent.com/hlzone/PicBed/master/20200212115528.png" alt=""></p>
+<p>_推迟测量原理(principle of deferred measurement)_<br>总可以把测量从量子线路的中间步骤移到线路的末端；如果测量的结果被用于线路的某些阶段，则经典的运算可以被条件量子运算代替。<br><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200212115528.png" alt=""></p>
 <p>\langle !— more —&gt;</p>
 <p><em>隐含测量原理（principle of implicit measurement)</em><br>不失一般性，量子线路中任何未终结的量子连线（未被测量的量子比特）总可以假设为被测量。</p>
 <p><em>测量的一个普遍特点</em>——为使一个测量是可逆的，它一定不能揭示被测量子状态的任何信息</p>
@@ -352,7 +352,7 @@ T=\begin{bmatrix}
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            0
+                            1
                         </p>
                     </a>
                 </div>
@@ -434,7 +434,15 @@ T=\begin{bmatrix}
                 分类
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/Tensor-Netwowrk/">
+            <span class="level-start">
+                <span class="level-item">Tensor Netwowrk</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -471,7 +479,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
                     <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -490,7 +498,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
                     <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -509,7 +517,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
                     <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -528,7 +536,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
                     <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -547,7 +555,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
                     <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -665,7 +673,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
                     <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -684,7 +692,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
                     <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -703,7 +711,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
                     <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -722,7 +730,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
                     <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -741,7 +749,7 @@ T=\begin{bmatrix}
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
                     <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>

@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-27T13:07:22.000Z">
-<meta property="article:modified_time" content="2020-02-27T15:09:36.542Z">
+<meta property="article:modified_time" content="2020-02-28T07:41:15.101Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
@@ -143,11 +143,15 @@
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 757 个字)
+                    6 分钟 读完 (大约 904 个字)
                 </span>
                 
                 
@@ -212,8 +216,23 @@
 <h3 id="class-tensornetwork-Node"><a href="#class-tensornetwork-Node" class="headerlink" title="class tensornetwork.Node"></a><em>class</em> tensornetwork.Node</h3><hr>
 <h3 id="class-tensornetwork-CopyNode"><a href="#class-tensornetwork-CopyNode" class="headerlink" title="class tensornetwork.CopyNode"></a><em>class</em> tensornetwork.CopyNode</h3><h4 id="compute-contracted-tensor"><a href="#compute-contracted-tensor" class="headerlink" title="compute_contracted_tensor"></a>compute_contracted_tensor</h4><hr>
 <h3 id="calss-tensornetwork-BaseNode"><a href="#calss-tensornetwork-BaseNode" class="headerlink" title="calss tensornetwork.BaseNode"></a><em>calss</em> tensornetwork.BaseNode</h3><p>节点的基类，可以从它派生出子类</p>
-<h4 id="add-axis-names"><a href="#add-axis-names" class="headerlink" title="add_axis_names"></a>add_axis_names</h4><h4 id="add-edge"><a href="#add-edge" class="headerlink" title="add_edge"></a>add_edge</h4><h4 id="get-all-dangling"><a href="#get-all-dangling" class="headerlink" title="get_all_dangling"></a>get_all_dangling</h4><h4 id="get-all-nondangling"><a href="#get-all-nondangling" class="headerlink" title="get_all_nondangling"></a>get_all_nondangling</h4><h4 id="get-axis-number"><a href="#get-axis-number" class="headerlink" title="get_axis_number"></a>get_axis_number</h4><h4 id="get-dimension"><a href="#get-dimension" class="headerlink" title="get_dimension"></a>get_dimension</h4><h4 id="get-rank"><a href="#get-rank" class="headerlink" title="get_rank"></a>get_rank</h4><h4 id="reorder-axes"><a href="#reorder-axes" class="headerlink" title="reorder_axes"></a>reorder_axes</h4><h4 id="reoder-edges"><a href="#reoder-edges" class="headerlink" title="reoder_edges"></a>reoder_edges</h4><h4 id="set-signature"><a href="#set-signature" class="headerlink" title="set_signature"></a>set_signature</h4><hr>
-<h2 id="Edges"><a href="#Edges" class="headerlink" title="Edges"></a>Edges</h2><h3 id="class-tensornetwork-Edge"><a href="#class-tensornetwork-Edge" class="headerlink" title="class tensornetwork.Edge"></a><em>class</em> tensornetwork.Edge</h3><h4 id="disconnect"><a href="#disconnect" class="headerlink" title="disconnect"></a>disconnect</h4><h4 id="get-nodes"><a href="#get-nodes" class="headerlink" title="get_nodes"></a>get_nodes</h4><h4 id="is-being-used"><a href="#is-being-used" class="headerlink" title="is_being_used"></a>is_being_used</h4><h4 id="is-dangling"><a href="#is-dangling" class="headerlink" title="is_dangling"></a>is_dangling</h4><h4 id="update-axis"><a href="#update-axis" class="headerlink" title="update_axis"></a>update_axis</h4><hr>
+<h4 id="add-axis-names"><a href="#add-axis-names" class="headerlink" title="add_axis_names"></a>add_axis_names</h4><p>向节点添加轴名称</p>
+<h4 id="add-edge"><a href="#add-edge" class="headerlink" title="add_edge"></a>add_edge</h4><p>向节点的给定轴上添加一条边</p>
+<h4 id="get-all-dangling"><a href="#get-all-dangling" class="headerlink" title="get_all_dangling"></a>get_all_dangling</h4><p>返回连接到此节点的悬空边集</p>
+<h4 id="get-all-nondangling"><a href="#get-all-nondangling" class="headerlink" title="get_all_nondangling"></a>get_all_nondangling</h4><p>返回连接到此节点的非悬挂边集</p>
+<h4 id="get-axis-number"><a href="#get-axis-number" class="headerlink" title="get_axis_number"></a>get_axis_number</h4><p>获取给定轴名或值的轴号</p>
+<h4 id="get-dimension"><a href="#get-dimension" class="headerlink" title="get_dimension"></a>get_dimension</h4><p>得到给定轴上的维数</p>
+<h4 id="get-rank"><a href="#get-rank" class="headerlink" title="get_rank"></a>get_rank</h4><p>返回张量的秩</p>
+<h4 id="reorder-axes"><a href="#reorder-axes" class="headerlink" title="reorder_axes"></a>reorder_axes</h4><p>重新排列节点张量的轴</p>
+<h4 id="reoder-edges"><a href="#reoder-edges" class="headerlink" title="reoder_edges"></a>reoder_edges</h4><p>对给定节点的边重新排序</p>
+<h4 id="set-signature"><a href="#set-signature" class="headerlink" title="set_signature"></a>set_signature</h4><p>设置节点的签名</p>
+<hr>
+<h2 id="Edges"><a href="#Edges" class="headerlink" title="Edges"></a>Edges</h2><h3 id="class-tensornetwork-Edge"><a href="#class-tensornetwork-Edge" class="headerlink" title="class tensornetwork.Edge"></a><em>class</em> tensornetwork.Edge</h3><h4 id="disconnect"><a href="#disconnect" class="headerlink" title="disconnect"></a>disconnect</h4><p>断开链接</p>
+<h4 id="get-nodes"><a href="#get-nodes" class="headerlink" title="get_nodes"></a>get_nodes</h4><p>得到连接边的节点</p>
+<h4 id="is-being-used"><a href="#is-being-used" class="headerlink" title="is_being_used"></a>is_being_used</h4><p>检查此边所指向的节点是否使用了此边</p>
+<h4 id="is-dangling"><a href="#is-dangling" class="headerlink" title="is_dangling"></a>is_dangling</h4><p>检查是否是悬边</p>
+<h4 id="update-axis"><a href="#update-axis" class="headerlink" title="update_axis"></a>update_axis</h4><p>更新边所连接的节点</p>
+<hr>
 <h2 id="Ncon"><a href="#Ncon" class="headerlink" title="Ncon"></a>Ncon</h2><h3 id="tensornetwork-ncon"><a href="#tensornetwork-ncon" class="headerlink" title="tensornetwork.ncon"></a>tensornetwork.ncon</h3><p>根据一个张量网络规范缩并张量或节点列表</p>
 <h3 id="tensornetwork-ncon-netwrok"><a href="#tensornetwork-ncon-netwrok" class="headerlink" title="tensornetwork.ncon_netwrok"></a>tensornetwork.ncon_netwrok</h3><p>根据张量从张量列表创建一个网络</p>
 <hr>
@@ -316,7 +335,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            0
+                            1
                         </p>
                     </a>
                 </div>
@@ -714,7 +733,15 @@
                 分类
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/Tensor-Netwowrk/">
+            <span class="level-start">
+                <span class="level-item">Tensor Netwowrk</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -751,7 +778,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
                     <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -770,7 +797,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
                     <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -789,7 +816,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
                     <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -808,7 +835,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
                     <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -827,7 +854,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
                     <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -945,7 +972,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time></div>
                     <a href="/2020/02/27/TensorNetwork-documentation/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork documentation</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -964,7 +991,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T06:24:21.000Z">2020-02-25</time></div>
                     <a href="/2020/02/25/Tensor-network-algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor network algorithms</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -983,7 +1010,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-24T11:24:39.000Z">2020-02-24</time></div>
                     <a href="/2020/02/24/Classifying-gapped-phases-in-1D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classifying gapped phases in 1D</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -1002,7 +1029,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time></div>
                     <a href="/2020/02/22/TensorNetwork-google/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorNetwork--a open source library</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
@@ -1021,7 +1048,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T08:29:54.000Z">2020-02-20</time></div>
                     <a href="/2020/02/20/Matrix-product-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Matrix product states</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
                     </p>
                 </div>
             </div>
