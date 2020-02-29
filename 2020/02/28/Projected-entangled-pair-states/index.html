@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-02-28T14:22:43.000Z">
-<meta property="article:modified_time" content="2020-02-28T15:08:57.327Z">
+<meta property="article:modified_time" content="2020-02-29T10:04:09.096Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 444 个字)
+                    13 分钟 读完 (大约 1880 个字)
                 </span>
                 
                 
@@ -184,7 +184,59 @@ P \rightarrow P(B^{-1} \otimes A^{-1})</script><p>$| \phi \rangle$不一定是�
 <p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200228230308.png" alt=""></p>
 <p>显然，这并没有提供比使用纠缠对更强的描述能力。假设我们有一些PEPS的投影放Q作用于一对纠缠态，然后我们可以把它扩展到P作用于纠缠三态</p>
 <script type="math/tex; mode=display">
-P=Q(1 \otimes (|0\rangle \langle 00| + |1 \rangle \langle 11|))</script><h2 id="Extending-to-higher-dimensions"><a href="#Extending-to-higher-dimensions" class="headerlink" title="Extending to higher dimensions"></a>Extending to higher dimensions</h2><h2 id="Some-PEPS-examples"><a href="#Some-PEPS-examples" class="headerlink" title="Some PEPS examples"></a>Some PEPS examples</h2><h3 id="Product-state"><a href="#Product-state" class="headerlink" title="Product state"></a>Product state</h3><h3 id="GHZ-state"><a href="#GHZ-state" class="headerlink" title="GHZ state"></a>GHZ state</h3><h3 id="RVB-state"><a href="#RVB-state" class="headerlink" title="RVB state"></a>RVB state</h3><h3 id="Toric-code-ground-state"><a href="#Toric-code-ground-state" class="headerlink" title="Toric code ground state"></a>Toric code ground state</h3><h2 id="2D-cluster-state-and-the-complexity-of-PEPS"><a href="#2D-cluster-state-and-the-complexity-of-PEPS" class="headerlink" title="2D cluster state and the complexity of PEPS"></a>2D cluster state and the complexity of PEPS</h2><h3 id="Numerical-PEPS"><a href="#Numerical-PEPS" class="headerlink" title="Numerical PEPS"></a>Numerical PEPS</h3><h2 id="Properties-of-PEPS"><a href="#Properties-of-PEPS" class="headerlink" title="Properties of PEPS"></a>Properties of PEPS</h2><h3 id="Algebraic-decay-of-correlations"><a href="#Algebraic-decay-of-correlations" class="headerlink" title="Algebraic decay of correlations"></a>Algebraic decay of correlations</h3><h3 id="Gauge-freedom"><a href="#Gauge-freedom" class="headerlink" title="Gauge freedom"></a>Gauge freedom</h3>
+P=Q(1 \otimes (|0\rangle \langle 00| + |1 \rangle \langle 11|))</script><h2 id="Extending-to-higher-dimensions"><a href="#Extending-to-higher-dimensions" class="headerlink" title="Extending to higher dimensions"></a>Extending to higher dimensions</h2><p>从一维系统到高维系统的扩展是直接进行的。我们将讨论超立方晶格的简单情况，但这个框架可以在任何图形上进行。特别地，我们将限制在2维</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229151609.png" alt=""></p>
+<p>其中</p>
+<script type="math/tex; mode=display">
+P: (\mathbb{C}^D)^{\otimes 4} \rightarrow \mathbb{C}^d</script><p>是一些从虚空间到物理空间的线性算子。</p>
+<p>显然，在这个描述中有大量的规范自由度，就像在一维情况下一样。每一个虚自旋的任何可逆变换都可以用投影仪P的定义来补偿。</p>
+<p>在MPS中，人们可能会问，使用不同的缠结结构是否会导致更强的描述能力。很容易看出，一般情况并非如此。假设我们选择在GHZ状态下放置plaquettes，然后在plaquettes之间使用PEPS投影。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229152510.png" alt=""></p>
+<p>我们可以使用一个标准的PEPS来准备这个资源状态，因此任何可以从这个“projected entangled plaquette”结构中准备的状态都可以从一个pep中准备，只需要很少的额外成本。</p>
+<h2 id="Some-PEPS-examples"><a href="#Some-PEPS-examples" class="headerlink" title="Some PEPS examples"></a>Some PEPS examples</h2><p>来看几个PEPS的例子。</p>
+<h3 id="Product-state"><a href="#Product-state" class="headerlink" title="Product state"></a>Product state</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229153210.png" alt=""></p>
+<h3 id="GHZ-state"><a href="#GHZ-state" class="headerlink" title="GHZ state"></a>GHZ state</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229153305.png" alt=""></p>
+<h3 id="RVB-state"><a href="#RVB-state" class="headerlink" title="RVB state"></a>RVB state</h3><p>令为键维度为$D=3$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229155604.png" alt=""></p>
+<p>$\alpha \in {1,2}$为唯一非零元素PEPS张量。假设我们将这些张量压平并投射悬空指标到$|2\rangle$态。结果的物理状态是什么？</p>
+<p>这种状态被称为共振价键态，由晶格中所有完全倾斜的叠加和最大纠缠对组成</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229160750.png" alt=""></p>
+<p><strong>Kitaev’s Toric code</strong></p>
+<h3 id="Toric-code-ground-state"><a href="#Toric-code-ground-state" class="headerlink" title="Toric code ground state"></a>Toric code ground state</h3><h2 id="2D-cluster-state-and-the-complexity-of-PEPS"><a href="#2D-cluster-state-and-the-complexity-of-PEPS" class="headerlink" title="2D cluster state and the complexity of PEPS"></a>2D cluster state and the complexity of PEPS</h2><p>令键维度为$D=2$</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229161349.png" alt=""></p>
+<p>为PEPS中的非零元素。生成的物理状态是2D聚态，是基于测量的量子计算的通用资源。</p>
+<p>如果我们能有效地求出PEPS之间的内积。然后，我们可以通过简单地将秩1投影到这些PEPS张量的物理指标上，来清楚地经典地模拟单个比特后选定的测量值。这告诉我们，即使是简单的PEPS状态，我们也无法有效地收缩，除非后选的量子计算可以经典地模拟出来(Post - BQP = BPP)。</p>
+<h3 id="Numerical-PEPS"><a href="#Numerical-PEPS" class="headerlink" title="Numerical PEPS"></a>Numerical PEPS</h3><p>在许多实际情况下，在有限的和无限的系统大小限制下，都可以实现PEPS网络的近似收缩。</p>
+<h2 id="Properties-of-PEPS"><a href="#Properties-of-PEPS" class="headerlink" title="Properties of PEPS"></a>Properties of PEPS</h2><p>MPS和PEPS这两种张量网络状态在性质上是不同的，无论是在物理上，还是在张量网络的计算能力上</p>
+<p><strong>Aside(Tensor network for classical partition function)</strong></p>
+<p>令$H[s] = \sum_{\langle i ,j \rangle} h [s_i , s_j]$为一个经典的哈密顿量。我们经常计算的是配分函数$Z = \sum_ e^{-\beta H[s]}$，系统的温度为$\beta$。我们可以用一个简单的张量网络来帮忙。</p>
+<p>定义两个张量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229164341.png" alt=""></p>
+<p>在每个经典自旋上放一个D张量，在每个相互作用上放一个M张量，下面的张量网络可以用来表示配分函数</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229164549.png" alt=""></p>
+<p>通过在网络中插入局部张量，可以计算出热期望值。例如</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229164705.png" alt=""></p>
+<p>注意，通过结合D和M张量，配分函数可以用一个张量来描述</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229165322.png" alt=""></p>
+<p>令</p>
+<script type="math/tex; mode=display">
+H = -J \sum_{\langle i,j \rangle} s_is_j</script><p>其中$s \in { \pm 1 }$，为经典Ising模型。张量Q可以简化为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229165947.png" alt=""></p>
+<h3 id="Algebraic-decay-of-correlations"><a href="#Algebraic-decay-of-correlations" class="headerlink" title="Algebraic decay of correlations"></a>Algebraic decay of correlations</h3><p>MPS只能捕获具有指数衰减相关性的状态(当然也可以是恒定相关性)。现在我们来看看这是否适用于PEPS。我们可以通过修改上述结构来建立一个与经典配分函数相对应的PEPS状态</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229162456.png" alt=""></p>
+<p>或者等价的整合为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229170115.png" alt=""></p>
+<p>定义PEPS态为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229170208.png" alt=""></p>
+<p>注意这是纯态，不是热态。它并没有被归一化，$\langle \psi | \psi \rangle = Z$。用这种状态计算的相关函数与用经典统计物理计算的相关函数相等。假设我们考虑一个具有热相变的经典模型(如上面的伊辛模型)。在临界温度下，该模型的相关系数会出现代数衰减，这意味着对应的PEPS也会出现代数衰减。因此，我们可以看到，与MPS不同，PEPS所描述的状态可以显示出相关的代数衰减。</p>
+<h3 id="Gauge-freedom"><a href="#Gauge-freedom" class="headerlink" title="Gauge freedom"></a>Gauge freedom</h3><p>PEPS张量的规范自由度是MPS自由度的简单概括。和以前一样，我们可以一起阻塞张量而不改变全局状态。此外，我们可以执行以下转换(在平移不变的PEPS上)：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229170912.png" alt=""></p>
+<p>其中$N$和$M$为可逆矩阵。</p>
+<p>回想一下，在MPS的情况下，我们可以利用这种自由把张量变成正则形式。这在PEPS的情况下是不可能完全实现的，尽管有一些数值方法可以将PEPS转换成近似的规范形式。</p>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>1.要在顶点上有自旋的蜂窝晶格上建立GHZ状态，需要什么样的PEPS张量？</p>
+<p>2.通过沿着水平缩并下列张量指标可以得到什么量子操作门？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229175647.png" alt=""></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -357,7 +409,11 @@ P=Q(1 \otimes (|0\rangle \langle 00| + |1 \rangle \langle 11|))</script><h2 id="
         <a class="is-flex" href="#Gauge-freedom">
         <span class="has-mr-6">5.2</span>
         <span>Gauge freedom</span>
-        </a></li></ul></li></ul>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Problem">
+        <span class="has-mr-6">6</span>
+        <span>Problem</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
