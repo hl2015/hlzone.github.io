@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Tensor network learning framework - hlzone</title>
+<title>Multiscale entanglement renormalisation ansatz - hlzone</title>
 
 
-    <meta name="description" content="根据张量网络学习网站tensornetwork列出的张量网络学习框架。">
+    <meta name="description" content="MPS对于理解一维量子模型的低能态非常有用。但是对于某些重要的态，它却无能无力。例如，它无法重现无间隙基态的相关性。回想一下，MPS总是具有指数衰减的相关性，而无间隙基态通常支持与幂律衰减的相关性。同样地，MPS也有一个关于纠缠熵的严格的面积定律，其中无间隙状态允许对数发散。多尺度纠缠重整化ansatz(MERA)是一个旨在克服这些问题的张量网络。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tensor network learning framework">
-<meta property="og:url" content="http://yoursite.com/2020/02/28/Tensor-network-learning-framework/index.html">
+<meta property="og:title" content="Multiscale entanglement renormalisation ansatz">
+<meta property="og:url" content="http://yoursite.com/2020/03/02/Multiscale-entanglement-renormalisation-ansatz/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="根据张量网络学习网站tensornetwork列出的张量网络学习框架。">
+<meta property="og:description" content="MPS对于理解一维量子模型的低能态非常有用。但是对于某些重要的态，它却无能无力。例如，它无法重现无间隙基态的相关性。回想一下，MPS总是具有指数衰减的相关性，而无间隙基态通常支持与幂律衰减的相关性。同样地，MPS也有一个关于纠缠熵的严格的面积定律，其中无间隙状态允许对数发散。多尺度纠缠重整化ansatz(MERA)是一个旨在克服这些问题的张量网络。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-02-28T12:29:34.000Z">
-<meta property="article:modified_time" content="2020-02-28T13:48:28.763Z">
+<meta property="article:published_time" content="2020-03-02T11:18:54.000Z">
+<meta property="article:modified_time" content="2020-03-02T15:01:42.966Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="Tensor network learning framework" height="28">
+                <img src="/images/hlzone.png" alt="Multiscale entanglement renormalisation ansatz" height="28">
             
             </a>
         </div>
@@ -141,7 +141,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-28T12:29:34.000Z">2020-02-28</time>
+                <time class="level-item has-text-grey" datetime="2020-03-02T11:18:54.000Z">2020-03-02</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 162 个字)
+                    13 分钟 读完 (大约 1988 个字)
                 </span>
                 
                 
@@ -165,77 +165,47 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Tensor network learning framework
+                Multiscale entanglement renormalisation ansatz
             
         </h1>
         <div class="content">
-            <p>根据张量网络学习网站<a href="http://tensornetwork.org/">tensornetwork</a>列出的张量网络学习框架。</p>
+            <p>MPS对于理解一维量子模型的低能态非常有用。但是对于某些重要的态，它却无能无力。例如，它无法重现无间隙基态的相关性。回想一下，MPS总是具有指数衰减的相关性，而无间隙基态通常支持与幂律衰减的相关性。同样地，MPS也有一个关于纠缠熵的严格的面积定律，其中无间隙状态允许对数发散。多尺度纠缠重整化ansatz(MERA)是一个旨在克服这些问题的张量网络。</p>
 <a id="more"></a>
-<h2 id="Fundamentals"><a href="#Fundamentals" class="headerlink" title="Fundamentals"></a>Fundamentals</h2><ul>
-<li>[x] Tensor Diagram Notation</li>
-</ul>
-<h2 id="Types-of-Tensor-Network"><a href="#Types-of-Tensor-Network" class="headerlink" title="Types of Tensor Network"></a>Types of Tensor Network</h2><ul>
-<li><p>[x] Matrix Product State / Tensor Train</p>
-</li>
-<li><p>[x] Matrix Product Operator</p>
-</li>
-<li><p>[ ] Tree Tensor Network </p>
-</li>
-<li><p>[ ] PEPS</p>
-</li>
-<li><p>[ ] MERA</p>
-</li>
-</ul>
-<h2 id="Tensor-Network-Algorithms"><a href="#Tensor-Network-Algorithms" class="headerlink" title="Tensor Network Algorithms"></a>Tensor Network Algorithms</h2><h3 id="MPS-TT-and-MPO-Algorithms"><a href="#MPS-TT-and-MPO-Algorithms" class="headerlink" title="MPS/TT and MPO Algorithms"></a>MPS/TT and MPO Algorithms</h3><h4 id="Elementary-MPS-TT-Algoithms"><a href="#Elementary-MPS-TT-Algoithms" class="headerlink" title="Elementary MPS/TT Algoithms"></a>Elementary MPS/TT Algoithms</h4><ul>
-<li><p>[ ] Retrieving a Single MPS/TT Component</p>
-</li>
-<li><p>[ ] Inner Product of Two MPS/TT</p>
-</li>
-<li><p>[ ] Compression of MPS/TT</p>
-</li>
-</ul>
-<h4 id="Solving-Linear-Equations-DMRG-etc"><a href="#Solving-Linear-Equations-DMRG-etc" class="headerlink" title="Solving Linear Equations (DMRG, etc)"></a>Solving Linear Equations (DMRG, etc)</h4><ul>
-<li>[x] DMRG(Density Matrix Renormalization Group)</li>
-</ul>
-<h4 id="Summing-MPS-TT-Networks"><a href="#Summing-MPS-TT-Networks" class="headerlink" title="Summing MPS/TT Networks"></a>Summing MPS/TT Networks</h4><ul>
-<li><p>[ ] Density Matrix Algorithm</p>
-</li>
-<li><p>[ ] Direct Algorithm</p>
-</li>
-</ul>
-<h4 id="Multiplying-an-MPS-TT-by-an-MPO"><a href="#Multiplying-an-MPS-TT-by-an-MPO" class="headerlink" title="Multiplying an MPS/TT by an MPO"></a>Multiplying an MPS/TT by an MPO</h4><ul>
-<li><p>[ ] Density Matrix Algorithm</p>
-</li>
-<li><p>[ ] Fitting Algorithm</p>
-</li>
-<li><p>[ ] Zip-Up Algorithm</p>
-</li>
-</ul>
-<h4 id="Times-Evolution-Algorithms"><a href="#Times-Evolution-Algorithms" class="headerlink" title="Times Evolution Algorithms"></a>Times Evolution Algorithms</h4><ul>
-<li><p>[x] Trotter Gate Time Evolution (TEBD)</p>
-</li>
-<li><p>[ ] MPO Time Evolution </p>
-</li>
-</ul>
-<p>MPS-local methods</p>
-<ul>
-<li><p>[ ] Time-Step Targeting Method (Local Krylov)</p>
-</li>
-<li><p>[ ] Time-Dependent Variational Principle (TDVP)</p>
-</li>
-<li><p>[ ] Krylov Time Evolution (Global Krlyov)</p>
-</li>
-</ul>
-<h3 id="TRG-Algorithm"><a href="#TRG-Algorithm" class="headerlink" title="TRG Algorithm"></a>TRG Algorithm</h3><h2 id="Computing-with-Tensor-Networks"><a href="#Computing-with-Tensor-Networks" class="headerlink" title="Computing with Tensor Networks"></a>Computing with Tensor Networks</h2><ul>
-<li><p>[x] Tensor Software</p>
-</li>
-<li><p>[ ] Software Benchmarks</p>
-</li>
-</ul>
-<h2 id="Applications-of-Tensor-Networks"><a href="#Applications-of-Tensor-Networks" class="headerlink" title="Applications of Tensor Networks"></a>Applications of Tensor Networks</h2><ul>
-<li>[ ] Quantum Physics</li>
-</ul>
-
+<p>尽管MPS并不自然地支持关键模型中所期望的那种相关性，但它们已成功地应用于此类系统的研究。为此目的使用MPS需要增加键维度的MPS族来检查相关性如何表现。但是MERA则不同，正如我们将要讨论的，一个单一的MERA态可以自然地捕获无间隙基态的物理特性。</p>
+<p>在这里，我们将张量网络作为ansatz来表示，并认为它很适合表示一维中无间隙哈密顿的基态。</p>
+<p>假设态可以被写为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302194722.png" alt=""></p>
+<p>我们将看到，这些张量上的约束对物理和计算都有影响。注意，$u$张量和$w$张量不一定是相同的，尽管如果我们期望平移和尺度不变的状态，通常会局限于这种情况。这类状态被称为多尺度纠缠重正化拟态(MERA)。</p>
+<p>MERA可以直接概括为更高维度的系统。与PEPS不同的是，该网络可以在更高维度上进行有效优化，尽管其可伸缩性使数值计算非常具有挑战性。</p>
+<h2 id="Properties-of-MERA"><a href="#Properties-of-MERA" class="headerlink" title="Properties of MERA"></a>Properties of MERA</h2><h3 id="Logarithmic-violation-of-the-area-law"><a href="#Logarithmic-violation-of-the-area-law" class="headerlink" title="Logarithmic violation of the area law"></a>Logarithmic violation of the area law</h3><p>一个在MERA中可以实现但是在MPS中无法实现的关键性质为纠缠熵的定标。回想一下，如果必须打破$n$个键才能将一个区域与网络的其余部分分开，可以支持的最大纠缠熵为$n\log D$，其中$D$为键维度。在MPS中，相邻区域上的任何还原态都可以通过切断$n = 2$个键来移除。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302204336.png" alt=""></p>
+<p>很容易看出，从网络的其余部分删除一个包含N个物理指标的块，需要切除$O(\log N)$个键。这显示了最大熵的尺度为$\log N \log D$。</p>
+<h3 id="Power-law-decay-of-correlations"><a href="#Power-law-decay-of-correlations" class="headerlink" title="Power law decay of correlations"></a>Power law decay of correlations</h3><p>利用张量的约束，我们可以简化两点相关因子在MERA态下的计算。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302205150.png" alt=""></p>
+<p>注意，相关因子的长度尺度行为完全由超算符的应用决定</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302205400.png" alt=""></p>
+<p>其中$w$张量可以被看作是一组Kraus算子</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302205737.png" alt=""></p>
+<p>可通过对指示的指标进行分组得到。</p>
+<p>因此，$S$为正定，unital的映射，所有的特征值$\lambda$满足$|\lambda| \leq 1$。我们可以通过应用$S \backsim log N$次将被$N$个节点分隔的操作符连接到一起。考虑S超算子的本征算子，相关因子的作用为</p>
+<script type="math/tex; mode=display">
+\langle A_j B_k \rangle \backsim \frac{\langle A_0 B_1 \rangle}{|j-k|^{\Delta_A +\Delta_B}}</script><p>其中$\Delta_{\phi} = -\log_3 \lambda_{\phi} , \Delta_{\phi}\geq 0 $被称为缩放维度，$\lambda_\phi$为$S$对应的特征值。因此，MERA状态可以支持相关关系的代数衰减。</p>
+<h3 id="Efficient-manipulation"><a href="#Efficient-manipulation" class="headerlink" title="Efficient manipulation"></a>Efficient manipulation</h3><p>一个好的张量网络ansatz应该满足两个性质。首先，它应该是有效存储的。到目前为止，我们讨论的所有网络都有这个特性，因为只需要少量的系数来表示这些状态。第二个特性更微妙,即应该能够有效地提取物理数据。虽然这对一维MPS网络有效，但对二维PEPS状态无效;计算局部算子期望值所需的缩并是非常困难的。</p>
+<p>事实证明，MERA具有这两种属性。我们可以有效地存储状态数据，并且由于公式(8.2)中的约束，我们可以有效地计算局部期望值和相关因子。我们已经看到了它是如何工作的。等距约束确保网络的物理级别上的局域操作符映射到更高级别上的局域操作符。因此，计算期望值只需要操作算子的因果锥中的少量张量。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302212856.png" alt=""></p>
+<p>其中阴影区域表示五个节点操作在物理层面上的因果锥。注意，每个后续级别上的张量数量不会增加。实际上，经过单层张量之后，算符就变成了三个位置的算符，而且范围永远不会增长。因此，我们可以看到MERA的各个层将局部操作符映射到局部操作符。</p>
+<h2 id="Renormalisation-group-transformation"><a href="#Renormalisation-group-transformation" class="headerlink" title="Renormalisation group transformation"></a>Renormalisation group transformation</h2><p>上面的大部分讨论都是关于作为Kraus算子的MERA层的解释，即在局部算子上定义一个unital CP映射。期望值的计算可以看作是许多超算子的应用，然后是较少数量节点的内积</p>
+<script type="math/tex; mode=display">
+\langle \psi_0 | O | \psi_0 \rangle = \langle \psi_{k+1} | A_k \circ \cdots \circ A_1 \circ A_0(O) | \psi_{k+1} \rangle</script><p>其中$A_j$为自旋$3^{N-j}$到自旋$3^{N-j}/3$的映射。这可以被看作是一个重整化的群或规模的转变。$| \psi_j \rangle$由$3^{N-j}$自旋支持，只包含必要的物理数据来理解那个长度范围内的物理。如果$O$为局域算符，$A(O)$是很容易计算的。这使我们能够把有效算符理解为长度标度的函数。</p>
+<p>热力学的或宏观的可观测的可以被看作是把形式上无限的MERA层应用于高能或微观的可观测的算符。因此，宏观物理或相结构是由映射$A$的不动点决定的。一些特别有趣的状态是尺度不变状态。如果在某一层之后所有的MERA张量都是相同的，则状态是尺度不变的。对于这些状态，我们不期望物理会改变成长度或能量的函数。这些状态的不动点可观测值特别容易理解，不同的尺度不变状态描述了不同的相位。</p>
+<p>由于不存在由谱隙或相关长度设置的特征长度尺度，所以无间隙基态被期望为是尺度不变的。因此，MERA使我们能够非常有效地理解这些状态的长程物理。另一种实现尺度不变状态的方法是使相关长度为零——这些状态表示有间隙的相位。</p>
+<h2 id="Some-simple-MERA-states"><a href="#Some-simple-MERA-states" class="headerlink" title="Some simple MERA states"></a>Some simple MERA states</h2><h3 id="Product-state"><a href="#Product-state" class="headerlink" title="Product state"></a>Product state</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302222440.png" alt=""></p>
+<p>如果我们用这些张量构建$\log_3 N$层，我们会得到$N$个节点的态。这个网络仍然在顶部有一个自由指标，所以我们需要定义一个单指标的顶部$T$来获得最终的状态。令$T= |+\rangle$，得到的态为$|+\rangle^{\otimes N}$。</p>
+<h3 id="GHZ-state"><a href="#GHZ-state" class="headerlink" title="GHZ state"></a>GHZ state</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302225535.png" alt=""></p>
+<p>令顶部张量为$T= |+\rangle$，得到的态为$\frac{|0\rangle^{\otimes N}+|1\rangle^{\otimes N}}{\sqrt2}$。</p>
+<h3 id="Cluster-state"><a href="#Cluster-state" class="headerlink" title="Cluster state"></a>Cluster state</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200302225643.png" alt=""></p>
+<p>其中两点一横线为CZ门。如果选择顶部张量为$T=|++\rangle$，可以周期边界条件下的簇态。</p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -259,17 +229,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/28/Projected-entangled-pair-states/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Projected entangled pair states</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/27/TensorNetwork-documentation/">
-                <span class="level-item">TensorNetwork documentation</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/28/Projected-entangled-pair-states/">
+                <span class="level-item">Projected entangled pair states</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -368,53 +331,49 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#Fundamentals">
+        <a class="is-flex" href="#Properties-of-MERA">
         <span class="has-mr-6">1</span>
-        <span>Fundamentals</span>
+        <span>Properties of MERA</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Logarithmic-violation-of-the-area-law">
+        <span class="has-mr-6">1.1</span>
+        <span>Logarithmic violation of the area law</span>
         </a></li><li>
-        <a class="is-flex" href="#Types-of-Tensor-Network">
+        <a class="is-flex" href="#Power-law-decay-of-correlations">
+        <span class="has-mr-6">1.2</span>
+        <span>Power law decay of correlations</span>
+        </a></li><li>
+        <a class="is-flex" href="#Efficient-manipulation">
+        <span class="has-mr-6">1.3</span>
+        <span>Efficient manipulation</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Renormalisation-group-transformation">
         <span class="has-mr-6">2</span>
-        <span>Types of Tensor Network</span>
+        <span>Renormalisation group transformation</span>
         </a></li><li>
-        <a class="is-flex" href="#Tensor-Network-Algorithms">
+        <a class="is-flex" href="#Some-simple-MERA-states">
         <span class="has-mr-6">3</span>
-        <span>Tensor Network Algorithms</span>
+        <span>Some simple MERA states</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#MPS-TT-and-MPO-Algorithms">
+        <a class="is-flex" href="#Product-state">
         <span class="has-mr-6">3.1</span>
-        <span>MPS/TT and MPO Algorithms</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Elementary-MPS-TT-Algoithms">
-        <span class="has-mr-6">3.1.1</span>
-        <span>Elementary MPS/TT Algoithms</span>
+        <span>Product state</span>
         </a></li><li>
-        <a class="is-flex" href="#Solving-Linear-Equations-DMRG-etc">
-        <span class="has-mr-6">3.1.2</span>
-        <span>Solving Linear Equations (DMRG, etc)</span>
-        </a></li><li>
-        <a class="is-flex" href="#Summing-MPS-TT-Networks">
-        <span class="has-mr-6">3.1.3</span>
-        <span>Summing MPS/TT Networks</span>
-        </a></li><li>
-        <a class="is-flex" href="#Multiplying-an-MPS-TT-by-an-MPO">
-        <span class="has-mr-6">3.1.4</span>
-        <span>Multiplying an MPS/TT by an MPO</span>
-        </a></li><li>
-        <a class="is-flex" href="#Times-Evolution-Algorithms">
-        <span class="has-mr-6">3.1.5</span>
-        <span>Times Evolution Algorithms</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#TRG-Algorithm">
+        <a class="is-flex" href="#GHZ-state">
         <span class="has-mr-6">3.2</span>
-        <span>TRG Algorithm</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#Computing-with-Tensor-Networks">
-        <span class="has-mr-6">4</span>
-        <span>Computing with Tensor Networks</span>
+        <span>GHZ state</span>
         </a></li><li>
-        <a class="is-flex" href="#Applications-of-Tensor-Networks">
-        <span class="has-mr-6">5</span>
-        <span>Applications of Tensor Networks</span>
+        <a class="is-flex" href="#Cluster-state">
+        <span class="has-mr-6">3.3</span>
+        <span>Cluster state</span>
+        </a></li><li>
+        <a class="is-flex" href="#">
+        <span class="has-mr-6">3.4</span>
+        <span> </span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Problem">
+        <span class="has-mr-6">4</span>
+        <span>Problem</span>
         </a></li></ul>
             </div>
         </div>
@@ -866,7 +825,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="Tensor network learning framework" height="28">
+                    <img src="/images/hlzone.png" alt="Multiscale entanglement renormalisation ansatz" height="28">
                 
                 </a>
                 <p class="is-size-7">
