@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-03-03T06:26:25.000Z">
-<meta property="article:modified_time" content="2020-03-03T14:03:00.593Z">
+<meta property="article:modified_time" content="2020-03-03T14:11:23.500Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@ Cm \lor \neg Hm \lor \neg Wm</script><p>当然，在早上不一定去Costco，�
 <h2 id="SAT-Problem"><a href="#SAT-Problem" class="headerlink" title="SAT Problem"></a>SAT Problem</h2><p>SAT问题已经从许多不同的角度被研究过，在本教程中，我们将学习如何使用张量和张量网络库来解决这个问题。</p>
 <p>假设我们有四个变量:$X1$, $X2$, $X3$, $X4$。我们想找到所有四个$Xi$的真值，使CNF表达式为真:</p>
 <script type="math/tex; mode=display">
-(\neg X1 \lor \neg X3 \lor \neg X4) \land (X2 \lor X3 \lor \neg X4) \land (X1 \lor \neg X2 \lor X4) \land (X1 \lor X3 \or X4) \and (\neg X1 \lor X2 \or \neg X3)</script><p>首先，我们需要定义如何编码我们想要满足的输入CNF表达式:</p>
+(\neg X1 \lor \neg X3 \lor \neg X4) \land (X2 \lor X3 \lor \neg X4) \land (X1 \lor \neg X2 \lor X4) \land (X1 \lor X3 \lor X4) \land (\neg X1 \lor X2 \lor \neg X3)</script><p>首先，我们需要定义如何编码我们想要满足的输入CNF表达式:</p>
 <ul>
 <li>每个逻辑字面值都表示为正整数或负整数，其中$i$和$-i$分别对应于逻辑字面值$Xi$和$\neg Xi$。</li>
 <li>表达式中的每个子句表示为上面编码的元组，例如$(-1,-3,-4)$可以表示$(\neg X1 \lor \neg X3 \lor \neg X4)$。</li>
