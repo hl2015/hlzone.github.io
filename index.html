@@ -133,13 +133,64 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-06T14:30:27.000Z">2020-03-06</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 607 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/03/06/Honeywell/">Honeywell</a>
+            
+        </h1>
+        <div class="content">
+            <p>Demonstration of the QCCD trapped-ion quantum computer architecture </p>
+<p>arXiv:2003.01293v1  </p>
+<p>文章展示了QCCD(quantum charge-coupled device)离子阱量子计算系统的组成结构，并分别在组成级别和整体级别对系统进行了评估。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/03/06/Honeywell/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-03-05T13:53:46.000Z">2020-03-05</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 36 个字)
+                    14 分钟 读完 (大约 2030 个字)
                 </span>
                 
                 
@@ -155,7 +206,58 @@
             <a id="more"></a>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.qiskit.org/textbook/ch-quantum-hardware/measuring-quantum-volume.html">Qiskit Textbook—Measuring Quantum Volume</a></p>
 <p><a href="https://arxiv.org/pdf/1811.12926"><em>Validating quantum computers using randomized model circuits</em>, Phys. Rev. A <strong>100</strong>, 032328 (2019)</a></p>
-
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Quantum Volume是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系统上执行的最大的等宽度深度的随机线路。量子计算系统的操作保真度越高，关联性越高，有越大的校准过的门操作集合和越多的重写工具链会有越高的QV(Quantum Volume)。QV与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联和门操作并行度相联系。总的来说，QV是一个用于近期整体评估量子计算系统的一个实用方法，QV值越高，系统整体错误率就越低，性能就越好。</p>
+<p>那这样的评估方法真的有用吗？</p>
+<p>和randomized benchmark相比有什么优势？</p>
+<h2 id="为什么要使用QV？"><a href="#为什么要使用QV？" class="headerlink" title="为什么要使用QV？"></a>为什么要使用QV？</h2><p>对于NISQ阶段的量子计算系统，孤立的门错误率没法预测系统的整体行为。常用的方法，例如randomized benchmarking，state and process tomography，和gateset tomography可以给出少量比特的性能(常见的单独给出单比特操作和两比特操作的性能)，但是这些方法给出的错误率是孤立的，当组成一个系统时，用这些错误率并不能估计和预测系统的整体性能和行为，因为系统中存在一些潜在的比特间的相互关联。即系统性能与很多因素，例如比特关联性和门操作并行度也有关系，而不是仅仅由门错误率决定的。也许一个系统的门错误率很低，但是整体执行时存在一定强度的串扰，或者因为比特关联性的原因，算法线路转化需要很多额外的消耗，也会导致整个系统的性能达不到预期。因此需要一个更全面的评估方法，来整体的评估系统的性能。</p>
+<p>那么如果衡量一个系统作为通用量子计算机的能力呢？</p>
+<p>IBM提出了一个叫Quantum Volume的协议。它可以对不同的体系进行评估，只需要系统可以执行一组通用的量子门集合。QV与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联，门操作并行度，甚至还与转化线路的工具链相联系，因为它评估的是系统的整体性能。协议最后只给出一个简单的数字用于评估比较。可以说这个方法不涉及细节，从这一个数字也看不出系统哪里出现了问题，需要去改进，但它给出一个系统间比较的最一般的方式。</p>
+<h2 id="什么是QV？"><a href="#什么是QV？" class="headerlink" title="什么是QV？"></a>什么是QV？</h2><p>QV协议简单来说就是对系统使用量子线路模型执行随机的线路操作，尽可能地将比特纠缠在一起，然后再将实验得到的结果与模拟的结果进行比较。如果实验结果与模拟结果误差在可接受的范围内，那么就判定这样的的随机线路可以执行，如果系统可执行的最大等宽度深度的量子随机线路的宽度和深度为$n$，则系统的$QV= 2^n$。</p>
+<h3 id="QV线路图"><a href="#QV线路图" class="headerlink" title="QV线路图"></a>QV线路图</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200306171012.png" alt=""></p>
+<p>QV执行时的线路图如上</p>
+<p>对深度为$d$，宽度为$m$的随机线路，可以表示为序列$U = U^{(d)} \ldots U^{(2)} U^{(1)}$，其中每一层$U$为</p>
+<script type="math/tex; mode=display">
+U^{(t)} = U^{(t)}_{\pi_t (m' -1),\pi_t (m')} \otimes \cdots \otimes U^{(t)}_{\pi_t (1),\pi_t (2)}</script><p>作用在$m’ = 2 \lfloor n/2 \rfloor$个比特上。即先对$m$比特指标进行均匀的随机排列$\pi_t \in S_m$，再对每组随机排列好的比特$a,b$从$SU(4)$中随机选择操作执行$U_{a,b}^{(t)}$ 。</p>
+<h3 id="模型线路的输出结果评估"><a href="#模型线路的输出结果评估" class="headerlink" title="模型线路的输出结果评估"></a>模型线路的输出结果评估</h3><p>使用了重输出问题。理想的输出分布为</p>
+<script type="math/tex; mode=display">
+p_U (x) = |\langle x|U|0\rangle|^2</script><p>其中$x \in {0,1}^m$为可观测到的比特串。考虑以升序排列$p_U (x)$的输出概率集合为$p_0 \leq p_1 \cdots \leq p_{2^m -1}$。概率集合的中位数为$p_{med} = (p_{2^{(m-1)}}+p_{2^{(m-1)}-1})/2$，那么重输出为</p>
+<script type="math/tex; mode=display">
+H_U = \{x \in {0,1}^m 使得\ p_U(x) > p_{med} 被满足\}</script><p>重输出生产问题，就是生成一组字符串集合，其中$2/3$的字符串满足上面的条件。对理想设备，重输出概率会渐进到$(1+\ln2)/2 \sim 0.85$，如果系统是完全的去极化的它将会减少到$\sim 0.5$。</p>
+<p>为了评估大量的输出，QV使用目标系统提供的门集来实现模型电路。例如，模型电路可能需要重新配置，不仅要使用系统的门集，还要考虑可用交互的集，这可能需要额外的操作，比如交换门。</p>
+<p>对$m$比特的理想操作矩阵$U$，如果执行近似的矩阵$U’$，平均的门保真度为</p>
+<script type="math/tex; mode=display">
+F_{avg}(U,U') = \frac{|Tr(U^{\dagger}U')|^2/2^m+1}{2^m+1}</script><p>其中需要满足$1- F_{avg}(U,U’) \leq \epsilon \ll 1$。这给出了门操作转换时引入的误差。</p>
+<p>重输出的采样输出概率为</p>
+<script type="math/tex; mode=display">
+h_U = \sum_{x \in H_U} q_U(x)</script><p>为了确定输出是否是重的，采用直接从$U$计算出$H_U$的方法，这个方法的复杂度会随$m$指数增长。一个随机选择的深度$d$模型电路，观察到一个大输出的概率为$h_d = \int_U h_U dU$。理想情况下，我们可以使用一个大型设备的所有量子比特来估计这个量，但是NISQ设备的错误率非常高，所以从小型电路模型开始，然后向大型电路模型发展。我们感兴趣的是对于给定电路模型宽度$m \in [n]$可实现的最大模型电路深度$d(m)$，$d(m)$定义为满足条件$h_d &gt; 2/3$的最大深度$d$，即</p>
+<script type="math/tex; mode=display">
+h_1,h_2,\ldots,h_{d(m)} > 2/3  \ and \ h_{d(m)+1} \leq 2/3</script><p>检测是否为重输出，即评估是否$h_d &gt; 2/3$的算法如下</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\mathrm{function} \ IsHeavy(m,d;n_c >= 100,n_s)\\
+& \qquad    n_h \leftarrow 0 \\
+& \qquad    \mathrm{for} \quad n_c  \quad 重复执行 \\
+&    \qquad \quad    U \leftarrow 宽度为m,深度为d的随机模型线路 \\
+&    \qquad \quad    H_U \leftarrow 经典模拟得到的重集合U \\
+&    \qquad \quad    U' \leftarrow 为特定硬件编译U得到的近似操作矩阵  \\
+&    \qquad \quad    \mathrm{for}\quad n_s \quad 重复执行 \\
+&    \qquad \qquad    x \leftarrow 执行U'得到的结果 \\
+&    \qquad \qquad    如果 x \in H_U \quad 则 \quad n_h = n_h + 1 \\
+&    \qquad    \mathrm{return}  \quad \frac{n_h-2\sqrt{n_h(n_s -n_h/n_c)} }{n_cn_s} >2/3
+\end{aligned}</script><p>我们需要一个单一实数的度量，因为这样可以直接进行比较。数据${d(m)}$可以遍历$m$和$d$来获取。有了${d(m)}$后，可以选择任意与${d(m)}$相关的函数来评估设备的性能。QV同等重要地对待一个模型电路的宽度和深度，即描述可以执行的最大等宽深线路。</p>
+<p>QV的定义$V_Q$为</p>
+<script type="math/tex; mode=display">
+\log_2 V_Q = \mathop{argmax}_m \min (m,d(m))</script><p>考虑到模拟量子线路的一些复杂度问题，进一步定义$V_Q$为</p>
+<script type="math/tex; mode=display">
+V_Q = 2^{min(d,m)}</script><h2 id="执行QV"><a href="#执行QV" class="headerlink" title="执行QV"></a>执行QV</h2><p>在IBM Q的四个设备上执行了QV。</p>
+<ul>
+<li>5-qubit $Tenerife$</li>
+<li>16-qubit $Melbourne$</li>
+<li>20-qubit $Tokyo$</li>
+<li>20-qubit $Johannesburg$</li>
+</ul>
+<p>对$d=m$，取$m$为$2,3,4$，每个测试生成200个线路，来确定$V_Q$。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2>
         </div>
         
         
@@ -595,59 +697,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-22T03:24:59.000Z">2020-02-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    14 分钟 读完 (大约 2158 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/22/TensorNetwork-google/">TensorNetwork--a open source library</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>TensotNetwork</em>是Google开源的以tensorflow为后端用来执行张量网络算法的Python库。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/22/TensorNetwork-google/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -663,6 +712,8 @@
             <li><a class="pagination-link is-current" href="/">1</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
             
         </ul>
     </nav>
@@ -712,7 +763,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            20
+                            21
                         </p>
                     </a>
                 </div>
@@ -792,6 +843,25 @@
         
         <article class="media">
             
+            <a href="/2020/03/06/Honeywell/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Honeywell">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T14:30:27.000Z">2020-03-06</time></div>
+                    <a href="/2020/03/06/Honeywell/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Honeywell</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/05/Quantum-Volume/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Quantum Volume">
@@ -866,25 +936,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/28/Projected-entangled-pair-states/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Projected entangled pair states">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T14:22:43.000Z">2020-02-28</time></div>
-                    <a href="/2020/02/28/Projected-entangled-pair-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Projected entangled pair states</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -902,7 +953,7 @@
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1004,6 +1055,25 @@
         
         <article class="media">
             
+            <a href="/2020/03/06/Honeywell/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Honeywell">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T14:30:27.000Z">2020-03-06</time></div>
+                    <a href="/2020/03/06/Honeywell/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Honeywell</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/05/Quantum-Volume/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Quantum Volume">
@@ -1078,25 +1148,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/28/Projected-entangled-pair-states/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Projected entangled pair states">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T14:22:43.000Z">2020-02-28</time></div>
-                    <a href="/2020/02/28/Projected-entangled-pair-states/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Projected entangled pair states</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1114,7 +1165,7 @@
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
