@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-03-05T13:53:46.000Z">
-<meta property="article:modified_time" content="2020-03-06T14:45:03.878Z">
+<meta property="article:modified_time" content="2020-03-07T15:35:19.226Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Quantum Volume">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 分钟 读完 (大约 2030 个字)
+                    21 分钟 读完 (大约 3115 个字)
                 </span>
                 
                 
@@ -167,33 +167,37 @@
         <div class="content">
             <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.qiskit.org/textbook/ch-quantum-hardware/measuring-quantum-volume.html">Qiskit Textbook—Measuring Quantum Volume</a></p>
 <p><a href="https://arxiv.org/pdf/1811.12926"><em>Validating quantum computers using randomized model circuits</em>, Phys. Rev. A <strong>100</strong>, 032328 (2019)</a></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Quantum Volume是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系统上执行的最大的等宽度深度的随机线路。量子计算系统的操作保真度越高，关联性越高，有越大的校准过的门操作集合和越多的重写工具链会有越高的QV(Quantum Volume)。QV与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联和门操作并行度相联系。总的来说，QV是一个用于近期整体评估量子计算系统的一个实用方法，QV值越高，系统整体错误率就越低，性能就越好。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><em>Quantum Volume</em>是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系统上执行的最大等宽度深度的随机线路。量子计算系统的操作保真度越高，关联性越高，有越大的校准过的门操作集合和越多的重写工具链会有越高的<em>QV</em>(<em>Quantum Volume</em>)。<em>QV</em>与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联和门操作并行度相联系。总的来说，<em>QV</em>是一个用于近期整体评估量子计算系统的一个实用方法，<em>QV</em>值越高，系统整体错误率就越低，性能就越好。</p>
 <a id="more"></a>
-<p>那这样的评估方法真的有用吗？</p>
-<p>和randomized benchmark相比有什么优势？</p>
-<h2 id="为什么要使用QV？"><a href="#为什么要使用QV？" class="headerlink" title="为什么要使用QV？"></a>为什么要使用QV？</h2><p>对于NISQ阶段的量子计算系统，孤立的门错误率没法预测系统的整体行为。常用的方法，例如randomized benchmarking，state and process tomography，和gateset tomography可以给出少量比特的性能(常见的单独给出单比特操作和两比特操作的性能)，但是这些方法给出的错误率是孤立的，当组成一个系统时，用这些错误率并不能估计和预测系统的整体性能和行为，因为系统中存在一些潜在的比特间的相互关联。即系统性能与很多因素，例如比特关联性和门操作并行度也有关系，而不是仅仅由门错误率决定的。也许一个系统的门错误率很低，但是整体执行时存在一定强度的串扰，或者因为比特关联性的原因，算法线路转化需要很多额外的消耗，也会导致整个系统的性能达不到预期。因此需要一个更全面的评估方法，来整体的评估系统的性能。</p>
-<p>那么如果衡量一个系统作为通用量子计算机的能力呢？</p>
-<p>IBM提出了一个叫Quantum Volume的协议。它可以对不同的体系进行评估，只需要系统可以执行一组通用的量子门集合。QV与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联，门操作并行度，甚至还与转化线路的工具链相联系，因为它评估的是系统的整体性能。协议最后只给出一个简单的数字用于评估比较。可以说这个方法不涉及细节，从这一个数字也看不出系统哪里出现了问题，需要去改进，但它给出一个系统间比较的最一般的方式。</p>
-<h2 id="什么是QV？"><a href="#什么是QV？" class="headerlink" title="什么是QV？"></a>什么是QV？</h2><p>QV协议简单来说就是对系统使用量子线路模型执行随机的线路操作，尽可能地将比特纠缠在一起，然后再将实验得到的结果与模拟的结果进行比较。如果实验结果与模拟结果误差在可接受的范围内，那么就判定这样的的随机线路可以执行，如果系统可执行的最大等宽度深度的量子随机线路的宽度和深度为$n$，则系统的$QV= 2^n$。</p>
-<h3 id="QV线路图"><a href="#QV线路图" class="headerlink" title="QV线路图"></a>QV线路图</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200306171012.png" alt=""></p>
-<p>QV执行时的线路图如上</p>
+<h2 id="为什么要使用QV？"><a href="#为什么要使用QV？" class="headerlink" title="为什么要使用QV？"></a>为什么要使用QV？</h2><p><strong>常用方法无法得到系统的整体信息</strong></p>
+<p>对于<em>NISQ</em>阶段的量子计算系统，孤立的门错误率没法预测系统的整体行为。常用的方法，例如<em>randomized benchmarking</em>，<em>state and process tomography</em>，和<em>gateset tomography</em>可以给出少量比特的性能(常见的单独给出单比特操作和两比特操作的性能)，但是这些方法给出的错误率是孤立的，当组成一个系统时，用这些错误率并不能估计和预测系统的整体性能和行为，因为系统中存在一些潜在的比特间的相互关联。即系统性能与很多因素，例如比特关联性和门操作并行度也有关系，而不是仅仅由门错误率决定的。也许一个系统的门错误率很低，但是整体执行时存在一定强度的串扰，或者因为比特关联性的原因，算法线路转化需要很多额外的消耗，也会导致整个系统的性能达不到预期。因此需要一个更全面的评估方法，来整体的评估系统的性能。</p>
+<p><strong>系统全面的量化方法</strong></p>
+<p>IBM提出了一个叫<em>Quantum Volume</em>的协议。它可以对不同的体系进行评估，只需要系统可以执行一组通用的量子门集合。<em>QV</em>与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联，门操作并行度，甚至还与转化线路的工具链相联系，因为它评估的是系统的整体性能。协议最后只给出一个简单的数字用于评估比较。它不会给出系统的局部性能信息，从这一个数字也看不出系统哪里出现了问题，需要去改进，但它给出一个系统间比较的最一般的量化方式。</p>
+<h2 id="什么是QV？"><a href="#什么是QV？" class="headerlink" title="什么是QV？"></a>什么是QV？</h2><p><em>QV</em>协议简单来说就是对系统使用量子线路模型执行随机的线路操作，尽可能地将比特纠缠在一起，然后再将实验得到的结果与模拟的结果进行比较。如果实验结果与模拟结果误差在可接受的范围内，那么就判定这样的的随机线路可以执行，如果系统可执行的最大等宽度深度的量子随机线路的宽度和深度为$n$，则系统的$QV= 2^n$。</p>
+<h3 id="QV随机模型线路图"><a href="#QV随机模型线路图" class="headerlink" title="QV随机模型线路图"></a>QV随机模型线路图</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200306171012.png" style="zoom: 50%;" /></p>
+<p><em>QV</em>随机模型线路图如上</p>
 <p>对深度为$d$，宽度为$m$的随机线路，可以表示为序列$U = U^{(d)} \ldots U^{(2)} U^{(1)}$，其中每一层$U$为</p>
 <script type="math/tex; mode=display">
 U^{(t)} = U^{(t)}_{\pi_t (m' -1),\pi_t (m')} \otimes \cdots \otimes U^{(t)}_{\pi_t (1),\pi_t (2)}</script><p>作用在$m’ = 2 \lfloor n/2 \rfloor$个比特上。即先对$m$比特指标进行均匀的随机排列$\pi_t \in S_m$，再对每组随机排列好的比特$a,b$从$SU(4)$中随机选择操作执行$U_{a,b}^{(t)}$ 。</p>
-<h3 id="模型线路的输出结果评估"><a href="#模型线路的输出结果评估" class="headerlink" title="模型线路的输出结果评估"></a>模型线路的输出结果评估</h3><p>使用了重输出问题。理想的输出分布为</p>
+<p>经过这样的一系列操作，将比特尽量随机全局的纠缠到了一起，接下来介绍如何评估随机模型线路的输出结果。什么样的输出结果代表随机模型线路是成功执行的。</p>
+<h3 id="模型线路的输出结果评估"><a href="#模型线路的输出结果评估" class="headerlink" title="模型线路的输出结果评估"></a>模型线路的输出结果评估</h3><h4 id="重输出生成问题"><a href="#重输出生成问题" class="headerlink" title="重输出生成问题"></a>重输出生成问题</h4><p><em>QV</em>协议使用了重输出<em>(heavy output</em>)生成问题模型来评估线路输出结果。</p>
+<p>对于模型线路$U$，理想的输出分布为</p>
 <script type="math/tex; mode=display">
 p_U (x) = |\langle x|U|0\rangle|^2</script><p>其中$x \in {0,1}^m$为可观测到的比特串。考虑以升序排列$p_U (x)$的输出概率集合为$p_0 \leq p_1 \cdots \leq p_{2^m -1}$。概率集合的中位数为$p_{med} = (p_{2^{(m-1)}}+p_{2^{(m-1)}-1})/2$，那么重输出为</p>
 <script type="math/tex; mode=display">
-H_U = \{x \in {0,1}^m 使得\ p_U(x) > p_{med} 被满足\}</script><p>重输出生产问题，就是生成一组字符串集合，其中$2/3$的字符串满足上面的条件。对理想设备，重输出概率会渐进到$(1+\ln2)/2 \sim 0.85$，如果系统是完全的去极化的它将会减少到$\sim 0.5$。</p>
-<p>为了评估大量的输出，QV使用目标系统提供的门集来实现模型电路。例如，模型电路可能需要重新配置，不仅要使用系统的门集，还要考虑可用交互的集，这可能需要额外的操作，比如交换门。</p>
+H_U = \{x \in {0,1}^m 使得\ p_U(x) > p_{med} 被满足\}</script><p>重输出生成问题，就是生成一组字符串集合，其中$2/3$的字符串满足上面的条件。对理想设备，重输出概率会渐进到$(1+\ln2)/2 \sim 0.85$，如果系统是完全的去极化的它将会减少到$\sim 0.5$。即只要满足重输出条件，就代表模型线路是可以成功执行的。希望在最理想和最糟糕中取一个值，来定义相应的重输出条件，在这里定义的是$2/3$，下面会细说。</p>
+<h4 id="近似操作矩阵的转换的误差"><a href="#近似操作矩阵的转换的误差" class="headerlink" title="近似操作矩阵的转换的误差"></a>近似操作矩阵的转换的误差</h4><p>为了评估大量的输出，<em>QV</em>使用目标系统提供的门集来实现模型电路。例如，模型电路可能需要重新配置，不仅要使用系统的门集，还要考虑可用交互的集，这可能需要额外的操作，比如交换门。</p>
 <p>对$m$比特的理想操作矩阵$U$，如果执行近似的矩阵$U’$，平均的门保真度为</p>
 <script type="math/tex; mode=display">
 F_{avg}(U,U') = \frac{|Tr(U^{\dagger}U')|^2/2^m+1}{2^m+1}</script><p>其中需要满足$1- F_{avg}(U,U’) \leq \epsilon \ll 1$。这给出了门操作转换时引入的误差。</p>
+<h4 id="评估输出结果"><a href="#评估输出结果" class="headerlink" title="评估输出结果"></a>评估输出结果</h4><p>下面将定义重输出条件。</p>
 <p>重输出的采样输出概率为</p>
 <script type="math/tex; mode=display">
-h_U = \sum_{x \in H_U} q_U(x)</script><p>为了确定输出是否是重的，采用直接从$U$计算出$H_U$的方法，这个方法的复杂度会随$m$指数增长。一个随机选择的深度$d$模型电路，观察到一个大输出的概率为$h_d = \int_U h_U dU$。理想情况下，我们可以使用一个大型设备的所有量子比特来估计这个量，但是NISQ设备的错误率非常高，所以从小型电路模型开始，然后向大型电路模型发展。我们感兴趣的是对于给定电路模型宽度$m \in [n]$可实现的最大模型电路深度$d(m)$，$d(m)$定义为满足条件$h_d &gt; 2/3$的最大深度$d$，即</p>
+h_U = \sum_{x \in H_U} q_U(x)</script><p>为了确定输出是否是重的，采用直接从$U$计算出$H_U$的方法，这个方法的复杂度会随$m$指数增长。一个随机选择的深度$d$模型电路，观察到一个大输出的概率为$h_d = \int_U h_U dU$。理想情况下，我们可以使用一个大型设备的所有量子比特来估计这个量，但是NISQ设备的错误率非常高，所以从小型电路模型开始，然后向大型电路模型发展。</p>
+<p>我们感兴趣的是对于给定电路模型宽度$m \in [n]$可实现的最大模型电路深度$d(m)$，$d(m)$定义为满足条件$h_d &gt; 2/3$的最大深度$d$，即</p>
 <script type="math/tex; mode=display">
-h_1,h_2,\ldots,h_{d(m)} > 2/3  \ and \ h_{d(m)+1} \leq 2/3</script><p>检测是否为重输出，即评估是否$h_d &gt; 2/3$的算法如下</p>
+h_1,h_2,\ldots,h_{d(m)} > 2/3  \ and \ h_{d(m)+1} \leq 2/3</script><p>问题转换为找到满足重输出条件$h_d &gt; 2/3$的最大深度$d$。</p>
+<h4 id="具体算法"><a href="#具体算法" class="headerlink" title="具体算法"></a>具体算法</h4><p>检测是否为重输出，即评估是否满足$h_d &gt; 2/3$的算法如下</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &\mathrm{function} \ IsHeavy(m,d;n_c >= 100,n_s)\\
@@ -206,19 +210,63 @@ h_1,h_2,\ldots,h_{d(m)} > 2/3  \ and \ h_{d(m)+1} \leq 2/3</script><p>检测是�
 &    \qquad \qquad    x \leftarrow 执行U'得到的结果 \\
 &    \qquad \qquad    如果 x \in H_U \quad 则 \quad n_h = n_h + 1 \\
 &    \qquad    \mathrm{return}  \quad \frac{n_h-2\sqrt{n_h(n_s -n_h/n_c)} }{n_cn_s} >2/3
-\end{aligned}</script><p>我们需要一个单一实数的度量，因为这样可以直接进行比较。数据${d(m)}$可以遍历$m$和$d$来获取。有了${d(m)}$后，可以选择任意与${d(m)}$相关的函数来评估设备的性能。QV同等重要地对待一个模型电路的宽度和深度，即描述可以执行的最大等宽深线路。</p>
-<p>QV的定义$V_Q$为</p>
+\end{aligned}</script><h3 id="QV的定义"><a href="#QV的定义" class="headerlink" title="QV的定义"></a>QV的定义</h3><p>我们需要一个单一实数的度量，因为这样可以直接进行比较。数据${d(m)}$可以遍历$m$和$d$来获取。有了${d(m)}$后，可以选择任意与${d(m)}$相关的函数来评估设备的性能。<em>QV</em>同等重要地对待一个模型电路的宽度和深度，即描述可以执行的最大等宽深线路。</p>
+<p>因此<em>QV</em>的定义$V_Q$为</p>
 <script type="math/tex; mode=display">
 \log_2 V_Q = \mathop{argmax}_m \min (m,d(m))</script><p>考虑到模拟量子线路的一些复杂度问题，进一步定义$V_Q$为</p>
 <script type="math/tex; mode=display">
-V_Q = 2^{min(d,m)}</script><h2 id="执行QV"><a href="#执行QV" class="headerlink" title="执行QV"></a>执行QV</h2><p>在IBM Q的四个设备上执行了QV。</p>
+V_Q = 2^{min(d,m)}</script><h2 id="QV的评估"><a href="#QV的评估" class="headerlink" title="QV的评估"></a>QV的评估</h2><h3 id="具体设备上的执行"><a href="#具体设备上的执行" class="headerlink" title="具体设备上的执行"></a>具体设备上的执行</h3><p>在IBM Q的四个设备上执行了QV。</p>
 <ul>
 <li>5-qubit $Tenerife$</li>
 <li>16-qubit $Melbourne$</li>
 <li>20-qubit $Tokyo$</li>
 <li>20-qubit $Johannesburg$</li>
 </ul>
-<p>对$d=m$，取$m$为$2,3,4$，每个测试生成200个线路，来确定$V_Q$。</p>
+<p>对$d=m$，取$m$为$2,3,4$，每个测试生成200个线路，来确定$V_Q$。数据如图表所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307162702.png" alt=""></p>
+<p>如果$h_d &gt; 0.68$，表示结果为重输出，表示随机模型线路是可以成功执行的，那么$V_Q = 2^{\min(d,m)}$。$\ast$代表结果与$0.68$很接近，进行了更多次的实验，保证结果处于一定的置信区间内。</p>
+<p>可以从上表中看出四个设备的$V_Q$分别为</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Tenerife</th>
+<th style="text-align:center">Melbourne</th>
+<th style="text-align:center">Tokyo</th>
+<th style="text-align:center">Johannesburg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$V_Q$</td>
+<td style="text-align:center">$2^2=4$</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">$2^3 = 8$</td>
+<td style="text-align:center">$2^4 = 16$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>设备$Tokyo$和$Johannesburg$具体的测试图如下:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307162100.png" style="zoom: 33%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307165617.png" style="zoom:33%;" /></p>
+<h3 id="不同编译方式的影响"><a href="#不同编译方式的影响" class="headerlink" title="不同编译方式的影响"></a>不同编译方式的影响</h3><p>论文还比较了在$Tokyo$上使用不同的优化编译方式的影响</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307173444.png" alt=""></p>
+<p>上图显示的是$m=d=4$时的$\hat{h}_d$。近似分解采用$\mathrm{CX}$门的错误率作为参数，表示将线路分解为$\mathrm{SU}(4)$的基本单元时可接受的错误率。发现$\hat{h}_d$会随着$\mathrm{CX}$门数量的减少而略微增加。当使用$1\%$错误率的$\mathrm{CX}$近似时可以得到最好的结果$\hat{h}_d = 0.649(0.005)$。</p>
+<h3 id="连通性的影响"><a href="#连通性的影响" class="headerlink" title="连通性的影响"></a>连通性的影响</h3><p>那么在一个连通性有限的系统中，QV是如何随着门错误率增加而变化的呢？</p>
+<p>考虑一个宽度为$m$的随机模型线路在方形格点排布的$m$比特上执行，$m$比特先尽量排布为正方形，额外的比特优先被添加到新的右列，然后再添加到新的底行。文章近似的通过假定错误都是独立且随机的来模拟深度为$\widetilde{d}(m)$的随机模型线路，所以线路体积满足下式时计算失败的概率很高：</p>
+<script type="math/tex; mode=display">
+m \hat{d} (m) \approx \frac{1}{\epsilon_{eff}(m)}</script><p>将两比特门的平均有效误差估计代入上式。估计$\epsilon_{eff}(m) =(a\sqrt m + b)\epsilon$正比于两比特的错误率</p>
+<script type="math/tex; mode=display">
+\epsilon_{eff,loop}(m) = (a'm+b')\epsilon</script><p>给定了门错误率$\epsilon$，就可以使用上述的表达式来计算相应的结构的QV。</p>
+<p>下图为各结构达到一定QV所接受的最大门错误率。评估使用了去极化噪声模型来模拟，两比特错误率为$\epsilon$，单比特错误率为$\epsilon/10$，假定了良好的测量。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307204617.png" alt=""></p>
+<p>可以看到全连接模型所容忍的门操作错误率更高一些。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307214502.png" style="zoom: 50%;" /></p>
+<p>这些模拟为QV在不同的量子计算体系结构上执行的表现给出了一定参考。例如，对于离子阱体系结构，将收益于其良好的全联通性，有较高的QV。根据上表，如果其两比特门错误率和测量错误率小于$0.01$，将会有大约$\log_2 V_Q =6$的$V_Q$，当然这是对如图所示的12比特全联通结构来说的。对于离子阱体系，因为离子间的关联，多比特的测量错误率会大于孤立测量到的两比特门错误率，因此QV为多比特系统给出了一个更可靠的评估。</p>
+<p>同样的，连通性更高的超导系统也有更高的QV，但这是建立在增加连通性不会增加太多门错误率的前提下。</p>
+<h2 id="动手运行QV程序"><a href="#动手运行QV程序" class="headerlink" title="动手运行QV程序"></a>动手运行QV程序</h2><p>参考Qiskit的教程</p>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2>
         </div>
         
@@ -368,20 +416,56 @@ V_Q = 2^{min(d,m)}</script><h2 id="执行QV"><a href="#执行QV" class="headerli
         <span class="has-mr-6">4</span>
         <span>什么是QV？</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#QV线路图">
+        <a class="is-flex" href="#QV随机模型线路图">
         <span class="has-mr-6">4.1</span>
-        <span>QV线路图</span>
+        <span>QV随机模型线路图</span>
         </a></li><li>
         <a class="is-flex" href="#模型线路的输出结果评估">
         <span class="has-mr-6">4.2</span>
         <span>模型线路的输出结果评估</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#重输出生成问题">
+        <span class="has-mr-6">4.2.1</span>
+        <span>重输出生成问题</span>
+        </a></li><li>
+        <a class="is-flex" href="#近似操作矩阵的转换的误差">
+        <span class="has-mr-6">4.2.2</span>
+        <span>近似操作矩阵的转换的误差</span>
+        </a></li><li>
+        <a class="is-flex" href="#评估输出结果">
+        <span class="has-mr-6">4.2.3</span>
+        <span>评估输出结果</span>
+        </a></li><li>
+        <a class="is-flex" href="#具体算法">
+        <span class="has-mr-6">4.2.4</span>
+        <span>具体算法</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#执行QV">
+        <a class="is-flex" href="#QV的定义">
+        <span class="has-mr-6">4.3</span>
+        <span>QV的定义</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#QV的评估">
         <span class="has-mr-6">5</span>
-        <span>执行QV</span>
+        <span>QV的评估</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#具体设备上的执行">
+        <span class="has-mr-6">5.1</span>
+        <span>具体设备上的执行</span>
+        </a></li><li>
+        <a class="is-flex" href="#不同编译方式的影响">
+        <span class="has-mr-6">5.2</span>
+        <span>不同编译方式的影响</span>
+        </a></li><li>
+        <a class="is-flex" href="#连通性的影响">
+        <span class="has-mr-6">5.3</span>
+        <span>连通性的影响</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#动手运行QV程序">
+        <span class="has-mr-6">6</span>
+        <span>动手运行QV程序</span>
         </a></li><li>
         <a class="is-flex" href="#附录">
-        <span class="has-mr-6">6</span>
+        <span class="has-mr-6">7</span>
         <span>附录</span>
         </a></li></ul>
             </div>
