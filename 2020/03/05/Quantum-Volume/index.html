@@ -10,16 +10,16 @@
 <title>Quantum Volume - hlzone</title>
 
 
-    <meta name="description" content="参考资料Qiskit Textbook—Measuring Quantum Volume Validating quantum computers using randomized model circuits, Phys. Rev. A 100, 032328 (2019) 概述Quantum Volume是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系">
+    <meta name="description" content="概述Quantum Volume是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系统上执行的最大等宽度深度的随机线路。量子计算系统的操作保真度越高，关联性越高，有越大的校准过的门操作集合和越多的重写工具链会有越高的QV(Quantum Volume)。QV与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联和门操作并行度相联系。总的来说，QV是一个用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quantum Volume">
 <meta property="og:url" content="http://yoursite.com/2020/03/05/Quantum-Volume/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="参考资料Qiskit Textbook—Measuring Quantum Volume Validating quantum computers using randomized model circuits, Phys. Rev. A 100, 032328 (2019) 概述Quantum Volume是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系">
+<meta property="og:description" content="概述Quantum Volume是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系统上执行的最大等宽度深度的随机线路。量子计算系统的操作保真度越高，关联性越高，有越大的校准过的门操作集合和越多的重写工具链会有越高的QV(Quantum Volume)。QV与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联和门操作并行度相联系。总的来说，QV是一个用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-03-05T13:53:46.000Z">
-<meta property="article:modified_time" content="2020-03-07T15:35:19.226Z">
+<meta property="article:modified_time" content="2020-03-08T12:54:38.092Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="Quantum Volume">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    21 分钟 读完 (大约 3115 个字)
+                    29 分钟 读完 (大约 4397 个字)
                 </span>
                 
                 
@@ -165,9 +165,7 @@
             
         </h1>
         <div class="content">
-            <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.qiskit.org/textbook/ch-quantum-hardware/measuring-quantum-volume.html">Qiskit Textbook—Measuring Quantum Volume</a></p>
-<p><a href="https://arxiv.org/pdf/1811.12926"><em>Validating quantum computers using randomized model circuits</em>, Phys. Rev. A <strong>100</strong>, 032328 (2019)</a></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><em>Quantum Volume</em>是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系统上执行的最大等宽度深度的随机线路。量子计算系统的操作保真度越高，关联性越高，有越大的校准过的门操作集合和越多的重写工具链会有越高的<em>QV</em>(<em>Quantum Volume</em>)。<em>QV</em>与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联和门操作并行度相联系。总的来说，<em>QV</em>是一个用于近期整体评估量子计算系统的一个实用方法，<em>QV</em>值越高，系统整体错误率就越低，性能就越好。</p>
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><em>Quantum Volume</em>是一个用于评估近期量子计算系统($n \lesssim 50$)性能的协议。它表示可以在系统上执行的最大等宽度深度的随机线路。量子计算系统的操作保真度越高，关联性越高，有越大的校准过的门操作集合和越多的重写工具链会有越高的<em>QV</em>(<em>Quantum Volume</em>)。<em>QV</em>与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联和门操作并行度相联系。总的来说，<em>QV</em>是一个用于近期整体评估量子计算系统的一个实用方法，<em>QV</em>值越高，系统整体错误率就越低，性能就越好。</p>
 <a id="more"></a>
 <h2 id="为什么要使用QV？"><a href="#为什么要使用QV？" class="headerlink" title="为什么要使用QV？"></a>为什么要使用QV？</h2><p><strong>常用方法无法得到系统的整体信息</strong></p>
 <p>对于<em>NISQ</em>阶段的量子计算系统，孤立的门错误率没法预测系统的整体行为。常用的方法，例如<em>randomized benchmarking</em>，<em>state and process tomography</em>，和<em>gateset tomography</em>可以给出少量比特的性能(常见的单独给出单比特操作和两比特操作的性能)，但是这些方法给出的错误率是孤立的，当组成一个系统时，用这些错误率并不能估计和预测系统的整体性能和行为，因为系统中存在一些潜在的比特间的相互关联。即系统性能与很多因素，例如比特关联性和门操作并行度也有关系，而不是仅仅由门错误率决定的。也许一个系统的门错误率很低，但是整体执行时存在一定强度的串扰，或者因为比特关联性的原因，算法线路转化需要很多额外的消耗，也会导致整个系统的性能达不到预期。因此需要一个更全面的评估方法，来整体的评估系统的性能。</p>
@@ -255,19 +253,65 @@ V_Q = 2^{min(d,m)}</script><h2 id="QV的评估"><a href="#QV的评估" class="he
 <p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307173444.png" alt=""></p>
 <p>上图显示的是$m=d=4$时的$\hat{h}_d$。近似分解采用$\mathrm{CX}$门的错误率作为参数，表示将线路分解为$\mathrm{SU}(4)$的基本单元时可接受的错误率。发现$\hat{h}_d$会随着$\mathrm{CX}$门数量的减少而略微增加。当使用$1\%$错误率的$\mathrm{CX}$近似时可以得到最好的结果$\hat{h}_d = 0.649(0.005)$。</p>
 <h3 id="连通性的影响"><a href="#连通性的影响" class="headerlink" title="连通性的影响"></a>连通性的影响</h3><p>那么在一个连通性有限的系统中，QV是如何随着门错误率增加而变化的呢？</p>
-<p>考虑一个宽度为$m$的随机模型线路在方形格点排布的$m$比特上执行，$m$比特先尽量排布为正方形，额外的比特优先被添加到新的右列，然后再添加到新的底行。文章近似的通过假定错误都是独立且随机的来模拟深度为$\widetilde{d}(m)$的随机模型线路，所以线路体积满足下式时计算失败的概率很高：</p>
+<p>文章近似的通过假定错误都是独立且随机的来模拟深度为$\widetilde{d}(m)$的随机模型线路，所以线路体积满足下式时计算失败的概率很高：</p>
 <script type="math/tex; mode=display">
-m \hat{d} (m) \approx \frac{1}{\epsilon_{eff}(m)}</script><p>将两比特门的平均有效误差估计代入上式。估计$\epsilon_{eff}(m) =(a\sqrt m + b)\epsilon$正比于两比特的错误率</p>
-<script type="math/tex; mode=display">
-\epsilon_{eff,loop}(m) = (a'm+b')\epsilon</script><p>给定了门错误率$\epsilon$，就可以使用上述的表达式来计算相应的结构的QV。</p>
+m \hat{d} (m) \approx \frac{1}{\epsilon_{eff}(m)}</script><p>将两比特门的平均有效误差估计代入上式，可计算出相应的线路体积。</p>
+<p>方格点模型的误差为$\epsilon_{eff}(m) =(a\sqrt m + b)\epsilon$</p>
+<p>循环点模型的误差为$\epsilon_{eff,loop}(m) = (a’m+b’)\epsilon$</p>
+<p>给定了门错误率$\epsilon$，就可以使用上述的表达式来计算相应的结构的QV。</p>
 <p>下图为各结构达到一定QV所接受的最大门错误率。评估使用了去极化噪声模型来模拟，两比特错误率为$\epsilon$，单比特错误率为$\epsilon/10$，假定了良好的测量。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307204617.png" alt=""></p>
-<p>可以看到全连接模型所容忍的门操作错误率更高一些。</p>
+<p>这是数值模拟的结果，可以看到全连接模型所容忍的门操作错误率更高一些。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200307214502.png" style="zoom: 50%;" /></p>
-<p>这些模拟为QV在不同的量子计算体系结构上执行的表现给出了一定参考。例如，对于离子阱体系结构，将收益于其良好的全联通性，有较高的QV。根据上表，如果其两比特门错误率和测量错误率小于$0.01$，将会有大约$\log_2 V_Q =6$的$V_Q$，当然这是对如图所示的12比特全联通结构来说的。对于离子阱体系，因为离子间的关联，多比特的测量错误率会大于孤立测量到的两比特门错误率，因此QV为多比特系统给出了一个更可靠的评估。</p>
+<p>上图给出了模型结果和数值模拟结果的比较。这些模拟为QV在不同的量子计算体系结构上执行的表现给出了一定参考。例如，对于离子阱体系结构，将收益于其良好的全联通性，有较高的QV。根据上表，如果其两比特门错误率和测量错误率小于$0.01$，将会有大约$\log_2 V_Q =6$的$V_Q$，当然这是对如图所示的12比特全联通结构来说的。对于离子阱体系，因为离子间的关联，多比特的测量错误率会大于孤立测量到的两比特门错误率，因此QV为多比特系统给出了一个更可靠的评估。</p>
 <p>同样的，连通性更高的超导系统也有更高的QV，但这是建立在增加连通性不会增加太多门错误率的前提下。</p>
-<h2 id="动手运行QV程序"><a href="#动手运行QV程序" class="headerlink" title="动手运行QV程序"></a>动手运行QV程序</h2><p>参考Qiskit的教程</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2>
+<h2 id="动手运行QV程序"><a href="#动手运行QV程序" class="headerlink" title="动手运行QV程序"></a>动手运行QV程序</h2><p>本节参考的是Qiskit教程</p>
+<p><a href="https://www.qiskit.org/textbook/ch-quantum-hardware/measuring-quantum-volume.html">Qiskit Textbook—Measuring Quantum Volume</a></p>
+<p>qiskit.ignis中包含了quantum_volume函数，可以直接调用，执行QV程序</p>
+<h3 id="预备"><a href="#预备" class="headerlink" title="预备"></a>预备</h3><p>Import Qiskit 类和qv函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line">%config InlineBackend.figure_format = <span class="string">'svg'</span> <span class="comment"># Makes the images look nice</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">#Import Qiskit classes</span></span><br><span class="line"><span class="keyword">import</span> qiskit</span><br><span class="line"><span class="keyword">from</span> qiskit.providers.aer.noise <span class="keyword">import</span> NoiseModel</span><br><span class="line"><span class="keyword">from</span> qiskit.providers.aer.noise.errors.standard_errors <span class="keyword">import</span> depolarizing_error, thermal_relaxation_error</span><br><span class="line"></span><br><span class="line"><span class="comment">#Import the qv function</span></span><br><span class="line"><span class="keyword">import</span> qiskit.ignis.verification.quantum_volume <span class="keyword">as</span> qv</span><br></pre></td></tr></table></figure>
+<h3 id="第一步：生成QV随机模型线路"><a href="#第一步：生成QV随机模型线路" class="headerlink" title="第一步：生成QV随机模型线路"></a>第一步：生成QV随机模型线路</h3><p>以6个比特$Q0,Q1,Q3,Q5,Q7,Q10$的执行为例</p>
+<p>生成一系列的子序列，ntrials为为每个子序列生成的随机模型线路数量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># qubit_lists: list of list of qubit subsets to generate QV circuits</span></span><br><span class="line">qubit_lists = [[<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">10</span>]]</span><br><span class="line"><span class="comment"># ntrials: Number of random circuits to create for each subset</span></span><br><span class="line">ntrials = <span class="number">50</span></span><br></pre></td></tr></table></figure>
+<p>生成随机模型线路可以直接调用qv函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qv_circs, qv_circs_nomeas = qv.qv_circuits(qubit_lists, ntrials)</span><br></pre></td></tr></table></figure>
+<p>可以输出看看第一组序列的第一个随机模型线路是什么样的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#pass the first trial of the nomeas through the transpiler to illustrate the circuit</span></span><br><span class="line">qv_circs_nomeas[<span class="number">0</span>] = qiskit.compiler.transpile(qv_circs_nomeas[<span class="number">0</span>], basis_gates=[<span class="string">'u1'</span>,<span class="string">'u2'</span>,<span class="string">'u3'</span>,<span class="string">'cx'</span>])</span><br><span class="line"></span><br><span class="line">print(qv_circs_nomeas[<span class="number">0</span>][<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>执行结果如下，可以看到生成了这样的一个线路图，这只是第一组线路的第一个随机线路图。因为生成的是等宽等深线路，第一组比特数量为3，线路深度也为3，这里的线路深度3指的是3组$U^{(t)}_{\pi_t (m’ -1),\pi_t (m’)}$。<br><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200308170823.png" alt=""></p>
+<p>上图已经执行了qiskit.compiler.transpile分解到具体的basis_gates上显示</p>
+<p>未转化前线路如下图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200308185655.png" style="zoom: 50%;" /></p>
+<p>可以看到有3个Unitary</p>
+<h3 id="第二步：模拟理想QV线路"><a href="#第二步：模拟理想QV线路" class="headerlink" title="第二步：模拟理想QV线路"></a>第二步：模拟理想QV线路</h3><p>QV方法需要知道线路的理想输出结果，因此使用了qiskit.Aer中的模拟器来模拟</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#The Unitary is an identity (with a global phase)</span></span><br><span class="line">backend = qiskit.Aer.get_backend(<span class="string">'statevector_simulator'</span>)</span><br><span class="line">ideal_results = []</span><br><span class="line"><span class="keyword">for</span> trial <span class="keyword">in</span> range(ntrials):</span><br><span class="line">    print(<span class="string">'Simulating trial %d'</span>%trial)</span><br><span class="line">    ideal_results.append(qiskit.execute(qv_circs_nomeas[trial], backend=backend).result())</span><br></pre></td></tr></table></figure>
+<p>理想输出结果存储在ideal_results(list)中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qv_fitter = qv.QVFitter(qubit_lists=qubit_lists)</span><br><span class="line">qv_fitter.add_statevectors(ideal_results)</span><br></pre></td></tr></table></figure>
+<p>再输入到qv_fitter中计算相应的qv各项参数</p>
+<h3 id="第三步：计算理想重输出"><a href="#第三步：计算理想重输出" class="headerlink" title="第三步：计算理想重输出"></a>第三步：计算理想重输出</h3><p>以trial 0为例，直接调用qv_fitter._heavy_outputs计算重输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> qubit_list <span class="keyword">in</span> qubit_lists:</span><br><span class="line">    l = len(qubit_list)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'qv_depth_'</span>+str(l)+<span class="string">'_trial_0:'</span>, qv_fitter._heavy_outputs[<span class="string">'qv_depth_'</span>+str(l)+<span class="string">'_trial_0'</span>])</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200308194024.png" alt=""></p>
+<p>再计算理想重输出相应的概率，接近于$0.85$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> qubit_list <span class="keyword">in</span> qubit_lists:</span><br><span class="line">    l = len(qubit_list)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'qv_depth_'</span>+str(l)+<span class="string">'_trial_0:'</span>, qv_fitter._heavy_output_prob_ideal[<span class="string">'qv_depth_'</span>+str(l)+<span class="string">'_trial_0'</span>])</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200308194140.png" alt=""></p>
+<h3 id="第四步：定义噪声模型"><a href="#第四步：定义噪声模型" class="headerlink" title="第四步：定义噪声模型"></a>第四步：定义噪声模型</h3><p>这部分为含噪声模拟定义噪声模型。为了模拟衰减，为CNOT和U门添加去极化噪声概率。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">noise_model = NoiseModel()</span><br><span class="line">p1Q = <span class="number">0.002</span></span><br><span class="line">p2Q = <span class="number">0.02</span></span><br><span class="line">noise_model.add_all_qubit_quantum_error(depolarizing_error(p1Q, <span class="number">1</span>), <span class="string">'u2'</span>)</span><br><span class="line">noise_model.add_all_qubit_quantum_error(depolarizing_error(<span class="number">2</span>*p1Q, <span class="number">1</span>), <span class="string">'u3'</span>)</span><br><span class="line">noise_model.add_all_qubit_quantum_error(depolarizing_error(p2Q, <span class="number">2</span>), <span class="string">'cx'</span>)</span><br><span class="line"><span class="comment">#noise_model = None</span></span><br></pre></td></tr></table></figure>
+<p>用噪声模型计算相应的线路输出结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">backend = qiskit.Aer.get_backend(<span class="string">'qasm_simulator'</span>)</span><br><span class="line">basis_gates = [<span class="string">'u1'</span>,<span class="string">'u2'</span>,<span class="string">'u3'</span>,<span class="string">'cx'</span>] <span class="comment"># use U,CX for now</span></span><br><span class="line">shots = <span class="number">1024</span></span><br><span class="line">exp_results = []</span><br><span class="line"><span class="keyword">for</span> trial <span class="keyword">in</span> range(ntrials):</span><br><span class="line">    print(<span class="string">'Running trial %d'</span>%trial)</span><br><span class="line">    exp_results.append(qiskit.execute(qv_circs[trial], basis_gates=basis_gates, backend=backend, noise_model=noise_model, backend_options=&#123;<span class="string">'max_parallel_experiments'</span>: <span class="number">0</span>&#125;).result())</span><br></pre></td></tr></table></figure>
+<p>将结果输入到qv_fitter可计算含噪声模型的重输出计数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">qv_fitter.add_data(exp_results)</span><br><span class="line"><span class="keyword">for</span> qubit_list <span class="keyword">in</span> qubit_lists:</span><br><span class="line">    l = len(qubit_list)</span><br><span class="line">    <span class="comment">#print (qv_fitter._heavy_output_counts)</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'qv_depth_'</span>+str(l)+<span class="string">'_trial_0:'</span>, qv_fitter._heavy_output_counts[<span class="string">'qv_depth_'</span>+str(l)+<span class="string">'_trial_0'</span>])</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200308200739.png" style="zoom:80%;" /></p>
+<h3 id="第五步：计算可运行线路的深度"><a href="#第五步：计算可运行线路的深度" class="headerlink" title="第五步：计算可运行线路的深度"></a>第五步：计算可运行线路的深度</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">ax = plt.gca()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the essence by calling plot_rb_data</span></span><br><span class="line">qv_fitter.plot_qv_data(ax=ax, show_plt=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add title and label</span></span><br><span class="line">ax.set_title(<span class="string">'Quantum Volume for up to %d Qubits \n and %d Trials'</span>%(len(qubit_lists[<span class="number">-1</span>]), ntrials), fontsize=<span class="number">18</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200308201158.png" alt=""></p>
+<p>上图分别为3，4，5，6比特的重输出结果，结果可以看到理想情况下重输出结果解决$0.85$，在噪声模型下3，4，5比特结果都大于$0.68$，代表随机线路模型是可执行的。6比特的结果显著的小于$0.68$，代表不可执行。</p>
+<h3 id="第六步：计算Quantum-Volume"><a href="#第六步：计算Quantum-Volume" class="headerlink" title="第六步：计算Quantum Volume"></a>第六步：计算Quantum Volume</h3><p>我们列出每个深度的统计数据。对于每个深度，我们列出深度是否成功，以及它的置信区间。对于成功执行的深度，置信区间必须满足$&gt; 97.5 \%$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">qv_success_list = qv_fitter.qv_success()</span><br><span class="line">qv_list = qv_fitter.ydata</span><br><span class="line">QV = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> qidx, qubit_list <span class="keyword">in</span> enumerate(qubit_lists):</span><br><span class="line">    <span class="keyword">if</span> qv_list[<span class="number">0</span>][qidx]&gt;<span class="number">2</span>/<span class="number">3</span>:</span><br><span class="line">        <span class="keyword">if</span> qv_success_list[qidx][<span class="number">0</span>]:</span><br><span class="line">            print(<span class="string">"Width/depth %d greater than 2/3 (%f) with confidence %f (successful). Quantum volume %d"</span>%</span><br><span class="line">                  (len(qubit_list),qv_list[<span class="number">0</span>][qidx],qv_success_list[qidx][<span class="number">1</span>],qv_fitter.quantum_volume()[qidx]))</span><br><span class="line">            QV = qv_fitter.quantum_volume()[qidx]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"Width/depth %d greater than 2/3 (%f) with confidence %f (unsuccessful)."</span>%</span><br><span class="line">                  (len(qubit_list),qv_list[<span class="number">0</span>][qidx],qv_success_list[qidx][<span class="number">1</span>]))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"Width/depth %d less than 2/3 (unsuccessful)."</span>%len(qubit_list))</span><br><span class="line">        </span><br><span class="line"><span class="keyword">print</span> (<span class="string">"The Quantum Volume is:"</span>, QV)</span><br></pre></td></tr></table></figure>
+<p>运行结果如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200308205039.png" alt=""></p>
+<p>恭喜你！成功的计算出了线路的$QV=8$。</p>
+<p>不过这只是模拟线路的结果，要得到真实实验的数据，可以将qiskit.Aer.get_backend后端’qasm_simulator’换为真实的IBM Q设备，就可以得到IBM Q设备的QV数据了。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.qiskit.org/textbook/ch-quantum-hardware/measuring-quantum-volume.html">Qiskit Textbook—Measuring Quantum Volume</a></p>
+<p><a href="https://arxiv.org/pdf/1811.12926"><em>Validating quantum computers using randomized model circuits</em>, Phys. Rev. A <strong>100</strong>, 032328 (2019)</a></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -400,73 +444,97 @@ m \hat{d} (m) \approx \frac{1}{\epsilon_{eff}(m)}</script><p>将两比特门的�
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#参考资料">
-        <span class="has-mr-6">1</span>
-        <span>参考资料</span>
-        </a></li><li>
         <a class="is-flex" href="#概述">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">1</span>
         <span>概述</span>
         </a></li><li>
         <a class="is-flex" href="#为什么要使用QV？">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">2</span>
         <span>为什么要使用QV？</span>
         </a></li><li>
         <a class="is-flex" href="#什么是QV？">
-        <span class="has-mr-6">4</span>
+        <span class="has-mr-6">3</span>
         <span>什么是QV？</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#QV随机模型线路图">
-        <span class="has-mr-6">4.1</span>
+        <span class="has-mr-6">3.1</span>
         <span>QV随机模型线路图</span>
         </a></li><li>
         <a class="is-flex" href="#模型线路的输出结果评估">
-        <span class="has-mr-6">4.2</span>
+        <span class="has-mr-6">3.2</span>
         <span>模型线路的输出结果评估</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#重输出生成问题">
-        <span class="has-mr-6">4.2.1</span>
+        <span class="has-mr-6">3.2.1</span>
         <span>重输出生成问题</span>
         </a></li><li>
         <a class="is-flex" href="#近似操作矩阵的转换的误差">
-        <span class="has-mr-6">4.2.2</span>
+        <span class="has-mr-6">3.2.2</span>
         <span>近似操作矩阵的转换的误差</span>
         </a></li><li>
         <a class="is-flex" href="#评估输出结果">
-        <span class="has-mr-6">4.2.3</span>
+        <span class="has-mr-6">3.2.3</span>
         <span>评估输出结果</span>
         </a></li><li>
         <a class="is-flex" href="#具体算法">
-        <span class="has-mr-6">4.2.4</span>
+        <span class="has-mr-6">3.2.4</span>
         <span>具体算法</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#QV的定义">
-        <span class="has-mr-6">4.3</span>
+        <span class="has-mr-6">3.3</span>
         <span>QV的定义</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#QV的评估">
-        <span class="has-mr-6">5</span>
+        <span class="has-mr-6">4</span>
         <span>QV的评估</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#具体设备上的执行">
-        <span class="has-mr-6">5.1</span>
+        <span class="has-mr-6">4.1</span>
         <span>具体设备上的执行</span>
         </a></li><li>
         <a class="is-flex" href="#不同编译方式的影响">
-        <span class="has-mr-6">5.2</span>
+        <span class="has-mr-6">4.2</span>
         <span>不同编译方式的影响</span>
         </a></li><li>
         <a class="is-flex" href="#连通性的影响">
-        <span class="has-mr-6">5.3</span>
+        <span class="has-mr-6">4.3</span>
         <span>连通性的影响</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#动手运行QV程序">
-        <span class="has-mr-6">6</span>
+        <span class="has-mr-6">5</span>
         <span>动手运行QV程序</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#预备">
+        <span class="has-mr-6">5.1</span>
+        <span>预备</span>
         </a></li><li>
-        <a class="is-flex" href="#附录">
-        <span class="has-mr-6">7</span>
-        <span>附录</span>
+        <a class="is-flex" href="#第一步：生成QV随机模型线路">
+        <span class="has-mr-6">5.2</span>
+        <span>第一步：生成QV随机模型线路</span>
+        </a></li><li>
+        <a class="is-flex" href="#第二步：模拟理想QV线路">
+        <span class="has-mr-6">5.3</span>
+        <span>第二步：模拟理想QV线路</span>
+        </a></li><li>
+        <a class="is-flex" href="#第三步：计算理想重输出">
+        <span class="has-mr-6">5.4</span>
+        <span>第三步：计算理想重输出</span>
+        </a></li><li>
+        <a class="is-flex" href="#第四步：定义噪声模型">
+        <span class="has-mr-6">5.5</span>
+        <span>第四步：定义噪声模型</span>
+        </a></li><li>
+        <a class="is-flex" href="#第五步：计算可运行线路的深度">
+        <span class="has-mr-6">5.6</span>
+        <span>第五步：计算可运行线路的深度</span>
+        </a></li><li>
+        <a class="is-flex" href="#第六步：计算Quantum-Volume">
+        <span class="has-mr-6">5.7</span>
+        <span>第六步：计算Quantum Volume</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#参考资料">
+        <span class="has-mr-6">6</span>
+        <span>参考资料</span>
         </a></li></ul>
             </div>
         </div>
