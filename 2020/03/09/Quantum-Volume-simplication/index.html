@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>tensor network and quantum information - hlzone</title>
+<title>什么是量子体积？ - hlzone</title>
 
 
-    <meta name="description" content="​        在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。">
+    <meta name="description" content="最近“口罩生产商”霍尼韦尔（Honeywell）发布重磅消息称已经在量子计算领域取得突破，将在未来三个月内把量子体积（Quantum Volume）为64的量子计算机推向市场，这将是全球量子体积最大的量子计算机。 此前在国际消费电子展（CES 2020）上，国际商用机器公司（IBM）也用量子体积评估了它们的28量子比特的量子计算机Raleh，量子体积达到了32。 量子两个字都够头疼了的，那量子体">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tensor network and quantum information">
-<meta property="og:url" content="http://yoursite.com/2020/02/19/tensor-network-and-quantum-information/index.html">
+<meta property="og:title" content="什么是量子体积？">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/Quantum-Volume-simplication/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="​        在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。">
+<meta property="og:description" content="最近“口罩生产商”霍尼韦尔（Honeywell）发布重磅消息称已经在量子计算领域取得突破，将在未来三个月内把量子体积（Quantum Volume）为64的量子计算机推向市场，这将是全球量子体积最大的量子计算机。 此前在国际消费电子展（CES 2020）上，国际商用机器公司（IBM）也用量子体积评估了它们的28量子比特的量子计算机Raleh，量子体积达到了32。 量子两个字都够头疼了的，那量子体">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-02-19T12:59:46.000Z">
-<meta property="article:modified_time" content="2020-02-28T10:23:49.625Z">
+<meta property="article:published_time" content="2020-03-09T11:52:30.000Z">
+<meta property="article:modified_time" content="2020-03-09T15:10:43.849Z">
 <meta property="article:author" content="hl">
-<meta property="article:tag" content="Tensor Netwowrk">
+<meta property="article:tag" content="Quantum Volume">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="tensor network and quantum information" height="28">
+                <img src="/images/hlzone.png" alt="什么是量子体积？" height="28">
             
             </a>
         </div>
@@ -141,17 +141,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-19T12:59:46.000Z">2020-02-19</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-03-09T11:52:30.000Z">2020-03-09</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    9 分钟 读完 (大约 1337 个字)
+                    10 分钟 读完 (大约 1446 个字)
                 </span>
                 
                 
@@ -165,64 +161,89 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                tensor network and quantum information
+                什么是量子体积？
             
         </h1>
         <div class="content">
-            <p>​        在这一节中，将讨论一些量子信息概念的例子，这些概念可以用张量网络符号更好地理解。</p>
+            <p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200309204825.png" style="zoom:50%;" /></p>
+<p>最近“口罩生产商”霍尼韦尔（Honeywell）发布重磅消息称已经在量子计算领域取得突破，将在未来三个月内把量子体积（Quantum Volume）为64的量子计算机推向市场，这将是全球量子体积最大的量子计算机。</p>
+<p>此前在国际消费电子展（CES 2020）上，国际商用机器公司（IBM）也用量子体积评估了它们的28量子比特的量子计算机Raleh，量子体积达到了32。</p>
+<p>量子两个字都够头疼了的，那量子体积又是什么东西呢？</p>
+<p><strong>量子体积简单的来说，就是IBM公司提倡的一个用于全面评估量子计算机性能的通用指标。</strong></p>
 <a id="more"></a>
-<h2 id="Bell-state-and-the-Bell-basis"><a href="#Bell-state-and-the-Bell-basis" class="headerlink" title="Bell state and the Bell basis"></a>Bell state and the Bell basis</h2><p>​        Bell基(Bell basis)构成了两粒子最大纠缠态的正交集合。Bell基标准的标记如下：</p>
-<script type="math/tex; mode=display">
-|\Phi^{\pm}\rangle :=(|0\rangle \otimes |0\rangle \pm |1\rangle \otimes |1\rangle)/\sqrt{2}\\
-|\Psi^{\pm}\rangle :=(|0\rangle \otimes |1\rangle \pm |1\rangle \otimes |0\rangle)/\sqrt{2}\\</script><p>对于第一个基$|\Phi^{+}\rangle$，称为Bell态(Bell state)，用$|\Omega\rangle$表示。</p>
-<script type="math/tex; mode=display">
-|\Omega \rangle = \frac{1}{\sqrt{2} } 
-\begin{pmatrix} 1 \\ 0 \\ 0 \\ 1 \end{pmatrix} \quad
-\mathop{\rightleftharpoons}_{Vectorise}^{Matricise} \quad
-\frac{1}{\sqrt{2} } \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
-=\frac{I}{\sqrt{2} }</script><p>在张量网络符号中，它被简单地表示为一条连接两条腿的线。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200219213651.png" alt=""></p>
-<p>​        要注意，这样一个表示包含很深刻的意义，如果将线的末端视为两个比特，对一个比特执行操作相当与对另一个比特执行转置操作，这很容易验证。那么，连线就意味着比特的纠缠。</p>
-<p>​        定义$|\Omega(\Omicron)\rangle=(\Omicron\otimes I)|\Omega\rangle$。根据这个定义，我们可以看到Bell基简单的对应着泡利算子的向量化。</p>
-<script type="math/tex; mode=display">
-|\Phi^+ \rangle = |\Omega(I)\rangle,\quad 
-|\Phi^- \rangle = |\Omega(Z)\rangle, \quad
-|\Psi^+ \rangle = |\Omega(X)\rangle, \quad
-|\Psi^- \rangle \propto |\Omega(Y)\rangle \quad</script><p>​        因此，可以看到Bell基与Pauli算符密切相关，在Bell基上的欧几里德内积(Euclidean inner product)状态对应于上Pauli算符的希伯特-施密特内积(Hilbert-Schmidt inner product)。</p>
-<h2 id="Quantum-teleportation"><a href="#Quantum-teleportation" class="headerlink" title="Quantum teleportation"></a>Quantum teleportation</h2><p>​        给定上面的Bell基标记，我们就可以用TNN来表示和理解量子隐态传输。</p>
-<script type="math/tex; mode=display">
-|\phi_B\rangle = \mathop{\overbrace{(p_B)}}^{Correction}
-\mathop{\overbrace{(\langle\Omega_{A_1A_2}(p))}}^{Teleportation}
-\mathop{\overbrace{(|\psi_{A_1}\rangle \otimes |\Omega_{A_2B}\rangle)}}^{Setup} 
-= |\psi_B\rangle/2</script><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220102701.png" alt=""></p>
-<p>​        可以看到公式与TNN相对应，公式和TNN都从右往左看。在TNN上用一条竖线往下画，可以截断3条横线，这三条并列的横线与Setup相对应。Teleportation过程相作用了一个左矢，相当于在TNN作用一个开口向右的弧线，将腿的数量减少到1。最后Correction的过程，在B上作用一个$p$。可以看到B最后可以得到$|\psi\rangle/2$。然后要验证一下，隐态传输算法中，$p$是否满足如上的关系，确定这TNN表达的合理性。</p>
-<h3 id="Gate-teleportation"><a href="#Gate-teleportation" class="headerlink" title="Gate teleportation"></a>Gate teleportation</h3><script type="math/tex; mode=display">
-|\phi\rangle = \mathop{\overbrace{(C_p)}}^{Correction}
-\mathop{\overbrace{(\langle\Omega_{A_1A_2}(p))}}^{Teleportation}
-\mathop{\overbrace{(|\psi_{A_1}\rangle \otimes |\Omega_{A_2B}(U^T)\rangle)}}^{Setup}
-=C_pUp^{\dagger}|\psi\rangle/2</script><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220113441.png" alt=""></p>
-<p>​        如果令$C_p:=UpU^\dagger$，那么Bob总是可以得到$U|\psi\rangle$。如果$U$是Clifford操作(Clifford群是将Paulis映射到Paulis的操作群)，这个修正也是一个泡利，这个传送过程在传送门的使用上并不比标准的传送需要更多的资源。</p>
-<h2 id="Purification"><a href="#Purification" class="headerlink" title="Purification"></a>Purification</h2><p>​        对于一个混合态$\rho$，提纯(purification)就是一个将原系统拓展到更大系统(添加的系统称为提纯系统)的纯态(pure state)$|\psi \rangle$，以减少原系统$\rho$的密度。这样的提纯可以给出为$|\psi\rangle \propto (\sqrt{\rho} \otimes I)|\Omega \rangle = |\Omega (\sqrt{\rho})\rangle$。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220124722.png" alt=""></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220124800.png" alt=""></p>
-<p>​        通过维度计数，可以看出上述提纯在提纯系统的等轴自由度范围内是唯一的，所以的提纯都是$(\sqrt{\rho} \otimes U)|\Omega \rangle$的形式，其中$U^\dagger U= 1$，即所有的提纯正比于$(\sqrt{\rho} \otimes I)|\Omega \rangle$，$|\Omega\rangle$可以是其他最大纠缠态。</p>
-<h2 id="Stinespring’s-Dilation-theorem"><a href="#Stinespring’s-Dilation-theorem" class="headerlink" title="Stinespring’s Dilation theorem"></a>Stinespring’s Dilation theorem</h2><p>​        Stinespring’s Theorem指出，任意量子通道$\varepsilon$，即一个完全的正保迹映射(completely positive trace preserving map(CPTP))，可以被表示为一个幺正算符作用在更大的系统上，再取偏迹。</p>
-<script type="math/tex; mode=display">
-\varepsilon(\rho) = Tr_1[V^\dagger(\rho \otimes|0\rangle\langle0|)V]</script><p>在物理上，这意味着，一个动态的开放系统等价于一个更大的封闭系统的子系统。</p>
-<p>​        任意CPTP映射可以被表示为Kraus操作$K_i$的集合：</p>
-<script type="math/tex; mode=display">
-\varepsilon(\rho)=\sum_i K_i^\dagger \rho K_i,\quad 其中\sum_i K_iK_i^\dagger=I.</script><p>其TNN表示为<br><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220155953.png" alt=""></p>
-<p>接着定义张量$U$为</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220160552.png" alt=""></p>
-<p>可以看到$U$满足$U^\dagger U=I$，可将其视为$V$加上一个附加比特</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220160905.png" alt=""></p>
-<p>​        通过这样的表示，再对上指标取偏迹，Stinespring Dilation Theorem可以表示为：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220161132.png" alt=""></p>
-<h2 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h2><p>1.考虑隐态传输的反向。Alice想要将一个经典比特发送给Bob，且她有一个可以传输量子比特的通道。那么单量子比特可以传输多少比特的信息呢？为了简单考虑，只考虑Bob可以执行投影测量的情况。</p>
-<hr>
-<p>2.假设Alice和Bob初始共享一个Bell对。这个提前共享的纠缠资源是否可以增加成功传输的经典信息的数量，如果可以的话，增加了多少呢？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200220162804.png" alt=""></p>
-<p><em>superdense coding</em></p>
+<h2 id="对于量子计算机的性能，我们该关注什么？"><a href="#对于量子计算机的性能，我们该关注什么？" class="headerlink" title="对于量子计算机的性能，我们该关注什么？"></a>对于量子计算机的性能，我们该关注什么？</h2><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200309212424.png" style="zoom: 50%;" /></p>
+<p>对于研究量子计算机的科研人员来说，评估量子计算机的性能指标会有很多：</p>
+<ul>
+<li><p>量子比特数目</p>
+</li>
+<li><p>量子操作门的错误率</p>
+</li>
+<li><p>量子比特的相干时间</p>
+</li>
+<li><p>量子芯片的连通性</p>
+</li>
+<li><p>量子比特间的串扰如何</p>
+<p>……….</p>
+</li>
+</ul>
+<p>太多了记不住啊，而且那么多指标该怎么比较呢？</p>
+<p>有的公司研发超导量子计算机，就说自己的量子比特数最多，是当前最强大的量子计算机。</p>
+<p>有的公司就不同意了，说你只是比特数多一些，比特相干时间不行，看我这个离子阱量子计算机，长相干时间，可运行时间长得多。</p>
+<p>这就没法比较了，各量子计算机体系都有自己的优势，怎么评价哪个量子计算机比较好呢？</p>
+<h2 id="部分性能相加可以代表整体性能吗？"><a href="#部分性能相加可以代表整体性能吗？" class="headerlink" title="部分性能相加可以代表整体性能吗？"></a>部分性能相加可以代表整体性能吗？</h2><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200309213652.png" style="zoom: 50%;" /></p>
+<p>当一个机器的每个部件性能都很好，那么这个机器的性能就会很好吗?</p>
+<p>这个回答在量子计算机上是否定的。</p>
+<p>在量子计算机上可以发生这样的情况，单独测试每个量子比特的性能时都很好，但是当量子计算机整体运行时，没能达到预期的效果。</p>
+<p>因为量子比特间会相互干扰，引入一些不期望的影响和错误，有一点组织内耗的意思。导致了量子计算机的错误率会比用部分测试得到的性能预测的差一些。</p>
+<p>这样上面提到的部分指标也不能全面反映量子计算机的性能。</p>
+<h2 id="量子体积（Quantum-Volume"><a href="#量子体积（Quantum-Volume" class="headerlink" title="量子体积（Quantum Volume)"></a>量子体积（Quantum Volume)</h2><p>为了解决上面的两个问题</p>
+<ul>
+<li>性能指标太多，不好比较</li>
+<li>性能指标有局域性，不能代表整体性能</li>
+</ul>
+<p>IBM公司站了出来，大家别吵了，我来提个标准吧，大家都按这个标准来。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200309222827.png" style="zoom: 50%;" /></p>
+<p>就像手机的跑分图，虽然细节指标太多了，不管大家并不用关注细节，就看个总分就可以了。</p>
+<p>但是量子体积并不是上述指标的简单加权相加，因为有个部分相加不能反映整体的原因。</p>
+<p>干脆就直接将量子计算机整体运行，是骡子是马直接拉出来溜溜。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200306171012.png" alt=""></p>
+<p>计算量子体积的过程就是在量子计算机上运行随机模型线路，比较实验执行的结果与理想结果的差距，判定这样的线路是否成功执行。</p>
+<p>量子体积同等地位的看待量子比特数量和执行时间内的可执行操作数，因此它与量子计算机可执行的最大等宽深随机模型线路相关。如果可以执行的等宽深线路深度为$n$，量子体积$V_Q = 2^n$。使用指数形式也反映了量子计算描述空间的指数级增长。</p>
+<p>量子体积与系统的整体性能相关联，即与系统的整体错误率，潜在的比特关联，门操作并行度，甚至还与转化线路的工具链相联系，评估了系统的整体性能。</p>
+<p>量子体积只是一个简单的数字。它不会给出系统的局部性能信息，从这一个数字也看不出系统哪里出现了问题，需要去改进，但它给出一个系统间比较的最一般的量化方式。</p>
+<h2 id="量子体积的增长趋势"><a href="#量子体积的增长趋势" class="headerlink" title="量子体积的增长趋势"></a>量子体积的增长趋势</h2><p>可以遇见到随着量子计算的不断发展，量子体积肯定会不断的增加。</p>
+<p>还是IBM，仿照摩尔定律（集成电路上可容纳的晶体管数目，每隔两年便会增加一倍）提出了量子摩尔定律，量子体积每年翻番。与量子体积的概念相辅相成。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200309224302.jpg" style="zoom: 50%;" /></p>
+<p>下面列举了一些IBM量子计算机的量子体积</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">$Tenerife$</th>
+<th style="text-align:center">$Tokyo$</th>
+<th style="text-align:center">$Johannesburg$</th>
+<th style="text-align:center">$Raleh$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$V_Q$</td>
+<td style="text-align:center">$2^2=4$</td>
+<td style="text-align:center">$2^3 = 8$</td>
+<td style="text-align:center">$2^4 = 16$</td>
+<td style="text-align:center">$2^5=32$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可以看到，好像有量子摩尔定律这样的趋势。</p>
+<p>那么这样的定律是否可以维持呢？量子计算机可以这样高速发展吗？</p>
+<p>我们就拭目以待吧！</p>
+<p><strong>参考文献：</strong></p>
+<p>[1]：Arute F, Arya K, Babbush R, et al. Quantum supremacy using a programmable superconducting processor[J]. Nature, 2019, 574(7779): 505-510.</p>
+<p>[2]：Pino J M, Dreiling J M, Figgatt C, et al. Demonstration of the QCCD trapped-ion quantum computer architecture[J]. arXiv preprint arXiv:2003.01293, 2020.</p>
+<p>[3]：Cross A W, Bishop L S, Sheldon S, et al. Validating quantum computers using randomized model circuits[J]. Physical Review A, 2019, 100(3): 032328.</p>
 
         </div>
         
@@ -230,7 +251,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Tensor-Netwowrk/" rel="tag">Tensor Netwowrk</a>
+                    <a class="has-link-grey -link" href="/tags/Quantum-Volume/" rel="tag">Quantum Volume</a>
                 </div>
             </div>
         </div>
@@ -247,17 +268,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/20/Matrix-product-states/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Matrix product states</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/18/Introduction-to-tensor-network-notation/">
-                <span class="level-item">Introduction to tensor network notation</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/06/Honeywell/">
+                <span class="level-item">Honeywell</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -356,29 +370,21 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#Bell-state-and-the-Bell-basis">
+        <a class="is-flex" href="#对于量子计算机的性能，我们该关注什么？">
         <span class="has-mr-6">1</span>
-        <span>Bell state and the Bell basis</span>
+        <span>对于量子计算机的性能，我们该关注什么？</span>
         </a></li><li>
-        <a class="is-flex" href="#Quantum-teleportation">
+        <a class="is-flex" href="#部分性能相加可以代表整体性能吗？">
         <span class="has-mr-6">2</span>
-        <span>Quantum teleportation</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Gate-teleportation">
-        <span class="has-mr-6">2.1</span>
-        <span>Gate teleportation</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#Purification">
+        <span>部分性能相加可以代表整体性能吗？</span>
+        </a></li><li>
+        <a class="is-flex" href="#量子体积（Quantum-Volume">
         <span class="has-mr-6">3</span>
-        <span>Purification</span>
+        <span>量子体积（Quantum Volume)</span>
         </a></li><li>
-        <a class="is-flex" href="#Stinespring’s-Dilation-theorem">
+        <a class="is-flex" href="#量子体积的增长趋势">
         <span class="has-mr-6">4</span>
-        <span>Stinespring’s Dilation theorem</span>
-        </a></li><li>
-        <a class="is-flex" href="#Problems">
-        <span class="has-mr-6">5</span>
-        <span>Problems</span>
+        <span>量子体积的增长趋势</span>
         </a></li></ul>
             </div>
         </div>
@@ -844,7 +850,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="tensor network and quantum information" height="28">
+                    <img src="/images/hlzone.png" alt="什么是量子体积？" height="28">
                 
                 </a>
                 <p class="is-size-7">
