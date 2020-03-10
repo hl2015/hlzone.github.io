@@ -7,16 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: 量子线路 - hlzone</title>
+<title>计算物理--计算方法 - hlzone</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="hlzone">
-<meta property="og:url" content="http://yoursite.com/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/index.html">
+    <meta name="description" content="插值 \widetilde f(x) \mathop{\longrightarrow}^{逼近} f(x)注意图像 误差的分析为数值方法的重点。但在物理中这并不是很关键的问题，因为如果使用代码包，给定误差，代码包可以智能的选定步长。 并不是阶数越高越好，Runge现象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算物理--计算方法">
+<meta property="og:url" content="http://yoursite.com/2020/03/10/computational-physics-2/index.html">
 <meta property="og:site_name" content="hlzone">
+<meta property="og:description" content="插值 \widetilde f(x) \mathop{\longrightarrow}^{逼近} f(x)注意图像 误差的分析为数值方法的重点。但在物理中这并不是很关键的问题，因为如果使用代码包，给定误差，代码包可以智能的选定步长。 并不是阶数越高越好，Runge现象。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-03-10T15:12:06.000Z">
+<meta property="article:modified_time" content="2020-03-10T15:17:54.600Z">
 <meta property="article:author" content="hl">
+<meta property="article:tag" content="计算物理">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -76,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="hlzone" height="28">
+                <img src="/images/hlzone.png" alt="计算物理--计算方法" height="28">
             
             </a>
         </div>
@@ -112,6 +117,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -125,56 +134,209 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">量子线路</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-17T06:20:53.000Z">2020-02-17</time>
+                <time class="level-item has-text-grey" datetime="2020-03-10T15:12:06.000Z">2020-03-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    12 分钟 读完 (大约 1830 个字)
+                    14 分钟 读完 (大约 2054 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/02/17/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">量子线路</a>
+                计算物理--计算方法
             
         </h1>
         <div class="content">
-            <p><em>计算机是物理的对象，而计算是物理的过程。计算机计算的范围完全由物理定律而不是纯数学决定                                     ———-David Deutsch</em></p>
-<hr>
-<p>量子线路语言是描述量子算法有效和有力的描述方式，它包含描述计算过程的一组<code>离散</code>元件的集合。这个工具将使我们能够用类似于需要的门的<code>总数</code>或<code>线路深度</code>来量化算法的花销，也带来了一些简化算法设计的丰富技巧，并较容易从概念上形象的认识算法。</p>
+            <h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><script type="math/tex; mode=display">
+\widetilde f(x) \mathop{\longrightarrow}^{逼近} f(x)</script><p>注意图像</p>
+<p>误差的分析为数值方法的重点。但在物理中这并不是很关键的问题，因为如果使用代码包，给定误差，代码包可以智能的选定步长。</p>
+<p>并不是阶数越高越好，Runge现象。</p>
+<a id="more"></a>
+<h3 id="拉格朗日-Lagrange-插值"><a href="#拉格朗日-Lagrange-插值" class="headerlink" title="拉格朗日(Lagrange)插值"></a>拉格朗日(Lagrange)插值</h3><h4 id="线性插值"><a href="#线性插值" class="headerlink" title="线性插值"></a>线性插值</h4><p>设$x_0 \neq x_1$，用两点式表示直线</p>
+<script type="math/tex; mode=display">
+L_1(x) = \frac{x-x_1}{x_0-x_1}f(x_0)+\frac{x-x_0}{x_1-x_0}f(x_1)</script><p>记$l_0(x) = \frac{x-x_1}{x_0-x_1}$，$l_1(x) = \frac{x-x_0}{x_1-x_0}$，为插值基函数。这样的形式为拉格朗日(Lagrange)插值多项式。</p>
+<p>误差</p>
+<script type="math/tex; mode=display">
+R(x)=f(x)-L_1(x)=\frac{f''(\xi)}{2!}(x-x_0)(x-x_1), \quad \xi \in [x_0,x_1]</script><h4 id="二次插值"><a href="#二次插值" class="headerlink" title="二次插值"></a>二次插值</h4><script type="math/tex; mode=display">
+L_2(x) = \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}f(x_0)+\frac{(x-x_0)(x-x_1)}{(x_1-x_0)(x_1-x_2)}f(x_1)+\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}f(x_2)
+\\
+l_i(x_j)=\delta_{ij}=\begin{cases}
+1, & i=j
+\cr 
+0 & i \neq j
+\end{cases}</script><p>误差</p>
+<script type="math/tex; mode=display">
+R_2(x) = \frac{f^{(3)(\xi)}}{3!}(x-x_0)(x-x_1)(x-x_2),\\
+\xi \in [\min\{x_0,x_1,x_2,x_3,x\},\max\{x_0,x_1,x_2,x\}]</script><h4 id="n-次拉格朗日插值多项式"><a href="#n-次拉格朗日插值多项式" class="headerlink" title="$n$次拉格朗日插值多项式"></a>$n$次拉格朗日插值多项式</h4><script type="math/tex; mode=display">
+L_n(x) = \sum^n_{i=0} l_i(x)f(x_i),\\
+l_i(x)= \prod_{0 \leq j \leq n,j \neq i} \frac{x-x_j}{x_i-x_j}</script><p>误差</p>
+<script type="math/tex; mode=display">
+R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)(x-x_1)\cdots(x-x_n), \quad \xi \in [a,b]</script><h3 id="牛顿-Newton-插值"><a href="#牛顿-Newton-插值" class="headerlink" title="牛顿(Newton)插值"></a>牛顿(Newton)插值</h3><p>零阶差商</p>
+<script type="math/tex; mode=display">
+f[x_0]=f(x_0)</script><p>一阶差商</p>
+<script type="math/tex; mode=display">
+f[x_0,x_1]=\frac{f(x_1)-f(x_0)}{x_1-x_0}</script><p>二阶差商</p>
+<script type="math/tex; mode=display">
+f[x_0,x_1,x_3]= \frac{f[x_1,x_2]-f[x_0,x_1]}{x_2-x_0}</script><p>$k$阶差商</p>
+<script type="math/tex; mode=display">
+f[x_0,x_1,\cdots,x_k]=\frac{f[x_1,x_2,\cdots,x_k]-f[x_0,x_1,\cdots,x_{k-1}]}{x_k-x_0}</script><p>性质1</p>
+<script type="math/tex; mode=display">
+f[x_0,x_1,\cdots,x_k]=\sum^k_{i=0} f(x_i)\prod^k_{j \neq i}\frac{1}{(x_i-x_j)}</script><p>性质2</p>
+<script type="math/tex; mode=display">
+f[x_0,x_1,\cdots,x_k]=f[x_{i_0},x_{i_1},\cdots,x_{i_k}]</script><p>性质3</p>
+<p>若$f(x)$为$m$次多项式，则$f[x_0,x_1,\cdots,x_{k-1},x]$为$m-k$次多项式。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200310160017.png" alt=""></p>
+<h4 id="n-次牛顿插值"><a href="#n-次牛顿插值" class="headerlink" title="$n$次牛顿插值"></a>$n$次牛顿插值</h4><script type="math/tex; mode=display">
+N(x)=f[x_0]+\sum_{k=1}^n f[x_0,x_1,\cdots,x_k](x-x_0)(x-x_1)\cdots(x-x_{k-1}),\\
+R(x)=f[x,x_0,x_1,\cdots,x_n]\prod_{i=0}^n (x-x_i)</script><h3 id="三次样条插值"><a href="#三次样条插值" class="headerlink" title="三次样条插值"></a>三次样条插值</h3><h2 id="数值积分"><a href="#数值积分" class="headerlink" title="数值积分"></a>数值积分</h2><p>$\dot{y}=f(x)$</p>
+<h3 id="牛顿-柯特斯数值积分"><a href="#牛顿-柯特斯数值积分" class="headerlink" title="牛顿-柯特斯数值积分"></a>牛顿-柯特斯数值积分</h3><h4 id="插值型数值积分"><a href="#插值型数值积分" class="headerlink" title="插值型数值积分"></a>插值型数值积分</h4><script type="math/tex; mode=display">
+\int_a^b f(x)dx \approx \int_a^b L_n(x)dx = \int_a^b \sum_{i=0}^n l_i(x)f(x_i)dx = \sum_{i=0}^n [\int_a^b l_i(x)dx]f(x_i)</script><p>记$\alpha_i = \int_a^b l_i(x)dx$，有</p>
+<script type="math/tex; mode=display">
+I_n(f)=\int_a^bL_n(x)dx=\sum_{i=0}^n \alpha_i f(x_i)</script><h4 id="Newton-Cotes积分"><a href="#Newton-Cotes积分" class="headerlink" title="Newton-Cotes积分"></a>Newton-Cotes积分</h4><p>对积分区间$[a,b]$进行$n$等分，记步长为$h=(b-a)/n$，取等分点${x_i = a+ih,i=0,1,\cdots,n}$为数值积分节点，构造Langrange插值多项式$L_n(x)$，称为Newton-Cotes积分。</p>
+<p>积分系数和积分节点及积分区间无关系，系数固定易于计算。</p>
+<h5 id="梯形积分"><a href="#梯形积分" class="headerlink" title="梯形积分"></a>梯形积分</h5><script type="math/tex; mode=display">
+\int_a^b L_1(x)dx = \int_a^b (l_0(x)f(x_0)+l_1(x)f(x_1))dx\\
+\alpha_0 = \int_a^b l_0(x)dx = \int_a^b \frac{x-b}{a-b}dx =\frac{1}{2}(b-a)=(b-a)C_0^{(1)}\\
+\alpha_1 = \int_a^b l_1(x)dx = \int_a^b \frac{x-a}{b-a}dx =\frac{1}{2}(b-a)=(b-a)C_1^{(1)}</script><h5 id="辛普森-Simpson-积分"><a href="#辛普森-Simpson-积分" class="headerlink" title="辛普森(Simpson)积分"></a>辛普森(Simpson)积分</h5><p>对区间$[a,b]$作二等分，记$x_0=a,x_1=(a+b)/2,x_2=b$</p>
+<script type="math/tex; mode=display">
+\int_a^b f(x) \approx \int_a^b L_2(x)dx =\int_a^b(l_0(x)f(x_0)+l_1(x)f(x_1)+l_2(x)f(x_2))dx\\
+\alpha_0 = \int_a^b l_0(x)dx = \int_a^b \frac{(x-\frac{a+b}{2})(x-b)}{(a-\frac{a+b}{2})(a-b)}dx = \frac{1}{6} (b-a) =(b-a)c_0^{(2)}\\
+\alpha_1 = \int_a^b l_1(x)dx = \frac{4}{6}(b-a) = (b-a)c_1^(2)\\
+\alpha_2 = \int_a^b l_2(x)dx = \frac{1}{6}(b-a) = (b-a)c_2^(2)</script><p>化简为</p>
+<script type="math/tex; mode=display">
+\int_a^b f(x)dx \approx I_2(f) = S(f) = \frac{b-a}{6} [f(a)+4f(\frac{a+b}{2})+f(b)]</script><h5 id="Newton-Cotes积分系数"><a href="#Newton-Cotes积分系数" class="headerlink" title="Newton-Cotes积分系数"></a>Newton-Cotes积分系数</h5><p>对积分区间$[a,b]$进行$n$等分，记步长为$h=(b-a)/n$，取等分点${x_i = a+ih,i=0,1,\cdots,n}$为数值积分节点</p>
+<script type="math/tex; mode=display">
+\int_a^b L_n(x)dx = \sum_{i=0}^{n} \alpha_i f(x_i)</script><p>令$x=a+th,x_i=a+ih$</p>
+<script type="math/tex; mode=display">
+\alpha_i = (b-a)c_i^{(n)}\\
+c_i^{(n)} =\frac{(-1)^{n-i}}{i!(n-i)!n} \int_0^n t(t-1)\cdots(t-i+1)(t-i-1)\cdots(t-n)dt</script><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200310201011.png" alt=""></p>
+<h3 id="复化数值积分"><a href="#复化数值积分" class="headerlink" title="复化数值积分"></a>复化数值积分</h3><h4 id="复化梯形积分"><a href="#复化梯形积分" class="headerlink" title="复化梯形积分"></a>复化梯形积分</h4><p>对积分区间$[a,b]$进行$n$等分，记步长为$h=(b-a)/n$，取等分点${x_i = a+ih,i=0,1,\cdots,n}$</p>
+<script type="math/tex; mode=display">
+I(f)=\int_a^b f(x)dx =\sum_{i=0}^{n-1} \int_{x_i}^{x_{i+1}}f(x)dx</script><script type="math/tex; mode=display">
+T(h)=T_n(f)=h[\frac{1}{2}f(a)+\sum_{i=1}^{n-1}f(a+ih)+\frac{1}{2}f(b)]</script><h4 id="复化Simpson积分"><a href="#复化Simpson积分" class="headerlink" title="复化Simpson积分"></a>复化Simpson积分</h4><p>把积分区间分成偶数$2m$等分，记$n=2m$，$h=(b-a)/n$，${x_i = a+ih,i=0,1,\cdots,n}$</p>
+<script type="math/tex; mode=display">
+I(f)=\int_a^b f(x)dx = \sum_{i=0}^{m-1}\int_{x_{2i}}^{x_{2i+2}} f(x)dx</script><script type="math/tex; mode=display">
+S_n(f)=\frac{h}{3}[f(a)+4\sum_{i=0}^{m-1}f(x_{2i+1})+2\sum_{i=1}^{m-1}f(x_{2i})+f(b)]</script><h2 id="常微分方程"><a href="#常微分方程" class="headerlink" title="常微分方程"></a>常微分方程</h2><script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+y'(x) & =  f(x,y), \\
+y(a) & =  y_0,
+\end{aligned}
+\right. \quad a \leq x \leq b</script><h3 id="欧拉-Euler-公式"><a href="#欧拉-Euler-公式" class="headerlink" title="欧拉(Euler)公式"></a>欧拉(Euler)公式</h3><h4 id="基于数值微商的Euler公式"><a href="#基于数值微商的Euler公式" class="headerlink" title="基于数值微商的Euler公式"></a>基于数值微商的Euler公式</h4><p>向前Euler公式：</p>
+<script type="math/tex; mode=display">
+y_{n+1}=y_n + hf(x_n,y_n)</script><p>向后Euler公式</p>
+<script type="math/tex; mode=display">
+y_{n+1}=y_n+hf(x_{n+1},y_{n+1})</script><p>从算法结构上，显式公式比隐式公式简单；从方法稳定性和精度上看，隐式公式优于显式公式。</p>
+<p>可以使用最简单的皮卡(Picard)迭代格式求解向后Euler公式：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+y_{n+1}^{(0)} & =  y_n + hf(x_n,y_n), \\
+y_{n+1}^{(k+1)} & =  y_n+ hf(x_{n+1},y_{n+1}^{(k)}) ,
+\end{aligned}
+\right. \quad k=0,1,2,\cdots</script><p>一般先用显示公式算出初始值，再用隐式公式进一步迭代，采用预估-校正公式：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+\bar{y}_{n+1} & =  y_n + hf(x_n,y_n), \\
+y_{n+1} & =  y_n+ hf(x_{n+1},\bar{y}_{n+1}) ,
+\end{aligned}
+\right.</script><h4 id="基于数值积分的近似公式"><a href="#基于数值积分的近似公式" class="headerlink" title="基于数值积分的近似公式"></a>基于数值积分的近似公式</h4><p>梯形公式</p>
+<script type="math/tex; mode=display">
+y_{n+1} = y_n + \frac{h}{2}(f(x_n,y_n)+f(x_{n+1},y_{n+1}))</script><p>用显式Euler公式和隐式的梯形公式组成的预估-校正公式：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+\bar{y}_{n+1} & =  y_n + hf(x_n,y_n), \\
+y_{n+1} &= y_n + \frac{h}{2}(f(x_n,y_n)+f(x_{n+1},\bar{y}_{n+1})) ,
+\end{aligned}
+\right.</script><p>合并为</p>
+<script type="math/tex; mode=display">
+y_{n+1} = y_n + \frac{h}{2}(f(x_n,y_n)+f(x_{n+1},y_n + hf(x_n,y_n)))</script><h3 id="Runge-Kutta方法"><a href="#Runge-Kutta方法" class="headerlink" title="Runge-Kutta方法"></a>Runge-Kutta方法</h3><p>二阶Runge-Kutta公：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+y_{n+1} & =  y_n + \frac{h}{2}(k_1+k_2)  \\
+k_1 & = f(x_n,y_n) \\
+k_2 & = f(x_n+h,y_n+hk_1)
+\end{aligned}
+\right.</script><p>四阶Runge-Kutta公式：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+y_{n+1} & =  y_n + \frac{h}{6}(k_1+2k_2+2k_3+k_4)  \\
+k_1 & = f(x_n,y_n) \\
+k_2 & = f(x_n+\frac{1}{2}h ,y_n+\frac{1}{2}hk_1) \\
+k_3 & = f(x_n+\frac{1}{2}h ,y_n+\frac{1}{2}hk_2) \\
+k_4 & = f(x_n+h,y_n+hk_3)
+\end{aligned}
+\right.</script><p>学会使用软件包<em>rk45</em></p>
+<h2 id="非线性方程求解"><a href="#非线性方程求解" class="headerlink" title="非线性方程求解"></a>非线性方程求解</h2><h3 id="迭代法"><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h3><p><strong>实根的对分法</strong>，一种简单直观的方法。</p>
+<p><strong>不动点迭代</strong></p>
+<p>给定方程$f(x)=0$，将它转化为等价形式$x = \varphi(x)$。给定初值$x_0$，构造迭代序列$x_{k+1}=\varphi(x_k)$，$k=1,2,\cdots$；如果$\varphi(x)$连续且迭代收敛</p>
+<script type="math/tex; mode=display">
+\lim_{k \rightarrow \infty} x_{k+1} = \lim_{k \rightarrow \infty} \varphi(x_k) = \alpha</script><p>则有$\alpha = \varphi(\alpha)$，$\alpha$就是方程$f(x)=0$的根。</p>
+<h3 id="Newton迭代法"><a href="#Newton迭代法" class="headerlink" title="Newton迭代法"></a>Newton迭代法</h3><script type="math/tex; mode=display">
+x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)} , \quad k=1,2,\cdots</script><h3 id="弦截法"><a href="#弦截法" class="headerlink" title="弦截法"></a>弦截法</h3><script type="math/tex; mode=display">
+x_{k+1} = x_k - \frac{f(x_k)(x_k - x_{k-1})}{f(x_k)-f(x_{k-1})},\quad k=1,2,\cdots</script><h3 id="求解非线性方程组的Newton方法"><a href="#求解非线性方程组的Newton方法" class="headerlink" title="求解非线性方程组的Newton方法"></a>求解非线性方程组的Newton方法</h3><script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+f_1 (x_1,x_2,&\cdots,x_n) = 0 \\
+f_2 (x_1,x_2,&\cdots,x_n) = 0 \\
+&\vdots \\
+f_n (x_1,x_2,&\cdots,x_n) = 0 \\
+\end{aligned}
+\right.</script><p>记$X=(x_1,x_2,\cdots,x_n)^T$，$F(x)=(f_1(x),f_2(x),\cdots,f_n(x))^T$</p>
+<p>用Newton迭代法求方程组$F(x)=0$的迭代公式为</p>
+<script type="math/tex; mode=display">
+X^{(k+1)}=X^{(k)}-J^{-1}(X^{(k)})F(X^{(k)})</script><p>其中</p>
+<script type="math/tex; mode=display">
+J(X)=
+\begin{pmatrix}
+   \frac{\partial f_1(X)}{\partial x_1} & \frac{\partial f_1(X)}{\partial x_2} & \cdots & \frac{\partial f_1(X)}{\partial x_n}\\
+   \frac{\partial f_2(X)}{\partial x_1} & \frac{\partial f_2(X)}{\partial x_2} & \cdots &\frac{\partial f_2(X)}{\partial x_n} \\
+   \vdots & \vdots &  & \vdots \\
+   \frac{\partial f_n(X)}{\partial x_1} & \frac{\partial f_n(X)}{\partial x_2} & \cdots & \frac{\partial f_n(X)}{\partial x_n} \\
+  \end{pmatrix}</script><p>迭代计算公式</p>
+<script type="math/tex; mode=display">
+J(X^{(k)})\Delta X^{(k)} = -F(X^{(k)}) \\
+X^{(k+1)} = X^{(k)} + \Delta X^{(k)}</script><p>一直做到$||\Delta x^{(k)}||_{\infty}$小于给定精度为止</p>
+<p>在$X$的邻域中若$\rho(X)&lt;1$或$||J(X)||_\infty &lt;1$，而初始值充分接近于解，则迭代收敛。</p>
+<h2 id="作业1"><a href="#作业1" class="headerlink" title="作业1"></a>作业1</h2><p>求$AX^2+BX+C=0$的根，其中$A,B,C$都是可逆矩阵，自己给定(用随机数生成，$3 \times 3$或$5 \times 5$)，$X$为$N \times N$的矩阵，求根$X$，收敛性如何。</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/17/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" rel="tag">计算物理</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -184,7 +346,19 @@
 
 
 
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/10/computational-physics-1/">
+                <span class="level-item">计算物理--序</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -269,6 +443,122 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#插值">
+        <span class="has-mr-6">1</span>
+        <span>插值</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#拉格朗日-Lagrange-插值">
+        <span class="has-mr-6">1.1</span>
+        <span>拉格朗日(Lagrange)插值</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#线性插值">
+        <span class="has-mr-6">1.1.1</span>
+        <span>线性插值</span>
+        </a></li><li>
+        <a class="is-flex" href="#二次插值">
+        <span class="has-mr-6">1.1.2</span>
+        <span>二次插值</span>
+        </a></li><li>
+        <a class="is-flex" href="#n-次拉格朗日插值多项式">
+        <span class="has-mr-6">1.1.3</span>
+        <span>$n$次拉格朗日插值多项式</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#牛顿-Newton-插值">
+        <span class="has-mr-6">1.2</span>
+        <span>牛顿(Newton)插值</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#n-次牛顿插值">
+        <span class="has-mr-6">1.2.1</span>
+        <span>$n$次牛顿插值</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#三次样条插值">
+        <span class="has-mr-6">1.3</span>
+        <span>三次样条插值</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#数值积分">
+        <span class="has-mr-6">2</span>
+        <span>数值积分</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#牛顿-柯特斯数值积分">
+        <span class="has-mr-6">2.1</span>
+        <span>牛顿-柯特斯数值积分</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#插值型数值积分">
+        <span class="has-mr-6">2.1.1</span>
+        <span>插值型数值积分</span>
+        </a></li><li>
+        <a class="is-flex" href="#Newton-Cotes积分">
+        <span class="has-mr-6">2.1.2</span>
+        <span>Newton-Cotes积分</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#复化数值积分">
+        <span class="has-mr-6">2.2</span>
+        <span>复化数值积分</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#复化梯形积分">
+        <span class="has-mr-6">2.2.1</span>
+        <span>复化梯形积分</span>
+        </a></li><li>
+        <a class="is-flex" href="#复化Simpson积分">
+        <span class="has-mr-6">2.2.2</span>
+        <span>复化Simpson积分</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#常微分方程">
+        <span class="has-mr-6">3</span>
+        <span>常微分方程</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#欧拉-Euler-公式">
+        <span class="has-mr-6">3.1</span>
+        <span>欧拉(Euler)公式</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#基于数值微商的Euler公式">
+        <span class="has-mr-6">3.1.1</span>
+        <span>基于数值微商的Euler公式</span>
+        </a></li><li>
+        <a class="is-flex" href="#基于数值积分的近似公式">
+        <span class="has-mr-6">3.1.2</span>
+        <span>基于数值积分的近似公式</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Runge-Kutta方法">
+        <span class="has-mr-6">3.2</span>
+        <span>Runge-Kutta方法</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#非线性方程求解">
+        <span class="has-mr-6">4</span>
+        <span>非线性方程求解</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#迭代法">
+        <span class="has-mr-6">4.1</span>
+        <span>迭代法</span>
+        </a></li><li>
+        <a class="is-flex" href="#Newton迭代法">
+        <span class="has-mr-6">4.2</span>
+        <span>Newton迭代法</span>
+        </a></li><li>
+        <a class="is-flex" href="#弦截法">
+        <span class="has-mr-6">4.3</span>
+        <span>弦截法</span>
+        </a></li><li>
+        <a class="is-flex" href="#求解非线性方程组的Newton方法">
+        <span class="has-mr-6">4.4</span>
+        <span>求解非线性方程组的Newton方法</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#作业1">
+        <span class="has-mr-6">5</span>
+        <span>作业1</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -751,7 +1041,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="hlzone" height="28">
+                    <img src="/images/hlzone.png" alt="计算物理--计算方法" height="28">
                 
                 </a>
                 <p class="is-size-7">
