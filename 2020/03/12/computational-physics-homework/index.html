@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>TensorNetwork documentation - hlzone</title>
+<title>computational physics homework - hlzone</title>
 
 
-    <meta name="description" content="这是阅读TensorNetwork documentation的一些简单记录，因为原文档的类操作没有目录。这里用目录的形式记录方便查询，详细的内容要看原文档。">
+    <meta name="description" content="1.求$AX^2+BX+C&#x3D;0$的根，其中$A,B,C$都是可逆矩阵，自己给定(用随机数生成，$3 \times 3$或$5 \times 5$)，$X$为$N \times N$的矩阵，求根$X$，收敛性如何。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TensorNetwork documentation">
-<meta property="og:url" content="http://yoursite.com/2020/02/27/TensorNetwork-documentation/index.html">
+<meta property="og:title" content="computational physics homework">
+<meta property="og:url" content="http://yoursite.com/2020/03/12/computational-physics-homework/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="这是阅读TensorNetwork documentation的一些简单记录，因为原文档的类操作没有目录。这里用目录的形式记录方便查询，详细的内容要看原文档。">
+<meta property="og:description" content="1.求$AX^2+BX+C&#x3D;0$的根，其中$A,B,C$都是可逆矩阵，自己给定(用随机数生成，$3 \times 3$或$5 \times 5$)，$X$为$N \times N$的矩阵，求根$X$，收敛性如何。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-02-27T13:07:22.000Z">
-<meta property="article:modified_time" content="2020-02-28T07:41:15.101Z">
+<meta property="article:published_time" content="2020-03-12T15:38:59.000Z">
+<meta property="article:modified_time" content="2020-03-12T15:47:25.622Z">
 <meta property="article:author" content="hl">
-<meta property="article:tag" content="Tensor Netwowrk">
+<meta property="article:tag" content="计算物理">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="TensorNetwork documentation" height="28">
+                <img src="/images/hlzone.png" alt="computational physics homework" height="28">
             
             </a>
         </div>
@@ -141,17 +141,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-27T13:07:22.000Z">2020-02-27</time>
+                <time class="level-item has-text-grey" datetime="2020-03-12T15:38:59.000Z">2020-03-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6 分钟 读完 (大约 904 个字)
+                    2 分钟 读完 (大约 277 个字)
                 </span>
                 
                 
@@ -165,83 +165,14 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                TensorNetwork documentation
+                computational physics homework
             
         </h1>
         <div class="content">
-            <p>这是阅读<a href="https://tensornetwork.readthedocs.io/en/latest/index.html">TensorNetwork documentation</a>的一些简单记录，因为原文档的类操作没有目录。这里用目录的形式记录方便查询，详细的内容要看原文档。</p>
-<a id="more"></a>
-<h2 id="TensorNetwork"><a href="#TensorNetwork" class="headerlink" title="TensorNetwork"></a>TensorNetwork</h2><p><em>注意，对节点的操作都是生成新节点，而不是在原节点上操作。</em></p>
-<h3 id="tensornetwork-conj"><a href="#tensornetwork-conj" class="headerlink" title="tensornetwork.conj"></a>tensornetwork.conj</h3><p>共轭</p>
-<h3 id="tensornetwork-copy"><a href="#tensornetwork-copy" class="headerlink" title="tensornetwork.copy"></a>tensornetwork.copy</h3><p>复制</p>
-<h3 id="tensornetwork-transpose"><a href="#tensornetwork-transpose" class="headerlink" title="tensornetwork.transpose"></a>tensornetwork.transpose</h3><p>转置</p>
-<h3 id="tensornetwork-reachable"><a href="#tensornetwork-reachable" class="headerlink" title="tensornetwork.reachable"></a>tensornetwork.reachable</h3><p>计算从节点或边缘可到达的所有节点</p>
-<h3 id="tensornetwork-remove-node"><a href="#tensornetwork-remove-node" class="headerlink" title="tensornetwork.remove_node"></a>tensornetwork.remove_node</h3><p>从网络中删除一个节点</p>
-<hr>
-<h3 id="tensornetwork-split"><a href="#tensornetwork-split" class="headerlink" title="tensornetwork.split"></a>tensornetwork.split</h3><h4 id="tensornetwork-split-node"><a href="#tensornetwork-split-node" class="headerlink" title="tensornetwork.split_node"></a>tensornetwork.split_node</h4><p>奇异值分解</p>
-<h4 id="tensornetwork-split-node-qr"><a href="#tensornetwork-split-node-qr" class="headerlink" title="tensornetwork.split_node_qr"></a>tensornetwork.split_node_qr</h4><p>QR分解</p>
-<h4 id="tensornetwork-split-node-rq"><a href="#tensornetwork-split-node-rq" class="headerlink" title="tensornetwork.split_node_rq"></a>tensornetwork.split_node_rq</h4><p>RQ分解</p>
-<h4 id="tensornetwork-split-node-full-svd"><a href="#tensornetwork-split-node-full-svd" class="headerlink" title="tensornetwork.split_node_full_svd"></a>tensornetwork.split_node_full_svd</h4><p>全奇异值分解</p>
-<hr>
-<h3 id="tensornetwork-check"><a href="#tensornetwork-check" class="headerlink" title="tensornetwork.check"></a>tensornetwork.check</h3><h4 id="tensornetwork-check-connected"><a href="#tensornetwork-check-connected" class="headerlink" title="tensornetwork.check_connected"></a>tensornetwork.check_connected</h4><p>检查节点列表中的所有节点是否都连接了</p>
-<h4 id="tensornetwork-check-correct"><a href="#tensornetwork-check-correct" class="headerlink" title="tensornetwork.check_correct"></a>tensornetwork.check_correct</h4><p>检查节点定义的网络是否满足必要的一致性关系</p>
-<hr>
-<h3 id="tensornetwork-get"><a href="#tensornetwork-get" class="headerlink" title="tensornetwork.get"></a>tensornetwork.get</h3><h4 id="tensornetwork-get-all-nodes"><a href="#tensornetwork-get-all-nodes" class="headerlink" title="tensornetwork.get_all_nodes"></a>tensornetwork.get_all_nodes</h4><p>返回连接到边的节点集</p>
-<h4 id="tensornetwork-get-all-edges"><a href="#tensornetwork-get-all-edges" class="headerlink" title="tensornetwork.get_all_edges"></a>tensornetwork.get_all_edges</h4><p>返回所有节点的边集</p>
-<h4 id="tensornetwork-get-all-nondangling"><a href="#tensornetwork-get-all-nondangling" class="headerlink" title="tensornetwork.get_all_nondangling"></a>tensornetwork.get_all_nondangling</h4><p>返回所有非悬空边的集合</p>
-<h4 id="tensornetwork-get-all-dangling"><a href="#tensornetwork-get-all-dangling" class="headerlink" title="tensornetwork.get_all_dangling"></a>tensornetwork.get_all_dangling</h4><p>返回所有悬空边的集合</p>
-<h4 id="tensornetwork-get-parallel-edges"><a href="#tensornetwork-get-parallel-edges" class="headerlink" title="tensornetwork.get_parallel_edges"></a>tensornetwork.get_parallel_edges</h4><p>得到所有与给定边平行的边</p>
-<h4 id="tensornetwork-get-shared-edges"><a href="#tensornetwork-get-shared-edges" class="headerlink" title="tensornetwork.get_shared_edges"></a>tensornetwork.get_shared_edges</h4><p>获取两个节点之间共享的所有边</p>
-<hr>
-<h3 id="tensornetwork-contract"><a href="#tensornetwork-contract" class="headerlink" title="tensornetwork.contract"></a>tensornetwork.contract</h3><h4 id="tensornetwork-contract-trace-edges"><a href="#tensornetwork-contract-trace-edges" class="headerlink" title="tensornetwork.contract_trace_edges"></a>tensornetwork.contract_trace_edges</h4><p>缩并节点的所有迹边</p>
-<h4 id="tensornetwork-contract-1"><a href="#tensornetwork-contract-1" class="headerlink" title="tensornetwork.contract"></a>tensornetwork.contract</h4><p>缩并连接两个节点的边</p>
-<h4 id="tensornetwork-contract-copy-node"><a href="#tensornetwork-contract-copy-node" class="headerlink" title="tensornetwork.contract_copy_node"></a>tensornetwork.contract_copy_node</h4><p>在给定的复制节点上缩并所有的边</p>
-<h4 id="tensornetwork-contract-between"><a href="#tensornetwork-contract-between" class="headerlink" title="tensornetwork.contract_between"></a>tensornetwork.contract_between</h4><p>缩并两个给定节点之间的所有边</p>
-<h4 id="tensornetwork-contract-parallel"><a href="#tensornetwork-contract-parallel" class="headerlink" title="tensornetwork.contract_parallel"></a>tensornetwork.contract_parallel</h4><p>缩并所有与这条边平行的边。</p>
-<hr>
-<h3 id="tensornetwork-outer"><a href="#tensornetwork-outer" class="headerlink" title="tensornetwork.outer"></a>tensornetwork.outer</h3><h4 id="tensornetwork-outer-product"><a href="#tensornetwork-outer-product" class="headerlink" title="tensornetwork.outer_product"></a>tensornetwork.outer_product</h4><p>计算两个节点的外积</p>
-<h4 id="tensornetwork-outer-product-final-nodes"><a href="#tensornetwork-outer-product-final-nodes" class="headerlink" title="tensornetwork.outer_product_final_nodes"></a>tensornetwork.outer_product_final_nodes</h4><p>得到节点集的外积</p>
-<hr>
-<h3 id="tensornetwork-flatten"><a href="#tensornetwork-flatten" class="headerlink" title="tensornetwork.flatten"></a>tensornetwork.flatten</h3><h4 id="tensornetwork-flatten-edges"><a href="#tensornetwork-flatten-edges" class="headerlink" title="tensornetwork.flatten_edges"></a>tensornetwork.flatten_edges</h4><p>把边压扁成单边</p>
-<h4 id="tensornetwork-flatten-all-edges"><a href="#tensornetwork-flatten-all-edges" class="headerlink" title="tensornetwork.flatten_all_edges"></a>tensornetwork.flatten_all_edges</h4><p>将所有属于节点的边压平</p>
-<h4 id="tensornetwork-flatten-edges-between"><a href="#tensornetwork-flatten-edges-between" class="headerlink" title="tensornetwork.flatten_edges_between"></a>tensornetwork.flatten_edges_between</h4><p>将给定两个节点之间的所有边压平</p>
-<hr>
-<h2 id="Contractors"><a href="#Contractors" class="headerlink" title="Contractors"></a>Contractors</h2><h3 id="tensornetwork-contractors-greedy"><a href="#tensornetwork-contractors-greedy" class="headerlink" title="tensornetwork.contractors.greedy"></a>tensornetwork.contractors.greedy</h3><p>贪心缩并</p>
-<h3 id="tensornetwork-contractors-branch"><a href="#tensornetwork-contractors-branch" class="headerlink" title="tensornetwork.contractors.branch"></a>tensornetwork.contractors.branch</h3><p>分支缩并</p>
-<h3 id="tensornetwork-contractors-optimal"><a href="#tensornetwork-contractors-optimal" class="headerlink" title="tensornetwork.contractors.optimal"></a>tensornetwork.contractors.optimal</h3><p>最优缩并</p>
-<h3 id="tensornetwork-contractors-auto"><a href="#tensornetwork-contractors-auto" class="headerlink" title="tensornetwork.contractors.auto"></a>tensornetwork.contractors.auto</h3><p>根据网络大小自动选择上述算法之一</p>
-<h3 id="tensornetwork-contractors-custom"><a href="#tensornetwork-contractors-custom" class="headerlink" title="tensornetwork.contractors.custom"></a>tensornetwork.contractors.custom</h3><p>使用用户创建的自定义路径优化器来计算缩并路径</p>
-<hr>
-<h2 id="Nodes"><a href="#Nodes" class="headerlink" title="Nodes"></a>Nodes</h2><p><em>TensorNetwork的操作都是对边进行的，以下为节点类</em></p>
-<h3 id="class-tensornetwork-Node"><a href="#class-tensornetwork-Node" class="headerlink" title="class tensornetwork.Node"></a><em>class</em> tensornetwork.Node</h3><hr>
-<h3 id="class-tensornetwork-CopyNode"><a href="#class-tensornetwork-CopyNode" class="headerlink" title="class tensornetwork.CopyNode"></a><em>class</em> tensornetwork.CopyNode</h3><h4 id="compute-contracted-tensor"><a href="#compute-contracted-tensor" class="headerlink" title="compute_contracted_tensor"></a>compute_contracted_tensor</h4><hr>
-<h3 id="calss-tensornetwork-BaseNode"><a href="#calss-tensornetwork-BaseNode" class="headerlink" title="calss tensornetwork.BaseNode"></a><em>calss</em> tensornetwork.BaseNode</h3><p>节点的基类，可以从它派生出子类</p>
-<h4 id="add-axis-names"><a href="#add-axis-names" class="headerlink" title="add_axis_names"></a>add_axis_names</h4><p>向节点添加轴名称</p>
-<h4 id="add-edge"><a href="#add-edge" class="headerlink" title="add_edge"></a>add_edge</h4><p>向节点的给定轴上添加一条边</p>
-<h4 id="get-all-dangling"><a href="#get-all-dangling" class="headerlink" title="get_all_dangling"></a>get_all_dangling</h4><p>返回连接到此节点的悬空边集</p>
-<h4 id="get-all-nondangling"><a href="#get-all-nondangling" class="headerlink" title="get_all_nondangling"></a>get_all_nondangling</h4><p>返回连接到此节点的非悬挂边集</p>
-<h4 id="get-axis-number"><a href="#get-axis-number" class="headerlink" title="get_axis_number"></a>get_axis_number</h4><p>获取给定轴名或值的轴号</p>
-<h4 id="get-dimension"><a href="#get-dimension" class="headerlink" title="get_dimension"></a>get_dimension</h4><p>得到给定轴上的维数</p>
-<h4 id="get-rank"><a href="#get-rank" class="headerlink" title="get_rank"></a>get_rank</h4><p>返回张量的秩</p>
-<h4 id="reorder-axes"><a href="#reorder-axes" class="headerlink" title="reorder_axes"></a>reorder_axes</h4><p>重新排列节点张量的轴</p>
-<h4 id="reoder-edges"><a href="#reoder-edges" class="headerlink" title="reoder_edges"></a>reoder_edges</h4><p>对给定节点的边重新排序</p>
-<h4 id="set-signature"><a href="#set-signature" class="headerlink" title="set_signature"></a>set_signature</h4><p>设置节点的签名</p>
-<hr>
-<h2 id="Edges"><a href="#Edges" class="headerlink" title="Edges"></a>Edges</h2><h3 id="class-tensornetwork-Edge"><a href="#class-tensornetwork-Edge" class="headerlink" title="class tensornetwork.Edge"></a><em>class</em> tensornetwork.Edge</h3><h4 id="disconnect"><a href="#disconnect" class="headerlink" title="disconnect"></a>disconnect</h4><p>断开链接</p>
-<h4 id="get-nodes"><a href="#get-nodes" class="headerlink" title="get_nodes"></a>get_nodes</h4><p>得到连接边的节点</p>
-<h4 id="is-being-used"><a href="#is-being-used" class="headerlink" title="is_being_used"></a>is_being_used</h4><p>检查此边所指向的节点是否使用了此边</p>
-<h4 id="is-dangling"><a href="#is-dangling" class="headerlink" title="is_dangling"></a>is_dangling</h4><p>检查是否是悬边</p>
-<h4 id="update-axis"><a href="#update-axis" class="headerlink" title="update_axis"></a>update_axis</h4><p>更新边所连接的节点</p>
-<hr>
-<h2 id="Ncon"><a href="#Ncon" class="headerlink" title="Ncon"></a>Ncon</h2><h3 id="tensornetwork-ncon"><a href="#tensornetwork-ncon" class="headerlink" title="tensornetwork.ncon"></a>tensornetwork.ncon</h3><p>根据一个张量网络规范缩并张量或节点列表</p>
-<h3 id="tensornetwork-ncon-netwrok"><a href="#tensornetwork-ncon-netwrok" class="headerlink" title="tensornetwork.ncon_netwrok"></a>tensornetwork.ncon_netwrok</h3><p>根据张量从张量列表创建一个网络</p>
-<hr>
-<h2 id="Matrix-Product-States"><a href="#Matrix-Product-States" class="headerlink" title="Matrix Product States"></a>Matrix Product States</h2><h3 id="class-tensornetwork-matrixprductstates-base-mps-BaseMPS"><a href="#class-tensornetwork-matrixprductstates-base-mps-BaseMPS" class="headerlink" title="class tensornetwork.matrixprductstates.base_mps.BaseMPS"></a><em>class</em> tensornetwork.matrixprductstates.base_mps.BaseMPS</h3><p>MPS的基类。BaseMPS是一个有限单元的无限矩阵乘积状态。</p>
-<h4 id="apply-one-site-gate"><a href="#apply-one-site-gate" class="headerlink" title="apply_one_site_gate"></a>apply_one_site_gate</h4><h4 id="apply-transfer-operator"><a href="#apply-transfer-operator" class="headerlink" title="apply_transfer_operator"></a>apply_transfer_operator</h4><h4 id="apply-two-site-gate"><a href="#apply-two-site-gate" class="headerlink" title="apply_two_site_gate"></a>apply_two_site_gate</h4><h4 id="bond-dimension"><a href="#bond-dimension" class="headerlink" title="bond_dimension"></a>bond_dimension</h4><h4 id="check-orthonormality"><a href="#check-orthonormality" class="headerlink" title="check_orthonormality"></a>check_orthonormality</h4><h4 id="get-node"><a href="#get-node" class="headerlink" title="get_node"></a>get_node</h4><h4 id="measure-local-operator"><a href="#measure-local-operator" class="headerlink" title="measure_local_operator"></a>measure_local_operator</h4><h4 id="measure-two-body-correlator"><a href="#measure-two-body-correlator" class="headerlink" title="measure_two_body_correlator"></a>measure_two_body_correlator</h4><h4 id="physical-dimensions"><a href="#physical-dimensions" class="headerlink" title="physical_dimensions"></a>physical_dimensions</h4><h4 id="position"><a href="#position" class="headerlink" title="position"></a>position</h4><h4 id="switch-backend"><a href="#switch-backend" class="headerlink" title="switch_backend"></a>switch_backend</h4><hr>
-<h3 id="class-tensornetwork-matrixprductstates-finite-mps-FiniteMPS"><a href="#class-tensornetwork-matrixprductstates-finite-mps-FiniteMPS" class="headerlink" title="class tensornetwork.matrixprductstates.finite_mps.FiniteMPS"></a><em>class</em> tensornetwork.matrixprductstates.finite_mps.FiniteMPS</h3><p>表示有限系统的MPS类</p>
-<h4 id="canonicalize"><a href="#canonicalize" class="headerlink" title="canonicalize"></a>canonicalize</h4><h4 id="check-canonical"><a href="#check-canonical" class="headerlink" title="check_canonical"></a>check_canonical</h4><h4 id="left-envs"><a href="#left-envs" class="headerlink" title="left_envs"></a>left_envs</h4><h4 id="classmethod-random"><a href="#classmethod-random" class="headerlink" title="classmethod random"></a><em>classmethod</em> random</h4><h4 id="right-envs"><a href="#right-envs" class="headerlink" title="right_envs"></a>right_envs</h4><hr>
-<h3 id="class-tensornetwork-matrixprductstates-infinite-mps-InfiniteMPS"><a href="#class-tensornetwork-matrixprductstates-infinite-mps-InfiniteMPS" class="headerlink" title="class tensornetwork.matrixprductstates.infinite_mps.InfiniteMPS"></a><em>class</em> tensornetwork.matrixprductstates.infinite_mps.InfiniteMPS</h3><p>表示无限系统的MPS类</p>
-<h4 id="canonicalize-1"><a href="#canonicalize-1" class="headerlink" title="canonicalize"></a>canonicalize</h4><h4 id="classmethod-random-1"><a href="#classmethod-random-1" class="headerlink" title="classmethod random"></a><em>classmethod</em> random</h4><h4 id="transfer-matrix-eigs"><a href="#transfer-matrix-eigs" class="headerlink" title="transfer_matrix_eigs"></a>transfer_matrix_eigs</h4><hr>
+            <p>1.求$AX^2+BX+C=0$的根，其中$A,B,C$都是可逆矩阵，自己给定(用随机数生成，$3 \times 3$或$5 \times 5$)，$X$为$N \times N$的矩阵，求根$X$，收敛性如何。</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">3</span>;</span><br><span class="line">beta = <span class="keyword">RandomReal</span>[<span class="number">1</span>];</span><br><span class="line">iternum = <span class="number">20</span>;</span><br><span class="line">Amatrix = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br><span class="line">Bmatrix = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br><span class="line">Cmatrix = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[Amatrix], <span class="string">"A:"</span>];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[Bmatrix], <span class="string">"B:"</span>];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[Cmatrix], <span class="string">"C:"</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Xstart = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br><span class="line"></span><br><span class="line">XmTable1 = <span class="keyword">Table</span>[<span class="keyword">Table</span>[<span class="number">0</span> , &#123;i, n&#125;, &#123;j, n&#125;], &#123;i, iternum&#125;];</span><br><span class="line">XmTable1[[<span class="number">1</span>]] = Xstart;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Table</span>[XmTable1[[i + <span class="number">1</span>]] =   </span><br><span class="line">   XmTable1[[i]] +  </span><br><span class="line">    beta*(Amatrix.XmTable1[[i]].XmTable1[[i]] + </span><br><span class="line">       Bmatrix.XmTable1[[i]] + Cmatrix), &#123;i, iternum - <span class="number">1</span>&#125;];</span><br><span class="line"><span class="keyword">Table</span>[<span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[XmTable1[[i]]], <span class="string">"iter:"</span>, i], &#123;i, iternum&#125;];</span><br><span class="line">TestIter1 = XmTable1[[iternum]] -  XmTable1[[iternum - <span class="number">1</span>]];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[TestIter1], <span class="string">"Def1:"</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">XmTable2 = <span class="keyword">Table</span>[<span class="keyword">Table</span>[<span class="number">0</span> , &#123;i, n&#125;, &#123;j, n&#125;], &#123;i, iternum&#125;];</span><br><span class="line">XmTable2[[<span class="number">1</span>]] = Xstart;</span><br><span class="line">BmatrInver = <span class="keyword">Inverse</span>[Bmatrix];</span><br><span class="line"><span class="keyword">Table</span>[XmTable2[[i + <span class="number">1</span>]] =   </span><br><span class="line">   BmatrInver.(-Amatrix.XmTable2[[i]].XmTable2[[i]] - Cmatrix), &#123;i, </span><br><span class="line">   iternum - <span class="number">1</span>&#125;];</span><br><span class="line"><span class="keyword">Table</span>[<span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[XmTable2[[i]]], <span class="string">"iter:"</span>, i], &#123;i, iternum&#125;];</span><br><span class="line">TestIter2 = XmTable2[[iternum]] -  XmTable2[[iternum - <span class="number">1</span>]];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[TestIter2], <span class="string">"Def2:"</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">XmTable3 = <span class="keyword">Table</span>[<span class="keyword">Table</span>[<span class="number">0</span> , &#123;i, n&#125;, &#123;j, n&#125;], &#123;i, iternum&#125;];</span><br><span class="line">XmTable3[[<span class="number">1</span>]] = Xstart;</span><br><span class="line">AmatrInver = <span class="keyword">Inverse</span>[Amatrix];</span><br><span class="line"><span class="keyword">Table</span>[XmTable3[[i + <span class="number">1</span>]] =   </span><br><span class="line">   AmatrInver.<span class="keyword">Inverse</span>[</span><br><span class="line">     XmTable3[[i]]].(-Bmatrix.XmTable3[[i]] - Cmatrix), &#123;i, </span><br><span class="line">   iternum - <span class="number">1</span>&#125;];</span><br><span class="line"><span class="keyword">Table</span>[<span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[XmTable3[[i]]], <span class="string">"iter:"</span>, i], &#123;i, iternum&#125;];</span><br><span class="line">TestIter3 = XmTable3[[iternum]] -  XmTable3[[iternum - <span class="number">1</span>]];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[TestIter3], <span class="string">"Def3:"</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Xmatrix = <span class="keyword">Array</span>[xn, &#123;n, n&#125;];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[Xmatrix], <span class="string">"X:"</span>];</span><br><span class="line">ResSol = <span class="keyword">FindRoot</span>[</span><br><span class="line">  Amatrix.Xmatrix.Xmatrix + Bmatrix.Xmatrix + Cmatrix == <span class="number">0</span>, </span><br><span class="line">  <span class="keyword">Flatten</span>[<span class="keyword">Array</span>[&#123;Xmatrix[[#<span class="number">1</span>, #<span class="number">2</span>]], <span class="number">0</span>&#125; &amp;, &#123;n, n&#125;], <span class="number">1</span>]]</span><br><span class="line">ResX = Xmatrix /. ResSol;</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[ResX], <span class="string">"X ResSol:"</span>];</span><br></pre></td></tr></table></figure>
+<p>试了很多次，很难找到一个收敛的迭代。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200312234648.png" alt=""></p>
 
         </div>
         
@@ -249,7 +180,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Tensor-Netwowrk/" rel="tag">Tensor Netwowrk</a>
+                    <a class="has-link-grey -link" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" rel="tag">计算物理</a>
                 </div>
             </div>
         </div>
@@ -266,17 +197,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/28/Tensor-network-learning-framework/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Tensor network learning framework</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/25/Tensor-network-algorithms/">
-                <span class="level-item">Tensor network algorithms</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/11/TensorFlow-Quantum/">
+                <span class="level-item">TensorFlow Quantum</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -367,369 +291,6 @@
 </div>
     
         
-
-    <div class="card widget" id="toc">
-        <div class="card-content">
-            <div class="menu">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-        <a class="is-flex" href="#TensorNetwork">
-        <span class="has-mr-6">1</span>
-        <span>TensorNetwork</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-conj">
-        <span class="has-mr-6">1.1</span>
-        <span>tensornetwork.conj</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-copy">
-        <span class="has-mr-6">1.2</span>
-        <span>tensornetwork.copy</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-transpose">
-        <span class="has-mr-6">1.3</span>
-        <span>tensornetwork.transpose</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-reachable">
-        <span class="has-mr-6">1.4</span>
-        <span>tensornetwork.reachable</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-remove-node">
-        <span class="has-mr-6">1.5</span>
-        <span>tensornetwork.remove_node</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-split">
-        <span class="has-mr-6">1.6</span>
-        <span>tensornetwork.split</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-split-node">
-        <span class="has-mr-6">1.6.1</span>
-        <span>tensornetwork.split_node</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-split-node-qr">
-        <span class="has-mr-6">1.6.2</span>
-        <span>tensornetwork.split_node_qr</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-split-node-rq">
-        <span class="has-mr-6">1.6.3</span>
-        <span>tensornetwork.split_node_rq</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-split-node-full-svd">
-        <span class="has-mr-6">1.6.4</span>
-        <span>tensornetwork.split_node_full_svd</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#tensornetwork-check">
-        <span class="has-mr-6">1.7</span>
-        <span>tensornetwork.check</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-check-connected">
-        <span class="has-mr-6">1.7.1</span>
-        <span>tensornetwork.check_connected</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-check-correct">
-        <span class="has-mr-6">1.7.2</span>
-        <span>tensornetwork.check_correct</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#tensornetwork-get">
-        <span class="has-mr-6">1.8</span>
-        <span>tensornetwork.get</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-get-all-nodes">
-        <span class="has-mr-6">1.8.1</span>
-        <span>tensornetwork.get_all_nodes</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-get-all-edges">
-        <span class="has-mr-6">1.8.2</span>
-        <span>tensornetwork.get_all_edges</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-get-all-nondangling">
-        <span class="has-mr-6">1.8.3</span>
-        <span>tensornetwork.get_all_nondangling</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-get-all-dangling">
-        <span class="has-mr-6">1.8.4</span>
-        <span>tensornetwork.get_all_dangling</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-get-parallel-edges">
-        <span class="has-mr-6">1.8.5</span>
-        <span>tensornetwork.get_parallel_edges</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-get-shared-edges">
-        <span class="has-mr-6">1.8.6</span>
-        <span>tensornetwork.get_shared_edges</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#tensornetwork-contract">
-        <span class="has-mr-6">1.9</span>
-        <span>tensornetwork.contract</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-contract-trace-edges">
-        <span class="has-mr-6">1.9.1</span>
-        <span>tensornetwork.contract_trace_edges</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contract-1">
-        <span class="has-mr-6">1.9.2</span>
-        <span>tensornetwork.contract</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contract-copy-node">
-        <span class="has-mr-6">1.9.3</span>
-        <span>tensornetwork.contract_copy_node</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contract-between">
-        <span class="has-mr-6">1.9.4</span>
-        <span>tensornetwork.contract_between</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contract-parallel">
-        <span class="has-mr-6">1.9.5</span>
-        <span>tensornetwork.contract_parallel</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#tensornetwork-outer">
-        <span class="has-mr-6">1.10</span>
-        <span>tensornetwork.outer</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-outer-product">
-        <span class="has-mr-6">1.10.1</span>
-        <span>tensornetwork.outer_product</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-outer-product-final-nodes">
-        <span class="has-mr-6">1.10.2</span>
-        <span>tensornetwork.outer_product_final_nodes</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#tensornetwork-flatten">
-        <span class="has-mr-6">1.11</span>
-        <span>tensornetwork.flatten</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-flatten-edges">
-        <span class="has-mr-6">1.11.1</span>
-        <span>tensornetwork.flatten_edges</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-flatten-all-edges">
-        <span class="has-mr-6">1.11.2</span>
-        <span>tensornetwork.flatten_all_edges</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-flatten-edges-between">
-        <span class="has-mr-6">1.11.3</span>
-        <span>tensornetwork.flatten_edges_between</span>
-        </a></li></ul></li></ul></li><li>
-        <a class="is-flex" href="#Contractors">
-        <span class="has-mr-6">2</span>
-        <span>Contractors</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-contractors-greedy">
-        <span class="has-mr-6">2.1</span>
-        <span>tensornetwork.contractors.greedy</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contractors-branch">
-        <span class="has-mr-6">2.2</span>
-        <span>tensornetwork.contractors.branch</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contractors-optimal">
-        <span class="has-mr-6">2.3</span>
-        <span>tensornetwork.contractors.optimal</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contractors-auto">
-        <span class="has-mr-6">2.4</span>
-        <span>tensornetwork.contractors.auto</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-contractors-custom">
-        <span class="has-mr-6">2.5</span>
-        <span>tensornetwork.contractors.custom</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#Nodes">
-        <span class="has-mr-6">3</span>
-        <span>Nodes</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#class-tensornetwork-Node">
-        <span class="has-mr-6">3.1</span>
-        <span>class tensornetwork.Node</span>
-        </a></li><li>
-        <a class="is-flex" href="#class-tensornetwork-CopyNode">
-        <span class="has-mr-6">3.2</span>
-        <span>class tensornetwork.CopyNode</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#compute-contracted-tensor">
-        <span class="has-mr-6">3.2.1</span>
-        <span>compute_contracted_tensor</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#calss-tensornetwork-BaseNode">
-        <span class="has-mr-6">3.3</span>
-        <span>calss tensornetwork.BaseNode</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#add-axis-names">
-        <span class="has-mr-6">3.3.1</span>
-        <span>add_axis_names</span>
-        </a></li><li>
-        <a class="is-flex" href="#add-edge">
-        <span class="has-mr-6">3.3.2</span>
-        <span>add_edge</span>
-        </a></li><li>
-        <a class="is-flex" href="#get-all-dangling">
-        <span class="has-mr-6">3.3.3</span>
-        <span>get_all_dangling</span>
-        </a></li><li>
-        <a class="is-flex" href="#get-all-nondangling">
-        <span class="has-mr-6">3.3.4</span>
-        <span>get_all_nondangling</span>
-        </a></li><li>
-        <a class="is-flex" href="#get-axis-number">
-        <span class="has-mr-6">3.3.5</span>
-        <span>get_axis_number</span>
-        </a></li><li>
-        <a class="is-flex" href="#get-dimension">
-        <span class="has-mr-6">3.3.6</span>
-        <span>get_dimension</span>
-        </a></li><li>
-        <a class="is-flex" href="#get-rank">
-        <span class="has-mr-6">3.3.7</span>
-        <span>get_rank</span>
-        </a></li><li>
-        <a class="is-flex" href="#reorder-axes">
-        <span class="has-mr-6">3.3.8</span>
-        <span>reorder_axes</span>
-        </a></li><li>
-        <a class="is-flex" href="#reoder-edges">
-        <span class="has-mr-6">3.3.9</span>
-        <span>reoder_edges</span>
-        </a></li><li>
-        <a class="is-flex" href="#set-signature">
-        <span class="has-mr-6">3.3.10</span>
-        <span>set_signature</span>
-        </a></li></ul></li></ul></li><li>
-        <a class="is-flex" href="#Edges">
-        <span class="has-mr-6">4</span>
-        <span>Edges</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#class-tensornetwork-Edge">
-        <span class="has-mr-6">4.1</span>
-        <span>class tensornetwork.Edge</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#disconnect">
-        <span class="has-mr-6">4.1.1</span>
-        <span>disconnect</span>
-        </a></li><li>
-        <a class="is-flex" href="#get-nodes">
-        <span class="has-mr-6">4.1.2</span>
-        <span>get_nodes</span>
-        </a></li><li>
-        <a class="is-flex" href="#is-being-used">
-        <span class="has-mr-6">4.1.3</span>
-        <span>is_being_used</span>
-        </a></li><li>
-        <a class="is-flex" href="#is-dangling">
-        <span class="has-mr-6">4.1.4</span>
-        <span>is_dangling</span>
-        </a></li><li>
-        <a class="is-flex" href="#update-axis">
-        <span class="has-mr-6">4.1.5</span>
-        <span>update_axis</span>
-        </a></li></ul></li></ul></li><li>
-        <a class="is-flex" href="#Ncon">
-        <span class="has-mr-6">5</span>
-        <span>Ncon</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#tensornetwork-ncon">
-        <span class="has-mr-6">5.1</span>
-        <span>tensornetwork.ncon</span>
-        </a></li><li>
-        <a class="is-flex" href="#tensornetwork-ncon-netwrok">
-        <span class="has-mr-6">5.2</span>
-        <span>tensornetwork.ncon_netwrok</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#Matrix-Product-States">
-        <span class="has-mr-6">6</span>
-        <span>Matrix Product States</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#class-tensornetwork-matrixprductstates-base-mps-BaseMPS">
-        <span class="has-mr-6">6.1</span>
-        <span>class tensornetwork.matrixprductstates.base_mps.BaseMPS</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#apply-one-site-gate">
-        <span class="has-mr-6">6.1.1</span>
-        <span>apply_one_site_gate</span>
-        </a></li><li>
-        <a class="is-flex" href="#apply-transfer-operator">
-        <span class="has-mr-6">6.1.2</span>
-        <span>apply_transfer_operator</span>
-        </a></li><li>
-        <a class="is-flex" href="#apply-two-site-gate">
-        <span class="has-mr-6">6.1.3</span>
-        <span>apply_two_site_gate</span>
-        </a></li><li>
-        <a class="is-flex" href="#bond-dimension">
-        <span class="has-mr-6">6.1.4</span>
-        <span>bond_dimension</span>
-        </a></li><li>
-        <a class="is-flex" href="#check-orthonormality">
-        <span class="has-mr-6">6.1.5</span>
-        <span>check_orthonormality</span>
-        </a></li><li>
-        <a class="is-flex" href="#get-node">
-        <span class="has-mr-6">6.1.6</span>
-        <span>get_node</span>
-        </a></li><li>
-        <a class="is-flex" href="#measure-local-operator">
-        <span class="has-mr-6">6.1.7</span>
-        <span>measure_local_operator</span>
-        </a></li><li>
-        <a class="is-flex" href="#measure-two-body-correlator">
-        <span class="has-mr-6">6.1.8</span>
-        <span>measure_two_body_correlator</span>
-        </a></li><li>
-        <a class="is-flex" href="#physical-dimensions">
-        <span class="has-mr-6">6.1.9</span>
-        <span>physical_dimensions</span>
-        </a></li><li>
-        <a class="is-flex" href="#position">
-        <span class="has-mr-6">6.1.10</span>
-        <span>position</span>
-        </a></li><li>
-        <a class="is-flex" href="#switch-backend">
-        <span class="has-mr-6">6.1.11</span>
-        <span>switch_backend</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#class-tensornetwork-matrixprductstates-finite-mps-FiniteMPS">
-        <span class="has-mr-6">6.2</span>
-        <span>class tensornetwork.matrixprductstates.finite_mps.FiniteMPS</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#canonicalize">
-        <span class="has-mr-6">6.2.1</span>
-        <span>canonicalize</span>
-        </a></li><li>
-        <a class="is-flex" href="#check-canonical">
-        <span class="has-mr-6">6.2.2</span>
-        <span>check_canonical</span>
-        </a></li><li>
-        <a class="is-flex" href="#left-envs">
-        <span class="has-mr-6">6.2.3</span>
-        <span>left_envs</span>
-        </a></li><li>
-        <a class="is-flex" href="#classmethod-random">
-        <span class="has-mr-6">6.2.4</span>
-        <span>classmethod random</span>
-        </a></li><li>
-        <a class="is-flex" href="#right-envs">
-        <span class="has-mr-6">6.2.5</span>
-        <span>right_envs</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#class-tensornetwork-matrixprductstates-infinite-mps-InfiniteMPS">
-        <span class="has-mr-6">6.3</span>
-        <span>class tensornetwork.matrixprductstates.infinite_mps.InfiniteMPS</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#canonicalize-1">
-        <span class="has-mr-6">6.3.1</span>
-        <span>canonicalize</span>
-        </a></li><li>
-        <a class="is-flex" href="#classmethod-random-1">
-        <span class="has-mr-6">6.3.2</span>
-        <span>classmethod random</span>
-        </a></li><li>
-        <a class="is-flex" href="#transfer-matrix-eigs">
-        <span class="has-mr-6">6.3.3</span>
-        <span>transfer_matrix_eigs</span>
-        </a></li></ul></li></ul></li></ul>
-            </div>
-        </div>
-    </div>
 
     
         
@@ -1227,7 +788,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="TensorNetwork documentation" height="28">
+                    <img src="/images/hlzone.png" alt="computational physics homework" height="28">
                 
                 </a>
                 <p class="is-size-7">
