@@ -10,18 +10,18 @@
 <title>TensorFlow Quantum - hlzone</title>
 
 
-    <meta name="description" content="链接TFQ主页 TFQ Github TFQ-arxiv">
+    <meta name="description" content="TensorFlow Quantum(TFQ)是一个用于快速生成量子经典混合ML模型的量子机器学习库。 可以利用这个框架进行量子算法和应用的研究。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorFlow Quantum">
 <meta property="og:url" content="http://yoursite.com/2020/03/11/TensorFlow-Quantum/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="链接TFQ主页 TFQ Github TFQ-arxiv">
+<meta property="og:description" content="TensorFlow Quantum(TFQ)是一个用于快速生成量子经典混合ML模型的量子机器学习库。 可以利用这个框架进行量子算法和应用的研究。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-03-11T14:20:22.000Z">
-<meta property="article:modified_time" content="2020-03-11T14:25:36.095Z">
+<meta property="article:modified_time" content="2020-03-14T15:48:42.271Z">
 <meta property="article:author" content="hl">
-<meta property="article:tag" content="TensorFlow">
+<meta property="article:tag" content="TFQ">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -143,7 +143,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 23 个字)
+                    12 分钟 读完 (大约 1847 个字)
                 </span>
                 
                 
@@ -161,7 +161,44 @@
             
         </h1>
         <div class="content">
-            <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.tensorflow.org/quantum/">TFQ主页</a></p>
+            <p>TensorFlow Quantum(TFQ)是一个用于快速生成量子经典混合ML模型的量子机器学习库。</p>
+<p>可以利用这个框架进行量子算法和应用的研究。</p>
+<a id="more"></a>
+<p>TensorFlow Quantum专注于量子数据(<em>quantum data</em>)和构建量子-经典混合模型(<em>hybrid quantum-classical models</em>)。它在Cirq(一个Python库，用于编写、操作和优化量子电路，并在量子计算机和模拟器上运行它们)中设计的量子计算算法和逻辑，并提供与现有TensorFlow api兼容的量子计算原语，以及高性能的量子电路模拟器。</p>
+<p>Google将TensorFlow与其量子计算语言库Cirq整合到一起形成了TensorFlow Quantum。</p>
+<h2 id="Quantum-machine-learning-concepts"><a href="#Quantum-machine-learning-concepts" class="headerlink" title="Quantum machine learning concepts"></a>Quantum machine learning concepts</h2><p>量子机器学习(<em>Quantum machine learning</em>)由两个概念组成：量子数据和量子-经典混合模型。</p>
+<h3 id="Quantum-data"><a href="#Quantum-data" class="headerlink" title="Quantum data"></a>Quantum data</h3><p>量子数据是在自然或人工量子系统中产生的任何数据源，可以由量子计算机生成。量子数据显示出叠加和纠缠，导致联合概率分布，可能需要指数数量的经典计算资源来表示或存储。</p>
+<p>由NISQ处理器产生的量子数据是有噪声的，而且通常在测量之前就会发生纠缠。启发式机器学习技术可以创建模型，最大限度地从嘈杂的纠缠数据中提取有用的经典信息。TensorFlow Quantum (TFQ)库提供了用于开发模型的基本元素，这些模型可以在量子数据中分离和泛化相关性，这为改进现有的量子算法或发现新的量子算法提供了机会。</p>
+<p>以下是可以在量子设备上生成或模拟的量子数据示例：</p>
+<ul>
+<li>化学模拟(<em>Chemical simulation</em>)—提取有关化学结构和动力学的信息，可能应用于材料科学、计算化学、计算生物学和药物发现。</li>
+<li>量子物态模拟(<em>Quantum matter simulation</em>)—模拟和设计具有多体量子效应的物质的高温超导性或其它奇异态。</li>
+<li>量子控制(<em>Quantum control</em>)—混合量子经典模型可以通过变量训练来执行最优的开环或闭环控制、校准和误差降低。这包括量子器件和量子处理器的错误检测和校正策略。</li>
+<li>量子通信网络(<em>Quantum communication networks</em>)—利用机器学习来区分非正交量子态，应用于结构化量子中继器、量子接收器和纯化单元的设计和构建。</li>
+<li>量子计量(<em>Quantum metrology</em>)—量子增强的高精度测量，如量子传感和量子成像，本质上是在小型量子器件的探头上进行的，可以通过变分量子模型来设计或改进。</li>
+</ul>
+<h3 id="Hybrid-quantum-classical-models"><a href="#Hybrid-quantum-classical-models" class="headerlink" title="Hybrid quantum-classical models"></a>Hybrid quantum-classical models</h3><p>量子模型可以表示和概括具有量子力学起源的数据。由于近期的量子处理器规模还很小且是嘈杂的，量子模型不能仅仅使用量子处理器来概括量子数据。NISQ处理器必须与经典的协处理器协同工作才能有效。由于TensorFlow已经支持跨cpu、gpu和TPUs的异构计算，因此它被用作实验量子经典算法的基础平台。</p>
+<p>量子神经网络(<em>quantum neural network</em> (QNN))用来描述一个参数化的量子计算模型，最好是在量子计算机上执行。这一术语常与参数量子电路(<em>parameterized quantum circuit</em> (PQC))互换。</p>
+<h2 id="Research"><a href="#Research" class="headerlink" title="Research"></a>Research</h2><p>在NISQ阶段，在量子计算机上执行Shor算法和Grover算法还不现实。</p>
+<p>TensorFlow Quantum的目标是帮助发现NISQ阶段的算法，特别是以下方面:</p>
+<ul>
+<li><strong>使用经典的机器学习来增强NISQ算法</strong>。希望来自经典机器学习的技术可以增强我们对量子计算的理解。<a href="https://arxiv.org/abs/1907.05415">将经典递归神经网络用于量子神经网络的元学习中，利用递归神经网络(RNN)发现QAOA和VQE等算法的控制参数优化比简单的现成优化器更有效</a>。<a href="https://www.nature.com/articles/s41534-019-0141-3">机器学习优化量子控制，使用强化学习来帮助减少错误并产生更高质量的量子门</a>。</li>
+<li><strong>用量子电路模拟量子数据</strong>。<a href="https://www.nature.com/articles/s41567-019-0648-8">量子卷积神经网络</a>展示了一种量子电路，其结构类似于卷积神经网络(CNN)，用于检测物质的不同拓扑相位。量子计算机保存数据和模型。经典的处理器只看到来自模型输出的测量样本，而从不看到数据本身。<a href="https://arxiv.org/abs/1711.07500">在噪声量子计算机的鲁棒纠缠重正化过程中，利用DMERA模型对量子多体系统的信息进行压缩</a>。</li>
+</ul>
+<h2 id="TensorFlow-Quantum-design"><a href="#TensorFlow-Quantum-design" class="headerlink" title="TensorFlow Quantum design"></a>TensorFlow Quantum design</h2><h3 id="Cirq"><a href="#Cirq" class="headerlink" title="Cirq"></a>Cirq</h3><p>Cirq是谷歌的一个量子编程框架。它提供了在量子计算机或模拟量子计算机上创建、修改和调用量子电路的所有基本操作，如量子比特、门操作、电路和测量。TensorFlow Quantum使用这些Cirq原语将TensorFlow扩展到批量计算、模型构建和梯度计算。TensorFlow Quantum上的描述需要支持Cirq。</p>
+<h3 id="TensorFlow-Quantum-primitives"><a href="#TensorFlow-Quantum-primitives" class="headerlink" title="TensorFlow Quantum primitives"></a>TensorFlow Quantum primitives</h3><p>TensorFlow Quantum实现了将TensorFlow与量子计算硬件集成所需的组件。为此，TFQ引入了两种数据类型原语:</p>
+<ul>
+<li>量子线路(<em>Quantum circuit</em>)：Cirq使用TensorFlow定义了<code>cirq.Circuit</code>。可以创造各种规模的线路。</li>
+<li>泡利和(<em>Pauli sum</em>)：表示在Cirq中定义的泡利算子的张量积的线性组合<code>cirq.PauliSum</code>，可以创造不同大小的操作符。</li>
+</ul>
+<h4 id="Fundamental-ops"><a href="#Fundamental-ops" class="headerlink" title="Fundamental ops"></a>Fundamental ops</h4><p>使用物理量子计算机创建具有相同功能签名的Ops。在模拟的和物理的量子计算机之间进行切换就像改变一行代码一样简单。这些操作在<a href="https://github.com/tensorflow/quantum/blob/master/tensorflow_quantum/core/ops/circuit_execution_ops.py">circuit_execution_ops.py</a>中。</p>
+<h4 id="Layers"><a href="#Layers" class="headerlink" title="Layers"></a>Layers</h4><p>TensorFlow Quantum使用<code>tf.keras.layers.Layer</code>向开发人员公布采样、期望和状态计算。</p>
+<p>可以方便地为经典控制参数或读出操作创建电路层。此外，您可以创建一个高度复杂的层来支持批处理电路、批处理控制参数值和执行批处理读出操作。</p>
+<h4 id="Differentiators"><a href="#Differentiators" class="headerlink" title="Differentiators"></a>Differentiators</h4><p><code>tfq.diiferentiators</code>提供了几种标准的梯度计算算法。</p>
+<h4 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h4><p><code>tfq.datasets</code>包含一些量子数据集，希望更多人加入社区一起完善。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>有了这个库会让量子机器学习的研究变得更简单一些。</p>
+<p>可以使用在机器学习领域很成熟的TensorFlow后端进行计算，同时使用Cirq进行线路的描述。后面也许还可以像在IBM Q平台上连接真实的量子计算机进行研究。</p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.tensorflow.org/quantum/">TFQ主页</a></p>
 <p><a href="https://github.com/tensorflow/quantum">TFQ Github</a></p>
 <p><a href="https://arxiv.org/abs/2003.02989">TFQ-arxiv</a></p>
 
@@ -171,7 +208,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/TensorFlow/" rel="tag">TensorFlow</a>
+                    <a class="has-link-grey -link" href="/tags/TFQ/" rel="tag">TFQ</a>
                 </div>
             </div>
         </div>
@@ -325,7 +362,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Quantum-Volume/" style="font-size: 13.33px;">Quantum Volume</a> <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" style="font-size: 16.67px;">计算物理</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
+        <a href="/tags/Quantum-Volume/" style="font-size: 13.33px;">Quantum Volume</a> <a href="/tags/TFQ/" style="font-size: 10px;">TFQ</a> <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" style="font-size: 16.67px;">计算物理</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
     </div>
 </div>
     
@@ -487,16 +524,16 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
-                        <span class="tag">Tensor Netwowrk</span>
-                        <span class="tag is-grey">13</span>
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TensorFlow/">
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -713,16 +750,16 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
-                        <span class="tag">Tensor Netwowrk</span>
-                        <span class="tag is-grey">13</span>
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/TensorFlow/">
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag is-grey">1</span>
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
