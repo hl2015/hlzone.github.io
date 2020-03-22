@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Tensor Network Contractions - hlzone</title>
+
+
+    <meta name="description" content="Tensor Network Contractions: Methods and Applications to Quantum Many-Body Systems 翻阅一下本书的目录，看看自己学了哪些内容，本书还有哪些内容值得学习，还没有细看。 这本书把张量网络各类模型和算法应用大概的描述了一遍，理清张量网络的发展历程，描绘了张量网络领域的轮廓，是不错的综述教程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensor Network Contractions">
+<meta property="og:url" content="http://yoursite.com/2020/03/21/Tensor-Network-Contractions/index.html">
+<meta property="og:site_name" content="hlzone">
+<meta property="og:description" content="Tensor Network Contractions: Methods and Applications to Quantum Many-Body Systems 翻阅一下本书的目录，看看自己学了哪些内容，本书还有哪些内容值得学习，还没有细看。 这本书把张量网络各类模型和算法应用大概的描述了一遍，理清张量网络的发展历程，描绘了张量网络领域的轮廓，是不错的综述教程。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-03-21T14:24:18.000Z">
+<meta property="article:modified_time" content="2020-03-22T12:19:43.390Z">
+<meta property="article:author" content="hl">
+<meta property="article:tag" content="Tensor Netwowrk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/L.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/hlzone.png" alt="Tensor Network Contractions" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/catagories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/hlzone">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 分钟 读完 (大约 1585 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Tensor Network Contractions
+            
+        </h1>
+        <div class="content">
+            <p>Tensor Network Contractions: Methods and Applications to Quantum Many-Body Systems</p>
+<p>翻阅一下本书的目录，看看自己学了哪些内容，本书还有哪些内容值得学习，还没有细看。</p>
+<p>这本书把张量网络各类模型和算法应用大概的描述了一遍，理清张量网络的发展历程，描绘了张量网络领域的轮廓，是不错的综述教程。</p>
+<a id="more"></a>
+<p>但是因为是综述，很多内容都是一笔带过，需要自己去看相应的文献。</p>
+<p>第2章，第3章的基础内容表示我在另一个基础的教程中大概学过了。</p>
+<ul>
+<li>张量网络的符号表示，<a href="https://hlzone.github.io/2020/02/18/Introduction-to-tensor-network-notation/#more">introduction to tensor network notation</a></li>
+<li>一些常用张量网络模型，<a href="https://hlzone.github.io/2020/02/20/Matrix-product-states/#more">MPS</a>，<a href="https://hlzone.github.io/2020/02/28/Projected-entangled-pair-states/#more">PEPS</a>，<a href="https://hlzone.github.io/2020/03/02/Multiscale-entanglement-renormalisation-ansatz/#more">MERA</a></li>
+<li>两个算法，<a href="https://hlzone.github.io/2020/02/25/Tensor-network-algorithms/">DMRG和TEBD</a></li>
+<li>张量网络和量子信息，<a href="https://hlzone.github.io/2020/02/19/tensor-network-and-quantum-information/">tensor network and quantum information</a></li>
+</ul>
+<p>另外之前还学习了google开源的张量网络库TensorNetwork的使用</p>
+<ul>
+<li>TensorNetwork入门，<a href="https://hlzone.github.io/2020/02/22/TensorNetwork-google/#more">TensorNetwork</a></li>
+<li>TensorNetwork文档学习，<a href="https://hlzone.github.io/2020/02/27/TensorNetwork-documentation/#more">TensorNetwork documentation</a></li>
+<li>两个使用例子，<a href="https://hlzone.github.io/2020/03/03/SAT-Problem-with-TensorNetwork/">SAT Problem with TensorNetwork</a>，<a href="https://hlzone.github.io/2020/03/04/FFT-with-TensorNetwork/#more">FFT with TensorNetwork</a></li>
+</ul>
+<p>但是对于张量网络的理解和使用还是有些糊涂，不够清楚。教程或者程序的例子很多都是直接画出图像，或者直接写出程序，没有相应的表达。这样缩并的过程就不是很清晰，不知道为什么这样的缩并过程就可以得到结果，这个过程还要再思考一下。</p>
+<p>接着我可以再看看这篇综述，看看自己有哪些理解缺陷和不对的地方，更进一步的学习后面的内容，包括之前老师提到的虚时演化，和一些量子纠缠模拟的内容。</p>
+<p>同时加强实践，不动手是不能深入理解的，不能让学习的东西都成为空中楼阁。</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h2><h3 id="1-1-Numeric-Renormalization-Group-in-One-Dimension"><a href="#1-1-Numeric-Renormalization-Group-in-One-Dimension" class="headerlink" title="1.1 Numeric Renormalization Group in One Dimension"></a>1.1 Numeric Renormalization Group in One Dimension</h3><p>数值重整化群（NRG）是寻找自旋系统的基态的一个方法。作者从这开始讲述张量网络的发展历史。</p>
+<p>后面发展出了密度矩阵重整化群（DMRG），一个最有效和精确的一维模型算法。</p>
+<p>接着张量网络以最简单的形式矩阵乘积态（MPS）引入，介绍了一些MPS可以解决的问题。</p>
+<p>一些经常看到但还没清楚的概念，area law , ansatz</p>
+<h3 id="1-2-Tensor-Network-States-in-Two-Dimensions"><a href="#1-2-Tensor-Network-States-in-Two-Dimensions" class="headerlink" title="1.2 Tensor Network States in Two Dimensions"></a>1.2 Tensor Network States in Two Dimensions</h3><p>引入PEPS，一个二维的张量网络模型。和树状模型MERA。</p>
+<h3 id="1-3-Tensor-Renormalization-Group-and-Tensor-Network-Algorithms"><a href="#1-3-Tensor-Renormalization-Group-and-Tensor-Network-Algorithms" class="headerlink" title="1.3 Tensor Renormalization Group and Tensor Network Algorithms"></a>1.3 Tensor Renormalization Group and Tensor Network Algorithms</h3><p>因为很多张量网络不能精确的缩并，需要更有效的算法。</p>
+<p>引入了张量重整化群（TRG）方法，还有TEBD方法。</p>
+<h3 id="1-4-Organization-of-Lecture-Notes"><a href="#1-4-Organization-of-Lecture-Notes" class="headerlink" title="1.4 Organization of Lecture Notes"></a>1.4 Organization of Lecture Notes</h3><h2 id="2-Tensor-Network-Basic-Definitions-and-properties"><a href="#2-Tensor-Network-Basic-Definitions-and-properties" class="headerlink" title="2 Tensor Network: Basic Definitions and properties"></a>2 Tensor Network: Basic Definitions and properties</h2><h3 id="2-1-Scalar-Vector-Matrix-and-Tensor"><a href="#2-1-Scalar-Vector-Matrix-and-Tensor" class="headerlink" title="2.1 Scalar, Vector, Matrix, and Tensor"></a>2.1 Scalar, Vector, Matrix, and Tensor</h3><p>介绍张量和张量网络/算子的基本概念和定义，以及它们的图形表示。</p>
+<h3 id="2-2-Tensor-Network-and-Tensor-Network-States"><a href="#2-2-Tensor-Network-and-Tensor-Network-States" class="headerlink" title="2.2 Tensor Network and Tensor Network States"></a>2.2 Tensor Network and Tensor Network States</h3><p>介绍了几种常用的张量网络结构，MPS，树状结构和PEPS。</p>
+<h4 id="2-2-1-A-Simple-Example-of-Two-Spins-and-Schmidt-Decomposition"><a href="#2-2-1-A-Simple-Example-of-Two-Spins-and-Schmidt-Decomposition" class="headerlink" title="2.2.1 A Simple Example of Two Spins and Schmidt Decomposition"></a>2.2.1 A Simple Example of Two Spins and Schmidt Decomposition</h4><h4 id="2-2-2-Matrix-Product-State"><a href="#2-2-2-Matrix-Product-State" class="headerlink" title="2.2.2 Matrix Product State"></a>2.2.2 Matrix Product State</h4><h4 id="2-2-3-Affleck-Kennedy-Lieb-Tasaki-State"><a href="#2-2-3-Affleck-Kennedy-Lieb-Tasaki-State" class="headerlink" title="2.2.3 Affleck-Kennedy-Lieb-Tasaki State"></a>2.2.3 Affleck-Kennedy-Lieb-Tasaki State</h4><h4 id="2-2-4-Tree-Tensor-Network-State-TTNS-and-Projected-Entangled-Pair-State-PEPS"><a href="#2-2-4-Tree-Tensor-Network-State-TTNS-and-Projected-Entangled-Pair-State-PEPS" class="headerlink" title="2.2.4 Tree Tensor Network State(TTNS) and Projected Entangled Pair State(PEPS)"></a>2.2.4 Tree Tensor Network State(TTNS) and Projected Entangled Pair State(PEPS)</h4><h4 id="2-2-5-PEPS-Can-Represent-Non-trivial-Many-Body-States-Examples"><a href="#2-2-5-PEPS-Can-Represent-Non-trivial-Many-Body-States-Examples" class="headerlink" title="2.2.5 PEPS Can Represent Non-trivial Many-Body States: Examples"></a>2.2.5 PEPS Can Represent Non-trivial Many-Body States: Examples</h4><h4 id="2-2-6-Tensor-Network-Operators"><a href="#2-2-6-Tensor-Network-Operators" class="headerlink" title="2.2.6 Tensor Network Operators"></a>2.2.6 Tensor Network Operators</h4><h4 id="2-2-7-Tensor-Network-for-Quantum-Circuits"><a href="#2-2-7-Tensor-Network-for-Quantum-Circuits" class="headerlink" title="2.2.7 Tensor Network for Quantum Circuits"></a>2.2.7 Tensor Network for Quantum Circuits</h4><h3 id="2-3-Tensor-Networks-that-Can-Be-Contracted-Exactly"><a href="#2-3-Tensor-Networks-that-Can-Be-Contracted-Exactly" class="headerlink" title="2.3 Tensor Networks that Can Be Contracted Exactly"></a>2.3 Tensor Networks that Can Be Contracted Exactly</h3><p>举例说明三种可以精确缩并的特殊类型的TNs。</p>
+<h4 id="2-3-1-Definition-of-Exactly-Contractible-Tensor-Network-States"><a href="#2-3-1-Definition-of-Exactly-Contractible-Tensor-Network-States" class="headerlink" title="2.3.1 Definition of Exactly Contractible Tensor Network States"></a>2.3.1 Definition of Exactly Contractible Tensor Network States</h4><h4 id="2-3-2-MPS-Wave-Function"><a href="#2-3-2-MPS-Wave-Function" class="headerlink" title="2.3.2 MPS Wave-Function"></a>2.3.2 MPS Wave-Function</h4><h4 id="2-3-3-Tree-Tensor-Network-Wave-Function"><a href="#2-3-3-Tree-Tensor-Network-Wave-Function" class="headerlink" title="2.3.3 Tree Tensor Network Wave-Function"></a>2.3.3 Tree Tensor Network Wave-Function</h4><h4 id="2-3-4-MERA-Wave-Functions"><a href="#2-3-4-MERA-Wave-Functions" class="headerlink" title="2.3.4 MERA Wave-Functions"></a>2.3.4 MERA Wave-Functions</h4><h4 id="2-3-5-Sequentially-Generated-PEPS-Wave-Functions"><a href="#2-3-5-Sequentially-Generated-PEPS-Wave-Functions" class="headerlink" title="2.3.5 Sequentially Generated PEPS Wave-Functions"></a>2.3.5 Sequentially Generated PEPS Wave-Functions</h4><h4 id="2-3-6-Exactly-Contractible-Tensor-Networks"><a href="#2-3-6-Exactly-Contractible-Tensor-Networks" class="headerlink" title="2.3.6 Exactly Contractible Tensor Networks"></a>2.3.6 Exactly Contractible Tensor Networks</h4><h3 id="2-4-Some-Discussions"><a href="#2-4-Some-Discussions" class="headerlink" title="2.4 Some Discussions"></a>2.4 Some Discussions</h3><p>讨论TN的一般形式、规范自由度以及与量子纠缠的关系。</p>
+<h4 id="2-4-1-General-Form-of-Tensor-Network"><a href="#2-4-1-General-Form-of-Tensor-Network" class="headerlink" title="2.4.1 General Form of Tensor Network"></a>2.4.1 General Form of Tensor Network</h4><h4 id="2-4-2-Gauge-Degrees-of-Freedom"><a href="#2-4-2-Gauge-Degrees-of-Freedom" class="headerlink" title="2.4.2 Gauge Degrees of Freedom"></a>2.4.2 Gauge Degrees of Freedom</h4><h4 id="2-4-3-Tensor-Network-and-Quantum-Entanglement"><a href="#2-4-3-Tensor-Network-and-Quantum-Entanglement" class="headerlink" title="2.4.3 Tensor Network and Quantum Entanglement"></a>2.4.3 Tensor Network and Quantum Entanglement</h4><h2 id="3-Two-Dimensional-Tensor-Networks-and-Contraction-Algorithms"><a href="#3-Two-Dimensional-Tensor-Networks-and-Contraction-Algorithms" class="headerlink" title="3 Two-Dimensional Tensor Networks and Contraction Algorithms"></a>3 Two-Dimensional Tensor Networks and Contraction Algorithms</h2><p>介绍了两位的张量网络及其缩并算法。</p>
+<h3 id="3-1-From-Physical-Problems-to-Two-Dimensional-Tensor-Networks"><a href="#3-1-From-Physical-Problems-to-Two-Dimensional-Tensor-Networks" class="headerlink" title="3.1 From Physical Problems to Two-Dimensional Tensor Networks"></a>3.1 From Physical Problems to Two-Dimensional Tensor Networks</h3><p>介绍了几个可以转化为2D 张量缩并的物理问题，包括经典模型的统计、TN状态的观察和一维量子模型的基态/有限温度模拟。</p>
+<h4 id="3-1-1-Classical-Partition-Functions"><a href="#3-1-1-Classical-Partition-Functions" class="headerlink" title="3.1.1 Classical Partition Functions"></a>3.1.1 Classical Partition Functions</h4><h4 id="3-1-2-Quantum-Observables"><a href="#3-1-2-Quantum-Observables" class="headerlink" title="3.1.2 Quantum Observables"></a>3.1.2 Quantum Observables</h4><h4 id="3-1-3-Ground-State-and-Finite-Temperature-Simulations"><a href="#3-1-3-Ground-State-and-Finite-Temperature-Simulations" class="headerlink" title="3.1.3 Ground-State and Finite-Temperature Simulations"></a>3.1.3 Ground-State and Finite-Temperature Simulations</h4><h3 id="3-2-Tensor-Renormalization-Group"><a href="#3-2-Tensor-Renormalization-Group" class="headerlink" title="3.2 Tensor Renormalization Group"></a>3.2 Tensor Renormalization Group</h3><p>TRG算法。</p>
+<h3 id="3-3-Corner-Transfer-Matrix-Renormalization-Group"><a href="#3-3-Corner-Transfer-Matrix-Renormalization-Group" class="headerlink" title="3.3 Corner Transfer Matrix Renormalization Group"></a>3.3 Corner Transfer Matrix Renormalization Group</h3><p>CTMRG算法。</p>
+<h3 id="3-4-Time-Evolving-Block-Decimation-Linearized-Contraction-and-Boundary-State-Methods"><a href="#3-4-Time-Evolving-Block-Decimation-Linearized-Contraction-and-Boundary-State-Methods" class="headerlink" title="3.4 Time-Evolving Block Decimation: Linearized Contraction and Boundary-State Methods"></a>3.4 Time-Evolving Block Decimation: Linearized Contraction and Boundary-State Methods</h3><p>TEBD算法。</p>
+<h3 id="3-5-Transverse-Contraction-and-Folding-Trick"><a href="#3-5-Transverse-Contraction-and-Folding-Trick" class="headerlink" title="3.5 Transverse Contraction and Folding Trick"></a>3.5 Transverse Contraction and Folding Trick</h3><h3 id="3-6-Relations-to-Exactly-Contractible-Tensor-Networks-and-Entanglement-Renormalization"><a href="#3-6-Relations-to-Exactly-Contractible-Tensor-Networks-and-Entanglement-Renormalization" class="headerlink" title="3.6 Relations to Exactly Contractible Tensor Networks and Entanglement Renormalization"></a>3.6 Relations to Exactly Contractible Tensor Networks and Entanglement Renormalization</h3><h2 id="4-Tensor-Network-Approaches-for-Higher-Dimensional-Quantum-Lattice-Models"><a href="#4-Tensor-Network-Approaches-for-Higher-Dimensional-Quantum-Lattice-Models" class="headerlink" title="4 Tensor Network Approaches for Higher-Dimensional Quantum Lattice Models"></a>4 Tensor Network Approaches for Higher-Dimensional Quantum Lattice Models</h2><p>重点讨论用于模拟二维量子晶格模型基态的PEPS算法。</p>
+<h3 id="4-1-Variational-Approaches-of-Projected-Entangled-Pair-State"><a href="#4-1-Variational-Approaches-of-Projected-Entangled-Pair-State" class="headerlink" title="4.1 Variational Approaches of Projected-Entangled Pair State"></a>4.1 Variational Approaches of Projected-Entangled Pair State</h3><p>PEPS的变分算法。</p>
+<h3 id="4-2-Imaginary-Time-Evolution-Methods"><a href="#4-2-Imaginary-Time-Evolution-Methods" class="headerlink" title="4.2 Imaginary-Time Evolution Methods"></a>4.2 Imaginary-Time Evolution Methods</h3><p>虚时演化方法。</p>
+<h3 id="4-3-Full-Simple-and-Cluster-Update-Schemes"><a href="#4-3-Full-Simple-and-Cluster-Update-Schemes" class="headerlink" title="4.3 Full, Simple, and Cluster Update Schemes"></a>4.3 Full, Simple, and Cluster Update Schemes</h3><p>根据更新张量的环境选择，解释简单的、集群的和完整的更新算法。</p>
+<h3 id="4-4-Summary-of-the-Tensor-Network-Algorithms-in-Higher-Dimensions"><a href="#4-4-Summary-of-the-Tensor-Network-Algorithms-in-Higher-Dimensions" class="headerlink" title="4.4 Summary of the Tensor Network Algorithms in Higher-Dimensions"></a>4.4 Summary of the Tensor Network Algorithms in Higher-Dimensions</h3><h2 id="5-Tensor-Network-Contraction-and-Multi-Linear-Algebra"><a href="#5-Tensor-Network-Contraction-and-Multi-Linear-Algebra" class="headerlink" title="5 Tensor Network Contraction and Multi-Linear Algebra"></a>5 Tensor Network Contraction and Multi-Linear Algebra</h2><p>讨论张量网络于多元线性代数的潜在关系。</p>
+<h3 id="5-1-A-Simple-Example-of-Solving-Tensor-Network-Contraction-by-Eigenvalue-Decomposition"><a href="#5-1-A-Simple-Example-of-Solving-Tensor-Network-Contraction-by-Eigenvalue-Decomposition" class="headerlink" title="5.1 A Simple Example of Solving Tensor Network Contraction by Eigenvalue Decomposition"></a>5.1 A Simple Example of Solving Tensor Network Contraction by Eigenvalue Decomposition</h3><p>一些通过特征值分解解决张量网络缩并问题的一些例子。从一个维度中MPS的规范化开始。</p>
+<h4 id="5-1-1-Canonicalization-of-Matrix-Product-State"><a href="#5-1-1-Canonicalization-of-Matrix-Product-State" class="headerlink" title="5.1.1 Canonicalization of Matrix Product State"></a>5.1.1 Canonicalization of Matrix Product State</h4><h4 id="5-1-2-Canonical-Form-and-Globally-Optimal-Truncation-of-MPS"><a href="#5-1-2-Canonical-Form-and-Globally-Optimal-Truncation-of-MPS" class="headerlink" title="5.1.2 Canonical Form and Globally Optimal Truncation of MPS"></a>5.1.2 Canonical Form and Globally Optimal Truncation of MPS</h4><h4 id="5-1-3-Canonicalization-Algorithm-and-Some-Related-Topics"><a href="#5-1-3-Canonicalization-Algorithm-and-Some-Related-Topics" class="headerlink" title="5.1.3 Canonicalization Algorithm and Some Related Topics"></a>5.1.3 Canonicalization Algorithm and Some Related Topics</h4><h3 id="5-2-Super-Orthogonalization-and-Tucker-Decomposition"><a href="#5-2-Super-Orthogonalization-and-Tucker-Decomposition" class="headerlink" title="5.2 Super-Orthogonalization and Tucker Decomposition"></a>5.2 Super-Orthogonalization and Tucker Decomposition</h3><p>高维中PEPS超正交化。</p>
+<h4 id="5-2-1-Super-Orthogonalization"><a href="#5-2-1-Super-Orthogonalization" class="headerlink" title="5.2.1 Super-Orthogonalization"></a>5.2.1 Super-Orthogonalization</h4><h4 id="5-2-2-Super-Orthogonalization-Algorithm"><a href="#5-2-2-Super-Orthogonalization-Algorithm" class="headerlink" title="5.2.2 Super-Orthogonalization Algorithm"></a>5.2.2 Super-Orthogonalization Algorithm</h4><h4 id="5-2-3-Super-Orthogonalization-and-Dimension-Reduction-by-Tucker-Decomposition"><a href="#5-2-3-Super-Orthogonalization-and-Dimension-Reduction-by-Tucker-Decomposition" class="headerlink" title="5.2.3 Super-Orthogonalization and Dimension Reduction by Tucker Decomposition"></a>5.2.3 Super-Orthogonalization and Dimension Reduction by Tucker Decomposition</h4><h3 id="5-3-Zero-Loop-Approximation-on-Regular-Lattices-and-Rank-1-Decomposition"><a href="#5-3-Zero-Loop-Approximation-on-Regular-Lattices-and-Rank-1-Decomposition" class="headerlink" title="5.3 Zero-Loop Approximation on Regular Lattices and Rank-1 Decomposition"></a>5.3 Zero-Loop Approximation on Regular Lattices and Rank-1 Decomposition</h3><p>正则晶格上PEPS的“零环”近似。</p>
+<h4 id="5-3-1-Super-Orthogonalization-Works-Well-for-Truncating-the-PEPS-on-Regular-Lattice-Some-Intuitive-Discussions"><a href="#5-3-1-Super-Orthogonalization-Works-Well-for-Truncating-the-PEPS-on-Regular-Lattice-Some-Intuitive-Discussions" class="headerlink" title="5.3.1 Super-Orthogonalization Works Well for Truncating the PEPS on Regular Lattice: Some Intuitive Discussions"></a>5.3.1 Super-Orthogonalization Works Well for Truncating the PEPS on Regular Lattice: Some Intuitive Discussions</h4><h4 id="5-3-2-Rank-1-Decomposition-and-Algorithm"><a href="#5-3-2-Rank-1-Decomposition-and-Algorithm" class="headerlink" title="5.3.2 Rank-1 Decomposition and Algorithm"></a>5.3.2 Rank-1 Decomposition and Algorithm</h4><h4 id="5-3-3-Rank-1-Decomposition-Super-Orthogonalization-and-Zero-Loop-Approximation"><a href="#5-3-3-Rank-1-Decomposition-Super-Orthogonalization-and-Zero-Loop-Approximation" class="headerlink" title="5.3.3 Rank-1 Decomposition, Super-Orthogonalization, and Zero-Loop Approximation"></a>5.3.3 Rank-1 Decomposition, Super-Orthogonalization, and Zero-Loop Approximation</h4><h4 id="5-3-4-Error-of-Zero-Loop-Approximation-and-Tree-Expansion-Theory-Based-on-Rank-Decomposition"><a href="#5-3-4-Error-of-Zero-Loop-Approximation-and-Tree-Expansion-Theory-Based-on-Rank-Decomposition" class="headerlink" title="5.3.4 Error of Zero-Loop Approximation and Tree-Expansion Theory Based on Rank-Decomposition"></a>5.3.4 Error of Zero-Loop Approximation and Tree-Expansion Theory Based on Rank-Decomposition</h4><h3 id="5-4-iDMRG-iTEBD-and-CTMRG-Revisited-by-Tensor-Ring-Decomposition"><a href="#5-4-iDMRG-iTEBD-and-CTMRG-Revisited-by-Tensor-Ring-Decomposition" class="headerlink" title="5.4 iDMRG, iTEBD, and CTMRG Revisited by Tensor Ring Decomposition"></a>5.4 iDMRG, iTEBD, and CTMRG Revisited by Tensor Ring Decomposition</h3><p>由张量环分解图像表示无限DMRG（iDMRG），无限TEBD（iTEBD），无限CTMRG。</p>
+<h4 id="5-4-1-Revisiting-iDMRG-iTEBD-and-CTMRG-A-Unified-Description-with-Tensor-Ring-Decomposition"><a href="#5-4-1-Revisiting-iDMRG-iTEBD-and-CTMRG-A-Unified-Description-with-Tensor-Ring-Decomposition" class="headerlink" title="5.4.1 Revisiting iDMRG, iTEBD, and CTMRG: A Unified Description with Tensor Ring Decomposition"></a>5.4.1 Revisiting iDMRG, iTEBD, and CTMRG: A Unified Description with Tensor Ring Decomposition</h4><h4 id="5-4-2-Extracting-the-Information-of-Tensor-Networks-From-Eigenvalue-Equations-Two-Examples"><a href="#5-4-2-Extracting-the-Information-of-Tensor-Networks-From-Eigenvalue-Equations-Two-Examples" class="headerlink" title="5.4.2 Extracting the Information of Tensor Networks From Eigenvalue Equations: Two Examples"></a>5.4.2 Extracting the Information of Tensor Networks From Eigenvalue Equations: Two Examples</h4><h2 id="6-Quantum-Entanglement-Simulation-Inspired-by-Tensor-Network"><a href="#6-Quantum-Entanglement-Simulation-Inspired-by-Tensor-Network" class="headerlink" title="6 Quantum Entanglement Simulation Inspired by Tensor Network"></a>6 Quantum Entanglement Simulation Inspired by Tensor Network</h2><p>QES是一种利用经典计算机或人工量子平台模拟多体模型来研究无限大多体系统的有效方法。这章就讨论张量网络启发的量子纠缠模拟。</p>
+<h3 id="6-1-Motivation-and-General-Ideas"><a href="#6-1-Motivation-and-General-Ideas" class="headerlink" title="6.1 Motivation and General Ideas"></a>6.1 Motivation and General Ideas</h3><h3 id="6-2-Simulating-One-Dimensional-Quantum-Lattice-Models"><a href="#6-2-Simulating-One-Dimensional-Quantum-Lattice-Models" class="headerlink" title="6.2 Simulating One-Dimensional Quantum Lattice Models"></a>6.2 Simulating One-Dimensional Quantum Lattice Models</h3><h3 id="6-3-Simulating-Higher-Dimensional-Quantum-Systems"><a href="#6-3-Simulating-Higher-Dimensional-Quantum-Systems" class="headerlink" title="6.3 Simulating Higher-Dimensional Quantum Systems"></a>6.3 Simulating Higher-Dimensional Quantum Systems</h3><h3 id="6-4-Quantum-Entanglement-Simulation-by-Tensor-Network-Summary"><a href="#6-4-Quantum-Entanglement-Simulation-by-Tensor-Network-Summary" class="headerlink" title="6.4 Quantum Entanglement Simulation by Tensor Network: Summary"></a>6.4 Quantum Entanglement Simulation by Tensor Network: Summary</h3>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Tensor-Netwowrk/" rel="tag">Tensor Netwowrk</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/20/Linear-algebra/">
+                <span class="level-item">Linear algebra</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/lm.jpeg" alt="hl">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        hl
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        尽人事，听天命
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hefei,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            30
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            2
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            9
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#1-Introduction">
+        <span class="has-mr-6">1</span>
+        <span>1 Introduction</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-1-Numeric-Renormalization-Group-in-One-Dimension">
+        <span class="has-mr-6">1.1</span>
+        <span>1.1 Numeric Renormalization Group in One Dimension</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-2-Tensor-Network-States-in-Two-Dimensions">
+        <span class="has-mr-6">1.2</span>
+        <span>1.2 Tensor Network States in Two Dimensions</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-3-Tensor-Renormalization-Group-and-Tensor-Network-Algorithms">
+        <span class="has-mr-6">1.3</span>
+        <span>1.3 Tensor Renormalization Group and Tensor Network Algorithms</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-4-Organization-of-Lecture-Notes">
+        <span class="has-mr-6">1.4</span>
+        <span>1.4 Organization of Lecture Notes</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-Tensor-Network-Basic-Definitions-and-properties">
+        <span class="has-mr-6">2</span>
+        <span>2 Tensor Network: Basic Definitions and properties</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#2-1-Scalar-Vector-Matrix-and-Tensor">
+        <span class="has-mr-6">2.1</span>
+        <span>2.1 Scalar, Vector, Matrix, and Tensor</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-Tensor-Network-and-Tensor-Network-States">
+        <span class="has-mr-6">2.2</span>
+        <span>2.2 Tensor Network and Tensor Network States</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#2-2-1-A-Simple-Example-of-Two-Spins-and-Schmidt-Decomposition">
+        <span class="has-mr-6">2.2.1</span>
+        <span>2.2.1 A Simple Example of Two Spins and Schmidt Decomposition</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-2-Matrix-Product-State">
+        <span class="has-mr-6">2.2.2</span>
+        <span>2.2.2 Matrix Product State</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-3-Affleck-Kennedy-Lieb-Tasaki-State">
+        <span class="has-mr-6">2.2.3</span>
+        <span>2.2.3 Affleck-Kennedy-Lieb-Tasaki State</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-4-Tree-Tensor-Network-State-TTNS-and-Projected-Entangled-Pair-State-PEPS">
+        <span class="has-mr-6">2.2.4</span>
+        <span>2.2.4 Tree Tensor Network State(TTNS) and Projected Entangled Pair State(PEPS)</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-5-PEPS-Can-Represent-Non-trivial-Many-Body-States-Examples">
+        <span class="has-mr-6">2.2.5</span>
+        <span>2.2.5 PEPS Can Represent Non-trivial Many-Body States: Examples</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-6-Tensor-Network-Operators">
+        <span class="has-mr-6">2.2.6</span>
+        <span>2.2.6 Tensor Network Operators</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-7-Tensor-Network-for-Quantum-Circuits">
+        <span class="has-mr-6">2.2.7</span>
+        <span>2.2.7 Tensor Network for Quantum Circuits</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-3-Tensor-Networks-that-Can-Be-Contracted-Exactly">
+        <span class="has-mr-6">2.3</span>
+        <span>2.3 Tensor Networks that Can Be Contracted Exactly</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#2-3-1-Definition-of-Exactly-Contractible-Tensor-Network-States">
+        <span class="has-mr-6">2.3.1</span>
+        <span>2.3.1 Definition of Exactly Contractible Tensor Network States</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-2-MPS-Wave-Function">
+        <span class="has-mr-6">2.3.2</span>
+        <span>2.3.2 MPS Wave-Function</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-3-Tree-Tensor-Network-Wave-Function">
+        <span class="has-mr-6">2.3.3</span>
+        <span>2.3.3 Tree Tensor Network Wave-Function</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-4-MERA-Wave-Functions">
+        <span class="has-mr-6">2.3.4</span>
+        <span>2.3.4 MERA Wave-Functions</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-5-Sequentially-Generated-PEPS-Wave-Functions">
+        <span class="has-mr-6">2.3.5</span>
+        <span>2.3.5 Sequentially Generated PEPS Wave-Functions</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-6-Exactly-Contractible-Tensor-Networks">
+        <span class="has-mr-6">2.3.6</span>
+        <span>2.3.6 Exactly Contractible Tensor Networks</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-4-Some-Discussions">
+        <span class="has-mr-6">2.4</span>
+        <span>2.4 Some Discussions</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#2-4-1-General-Form-of-Tensor-Network">
+        <span class="has-mr-6">2.4.1</span>
+        <span>2.4.1 General Form of Tensor Network</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-4-2-Gauge-Degrees-of-Freedom">
+        <span class="has-mr-6">2.4.2</span>
+        <span>2.4.2 Gauge Degrees of Freedom</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-4-3-Tensor-Network-and-Quantum-Entanglement">
+        <span class="has-mr-6">2.4.3</span>
+        <span>2.4.3 Tensor Network and Quantum Entanglement</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#3-Two-Dimensional-Tensor-Networks-and-Contraction-Algorithms">
+        <span class="has-mr-6">3</span>
+        <span>3 Two-Dimensional Tensor Networks and Contraction Algorithms</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#3-1-From-Physical-Problems-to-Two-Dimensional-Tensor-Networks">
+        <span class="has-mr-6">3.1</span>
+        <span>3.1 From Physical Problems to Two-Dimensional Tensor Networks</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#3-1-1-Classical-Partition-Functions">
+        <span class="has-mr-6">3.1.1</span>
+        <span>3.1.1 Classical Partition Functions</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-1-2-Quantum-Observables">
+        <span class="has-mr-6">3.1.2</span>
+        <span>3.1.2 Quantum Observables</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-1-3-Ground-State-and-Finite-Temperature-Simulations">
+        <span class="has-mr-6">3.1.3</span>
+        <span>3.1.3 Ground-State and Finite-Temperature Simulations</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#3-2-Tensor-Renormalization-Group">
+        <span class="has-mr-6">3.2</span>
+        <span>3.2 Tensor Renormalization Group</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-3-Corner-Transfer-Matrix-Renormalization-Group">
+        <span class="has-mr-6">3.3</span>
+        <span>3.3 Corner Transfer Matrix Renormalization Group</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-4-Time-Evolving-Block-Decimation-Linearized-Contraction-and-Boundary-State-Methods">
+        <span class="has-mr-6">3.4</span>
+        <span>3.4 Time-Evolving Block Decimation: Linearized Contraction and Boundary-State Methods</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-5-Transverse-Contraction-and-Folding-Trick">
+        <span class="has-mr-6">3.5</span>
+        <span>3.5 Transverse Contraction and Folding Trick</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-6-Relations-to-Exactly-Contractible-Tensor-Networks-and-Entanglement-Renormalization">
+        <span class="has-mr-6">3.6</span>
+        <span>3.6 Relations to Exactly Contractible Tensor Networks and Entanglement Renormalization</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#4-Tensor-Network-Approaches-for-Higher-Dimensional-Quantum-Lattice-Models">
+        <span class="has-mr-6">4</span>
+        <span>4 Tensor Network Approaches for Higher-Dimensional Quantum Lattice Models</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#4-1-Variational-Approaches-of-Projected-Entangled-Pair-State">
+        <span class="has-mr-6">4.1</span>
+        <span>4.1 Variational Approaches of Projected-Entangled Pair State</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-2-Imaginary-Time-Evolution-Methods">
+        <span class="has-mr-6">4.2</span>
+        <span>4.2 Imaginary-Time Evolution Methods</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-3-Full-Simple-and-Cluster-Update-Schemes">
+        <span class="has-mr-6">4.3</span>
+        <span>4.3 Full, Simple, and Cluster Update Schemes</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-4-Summary-of-the-Tensor-Network-Algorithms-in-Higher-Dimensions">
+        <span class="has-mr-6">4.4</span>
+        <span>4.4 Summary of the Tensor Network Algorithms in Higher-Dimensions</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#5-Tensor-Network-Contraction-and-Multi-Linear-Algebra">
+        <span class="has-mr-6">5</span>
+        <span>5 Tensor Network Contraction and Multi-Linear Algebra</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-1-A-Simple-Example-of-Solving-Tensor-Network-Contraction-by-Eigenvalue-Decomposition">
+        <span class="has-mr-6">5.1</span>
+        <span>5.1 A Simple Example of Solving Tensor Network Contraction by Eigenvalue Decomposition</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-1-1-Canonicalization-of-Matrix-Product-State">
+        <span class="has-mr-6">5.1.1</span>
+        <span>5.1.1 Canonicalization of Matrix Product State</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-1-2-Canonical-Form-and-Globally-Optimal-Truncation-of-MPS">
+        <span class="has-mr-6">5.1.2</span>
+        <span>5.1.2 Canonical Form and Globally Optimal Truncation of MPS</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-1-3-Canonicalization-Algorithm-and-Some-Related-Topics">
+        <span class="has-mr-6">5.1.3</span>
+        <span>5.1.3 Canonicalization Algorithm and Some Related Topics</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#5-2-Super-Orthogonalization-and-Tucker-Decomposition">
+        <span class="has-mr-6">5.2</span>
+        <span>5.2 Super-Orthogonalization and Tucker Decomposition</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-2-1-Super-Orthogonalization">
+        <span class="has-mr-6">5.2.1</span>
+        <span>5.2.1 Super-Orthogonalization</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-2-2-Super-Orthogonalization-Algorithm">
+        <span class="has-mr-6">5.2.2</span>
+        <span>5.2.2 Super-Orthogonalization Algorithm</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-2-3-Super-Orthogonalization-and-Dimension-Reduction-by-Tucker-Decomposition">
+        <span class="has-mr-6">5.2.3</span>
+        <span>5.2.3 Super-Orthogonalization and Dimension Reduction by Tucker Decomposition</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#5-3-Zero-Loop-Approximation-on-Regular-Lattices-and-Rank-1-Decomposition">
+        <span class="has-mr-6">5.3</span>
+        <span>5.3 Zero-Loop Approximation on Regular Lattices and Rank-1 Decomposition</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-3-1-Super-Orthogonalization-Works-Well-for-Truncating-the-PEPS-on-Regular-Lattice-Some-Intuitive-Discussions">
+        <span class="has-mr-6">5.3.1</span>
+        <span>5.3.1 Super-Orthogonalization Works Well for Truncating the PEPS on Regular Lattice: Some Intuitive Discussions</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-3-2-Rank-1-Decomposition-and-Algorithm">
+        <span class="has-mr-6">5.3.2</span>
+        <span>5.3.2 Rank-1 Decomposition and Algorithm</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-3-3-Rank-1-Decomposition-Super-Orthogonalization-and-Zero-Loop-Approximation">
+        <span class="has-mr-6">5.3.3</span>
+        <span>5.3.3 Rank-1 Decomposition, Super-Orthogonalization, and Zero-Loop Approximation</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-3-4-Error-of-Zero-Loop-Approximation-and-Tree-Expansion-Theory-Based-on-Rank-Decomposition">
+        <span class="has-mr-6">5.3.4</span>
+        <span>5.3.4 Error of Zero-Loop Approximation and Tree-Expansion Theory Based on Rank-Decomposition</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#5-4-iDMRG-iTEBD-and-CTMRG-Revisited-by-Tensor-Ring-Decomposition">
+        <span class="has-mr-6">5.4</span>
+        <span>5.4 iDMRG, iTEBD, and CTMRG Revisited by Tensor Ring Decomposition</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-4-1-Revisiting-iDMRG-iTEBD-and-CTMRG-A-Unified-Description-with-Tensor-Ring-Decomposition">
+        <span class="has-mr-6">5.4.1</span>
+        <span>5.4.1 Revisiting iDMRG, iTEBD, and CTMRG: A Unified Description with Tensor Ring Decomposition</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-4-2-Extracting-the-Information-of-Tensor-Networks-From-Eigenvalue-Equations-Two-Examples">
+        <span class="has-mr-6">5.4.2</span>
+        <span>5.4.2 Extracting the Information of Tensor Networks From Eigenvalue Equations: Two Examples</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#6-Quantum-Entanglement-Simulation-Inspired-by-Tensor-Network">
+        <span class="has-mr-6">6</span>
+        <span>6 Quantum Entanglement Simulation Inspired by Tensor Network</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#6-1-Motivation-and-General-Ideas">
+        <span class="has-mr-6">6.1</span>
+        <span>6.1 Motivation and General Ideas</span>
+        </a></li><li>
+        <a class="is-flex" href="#6-2-Simulating-One-Dimensional-Quantum-Lattice-Models">
+        <span class="has-mr-6">6.2</span>
+        <span>6.2 Simulating One-Dimensional Quantum Lattice Models</span>
+        </a></li><li>
+        <a class="is-flex" href="#6-3-Simulating-Higher-Dimensional-Quantum-Systems">
+        <span class="has-mr-6">6.3</span>
+        <span>6.3 Simulating Higher-Dimensional Quantum Systems</span>
+        </a></li><li>
+        <a class="is-flex" href="#6-4-Quantum-Entanglement-Simulation-by-Tensor-Network-Summary">
+        <span class="has-mr-6">6.4</span>
+        <span>6.4 Quantum Entanglement Simulation by Tensor Network: Summary</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Tensor-Netwowrk/">
+            <span class="level-start">
+                <span class="level-item">Tensor Netwowrk</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+            <span class="level-start">
+                <span class="level-item">计算物理</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Quantum-Volume/" style="font-size: 13.33px;">Quantum Volume</a> <a href="/tags/TFQ/" style="font-size: 10px;">TFQ</a> <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" style="font-size: 16.67px;">计算物理</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/21/Tensor-Network-Contractions/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network Contractions">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time></div>
+                    <a href="/2020/03/21/Tensor-Network-Contractions/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network Contractions</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/20/Linear-algebra/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linear algebra">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-20T11:21:38.000Z">2020-03-20</time></div>
+                    <a href="/2020/03/20/Linear-algebra/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linear algebra</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Lecture Notes on Quantum Algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T15:19:56.000Z">2020-03-18</time></div>
+                    <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Lecture Notes on Quantum Algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/17/Classical-Mechanics/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classical Mechanics">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T08:28:27.000Z">2020-03-17</time></div>
+                    <a href="/2020/03/17/Classical-Mechanics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classical Mechanics</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/12/computational-physics-homework/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics homework">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-12T15:38:59.000Z">2020-03-12</time></div>
+                    <a href="/2020/03/12/computational-physics-homework/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics homework</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">16</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quantum-Volume/">
+                        <span class="tag">Quantum Volume</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E5%88%92/">
+                        <span class="tag">计划</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+                        <span class="tag">计算物理</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/21/Tensor-Network-Contractions/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network Contractions">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time></div>
+                    <a href="/2020/03/21/Tensor-Network-Contractions/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network Contractions</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/20/Linear-algebra/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linear algebra">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-20T11:21:38.000Z">2020-03-20</time></div>
+                    <a href="/2020/03/20/Linear-algebra/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linear algebra</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Lecture Notes on Quantum Algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T15:19:56.000Z">2020-03-18</time></div>
+                    <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Lecture Notes on Quantum Algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/17/Classical-Mechanics/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classical Mechanics">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T08:28:27.000Z">2020-03-17</time></div>
+                    <a href="/2020/03/17/Classical-Mechanics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classical Mechanics</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/12/computational-physics-homework/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics homework">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-12T15:38:59.000Z">2020-03-12</time></div>
+                    <a href="/2020/03/12/computational-physics-homework/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics homework</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">16</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quantum-Volume/">
+                        <span class="tag">Quantum Volume</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E5%88%92/">
+                        <span class="tag">计划</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+                        <span class="tag">计算物理</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/hlzone.png" alt="Tensor Network Contractions" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 hl&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

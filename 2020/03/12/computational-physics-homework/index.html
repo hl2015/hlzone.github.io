@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-03-12T15:38:59.000Z">
-<meta property="article:modified_time" content="2020-03-15T12:44:02.652Z">
+<meta property="article:modified_time" content="2020-03-16T16:08:03.483Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="计算物理">
 <meta name="twitter:card" content="summary">
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 分钟 读完 (大约 949 个字)
+                    9 分钟 读完 (大约 1347 个字)
                 </span>
                 
                 
@@ -171,7 +171,7 @@
         <div class="content">
             <p>第一次计算物理作业</p>
 <a id="more"></a>
-<h2 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h2><p>1.求$AX^2+BX+C=0$的根，其中$A,B,C$都是可逆矩阵，自己给定(用随机数生成，$3 \times 3$或$5 \times 5$)，$X$为$N \times N$的矩阵，求根$X$，收敛性如何。</p>
+<h2 id="作业1"><a href="#作业1" class="headerlink" title="作业1"></a>作业1</h2><p>求$AX^2+BX+C=0$的根，其中$A,B,C$都是可逆矩阵，自己给定(用随机数生成，$3 \times 3$或$5 \times 5$)，$X$为$N \times N$的矩阵，求根$X$，收敛性如何。</p>
 <p><strong>初始化</strong>$A,B,C$</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">3</span>;</span><br><span class="line">iternum = <span class="number">20</span>;</span><br><span class="line">Amatrix = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br><span class="line">Bmatrix = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br><span class="line">Cmatrix = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[Amatrix], <span class="string">"A:"</span>];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[Bmatrix], <span class="string">"B:"</span>];</span><br><span class="line"><span class="keyword">Echo</span>[<span class="keyword">MatrixForm</span>[Cmatrix], <span class="string">"C:"</span>];</span><br><span class="line"></span><br><span class="line">Xstart = <span class="keyword">RandomReal</span>[<span class="number">1</span>, &#123;n, n&#125;];</span><br></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200313202948.png" alt=""></p>
@@ -192,7 +192,7 @@ X_{n+1} = A^{-1}(-BX_n-C)X_n^{-1}</script><figure class="highlight mathematica">
 <p>可以快速的求出根</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在这个题目中使用迭代法很难求出根，选取的初始点很关键，随机选到的初始点一般都不会收敛。我试了很久，只有一次$n=2$时求出了根。</p>
 <p>使用FindRoot内置函数会很快的求出根，因为它可以选择较优的求根方式来解决这个问题。</p>
-<h2 id="习题2"><a href="#习题2" class="headerlink" title="习题2"></a>习题2</h2><p>2.Lorenz Attractor</p>
+<h2 id="作业2"><a href="#作业2" class="headerlink" title="作业2"></a>作业2</h2><p>2.Lorenz Attractor</p>
 <script type="math/tex; mode=display">
 \left\{
 \begin{aligned}
@@ -237,7 +237,47 @@ z &= z^* + \widetilde{z} ,
 <p>会比系统自动选取的方法慢一些。</p>
 <h4 id="自己编写程序"><a href="#自己编写程序" class="headerlink" title="自己编写程序"></a>自己编写程序</h4><p>使用向前Euler公式</p>
 <script type="math/tex; mode=display">
-y_{n+1}  =  y_n + hf(x_n,y_n)</script>
+y_{n+1}  =  y_n + hf(x_n,y_n)</script><p>可以得到</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+x_{n+1} &= x_n + h(\sigma(y_n-x_n)) , \\
+y_{n+1} &= y_n + h(\rho x_n -y_n -x_nz_n) , \\
+z_{n+1} &= z_n+ h(x_ny_n - \beta z_n), 
+\end{aligned}
+\right.</script><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npoint = <span class="number">10000</span>;</span><br><span class="line">tmax = <span class="number">100</span>;</span><br><span class="line">F = <span class="keyword">Table</span>[&#123;x[t], y[t], z[t]&#125;, &#123;t, <span class="number">1</span>, npoint&#125;];</span><br><span class="line">h = tmax/npoint;</span><br><span class="line"></span><br><span class="line">F[[<span class="number">1</span>]] = &#123;xstart, ystart, zstart&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Table</span>[F[[t + <span class="number">1</span>]] =  &#123;F[[t, <span class="number">1</span>]] + h*sigma (F[[t, <span class="number">2</span>]] - F[[t, <span class="number">1</span>]]), </span><br><span class="line">    F[[t, <span class="number">2</span>]] + h*(rho*F[[t, <span class="number">1</span>]] - F[[t, <span class="number">2</span>]] - F[[t, <span class="number">1</span>]]*F[[t, <span class="number">3</span>]]), </span><br><span class="line">    F[[t, <span class="number">3</span>]] + h*(F[[t, <span class="number">1</span>]]*F[[t, <span class="number">2</span>]] - beta*F[[t, <span class="number">3</span>]])&#125; , &#123;t, <span class="number">1</span>, </span><br><span class="line">   npoint - <span class="number">1</span>&#125;];</span><br><span class="line"></span><br><span class="line"><span class="keyword">ListPointPlot3D</span>[F]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200316163205.png" alt=""></p>
+<h3 id="d-e-求A的特征值及其稳定性"><a href="#d-e-求A的特征值及其稳定性" class="headerlink" title="d.e.求A的特征值及其稳定性"></a>d.e.求A的特征值及其稳定性</h3><script type="math/tex; mode=display">
+\begin{pmatrix}
+\sigma(y-x) \\
+\rho x -y -xz \\
+xy - \beta z
+\end{pmatrix}
+= A
+\begin{pmatrix}
+x \\
+y \\
+z
+\end{pmatrix}</script><p>可设</p>
+<script type="math/tex; mode=display">
+A= 
+\begin{pmatrix}
+-\sigma & \sigma & 0\\
+\rho & -1 & -x \\
+y & 0 & -\beta
+\end{pmatrix}</script><p>程序为</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">sigma = <span class="number">7</span>;</span><br><span class="line">rho = <span class="number">28</span>;</span><br><span class="line">beta = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">EquSol = <span class="keyword">Solve</span>[ </span><br><span class="line">   sigma (ystar - xstar) == <span class="number">0</span> &amp;&amp; </span><br><span class="line">    rho*xstar - ystar - xstar*zstar == <span class="number">0</span> &amp;&amp; </span><br><span class="line">    xstar*ystar - beta*zstar == <span class="number">0</span>, &#123;xstar, ystar, zstar&#125;];</span><br><span class="line"><span class="keyword">Echo</span>[&#123;xstar, ystar, zstar&#125; /. %, <span class="string">"&#123;xstar,ystar,zstar&#125;:"</span>];</span><br><span class="line">start = &#123;xstar, ystar, zstar&#125; /. EquSol</span><br><span class="line"></span><br><span class="line">npoint = <span class="number">10</span>;</span><br><span class="line">tmax = <span class="number">1</span>/<span class="number">10</span>;</span><br><span class="line">F = <span class="keyword">Table</span>[&#123;x[t], y[t], z[t]&#125;, &#123;t, <span class="number">1</span>, npoint&#125;];</span><br><span class="line">h = tmax/npoint;</span><br><span class="line"></span><br><span class="line">F[[<span class="number">1</span>]] = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125; + &#123;<span class="keyword">RandomReal</span>[<span class="number">1</span>], <span class="keyword">RandomReal</span>[<span class="number">1</span>], <span class="keyword">RandomReal</span>[<span class="number">1</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Table</span>[F[[t + <span class="number">1</span>]] =  &#123;F[[t, <span class="number">1</span>]] + h*sigma (F[[t, <span class="number">2</span>]] - F[[t, <span class="number">1</span>]]), </span><br><span class="line">    F[[t, <span class="number">2</span>]] + h*(rho*F[[t, <span class="number">1</span>]] - F[[t, <span class="number">2</span>]] - F[[t, <span class="number">1</span>]]*F[[t, <span class="number">3</span>]]), </span><br><span class="line">    F[[t, <span class="number">3</span>]] + h*(F[[t, <span class="number">1</span>]]*F[[t, <span class="number">2</span>]] - beta*F[[t, <span class="number">3</span>]])&#125; , &#123;t, <span class="number">1</span>, </span><br><span class="line">   npoint - <span class="number">1</span>&#125;];</span><br><span class="line"></span><br><span class="line"><span class="keyword">ListPointPlot3D</span>[F]</span><br><span class="line"></span><br><span class="line">A = <span class="keyword">Table</span>[&#123;&#123;-sigma, -sigma, <span class="number">0</span>&#125;, &#123;rho, <span class="number">-1</span>, -F[[t, <span class="number">1</span>]]&#125;, &#123;F[[t, <span class="number">2</span>]], </span><br><span class="line">    <span class="number">0</span>, -beta&#125;&#125;, &#123;t, <span class="number">1</span>, npoint - <span class="number">1</span>&#125;]</span><br><span class="line"></span><br><span class="line">AEign = <span class="keyword">Table</span>[<span class="keyword">Eigenvalues</span>[A[[t]]], &#123;t, <span class="number">1</span>, npoint - <span class="number">1</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>任意取$(x^<em>,y^</em>,z^*)$为$(3,4,5)$，得到的结果不稳定</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200316210747.png" style="zoom: 67%;" /></p>
+<p>在取$(x^<em>,y^</em>,z^*)$为使导数为零点处，得到的结果较稳定</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F[[<span class="number">1</span>]] = start[[<span class="number">1</span>]] + &#123;<span class="keyword">RandomReal</span>[<span class="number">1</span>], <span class="keyword">RandomReal</span>[<span class="number">1</span>], <span class="keyword">RandomReal</span>[<span class="number">1</span>]&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200316210053.png" style="zoom:67%;" /></p>
+<h2 id="作业4"><a href="#作业4" class="headerlink" title="作业4"></a>作业4</h2><p>利用Mathematica的NDSolve函数求解$\ddot{\theta}=-\sin \theta$（取不同初始条件）。</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thetaStart = &#123;<span class="keyword">Pi</span>/<span class="number">2</span>, <span class="keyword">Pi</span>/<span class="number">4</span>, <span class="keyword">Pi</span>/<span class="number">6</span>, <span class="keyword">Pi</span>/<span class="number">8</span>&#125;;</span><br><span class="line"><span class="keyword">Table</span>[<span class="keyword">NDSolve</span>[&#123;theta''[t] == <span class="keyword">Sin</span>[theta[t]], </span><br><span class="line">   theta[<span class="number">0</span>] == thetaStart[[i]], theta'[<span class="number">0</span>] == <span class="number">0</span>&#125;, </span><br><span class="line">  theta[t], &#123;t, <span class="number">0</span>, <span class="number">100</span>&#125;], &#123;i, <span class="number">1</span>, <span class="number">4</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>运行结果为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200317000048.png" alt=""></p>
+<p>可以看到当$\theta$初始值较高时，势能更高，运动速度较快。</p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -260,6 +300,13 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/17/Classical-Mechanics/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Classical Mechanics</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -318,7 +365,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            26
+                            30
                         </p>
                     </a>
                 </div>
@@ -363,9 +410,9 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#习题1">
+        <a class="is-flex" href="#作业1">
         <span class="has-mr-6">1</span>
-        <span>习题1</span>
+        <span>作业1</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#第一种迭代方式">
         <span class="has-mr-6">1.1</span>
@@ -387,9 +434,9 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
         <span class="has-mr-6">1.5</span>
         <span>总结</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#习题2">
+        <a class="is-flex" href="#作业2">
         <span class="has-mr-6">2</span>
-        <span>习题2</span>
+        <span>作业2</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#a-画出运动轨迹">
         <span class="has-mr-6">2.1</span>
@@ -410,7 +457,15 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
         <a class="is-flex" href="#自己编写程序">
         <span class="has-mr-6">2.3.2</span>
         <span>自己编写程序</span>
-        </a></li></ul></li></ul></li></ul>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#d-e-求A的特征值及其稳定性">
+        <span class="has-mr-6">2.4</span>
+        <span>d.e.求A的特征值及其稳定性</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#作业4">
+        <span class="has-mr-6">3</span>
+        <span>作业4</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
@@ -430,7 +485,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                 <span class="level-item">Tensor Netwowrk</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">13</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
@@ -438,7 +493,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                 <span class="level-item">计算物理</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li>
             </ul>
@@ -466,6 +521,82 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
         
         <article class="media">
             
+            <a href="/2020/03/21/Tensor-Network-Contractions/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network Contractions">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time></div>
+                    <a href="/2020/03/21/Tensor-Network-Contractions/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network Contractions</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/20/Linear-algebra/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linear algebra">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-20T11:21:38.000Z">2020-03-20</time></div>
+                    <a href="/2020/03/20/Linear-algebra/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linear algebra</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Lecture Notes on Quantum Algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T15:19:56.000Z">2020-03-18</time></div>
+                    <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Lecture Notes on Quantum Algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/17/Classical-Mechanics/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classical Mechanics">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T08:28:27.000Z">2020-03-17</time></div>
+                    <a href="/2020/03/17/Classical-Mechanics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classical Mechanics</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/12/computational-physics-homework/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics homework">
@@ -478,82 +609,6 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                     <a href="/2020/03/12/computational-physics-homework/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics homework</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/11/TensorFlow-Quantum/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorFlow Quantum">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-11T14:20:22.000Z">2020-03-11</time></div>
-                    <a href="/2020/03/11/TensorFlow-Quantum/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorFlow Quantum</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/10/computational-physics-2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理--计算方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-10T15:12:06.000Z">2020-03-10</time></div>
-                    <a href="/2020/03/10/computational-physics-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理--计算方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/10/computational-physics-1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理--序">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-10T06:42:02.000Z">2020-03-10</time></div>
-                    <a href="/2020/03/10/computational-physics-1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理--序</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/09/Quantum-Volume-simplication/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="什么是量子体积？">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-09T11:52:30.000Z">2020-03-09</time></div>
-                    <a href="/2020/03/09/Quantum-Volume-simplication/" class="title has-link-black-ter is-size-6 has-text-weight-normal">什么是量子体积？</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -576,7 +631,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -622,7 +677,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
                         <span class="tag">Tensor Netwowrk</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -643,7 +698,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
                         <span class="tag">计算物理</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -692,6 +747,82 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
         
         <article class="media">
             
+            <a href="/2020/03/21/Tensor-Network-Contractions/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network Contractions">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time></div>
+                    <a href="/2020/03/21/Tensor-Network-Contractions/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network Contractions</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/20/Linear-algebra/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linear algebra">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-20T11:21:38.000Z">2020-03-20</time></div>
+                    <a href="/2020/03/20/Linear-algebra/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linear algebra</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Lecture Notes on Quantum Algorithms">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T15:19:56.000Z">2020-03-18</time></div>
+                    <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Lecture Notes on Quantum Algorithms</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/17/Classical-Mechanics/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classical Mechanics">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T08:28:27.000Z">2020-03-17</time></div>
+                    <a href="/2020/03/17/Classical-Mechanics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classical Mechanics</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/12/computational-physics-homework/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics homework">
@@ -704,82 +835,6 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                     <a href="/2020/03/12/computational-physics-homework/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics homework</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/11/TensorFlow-Quantum/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TensorFlow Quantum">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-11T14:20:22.000Z">2020-03-11</time></div>
-                    <a href="/2020/03/11/TensorFlow-Quantum/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TensorFlow Quantum</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/10/computational-physics-2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理--计算方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-10T15:12:06.000Z">2020-03-10</time></div>
-                    <a href="/2020/03/10/computational-physics-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理--计算方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/10/computational-physics-1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理--序">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-10T06:42:02.000Z">2020-03-10</time></div>
-                    <a href="/2020/03/10/computational-physics-1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理--序</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/09/Quantum-Volume-simplication/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="什么是量子体积？">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-09T11:52:30.000Z">2020-03-09</time></div>
-                    <a href="/2020/03/09/Quantum-Volume-simplication/" class="title has-link-black-ter is-size-6 has-text-weight-normal">什么是量子体积？</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -802,7 +857,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -848,7 +903,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
                         <span class="tag">Tensor Netwowrk</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -869,7 +924,7 @@ y_{n+1}  =  y_n + hf(x_n,y_n)</script>
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
                         <span class="tag">计算物理</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
