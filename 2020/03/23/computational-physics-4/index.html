@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>近期计划1 - hlzone</title>
+<title>computational physics 4 - hlzone</title>
 
 
-    <meta name="description" content="量子算法学习 学习绿皮书四五六章 。即量子线路部分，量子傅里叶变换和量子搜索算法部分。仔细思考，包括习题。 学习Andrew M. Childs的量子计算讲义。这部分是在上一步的基础上完成的。">
+    <meta name="description" content="Rigid Body DynamicsLagrange及动量守恒约束条件如下  \left\{ \begin{aligned} &amp;L &#x3D; \frac{1}{2} I_\psi (\dot{\psi}+\dot{\phi} \cos \theta)^2 + \frac{1}{2} I_0 (\dot{\theta}^2+\dot{\phi}^2 \sin \theta^2) -mgl \cos \t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="近期计划1">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/%E8%BF%91%E6%9C%9F%E8%AE%A1%E5%88%921/index.html">
+<meta property="og:title" content="computational physics 4">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/computational-physics-4/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="量子算法学习 学习绿皮书四五六章 。即量子线路部分，量子傅里叶变换和量子搜索算法部分。仔细思考，包括习题。 学习Andrew M. Childs的量子计算讲义。这部分是在上一步的基础上完成的。">
+<meta property="og:description" content="Rigid Body DynamicsLagrange及动量守恒约束条件如下  \left\{ \begin{aligned} &amp;L &#x3D; \frac{1}{2} I_\psi (\dot{\psi}+\dot{\phi} \cos \theta)^2 + \frac{1}{2} I_0 (\dot{\theta}^2+\dot{\phi}^2 \sin \theta^2) -mgl \cos \t">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-02-17T12:29:02.000Z">
-<meta property="article:modified_time" content="2020-02-17T12:40:16.870Z">
+<meta property="article:published_time" content="2020-03-23T11:07:42.000Z">
+<meta property="article:modified_time" content="2020-03-27T03:10:18.774Z">
 <meta property="article:author" content="hl">
-<meta property="article:tag" content="计划">
+<meta property="article:tag" content="计算物理">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="近期计划1" height="28">
+                <img src="/images/hlzone.png" alt="computational physics 4" height="28">
             
             </a>
         </div>
@@ -117,6 +117,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -137,13 +141,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-17T12:29:02.000Z">2020-02-17</time>
+                <time class="level-item has-text-grey" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 81 个字)
+                    4 分钟 读完 (大约 667 个字)
                 </span>
                 
                 
@@ -157,15 +165,110 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                近期计划1
+                computational physics 4
             
         </h1>
         <div class="content">
-            <h2 id="量子算法学习"><a href="#量子算法学习" class="headerlink" title="量子算法学习"></a>量子算法学习</h2><ol>
-<li><strong>学习绿皮书四五六章</strong> 。即量子线路部分，量子傅里叶变换和量子搜索算法部分。仔细思考，包括习题。</li>
-<li><strong>学习Andrew M. Childs的量子计算讲义</strong>。这部分是在上一步的基础上完成的。</li>
-</ol>
-<a id="more"></a>
+            <h3 id="Rigid-Body-Dynamics"><a href="#Rigid-Body-Dynamics" class="headerlink" title="Rigid Body Dynamics"></a>Rigid Body Dynamics</h3><p>Lagrange及动量守恒约束条件如下</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+&L = \frac{1}{2} I_\psi (\dot{\psi}+\dot{\phi} \cos \theta)^2
++ \frac{1}{2} I_0 (\dot{\theta}^2+\dot{\phi}^2 \sin \theta^2)
+-mgl \cos \theta \\
+&\frac{\partial L}{\partial \dot{\psi}}  = p_\psi 
+= I_\psi (\dot{\psi}+\dot{\phi} \cos \theta) = const \\
+&\frac{\partial L}{\partial \dot{\phi}}  = p_\phi 
+= I_\psi (\dot{\psi}+\dot{\phi} \cos \theta)\cos \theta 
++I_0 \dot{\phi} \sin \theta^2 = const
+
+\end{aligned}
+\right.</script><p>用$p_\phi,p_\psi,\theta$代替$\dot{\psi},\dot{\phi}$，得到</p>
+<script type="math/tex; mode=display">
+L = \frac{1}{2} I_0 \dot{\theta}^2 - V_{eff}(\theta)</script><p>求运动方程</p>
+<script type="math/tex; mode=display">
+\frac{d}{dt} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} = 0  \Longrightarrow I_0 \ddot{\theta} = f(\theta)</script><h3 id="Parametric-resonance"><a href="#Parametric-resonance" class="headerlink" title="Parametric resonance"></a>Parametric resonance</h3><script type="math/tex; mode=display">
+\ddot{\theta}+ w_0^2(t)= 0,w_0(t)=w_0(1+\alpha \cos wt),|\alpha| \ll 1 \\
+w = 2w_0 + \varepsilon  \Longrightarrow \ddot{\theta}+w_0^2[1+2 \alpha \cos(2w_0+\varepsilon)t] \theta = 0\\</script><p>有解为</p>
+<script type="math/tex; mode=display">
+\theta = a(t) \cos (w_0+ \frac{\varepsilon}{2})t + b(t) \sin(w_0+\frac{\varepsilon}{2}t) \\
+\Longrightarrow \ddot{\theta} = \cdots</script><p>$a(t),b(t)$为慢变化项，忽略二阶导数$\ddot{a},\ddot{b}$，有$a \sim e^{\mu t},b \sim e^{\mu t}, a\sim \mu a, b \sim \mu b$</p>
+<script type="math/tex; mode=display">
+\mu = \pm \frac{1}{2} \sqrt{(\alpha w_0)^2-\varepsilon^2}</script><p>共振判断条件</p>
+<ul>
+<li>$|\varepsilon|&lt;|\alpha w_0|$，不稳定</li>
+<li>$|\varepsilon|&gt;|\alpha w_0|$，稳定</li>
+</ul>
+<h3 id="周期问题"><a href="#周期问题" class="headerlink" title="周期问题"></a>周期问题</h3><h4 id="历史发展"><a href="#历史发展" class="headerlink" title="历史发展"></a>历史发展</h4><ul>
+<li>Mathieu eq(1868)，$y’’ + (a-2q \cos 2x)y = 0$</li>
+<li>Floquet(1883)，$\dot{x}=A(t)x,A(t)=A(t+T)$</li>
+<li>Hill eq(1886)，$\ddot{y}+f(t)y=0,f(t)=f(t+\tau)$</li>
+<li>Bloch定理</li>
+</ul>
+<h4 id="Floquet"><a href="#Floquet" class="headerlink" title="Floquet"></a>Floquet</h4><script type="math/tex; mode=display">
+\dot{x} = A(t)x \\
+\Longrightarrow \dot{\phi} = A \phi, \ \phi=(x_1,x_2,\cdots)</script><p>解满足一下性质</p>
+<script type="math/tex; mode=display">
+\phi (t+T) = \phi(t) \phi^{-1}(0)\phi(T) \\
+\phi(t) = P(t)e^{tB},P(t)=P(t+T) \\
+\phi(t+T) = \phi(t)e^{TB} \\
+Tr [TB] = \int_0^T Tr[A(s)]ds \ or \ Tr[B]=T^{-1}\int_0^T Tr[A(s)]ds \\
+Tr[\ln A] = \ln[Det A],e^B=e^{A_1}e^{A_2} \Rightarrow TrB=TrA_1+TrA_2</script><h4 id="Bloch"><a href="#Bloch" class="headerlink" title="Bloch"></a>Bloch</h4><script type="math/tex; mode=display">
+- \frac{d^2}{dx^2} \phi - 2q \cos x \phi = \varepsilon \phi \\
+\phi _k(x) = e^{ikx} \sum_n C_n e^{inx} \\
+\Longrightarrow (n+k)^2 C_n - q(C_{n+1}+C_{n-1})=\varepsilon C_n</script><script type="math/tex; mode=display">
+\begin{pmatrix}
+\ddots & & & & \\
+-q & (1+k)^2 & -q & & \\
+ & -q & (0+k)^2 & & \\
+ & & -q & (-1+k)^2 & -q \\
+ & & & & \ddots
+\end{pmatrix}
+\begin{pmatrix}
+\vdots \\
+C_1 \\
+C_0 \\
+C_{-1} \\
+\vdots
+\end{pmatrix}
+=
+\varepsilon 
+\begin{pmatrix}
+\vdots \\
+C_1 \\
+C_0 \\
+C_{-1} \\
+\vdots
+\end{pmatrix}</script><h4 id="Mathieu-eq"><a href="#Mathieu-eq" class="headerlink" title="Mathieu eq"></a>Mathieu eq</h4><script type="math/tex; mode=display">
+- \frac{d^2}{dt^2} \phi + (a - 2q \cos t) \phi = 0</script><p>$t \Rightarrow x$，变为Bloch问题</p>
+<p>不同点</p>
+<ul>
+<li>$t \Rightarrow $演化$\Rightarrow$给定$a$，$q \Rightarrow \phi(t)$</li>
+<li>$x \Rightarrow $本征值问题$\Rightarrow \varepsilon$，$\phi (x)$</li>
+</ul>
+<h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><h4 id="作业5"><a href="#作业5" class="headerlink" title="作业5"></a>作业5</h4><ul>
+<li>利用Mathematica推导Rigid Body Dynamics的各方程 (Simplify,Fullsimplify)</li>
+<li>用NDSolve求解$\theta(t),\psi(t),\phi(t)$</li>
+</ul>
+<h4 id="作业6"><a href="#作业6" class="headerlink" title="作业6"></a>作业6</h4><ul>
+<li>用NDSolve研究参数共振问题</li>
+<li>如何取$w$值，使其共振</li>
+</ul>
+<h4 id="作业7"><a href="#作业7" class="headerlink" title="作业7"></a>作业7</h4><ul>
+<li>从无穷矩阵看出，$|k| \leq 1/2$</li>
+<li>计算Bloch能带</li>
+<li>扫描a和q，画出稳定区域</li>
+</ul>
+<h4 id="作业8"><a href="#作业8" class="headerlink" title="作业8"></a>作业8</h4><p>参考<a href="[http://home.ustc.edu.cn/~zegang/pic/Compartmental%20models%20in%20epidemiology.pdf](http://home.ustc.edu.cn/~zegang/pic/Compartmental models in epidemiology.pdf">Compartmental models in epidemiology(wiki)</a>)，计算里面所有模型</p>
+<ul>
+<li>The SIR model without vital dynamics</li>
+<li>The SIR model with vital dynamics and constant population</li>
+<li>The SIS model</li>
+<li>The MSIR model</li>
+<li>The SEIR model</li>
+<li>The MSEIR model</li>
+</ul>
+<p>（1）用NDSolve求演化过程；（2）变化参数，看哪种情况疫情可以得到控制</p>
 
         </div>
         
@@ -173,7 +276,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a>
+                    <a class="has-link-grey -link" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" rel="tag">计算物理</a>
                 </div>
             </div>
         </div>
@@ -191,16 +294,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/18/TensorNetwork/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Tensor Network</span>
+                <span class="level-item">统计学习方法</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/17/%E9%93%BE%E6%8E%A5%E6%95%B4%E7%90%86/">
-                <span class="level-item">链接整理</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/23/computational-physics-3/">
+                <span class="level-item">计算物理-3</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -254,7 +357,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            30
+                            34
                         </p>
                     </a>
                 </div>
@@ -278,7 +381,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            9
+                            8
                         </p>
                     </a>
                 </div>
@@ -291,6 +394,66 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#Rigid-Body-Dynamics">
+        <span class="has-mr-6">1</span>
+        <span>Rigid Body Dynamics</span>
+        </a></li><li>
+        <a class="is-flex" href="#Parametric-resonance">
+        <span class="has-mr-6">2</span>
+        <span>Parametric resonance</span>
+        </a></li><li>
+        <a class="is-flex" href="#周期问题">
+        <span class="has-mr-6">3</span>
+        <span>周期问题</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#历史发展">
+        <span class="has-mr-6">3.1</span>
+        <span>历史发展</span>
+        </a></li><li>
+        <a class="is-flex" href="#Floquet">
+        <span class="has-mr-6">3.2</span>
+        <span>Floquet</span>
+        </a></li><li>
+        <a class="is-flex" href="#Bloch">
+        <span class="has-mr-6">3.3</span>
+        <span>Bloch</span>
+        </a></li><li>
+        <a class="is-flex" href="#Mathieu-eq">
+        <span class="has-mr-6">3.4</span>
+        <span>Mathieu eq</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#作业">
+        <span class="has-mr-6">4</span>
+        <span>作业</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#作业5">
+        <span class="has-mr-6">4.1</span>
+        <span>作业5</span>
+        </a></li><li>
+        <a class="is-flex" href="#作业6">
+        <span class="has-mr-6">4.2</span>
+        <span>作业6</span>
+        </a></li><li>
+        <a class="is-flex" href="#作业7">
+        <span class="has-mr-6">4.3</span>
+        <span>作业7</span>
+        </a></li><li>
+        <a class="is-flex" href="#作业8">
+        <span class="has-mr-6">4.4</span>
+        <span>作业8</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -314,7 +477,7 @@
                 <span class="level-item">计算物理</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li>
             </ul>
@@ -327,7 +490,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Quantum-Volume/" style="font-size: 13.33px;">Quantum Volume</a> <a href="/tags/TFQ/" style="font-size: 10px;">TFQ</a> <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 10px;">计划</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" style="font-size: 16.67px;">计算物理</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
+        <a href="/tags/Quantum-Volume/" style="font-size: 13.33px;">Quantum Volume</a> <a href="/tags/TFQ/" style="font-size: 10px;">TFQ</a> <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" style="font-size: 16.67px;">计算物理</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
     </div>
 </div>
     
@@ -342,35 +505,16 @@
         
         <article class="media">
             
-            <a href="/2020/03/21/Tensor-Network-Contractions/" class="media-left">
+            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network Contractions">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time></div>
-                    <a href="/2020/03/21/Tensor-Network-Contractions/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network Contractions</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/20/Linear-algebra/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linear algebra">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-20T11:21:38.000Z">2020-03-20</time></div>
-                    <a href="/2020/03/20/Linear-algebra/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linear algebra</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
+                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -380,35 +524,16 @@
         
         <article class="media">
             
-            <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="media-left">
+            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Lecture Notes on Quantum Algorithms">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T15:19:56.000Z">2020-03-18</time></div>
-                    <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Lecture Notes on Quantum Algorithms</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/17/Classical-Mechanics/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classical Mechanics">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T08:28:27.000Z">2020-03-17</time></div>
-                    <a href="/2020/03/17/Classical-Mechanics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classical Mechanics</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
+                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
                     </p>
@@ -418,16 +543,54 @@
         
         <article class="media">
             
-            <a href="/2020/03/12/computational-physics-homework/" class="media-left">
+            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics homework">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-12T15:38:59.000Z">2020-03-12</time></div>
-                    <a href="/2020/03/12/computational-physics-homework/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics homework</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理-3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:34:38.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理-3</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
                     </p>
@@ -452,7 +615,7 @@
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">19</span>
                 </span>
             </a>
         </li>
@@ -463,7 +626,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -510,16 +673,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E5%88%92/">
-                        <span class="tag">计划</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
                         <span class="tag">计算物理</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -568,35 +724,16 @@
         
         <article class="media">
             
-            <a href="/2020/03/21/Tensor-Network-Contractions/" class="media-left">
+            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensor Network Contractions">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time></div>
-                    <a href="/2020/03/21/Tensor-Network-Contractions/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Tensor Network Contractions</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/20/Linear-algebra/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Linear algebra">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-20T11:21:38.000Z">2020-03-20</time></div>
-                    <a href="/2020/03/20/Linear-algebra/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Linear algebra</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
+                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -606,35 +743,16 @@
         
         <article class="media">
             
-            <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="media-left">
+            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Lecture Notes on Quantum Algorithms">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-18T15:19:56.000Z">2020-03-18</time></div>
-                    <a href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Lecture Notes on Quantum Algorithms</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/17/Classical-Mechanics/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Classical Mechanics">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T08:28:27.000Z">2020-03-17</time></div>
-                    <a href="/2020/03/17/Classical-Mechanics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Classical Mechanics</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
+                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
                     </p>
@@ -644,16 +762,54 @@
         
         <article class="media">
             
-            <a href="/2020/03/12/computational-physics-homework/" class="media-left">
+            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics homework">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-12T15:38:59.000Z">2020-03-12</time></div>
-                    <a href="/2020/03/12/computational-physics-homework/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics homework</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理-3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:34:38.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理-3</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
                     </p>
@@ -678,7 +834,7 @@
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">19</span>
                 </span>
             </a>
         </li>
@@ -689,7 +845,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -736,16 +892,9 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E5%88%92/">
-                        <span class="tag">计划</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
                         <span class="tag">计算物理</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -787,7 +936,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="近期计划1" height="28">
+                    <img src="/images/hlzone.png" alt="computational physics 4" height="28">
                 
                 </a>
                 <p class="is-size-7">

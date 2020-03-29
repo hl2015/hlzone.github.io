@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>统计学习方法 - hlzone</title>
+
+
+    <meta name="description" content="统计学习方法目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计学习方法">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="hlzone">
+<meta property="og:description" content="统计学习方法目录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-03-23T15:03:55.000Z">
+<meta property="article:modified_time" content="2020-03-24T04:18:21.460Z">
+<meta property="article:author" content="hl">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/L.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/hlzone.png" alt="统计学习方法" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/catagories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/hlzone">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 分钟 读完 (大约 1812 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                统计学习方法
+            
+        </h1>
+        <div class="content">
+            <p>统计学习方法目录</p>
+<a id="more"></a>
+<h2 id="第1篇-监督学习"><a href="#第1篇-监督学习" class="headerlink" title="第1篇 监督学习"></a>第1篇 监督学习</h2><h3 id="第1章-统计学习及监督学习概论"><a href="#第1章-统计学习及监督学习概论" class="headerlink" title="第1章 统计学习及监督学习概论"></a>第1章 统计学习及监督学习概论</h3><h4 id="1-1-统计学习"><a href="#1-1-统计学习" class="headerlink" title="1.1 统计学习"></a>1.1 统计学习</h4><h4 id="1-2-统计学习的分类"><a href="#1-2-统计学习的分类" class="headerlink" title="1.2 统计学习的分类"></a>1.2 统计学习的分类</h4><h5 id="1-2-1-基本分类"><a href="#1-2-1-基本分类" class="headerlink" title="1.2.1 基本分类"></a>1.2.1 基本分类</h5><h5 id="1-2-2-按模型分类"><a href="#1-2-2-按模型分类" class="headerlink" title="1.2.2 按模型分类"></a>1.2.2 按模型分类</h5><h5 id="1-2-3-按算法分类"><a href="#1-2-3-按算法分类" class="headerlink" title="1.2.3 按算法分类"></a>1.2.3 按算法分类</h5><h5 id="1-2-4-按技巧分类"><a href="#1-2-4-按技巧分类" class="headerlink" title="1.2.4 按技巧分类"></a>1.2.4 按技巧分类</h5><h4 id="1-3-统计学习方法三要素"><a href="#1-3-统计学习方法三要素" class="headerlink" title="1.3 统计学习方法三要素"></a>1.3 统计学习方法三要素</h4><h5 id="1-3-1-模型"><a href="#1-3-1-模型" class="headerlink" title="1.3.1 模型"></a>1.3.1 模型</h5><h5 id="1-3-2-策略"><a href="#1-3-2-策略" class="headerlink" title="1.3.2 策略"></a>1.3.2 策略</h5><h5 id="1-3-3-算法"><a href="#1-3-3-算法" class="headerlink" title="1.3.3 算法"></a>1.3.3 算法</h5><h4 id="1-4-模型评估与模型选择"><a href="#1-4-模型评估与模型选择" class="headerlink" title="1.4 模型评估与模型选择"></a>1.4 模型评估与模型选择</h4><h5 id="1-4-1-训练误差与测试误差"><a href="#1-4-1-训练误差与测试误差" class="headerlink" title="1.4.1 训练误差与测试误差"></a>1.4.1 训练误差与测试误差</h5><h5 id="1-4-2-过拟合与模型选择"><a href="#1-4-2-过拟合与模型选择" class="headerlink" title="1.4.2 过拟合与模型选择"></a>1.4.2 过拟合与模型选择</h5><h4 id="1-5-正则化与交叉验证"><a href="#1-5-正则化与交叉验证" class="headerlink" title="1.5 正则化与交叉验证"></a>1.5 正则化与交叉验证</h4><h5 id="1-5-1-正则化"><a href="#1-5-1-正则化" class="headerlink" title="1.5.1 正则化"></a>1.5.1 正则化</h5><h5 id="1-5-2-交叉验证"><a href="#1-5-2-交叉验证" class="headerlink" title="1.5.2 交叉验证"></a>1.5.2 交叉验证</h5><h4 id="1-6-泛化能力"><a href="#1-6-泛化能力" class="headerlink" title="1.6 泛化能力"></a>1.6 泛化能力</h4><h5 id="1-6-1-泛化误差"><a href="#1-6-1-泛化误差" class="headerlink" title="1.6.1 泛化误差"></a>1.6.1 泛化误差</h5><h5 id="1-6-2-泛化误差上界"><a href="#1-6-2-泛化误差上界" class="headerlink" title="1.6.2 泛化误差上界"></a>1.6.2 泛化误差上界</h5><h4 id="1-7-生成模型与判别模型"><a href="#1-7-生成模型与判别模型" class="headerlink" title="1.7 生成模型与判别模型"></a>1.7 生成模型与判别模型</h4><h4 id="1-8-监督学习应用"><a href="#1-8-监督学习应用" class="headerlink" title="1.8 监督学习应用"></a>1.8 监督学习应用</h4><h5 id="1-8-1-分类问题"><a href="#1-8-1-分类问题" class="headerlink" title="1.8.1 分类问题"></a>1.8.1 分类问题</h5><h5 id="1-8-2-标注问题"><a href="#1-8-2-标注问题" class="headerlink" title="1.8.2 标注问题"></a>1.8.2 标注问题</h5><h5 id="1-8-3-回归问题"><a href="#1-8-3-回归问题" class="headerlink" title="1.8.3 回归问题"></a>1.8.3 回归问题</h5><h3 id="第2章-感知机"><a href="#第2章-感知机" class="headerlink" title="第2章 感知机"></a>第2章 感知机</h3><h4 id="2-1-感知机模型"><a href="#2-1-感知机模型" class="headerlink" title="2.1 感知机模型"></a>2.1 感知机模型</h4><h4 id="2-2-感知机学习策略"><a href="#2-2-感知机学习策略" class="headerlink" title="2.2 感知机学习策略"></a>2.2 感知机学习策略</h4><h5 id="2-2-1-数据集的线性可分性"><a href="#2-2-1-数据集的线性可分性" class="headerlink" title="2.2.1 数据集的线性可分性"></a>2.2.1 数据集的线性可分性</h5><h5 id="2-2-2-感知机学习策略"><a href="#2-2-2-感知机学习策略" class="headerlink" title="2.2.2 感知机学习策略"></a>2.2.2 感知机学习策略</h5><h4 id="2-3-感知机学习算法"><a href="#2-3-感知机学习算法" class="headerlink" title="2.3 感知机学习算法"></a>2.3 感知机学习算法</h4><h5 id="2-3-1-感知机学习算法的原始形式"><a href="#2-3-1-感知机学习算法的原始形式" class="headerlink" title="2.3.1 感知机学习算法的原始形式"></a>2.3.1 感知机学习算法的原始形式</h5><h5 id="2-3-2-算法的收敛性"><a href="#2-3-2-算法的收敛性" class="headerlink" title="2.3.2 算法的收敛性"></a>2.3.2 算法的收敛性</h5><h5 id="2-3-3-感知机学习算法的对偶形式"><a href="#2-3-3-感知机学习算法的对偶形式" class="headerlink" title="2.3.3 感知机学习算法的对偶形式"></a>2.3.3 感知机学习算法的对偶形式</h5><h3 id="第3章-k近邻法"><a href="#第3章-k近邻法" class="headerlink" title="第3章 k近邻法"></a>第3章 k近邻法</h3><h4 id="3-1-k近邻算法"><a href="#3-1-k近邻算法" class="headerlink" title="3.1 k近邻算法"></a>3.1 k近邻算法</h4><h4 id="3-2-k近邻模型"><a href="#3-2-k近邻模型" class="headerlink" title="3.2 k近邻模型"></a>3.2 k近邻模型</h4><h5 id="3-2-1-模型"><a href="#3-2-1-模型" class="headerlink" title="3.2.1 模型"></a>3.2.1 模型</h5><h5 id="3-2-2-距离度量"><a href="#3-2-2-距离度量" class="headerlink" title="3.2.2 距离度量"></a>3.2.2 距离度量</h5><h5 id="3-2-3-k值的选择"><a href="#3-2-3-k值的选择" class="headerlink" title="3.2.3 k值的选择"></a>3.2.3 k值的选择</h5><h5 id="3-2-4-分类决策规则"><a href="#3-2-4-分类决策规则" class="headerlink" title="3.2.4 分类决策规则"></a>3.2.4 分类决策规则</h5><h4 id="3-3-k近邻法的实现：kd树"><a href="#3-3-k近邻法的实现：kd树" class="headerlink" title="3.3 k近邻法的实现：kd树"></a>3.3 k近邻法的实现：kd树</h4><h5 id="3-3-1-构造kd树"><a href="#3-3-1-构造kd树" class="headerlink" title="3.3.1 构造kd树"></a>3.3.1 构造kd树</h5><h5 id="3-3-2-搜索kd树"><a href="#3-3-2-搜索kd树" class="headerlink" title="3.3.2 搜索kd树"></a>3.3.2 搜索kd树</h5><h3 id="第4章-朴素贝叶斯法"><a href="#第4章-朴素贝叶斯法" class="headerlink" title="第4章 朴素贝叶斯法"></a>第4章 朴素贝叶斯法</h3><h4 id="4-1-朴素贝叶斯法的学习与分类"><a href="#4-1-朴素贝叶斯法的学习与分类" class="headerlink" title="4.1 朴素贝叶斯法的学习与分类"></a>4.1 朴素贝叶斯法的学习与分类</h4><h5 id="4-1-1-基本方法"><a href="#4-1-1-基本方法" class="headerlink" title="4.1.1 基本方法"></a>4.1.1 基本方法</h5><h5 id="4-1-2-后验概率最大化的含义"><a href="#4-1-2-后验概率最大化的含义" class="headerlink" title="4.1.2 后验概率最大化的含义"></a>4.1.2 后验概率最大化的含义</h5><h4 id="4-2-朴素贝叶斯法的参数估计"><a href="#4-2-朴素贝叶斯法的参数估计" class="headerlink" title="4.2 朴素贝叶斯法的参数估计"></a>4.2 朴素贝叶斯法的参数估计</h4><h5 id="4-2-1-极大似然估计"><a href="#4-2-1-极大似然估计" class="headerlink" title="4.2.1 极大似然估计"></a>4.2.1 极大似然估计</h5><h5 id="4-2-2-学习与分类算法"><a href="#4-2-2-学习与分类算法" class="headerlink" title="4.2.2 学习与分类算法"></a>4.2.2 学习与分类算法</h5><h5 id="4-2-3-贝叶斯估计"><a href="#4-2-3-贝叶斯估计" class="headerlink" title="4.2.3 贝叶斯估计"></a>4.2.3 贝叶斯估计</h5><h3 id="第5章-决策树"><a href="#第5章-决策树" class="headerlink" title="第5章 决策树"></a>第5章 决策树</h3><h4 id="5-1-决策树模型与学习"><a href="#5-1-决策树模型与学习" class="headerlink" title="5.1 决策树模型与学习"></a>5.1 决策树模型与学习</h4><h5 id="5-1-1-决策树模型"><a href="#5-1-1-决策树模型" class="headerlink" title="5.1.1 决策树模型"></a>5.1.1 决策树模型</h5><h5 id="5-1-2-决策树与if-then规则"><a href="#5-1-2-决策树与if-then规则" class="headerlink" title="5.1.2 决策树与if-then规则"></a>5.1.2 决策树与if-then规则</h5><h5 id="5-1-3-决策树与条件概率分别"><a href="#5-1-3-决策树与条件概率分别" class="headerlink" title="5.1.3 决策树与条件概率分别"></a>5.1.3 决策树与条件概率分别</h5><h5 id="5-1-4-决策树学习"><a href="#5-1-4-决策树学习" class="headerlink" title="5.1.4 决策树学习"></a>5.1.4 决策树学习</h5><h4 id="5-2-特征选择"><a href="#5-2-特征选择" class="headerlink" title="5.2 特征选择"></a>5.2 特征选择</h4><h5 id="5-2-1-特征选择问题"><a href="#5-2-1-特征选择问题" class="headerlink" title="5.2.1 特征选择问题"></a>5.2.1 特征选择问题</h5><h5 id="5-2-2-信息增益"><a href="#5-2-2-信息增益" class="headerlink" title="5.2.2 信息增益"></a>5.2.2 信息增益</h5><h5 id="5-2-3-信息增益比"><a href="#5-2-3-信息增益比" class="headerlink" title="5.2.3 信息增益比"></a>5.2.3 信息增益比</h5><h4 id="5-3-决策树的生成"><a href="#5-3-决策树的生成" class="headerlink" title="5.3 决策树的生成"></a>5.3 决策树的生成</h4><h5 id="5-3-1-ID3算法"><a href="#5-3-1-ID3算法" class="headerlink" title="5.3.1 ID3算法"></a>5.3.1 ID3算法</h5><h5 id="5-3-2-C4-5的生成算法"><a href="#5-3-2-C4-5的生成算法" class="headerlink" title="5.3.2 C4.5的生成算法"></a>5.3.2 C4.5的生成算法</h5><h4 id="5-4-决策树的剪枝"><a href="#5-4-决策树的剪枝" class="headerlink" title="5.4 决策树的剪枝"></a>5.4 决策树的剪枝</h4><h4 id="5-5-CART算法"><a href="#5-5-CART算法" class="headerlink" title="5.5 CART算法"></a>5.5 CART算法</h4><h5 id="5-5-1-CART生成"><a href="#5-5-1-CART生成" class="headerlink" title="5.5.1 CART生成"></a>5.5.1 CART生成</h5><h5 id="5-5-2-CART剪枝"><a href="#5-5-2-CART剪枝" class="headerlink" title="5.5.2 CART剪枝"></a>5.5.2 CART剪枝</h5><h3 id="第6章-逻辑斯谛回归与最大熵模型"><a href="#第6章-逻辑斯谛回归与最大熵模型" class="headerlink" title="第6章 逻辑斯谛回归与最大熵模型"></a>第6章 逻辑斯谛回归与最大熵模型</h3><h4 id="6-1-逻辑斯谛回归模型"><a href="#6-1-逻辑斯谛回归模型" class="headerlink" title="6.1 逻辑斯谛回归模型"></a>6.1 逻辑斯谛回归模型</h4><h5 id="6-1-1-逻辑斯谛分布"><a href="#6-1-1-逻辑斯谛分布" class="headerlink" title="6.1.1 逻辑斯谛分布"></a>6.1.1 逻辑斯谛分布</h5><h5 id="6-1-2-二项逻辑斯谛回归模型"><a href="#6-1-2-二项逻辑斯谛回归模型" class="headerlink" title="6.1.2 二项逻辑斯谛回归模型"></a>6.1.2 二项逻辑斯谛回归模型</h5><h5 id="6-1-3-模型参数估计"><a href="#6-1-3-模型参数估计" class="headerlink" title="6.1.3 模型参数估计"></a>6.1.3 模型参数估计</h5><h5 id="6-1-4-多项逻辑斯谛回归"><a href="#6-1-4-多项逻辑斯谛回归" class="headerlink" title="6.1.4 多项逻辑斯谛回归"></a>6.1.4 多项逻辑斯谛回归</h5><h4 id="6-2-最大熵模型"><a href="#6-2-最大熵模型" class="headerlink" title="6.2 最大熵模型"></a>6.2 最大熵模型</h4><h5 id="6-2-1-最大熵原理"><a href="#6-2-1-最大熵原理" class="headerlink" title="6.2.1 最大熵原理"></a>6.2.1 最大熵原理</h5><h5 id="6-2-2-最大熵模型的定义"><a href="#6-2-2-最大熵模型的定义" class="headerlink" title="6.2.2 最大熵模型的定义"></a>6.2.2 最大熵模型的定义</h5><h5 id="6-2-3-最大熵模型的学习"><a href="#6-2-3-最大熵模型的学习" class="headerlink" title="6.2.3 最大熵模型的学习"></a>6.2.3 最大熵模型的学习</h5><h5 id="6-2-4-极大似然估计"><a href="#6-2-4-极大似然估计" class="headerlink" title="6.2.4 极大似然估计"></a>6.2.4 极大似然估计</h5><h4 id="6-3-模型学习的最优化算法"><a href="#6-3-模型学习的最优化算法" class="headerlink" title="6.3 模型学习的最优化算法"></a>6.3 模型学习的最优化算法</h4><h5 id="6-3-1-改进的迭代尺度法"><a href="#6-3-1-改进的迭代尺度法" class="headerlink" title="6.3.1 改进的迭代尺度法"></a>6.3.1 改进的迭代尺度法</h5><h5 id="6-3-2-拟牛顿法"><a href="#6-3-2-拟牛顿法" class="headerlink" title="6.3.2 拟牛顿法"></a>6.3.2 拟牛顿法</h5><h3 id="第7章-支持向量机"><a href="#第7章-支持向量机" class="headerlink" title="第7章 支持向量机"></a>第7章 支持向量机</h3><h4 id="7-1-线性可支持向量机与硬间隔最大化"><a href="#7-1-线性可支持向量机与硬间隔最大化" class="headerlink" title="7.1 线性可支持向量机与硬间隔最大化"></a>7.1 线性可支持向量机与硬间隔最大化</h4><h5 id="7-1-1-线性可支持向量机"><a href="#7-1-1-线性可支持向量机" class="headerlink" title="7.1.1 线性可支持向量机"></a>7.1.1 线性可支持向量机</h5><h5 id="7-1-2-函数间隔和几何间隔"><a href="#7-1-2-函数间隔和几何间隔" class="headerlink" title="7.1.2 函数间隔和几何间隔"></a>7.1.2 函数间隔和几何间隔</h5><h5 id="7-1-3-间隔最大化"><a href="#7-1-3-间隔最大化" class="headerlink" title="7.1.3 间隔最大化"></a>7.1.3 间隔最大化</h5><h5 id="7-1-4-学习的对偶算法"><a href="#7-1-4-学习的对偶算法" class="headerlink" title="7.1.4 学习的对偶算法"></a>7.1.4 学习的对偶算法</h5><h4 id="7-2-线性支持向量机与软间隔最大化"><a href="#7-2-线性支持向量机与软间隔最大化" class="headerlink" title="7.2 线性支持向量机与软间隔最大化"></a>7.2 线性支持向量机与软间隔最大化</h4><h5 id="7-2-1-线性支持向量机"><a href="#7-2-1-线性支持向量机" class="headerlink" title="7.2.1 线性支持向量机"></a>7.2.1 线性支持向量机</h5><h5 id="7-2-2-学习的对偶算法"><a href="#7-2-2-学习的对偶算法" class="headerlink" title="7.2.2 学习的对偶算法"></a>7.2.2 学习的对偶算法</h5><h5 id="7-2-3-支持向量"><a href="#7-2-3-支持向量" class="headerlink" title="7.2.3 支持向量"></a>7.2.3 支持向量</h5><h5 id="7-2-4-合页损失函数"><a href="#7-2-4-合页损失函数" class="headerlink" title="7.2.4 合页损失函数"></a>7.2.4 合页损失函数</h5><h4 id="7-3-非线性支持向量机与核函数"><a href="#7-3-非线性支持向量机与核函数" class="headerlink" title="7.3 非线性支持向量机与核函数"></a>7.3 非线性支持向量机与核函数</h4><h5 id="7-3-1-核技巧"><a href="#7-3-1-核技巧" class="headerlink" title="7.3.1 核技巧"></a>7.3.1 核技巧</h5><h5 id="7-3-2-正定核"><a href="#7-3-2-正定核" class="headerlink" title="7.3.2 正定核"></a>7.3.2 正定核</h5><h5 id="7-3-3-常用核函数"><a href="#7-3-3-常用核函数" class="headerlink" title="7.3.3 常用核函数"></a>7.3.3 常用核函数</h5><h5 id="7-3-4-非线性支持向量分类机"><a href="#7-3-4-非线性支持向量分类机" class="headerlink" title="7.3.4 非线性支持向量分类机"></a>7.3.4 非线性支持向量分类机</h5><h4 id="7-4-序列最小最优化算法"><a href="#7-4-序列最小最优化算法" class="headerlink" title="7.4 序列最小最优化算法"></a>7.4 序列最小最优化算法</h4><h5 id="7-4-1-两个变量二次规划的求解方法"><a href="#7-4-1-两个变量二次规划的求解方法" class="headerlink" title="7.4.1 两个变量二次规划的求解方法"></a>7.4.1 两个变量二次规划的求解方法</h5><h5 id="7-4-2-变量的选择方法"><a href="#7-4-2-变量的选择方法" class="headerlink" title="7.4.2 变量的选择方法"></a>7.4.2 变量的选择方法</h5><h5 id="7-4-3-SMO算法"><a href="#7-4-3-SMO算法" class="headerlink" title="7.4.3 SMO算法"></a>7.4.3 SMO算法</h5><h3 id="第8-章-提升方法"><a href="#第8-章-提升方法" class="headerlink" title="第8 章 提升方法"></a>第8 章 提升方法</h3><h4 id="8-1-提升方法AdaBoost算法"><a href="#8-1-提升方法AdaBoost算法" class="headerlink" title="8.1 提升方法AdaBoost算法"></a>8.1 提升方法AdaBoost算法</h4><h5 id="8-1-1-提升方法的基本思路"><a href="#8-1-1-提升方法的基本思路" class="headerlink" title="8.1.1 提升方法的基本思路"></a>8.1.1 提升方法的基本思路</h5><h5 id="8-1-2-AdaBoost算法"><a href="#8-1-2-AdaBoost算法" class="headerlink" title="8.1.2 AdaBoost算法"></a>8.1.2 AdaBoost算法</h5><h5 id="8-1-3-AdaBoost的例子"><a href="#8-1-3-AdaBoost的例子" class="headerlink" title="8.1.3 AdaBoost的例子"></a>8.1.3 AdaBoost的例子</h5><h4 id="8-2-AdaBoost算法的训练误差分析"><a href="#8-2-AdaBoost算法的训练误差分析" class="headerlink" title="8.2 AdaBoost算法的训练误差分析"></a>8.2 AdaBoost算法的训练误差分析</h4><h4 id="8-3-AdaBoost算法的解释"><a href="#8-3-AdaBoost算法的解释" class="headerlink" title="8.3 AdaBoost算法的解释"></a>8.3 AdaBoost算法的解释</h4><h5 id="8-3-1-前分布算法"><a href="#8-3-1-前分布算法" class="headerlink" title="8.3.1 前分布算法"></a>8.3.1 前分布算法</h5><h5 id="8-3-2-前分布算法与AdaBoost"><a href="#8-3-2-前分布算法与AdaBoost" class="headerlink" title="8.3.2 前分布算法与AdaBoost"></a>8.3.2 前分布算法与AdaBoost</h5><h4 id="8-4-提升树"><a href="#8-4-提升树" class="headerlink" title="8.4 提升树"></a>8.4 提升树</h4><h5 id="8-4-1-提升树模型"><a href="#8-4-1-提升树模型" class="headerlink" title="8.4.1 提升树模型"></a>8.4.1 提升树模型</h5><h5 id="8-4-2-提升树算法"><a href="#8-4-2-提升树算法" class="headerlink" title="8.4.2 提升树算法"></a>8.4.2 提升树算法</h5><h5 id="8-4-3-梯度提升"><a href="#8-4-3-梯度提升" class="headerlink" title="8.4.3 梯度提升"></a>8.4.3 梯度提升</h5><h3 id="第9章-EM算法及其推广"><a href="#第9章-EM算法及其推广" class="headerlink" title="第9章 EM算法及其推广"></a>第9章 EM算法及其推广</h3><h4 id="9-1-EM算法的引入"><a href="#9-1-EM算法的引入" class="headerlink" title="9.1 EM算法的引入"></a>9.1 EM算法的引入</h4><h5 id="9-1-1-EM算法"><a href="#9-1-1-EM算法" class="headerlink" title="9.1.1 EM算法"></a>9.1.1 EM算法</h5><h5 id="9-1-2-EM算法的导出"><a href="#9-1-2-EM算法的导出" class="headerlink" title="9.1.2 EM算法的导出"></a>9.1.2 EM算法的导出</h5><h5 id="9-1-3-EM算法在无监督学习中的应用"><a href="#9-1-3-EM算法在无监督学习中的应用" class="headerlink" title="9.1.3 EM算法在无监督学习中的应用"></a>9.1.3 EM算法在无监督学习中的应用</h5><h4 id="9-2-EM算法的收敛性"><a href="#9-2-EM算法的收敛性" class="headerlink" title="9.2 EM算法的收敛性"></a>9.2 EM算法的收敛性</h4><h4 id="9-3-EM算法在高斯混合模型学习中的应用"><a href="#9-3-EM算法在高斯混合模型学习中的应用" class="headerlink" title="9.3 EM算法在高斯混合模型学习中的应用"></a>9.3 EM算法在高斯混合模型学习中的应用</h4><h5 id="9-3-1-高斯混合模型"><a href="#9-3-1-高斯混合模型" class="headerlink" title="9.3.1 高斯混合模型"></a>9.3.1 高斯混合模型</h5><h5 id="9-3-2-高斯混合模型参数估计的EM算法"><a href="#9-3-2-高斯混合模型参数估计的EM算法" class="headerlink" title="9.3.2 高斯混合模型参数估计的EM算法"></a>9.3.2 高斯混合模型参数估计的EM算法</h5><h4 id="9-4-EM算法的推广"><a href="#9-4-EM算法的推广" class="headerlink" title="9.4 EM算法的推广"></a>9.4 EM算法的推广</h4><h5 id="9-4-1-F函数的极大-极大算法"><a href="#9-4-1-F函数的极大-极大算法" class="headerlink" title="9.4.1 F函数的极大-极大算法"></a>9.4.1 F函数的极大-极大算法</h5><h5 id="9-4-2-GEM算法"><a href="#9-4-2-GEM算法" class="headerlink" title="9.4.2 GEM算法"></a>9.4.2 GEM算法</h5><h3 id="第10章-隐马尔可夫模型"><a href="#第10章-隐马尔可夫模型" class="headerlink" title="第10章 隐马尔可夫模型"></a>第10章 隐马尔可夫模型</h3><h4 id="10-1-隐马尔可夫模型的基本概念"><a href="#10-1-隐马尔可夫模型的基本概念" class="headerlink" title="10.1 隐马尔可夫模型的基本概念"></a>10.1 隐马尔可夫模型的基本概念</h4><h5 id="10-1-1-隐马尔可夫模型的定义"><a href="#10-1-1-隐马尔可夫模型的定义" class="headerlink" title="10.1.1 隐马尔可夫模型的定义"></a>10.1.1 隐马尔可夫模型的定义</h5><h5 id="10-1-2-观测序列的生成过程"><a href="#10-1-2-观测序列的生成过程" class="headerlink" title="10.1.2 观测序列的生成过程"></a>10.1.2 观测序列的生成过程</h5><h5 id="10-1-3-隐马尔可夫模型的3个基本问题"><a href="#10-1-3-隐马尔可夫模型的3个基本问题" class="headerlink" title="10.1.3 隐马尔可夫模型的3个基本问题"></a>10.1.3 隐马尔可夫模型的3个基本问题</h5><h4 id="10-2-概率计算算法"><a href="#10-2-概率计算算法" class="headerlink" title="10.2 概率计算算法"></a>10.2 概率计算算法</h4><h5 id="10-2-1-直接计算法"><a href="#10-2-1-直接计算法" class="headerlink" title="10.2.1 直接计算法"></a>10.2.1 直接计算法</h5><h5 id="10-2-2-前向算法"><a href="#10-2-2-前向算法" class="headerlink" title="10.2.2 前向算法"></a>10.2.2 前向算法</h5><h5 id="10-2-3-后向算法"><a href="#10-2-3-后向算法" class="headerlink" title="10.2.3 后向算法"></a>10.2.3 后向算法</h5><h5 id="10-2-4-一些概率与期望值的计算"><a href="#10-2-4-一些概率与期望值的计算" class="headerlink" title="10.2.4 一些概率与期望值的计算"></a>10.2.4 一些概率与期望值的计算</h5><h4 id="10-3-学习算法"><a href="#10-3-学习算法" class="headerlink" title="10.3 学习算法"></a>10.3 学习算法</h4><h5 id="10-3-1-监督学习方法"><a href="#10-3-1-监督学习方法" class="headerlink" title="10.3.1 监督学习方法"></a>10.3.1 监督学习方法</h5><h5 id="10-3-2-Baum-Welch算法"><a href="#10-3-2-Baum-Welch算法" class="headerlink" title="10.3.2 Baum-Welch算法"></a>10.3.2 Baum-Welch算法</h5><h5 id="10-3-3-Baum-Welch模型参数估计公式"><a href="#10-3-3-Baum-Welch模型参数估计公式" class="headerlink" title="10.3.3 Baum-Welch模型参数估计公式"></a>10.3.3 Baum-Welch模型参数估计公式</h5><h4 id="10-4-预测算法"><a href="#10-4-预测算法" class="headerlink" title="10.4 预测算法"></a>10.4 预测算法</h4><h5 id="10-4-1-近似算法"><a href="#10-4-1-近似算法" class="headerlink" title="10.4.1 近似算法"></a>10.4.1 近似算法</h5><h5 id="10-4-2-维特比算法"><a href="#10-4-2-维特比算法" class="headerlink" title="10.4.2 维特比算法"></a>10.4.2 维特比算法</h5><h3 id="第11章-条件随机场"><a href="#第11章-条件随机场" class="headerlink" title="第11章 条件随机场"></a>第11章 条件随机场</h3><h4 id="11-1-概率无向图模型"><a href="#11-1-概率无向图模型" class="headerlink" title="11.1 概率无向图模型"></a>11.1 概率无向图模型</h4><h5 id="11-1-1-模型定义"><a href="#11-1-1-模型定义" class="headerlink" title="11.1.1 模型定义"></a>11.1.1 模型定义</h5><h5 id="11-1-2-概率无向图模型的因子分解"><a href="#11-1-2-概率无向图模型的因子分解" class="headerlink" title="11.1.2 概率无向图模型的因子分解"></a>11.1.2 概率无向图模型的因子分解</h5><h4 id="11-2-条件随机场的定义与形式"><a href="#11-2-条件随机场的定义与形式" class="headerlink" title="11.2 条件随机场的定义与形式"></a>11.2 条件随机场的定义与形式</h4><h5 id="11-2-1-条件随机场的定义"><a href="#11-2-1-条件随机场的定义" class="headerlink" title="11.2.1 条件随机场的定义"></a>11.2.1 条件随机场的定义</h5><h5 id="11-2-2-条件随机场的参数化形式"><a href="#11-2-2-条件随机场的参数化形式" class="headerlink" title="11.2.2 条件随机场的参数化形式"></a>11.2.2 条件随机场的参数化形式</h5><h5 id="11-2-3-条件随机场的简化形式"><a href="#11-2-3-条件随机场的简化形式" class="headerlink" title="11.2.3 条件随机场的简化形式"></a>11.2.3 条件随机场的简化形式</h5><h5 id="11-2-4-条件随机场的矩阵形式"><a href="#11-2-4-条件随机场的矩阵形式" class="headerlink" title="11.2.4 条件随机场的矩阵形式"></a>11.2.4 条件随机场的矩阵形式</h5><h4 id="11-3-条件随机场的概率计算问题"><a href="#11-3-条件随机场的概率计算问题" class="headerlink" title="11.3 条件随机场的概率计算问题"></a>11.3 条件随机场的概率计算问题</h4><h5 id="11-3-1-向前-向后算法"><a href="#11-3-1-向前-向后算法" class="headerlink" title="11.3.1 向前-向后算法"></a>11.3.1 向前-向后算法</h5><h5 id="11-3-2-概率计算"><a href="#11-3-2-概率计算" class="headerlink" title="11.3.2 概率计算"></a>11.3.2 概率计算</h5><h5 id="11-3-3-期望值的计算"><a href="#11-3-3-期望值的计算" class="headerlink" title="11.3.3 期望值的计算"></a>11.3.3 期望值的计算</h5><h4 id="11-4-条件随机场的学习算法"><a href="#11-4-条件随机场的学习算法" class="headerlink" title="11.4 条件随机场的学习算法"></a>11.4 条件随机场的学习算法</h4><h5 id="11-4-1-改进的迭代尺度法"><a href="#11-4-1-改进的迭代尺度法" class="headerlink" title="11.4.1 改进的迭代尺度法"></a>11.4.1 改进的迭代尺度法</h5><h5 id="11-4-2-拟牛顿法"><a href="#11-4-2-拟牛顿法" class="headerlink" title="11.4.2 拟牛顿法"></a>11.4.2 拟牛顿法</h5><h4 id="11-5-条件随机场的预测算法"><a href="#11-5-条件随机场的预测算法" class="headerlink" title="11.5 条件随机场的预测算法"></a>11.5 条件随机场的预测算法</h4><h3 id="监督学习方法总结"><a href="#监督学习方法总结" class="headerlink" title="监督学习方法总结"></a>监督学习方法总结</h3><h2 id="第2篇-无监督学习"><a href="#第2篇-无监督学习" class="headerlink" title="第2篇 无监督学习"></a>第2篇 无监督学习</h2><h3 id="第13章-无监督学习概论"><a href="#第13章-无监督学习概论" class="headerlink" title="第13章 无监督学习概论"></a>第13章 无监督学习概论</h3><h4 id="13-1-无监督学习基本原理"><a href="#13-1-无监督学习基本原理" class="headerlink" title="13.1 无监督学习基本原理"></a>13.1 无监督学习基本原理</h4><h4 id="13-2-基本问题"><a href="#13-2-基本问题" class="headerlink" title="13.2 基本问题"></a>13.2 基本问题</h4><h4 id="13-3-机器学习三要素"><a href="#13-3-机器学习三要素" class="headerlink" title="13.3 机器学习三要素"></a>13.3 机器学习三要素</h4><h4 id="13-4-无监督学习方法"><a href="#13-4-无监督学习方法" class="headerlink" title="13.4 无监督学习方法"></a>13.4 无监督学习方法</h4><h3 id="第14章-聚类方法"><a href="#第14章-聚类方法" class="headerlink" title="第14章 聚类方法"></a>第14章 聚类方法</h3><h4 id="14-1-聚类的基本概念"><a href="#14-1-聚类的基本概念" class="headerlink" title="14.1 聚类的基本概念"></a>14.1 聚类的基本概念</h4><h5 id="14-1-1-相似度或距离"><a href="#14-1-1-相似度或距离" class="headerlink" title="14.1.1 相似度或距离"></a>14.1.1 相似度或距离</h5><h5 id="14-1-2-类或簇"><a href="#14-1-2-类或簇" class="headerlink" title="14.1.2 类或簇"></a>14.1.2 类或簇</h5><h5 id="14-1-3-类与类之间的距离"><a href="#14-1-3-类与类之间的距离" class="headerlink" title="14.1.3 类与类之间的距离"></a>14.1.3 类与类之间的距离</h5><h4 id="14-2-层次聚类"><a href="#14-2-层次聚类" class="headerlink" title="14.2 层次聚类"></a>14.2 层次聚类</h4><h4 id="14-3-k均值聚类"><a href="#14-3-k均值聚类" class="headerlink" title="14.3 k均值聚类"></a>14.3 k均值聚类</h4><h5 id="14-3-1-模型"><a href="#14-3-1-模型" class="headerlink" title="14.3.1 模型"></a>14.3.1 模型</h5><h5 id="14-3-2-策略"><a href="#14-3-2-策略" class="headerlink" title="14.3.2 策略"></a>14.3.2 策略</h5><h5 id="14-3-3-算法"><a href="#14-3-3-算法" class="headerlink" title="14.3.3 算法"></a>14.3.3 算法</h5><h5 id="14-3-4-算法特性"><a href="#14-3-4-算法特性" class="headerlink" title="14.3.4 算法特性"></a>14.3.4 算法特性</h5><h3 id="第15章-奇异值分解"><a href="#第15章-奇异值分解" class="headerlink" title="第15章 奇异值分解"></a>第15章 奇异值分解</h3><h4 id="15-1-奇异值分解的定义与性质"><a href="#15-1-奇异值分解的定义与性质" class="headerlink" title="15.1 奇异值分解的定义与性质"></a>15.1 奇异值分解的定义与性质</h4><h5 id="15-1-1-定义与定理"><a href="#15-1-1-定义与定理" class="headerlink" title="15.1.1 定义与定理"></a>15.1.1 定义与定理</h5><h5 id="15-1-2-紧奇异值分解与截断奇异值分解"><a href="#15-1-2-紧奇异值分解与截断奇异值分解" class="headerlink" title="15.1.2 紧奇异值分解与截断奇异值分解"></a>15.1.2 紧奇异值分解与截断奇异值分解</h5><h5 id="15-1-3-几何解释"><a href="#15-1-3-几何解释" class="headerlink" title="15.1.3 几何解释"></a>15.1.3 几何解释</h5><h5 id="15-1-4-主要性质"><a href="#15-1-4-主要性质" class="headerlink" title="15.1.4 主要性质"></a>15.1.4 主要性质</h5><h4 id="15-2-奇异值分解的计算"><a href="#15-2-奇异值分解的计算" class="headerlink" title="15.2 奇异值分解的计算"></a>15.2 奇异值分解的计算</h4><h4 id="15-3-奇异值分解与矩阵近似"><a href="#15-3-奇异值分解与矩阵近似" class="headerlink" title="15.3 奇异值分解与矩阵近似"></a>15.3 奇异值分解与矩阵近似</h4><h5 id="15-3-1-弗罗贝尼乌斯范数"><a href="#15-3-1-弗罗贝尼乌斯范数" class="headerlink" title="15.3.1 弗罗贝尼乌斯范数"></a>15.3.1 弗罗贝尼乌斯范数</h5><h5 id="15-3-2-矩阵的最优近似"><a href="#15-3-2-矩阵的最优近似" class="headerlink" title="15.3.2 矩阵的最优近似"></a>15.3.2 矩阵的最优近似</h5><h5 id="15-3-3-矩阵的外积展开式"><a href="#15-3-3-矩阵的外积展开式" class="headerlink" title="15.3.3 矩阵的外积展开式"></a>15.3.3 矩阵的外积展开式</h5><h3 id="第16章-主成分分析"><a href="#第16章-主成分分析" class="headerlink" title="第16章 主成分分析"></a>第16章 主成分分析</h3><h4 id="16-1-总体主成分分析"><a href="#16-1-总体主成分分析" class="headerlink" title="16.1 总体主成分分析"></a>16.1 总体主成分分析</h4><h5 id="16-1-1-基本想法"><a href="#16-1-1-基本想法" class="headerlink" title="16.1.1 基本想法"></a>16.1.1 基本想法</h5><h5 id="16-1-2-定义和导出"><a href="#16-1-2-定义和导出" class="headerlink" title="16.1.2 定义和导出"></a>16.1.2 定义和导出</h5><h5 id="16-1-3-主要性质"><a href="#16-1-3-主要性质" class="headerlink" title="16.1.3 主要性质"></a>16.1.3 主要性质</h5><h5 id="16-1-4-主成分的个数"><a href="#16-1-4-主成分的个数" class="headerlink" title="16.1.4 主成分的个数"></a>16.1.4 主成分的个数</h5><h5 id="16-1-5-规范化变量的总体主成分"><a href="#16-1-5-规范化变量的总体主成分" class="headerlink" title="16.1.5 规范化变量的总体主成分"></a>16.1.5 规范化变量的总体主成分</h5><h4 id="16-2-样本主成分分析"><a href="#16-2-样本主成分分析" class="headerlink" title="16.2 样本主成分分析"></a>16.2 样本主成分分析</h4><h5 id="16-2-1-样本主成分的定义和性质"><a href="#16-2-1-样本主成分的定义和性质" class="headerlink" title="16.2.1 样本主成分的定义和性质"></a>16.2.1 样本主成分的定义和性质</h5><h5 id="16-2-2-相关矩阵的特征值分解算法"><a href="#16-2-2-相关矩阵的特征值分解算法" class="headerlink" title="16.2.2 相关矩阵的特征值分解算法"></a>16.2.2 相关矩阵的特征值分解算法</h5><h5 id="16-2-3-数据矩阵的奇异值分解算法"><a href="#16-2-3-数据矩阵的奇异值分解算法" class="headerlink" title="16.2.3 数据矩阵的奇异值分解算法"></a>16.2.3 数据矩阵的奇异值分解算法</h5><h3 id="第17章-潜在语义分析"><a href="#第17章-潜在语义分析" class="headerlink" title="第17章  潜在语义分析"></a>第17章  潜在语义分析</h3><h4 id="17-1-单词向量空间与话题向量空间"><a href="#17-1-单词向量空间与话题向量空间" class="headerlink" title="17.1 单词向量空间与话题向量空间"></a>17.1 单词向量空间与话题向量空间</h4><h5 id="17-1-1-单词向量空间"><a href="#17-1-1-单词向量空间" class="headerlink" title="17.1.1 单词向量空间"></a>17.1.1 单词向量空间</h5><h5 id="17-1-2-话题向量空间"><a href="#17-1-2-话题向量空间" class="headerlink" title="17.1.2 话题向量空间"></a>17.1.2 话题向量空间</h5><h4 id="17-2-潜在语义分析算法"><a href="#17-2-潜在语义分析算法" class="headerlink" title="17.2 潜在语义分析算法"></a>17.2 潜在语义分析算法</h4><h5 id="17-2-1-矩阵奇异值分解算法"><a href="#17-2-1-矩阵奇异值分解算法" class="headerlink" title="17.2.1 矩阵奇异值分解算法"></a>17.2.1 矩阵奇异值分解算法</h5><h5 id="17-2-2-例子"><a href="#17-2-2-例子" class="headerlink" title="17.2.2 例子"></a>17.2.2 例子</h5><h4 id="17-3-非负矩阵分解算法"><a href="#17-3-非负矩阵分解算法" class="headerlink" title="17.3 非负矩阵分解算法"></a>17.3 非负矩阵分解算法</h4><h5 id="17-3-1-非负矩阵分解"><a href="#17-3-1-非负矩阵分解" class="headerlink" title="17.3.1 非负矩阵分解"></a>17.3.1 非负矩阵分解</h5><h5 id="17-3-2-潜在语义分析模型"><a href="#17-3-2-潜在语义分析模型" class="headerlink" title="17.3.2 潜在语义分析模型"></a>17.3.2 潜在语义分析模型</h5><h5 id="17-3-3-非负矩阵分解的形式化"><a href="#17-3-3-非负矩阵分解的形式化" class="headerlink" title="17.3.3 非负矩阵分解的形式化"></a>17.3.3 非负矩阵分解的形式化</h5><h5 id="17-3-4-算法"><a href="#17-3-4-算法" class="headerlink" title="17.3.4 算法"></a>17.3.4 算法</h5><h3 id="第18章-概率潜在语义分析"><a href="#第18章-概率潜在语义分析" class="headerlink" title="第18章 概率潜在语义分析"></a>第18章 概率潜在语义分析</h3><h4 id="18-1-概率潜在语义分析"><a href="#18-1-概率潜在语义分析" class="headerlink" title="18.1 概率潜在语义分析"></a>18.1 概率潜在语义分析</h4><h5 id="18-1-1-基本想法"><a href="#18-1-1-基本想法" class="headerlink" title="18.1.1 基本想法"></a>18.1.1 基本想法</h5><h5 id="18-1-2-生成模型"><a href="#18-1-2-生成模型" class="headerlink" title="18.1.2 生成模型"></a>18.1.2 生成模型</h5><h5 id="18-1-3-共现模型"><a href="#18-1-3-共现模型" class="headerlink" title="18.1.3 共现模型"></a>18.1.3 共现模型</h5><h5 id="18-1-4-模型性质"><a href="#18-1-4-模型性质" class="headerlink" title="18.1.4 模型性质"></a>18.1.4 模型性质</h5><h4 id="18-2-概率潜在语义分析算法"><a href="#18-2-概率潜在语义分析算法" class="headerlink" title="18.2 概率潜在语义分析算法"></a>18.2 概率潜在语义分析算法</h4><h3 id="第19章-马尔可夫链蒙特卡罗法"><a href="#第19章-马尔可夫链蒙特卡罗法" class="headerlink" title="第19章 马尔可夫链蒙特卡罗法"></a>第19章 马尔可夫链蒙特卡罗法</h3><h4 id="19-1-蒙特卡罗法"><a href="#19-1-蒙特卡罗法" class="headerlink" title="19.1 蒙特卡罗法"></a>19.1 蒙特卡罗法</h4><h5 id="19-1-1-随机抽样"><a href="#19-1-1-随机抽样" class="headerlink" title="19.1.1 随机抽样"></a>19.1.1 随机抽样</h5><h5 id="19-1-2-数学期望估计"><a href="#19-1-2-数学期望估计" class="headerlink" title="19.1.2 数学期望估计"></a>19.1.2 数学期望估计</h5><h5 id="19-1-3-积分计算"><a href="#19-1-3-积分计算" class="headerlink" title="19.1.3 积分计算"></a>19.1.3 积分计算</h5><h4 id="19-2-马尔可夫链"><a href="#19-2-马尔可夫链" class="headerlink" title="19.2 马尔可夫链"></a>19.2 马尔可夫链</h4><h5 id="19-2-1-基本定义"><a href="#19-2-1-基本定义" class="headerlink" title="19.2.1 基本定义"></a>19.2.1 基本定义</h5><h5 id="19-2-2-离散状态马尔可夫链"><a href="#19-2-2-离散状态马尔可夫链" class="headerlink" title="19.2.2 离散状态马尔可夫链"></a>19.2.2 离散状态马尔可夫链</h5><h5 id="19-2-3-连续状态马尔科夫链"><a href="#19-2-3-连续状态马尔科夫链" class="headerlink" title="19.2.3 连续状态马尔科夫链"></a>19.2.3 连续状态马尔科夫链</h5><h5 id="19-2-4-马尔可夫链的性质"><a href="#19-2-4-马尔可夫链的性质" class="headerlink" title="19.2.4 马尔可夫链的性质"></a>19.2.4 马尔可夫链的性质</h5><h4 id="19-3-马尔可夫链蒙特卡罗法"><a href="#19-3-马尔可夫链蒙特卡罗法" class="headerlink" title="19.3 马尔可夫链蒙特卡罗法"></a>19.3 马尔可夫链蒙特卡罗法</h4><h5 id="19-3-1-基本想法"><a href="#19-3-1-基本想法" class="headerlink" title="19.3.1 基本想法"></a>19.3.1 基本想法</h5><h5 id="19-3-2-基本步骤"><a href="#19-3-2-基本步骤" class="headerlink" title="19.3.2 基本步骤"></a>19.3.2 基本步骤</h5><h5 id="19-3-3-马尔可夫链蒙特卡罗与统计学习"><a href="#19-3-3-马尔可夫链蒙特卡罗与统计学习" class="headerlink" title="19.3.3 马尔可夫链蒙特卡罗与统计学习"></a>19.3.3 马尔可夫链蒙特卡罗与统计学习</h5><h4 id="19-4-Metropolis-Hastings算法"><a href="#19-4-Metropolis-Hastings算法" class="headerlink" title="19.4 Metropolis-Hastings算法"></a>19.4 Metropolis-Hastings算法</h4><h5 id="19-4-1-基本原理"><a href="#19-4-1-基本原理" class="headerlink" title="19.4.1 基本原理"></a>19.4.1 基本原理</h5><h5 id="19-4-2-Metropolis-Hastings算法"><a href="#19-4-2-Metropolis-Hastings算法" class="headerlink" title="19.4.2 Metropolis-Hastings算法"></a>19.4.2 Metropolis-Hastings算法</h5><h5 id="19-4-3-单分量Metropolis-Hastings算法"><a href="#19-4-3-单分量Metropolis-Hastings算法" class="headerlink" title="19.4.3 单分量Metropolis-Hastings算法"></a>19.4.3 单分量Metropolis-Hastings算法</h5><h4 id="19-5-吉布斯抽样"><a href="#19-5-吉布斯抽样" class="headerlink" title="19.5 吉布斯抽样"></a>19.5 吉布斯抽样</h4><h5 id="19-5-1-基本原理"><a href="#19-5-1-基本原理" class="headerlink" title="19.5.1 基本原理"></a>19.5.1 基本原理</h5><h5 id="19-5-2-吉布斯抽样算法"><a href="#19-5-2-吉布斯抽样算法" class="headerlink" title="19.5.2 吉布斯抽样算法"></a>19.5.2 吉布斯抽样算法</h5><h5 id="19-5-3-抽样算法"><a href="#19-5-3-抽样算法" class="headerlink" title="19.5.3 抽样算法"></a>19.5.3 抽样算法</h5><h3 id="第20章-潜在狄利克雷分配"><a href="#第20章-潜在狄利克雷分配" class="headerlink" title="第20章 潜在狄利克雷分配"></a>第20章 潜在狄利克雷分配</h3><h4 id="20-1-狄利克雷分布"><a href="#20-1-狄利克雷分布" class="headerlink" title="20.1 狄利克雷分布"></a>20.1 狄利克雷分布</h4><h4 id="20-2-潜在狄利克雷分配模型"><a href="#20-2-潜在狄利克雷分配模型" class="headerlink" title="20.2 潜在狄利克雷分配模型"></a>20.2 潜在狄利克雷分配模型</h4><h4 id="20-3-LDA的吉布斯抽样算法"><a href="#20-3-LDA的吉布斯抽样算法" class="headerlink" title="20.3 LDA的吉布斯抽样算法"></a>20.3 LDA的吉布斯抽样算法</h4><h4 id="20-4-LDA的变分EM算法"><a href="#20-4-LDA的变分EM算法" class="headerlink" title="20.4 LDA的变分EM算法"></a>20.4 LDA的变分EM算法</h4><h3 id="第21章-PageRank算法"><a href="#第21章-PageRank算法" class="headerlink" title="第21章  PageRank算法"></a>第21章  PageRank算法</h3><h4 id="21-1-PageRank的定义"><a href="#21-1-PageRank的定义" class="headerlink" title="21.1 PageRank的定义"></a>21.1 PageRank的定义</h4><h5 id="21-1-1-基本想法"><a href="#21-1-1-基本想法" class="headerlink" title="21.1.1 基本想法"></a>21.1.1 基本想法</h5><h5 id="21-1-2-有向图和随机游走模型"><a href="#21-1-2-有向图和随机游走模型" class="headerlink" title="21.1.2 有向图和随机游走模型"></a>21.1.2 有向图和随机游走模型</h5><h5 id="21-1-3-PageRank的基本定义"><a href="#21-1-3-PageRank的基本定义" class="headerlink" title="21.1.3 PageRank的基本定义"></a>21.1.3 PageRank的基本定义</h5><h5 id="21-1-4-PageRank的一般定义"><a href="#21-1-4-PageRank的一般定义" class="headerlink" title="21.1.4 PageRank的一般定义"></a>21.1.4 PageRank的一般定义</h5><h4 id="21-2-PageRank的计算"><a href="#21-2-PageRank的计算" class="headerlink" title="21.2 PageRank的计算"></a>21.2 PageRank的计算</h4><h5 id="21-2-1-迭代算法"><a href="#21-2-1-迭代算法" class="headerlink" title="21.2.1 迭代算法"></a>21.2.1 迭代算法</h5><h5 id="21-2-2-幂法"><a href="#21-2-2-幂法" class="headerlink" title="21.2.2 幂法"></a>21.2.2 幂法</h5><h5 id="21-2-3-代数算法"><a href="#21-2-3-代数算法" class="headerlink" title="21.2.3 代数算法"></a>21.2.3 代数算法</h5><h3 id="第22章-无监督学习方法总结"><a href="#第22章-无监督学习方法总结" class="headerlink" title="第22章 无监督学习方法总结"></a>第22章 无监督学习方法总结</h3><h4 id="22-1-无监督学习方法的关系和特点"><a href="#22-1-无监督学习方法的关系和特点" class="headerlink" title="22.1 无监督学习方法的关系和特点"></a>22.1 无监督学习方法的关系和特点</h4><h5 id="22-1-1-各种方法之间的关系"><a href="#22-1-1-各种方法之间的关系" class="headerlink" title="22.1.1 各种方法之间的关系"></a>22.1.1 各种方法之间的关系</h5><h5 id="22-1-2-无监督学习方法"><a href="#22-1-2-无监督学习方法" class="headerlink" title="22.1.2 无监督学习方法"></a>22.1.2 无监督学习方法</h5><h5 id="22-1-3-基础机器学习方法"><a href="#22-1-3-基础机器学习方法" class="headerlink" title="22.1.3 基础机器学习方法"></a>22.1.3 基础机器学习方法</h5><h4 id="22-2-话题模型之间的关系和特点"><a href="#22-2-话题模型之间的关系和特点" class="headerlink" title="22.2 话题模型之间的关系和特点"></a>22.2 话题模型之间的关系和特点</h4>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/27/computational-physics-homework-2/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">计算物理作业2</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/23/computational-physics-4/">
+                <span class="level-item">computational physics 4</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/lm.jpeg" alt="hl">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        hl
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        尽人事，听天命
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hefei,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            34
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            2
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Tensor-Netwowrk/">
+            <span class="level-start">
+                <span class="level-item">Tensor Netwowrk</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+            <span class="level-start">
+                <span class="level-item">计算物理</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Quantum-Volume/" style="font-size: 13.33px;">Quantum Volume</a> <a href="/tags/TFQ/" style="font-size: 10px;">TFQ</a> <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" style="font-size: 16.67px;">计算物理</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
+                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
+                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理-3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:34:38.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理-3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">19</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">15</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quantum-Volume/">
+                        <span class="tag">Quantum Volume</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+                        <span class="tag">计算物理</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
+                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
+                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理-3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:34:38.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理-3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">19</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">15</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quantum-Volume/">
+                        <span class="tag">Quantum Volume</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+                        <span class="tag">计算物理</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/hlzone.png" alt="统计学习方法" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 hl&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

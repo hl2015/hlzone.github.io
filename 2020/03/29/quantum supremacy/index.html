@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>“量子霸权” - hlzone</title>
+
+
+    <meta name="description" content="“量子霸权”2月底，《MIT科技评论》发布了2020年“全球十大突破性技术”，其中之一“量子霸权”就是量子计算领域的突破。 量子计算是区别于经典数字计算的一种计算范式，它使用了量子力学现象例如叠加和纠缠来进行计算。经典的二进制数字计算机采用经典比特作为信息表示单元，同一时刻只能表示确定的信息（0或1状态），而量子计算机采用量子比特作为基础单元，可以表示状态的叠加。这样的量子比特可以用许多不同的物理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“量子霸权”">
+<meta property="og:url" content="http://yoursite.com/2020/03/29/quantum%20supremacy/index.html">
+<meta property="og:site_name" content="hlzone">
+<meta property="og:description" content="“量子霸权”2月底，《MIT科技评论》发布了2020年“全球十大突破性技术”，其中之一“量子霸权”就是量子计算领域的突破。 量子计算是区别于经典数字计算的一种计算范式，它使用了量子力学现象例如叠加和纠缠来进行计算。经典的二进制数字计算机采用经典比特作为信息表示单元，同一时刻只能表示确定的信息（0或1状态），而量子计算机采用量子比特作为基础单元，可以表示状态的叠加。这样的量子比特可以用许多不同的物理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-03-29T11:52:30.000Z">
+<meta property="article:modified_time" content="2020-03-29T11:20:00.652Z">
+<meta property="article:author" content="hl">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/L.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/hlzone.png" alt="“量子霸权”" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/catagories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/hlzone">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    15 分钟 读完 (大约 2307 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                “量子霸权”
+            
+        </h1>
+        <div class="content">
+            <h2 id="“量子霸权”"><a href="#“量子霸权”" class="headerlink" title="“量子霸权”"></a>“量子霸权”</h2><p>2月底，《MIT科技评论》发布了2020年“全球十大突破性技术”，其中之一“量子霸权”就是量子计算领域的突破。</p>
+<p>量子计算是区别于经典数字计算的一种计算范式，它使用了量子力学现象例如叠加和纠缠来进行计算。经典的二进制数字计算机采用经典比特作为信息表示单元，同一时刻只能表示确定的信息（0或1状态），而量子计算机采用量子比特作为基础单元，可以表示状态的叠加。这样的量子比特可以用许多不同的物理方式实现，可以由单个原子、单个电子、单个光子或者复杂的系统（例如由很多电子构成的超导量子比特）承载表示。</p>
+<a id="more"></a>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200329191159.jpg" alt=""></p>
+<p>量子计算的概念在上世纪80年代由费曼（Feynman)等人提出，“自然不是经典的，如果你想模拟自然，你最好让模拟是遵循量子力学规范的”，使用量子系统来模拟自然量子体系是更自然且有效的方式。随着Shor算法的提出，人们看到了量子计算的潜力，它可以在多项式时间内解决质因数分解问题，而这会给目前广泛使用的RSA加密算法带来威胁。在2001年，IBM的研究小组使用7量子比特的核磁共振（NMR）计算机演示了用Shor算法分解整数15，拉开了量子计算研究竞赛的序幕。</p>
+<p>近年来，许多国家政府和研究机构都在资助量子计算研究，努力开发用于民用、商业、贸易、环境和国家安全目的的量子计算机。同时量子计算也吸引了资本的注意，许多知名公司和创业公司也参与其中，较著名的玩家有Google、IBM、Intel、Rigetti、IonQ等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200326204045.png" alt=""></p>
+<p>2019年10月，Google在Nature上发表了一篇文章，实验展示了称为悬铃木（Sycamore）超导量子计算处理器可以用200秒来实现一个量子电路的采样实例，而同样的任务在最先进的经典超级计算机上处理需要大约1万年，因此宣称实现了“量子霸权”（Quantum Supremacy）。“量子霸权”这个概念由John Preskill提出，量子计算装置在特定测试案例上表现出超越所有经典计算机的计算能力，没有现有的(或容易预见的)经典设备可以执行相同的任务，不管该任务在其它方面是否有用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200329191203.jpg" alt=""></p>
+<p>尽管IBM对Google取得的“量子霸权”结果有一些争议，同时Google的实验基准为一个特定的问题，商业用途非常有限，但不可否认的是这是一个量子计算的重要里程碑。有人将Google的实验与1903年12月莱特兄弟的第一次飞行作比较，它证明了量子加速在真实世界地系统中是可以实现的，显示了量子计算存在的潜力。</p>
+<p>但目前的量子计算机距离可以执行有用的Shor算法还相距甚远，要运行包含数千个受保护的量子比特的算法，我们需要大量的物理量子逻辑，以百万计，甚至更多，而目前量子计算机的量子比特数量还没到达上百个。Google的研究者声称“量子霸权”的实现意味着噪声中间尺度的量子计算（NISQ）时代的到来。</p>
+<p>在NISQ阶段中，量子计算机拥有的量子比特还比较少（大概50-100个），同时因为实现量子误差校正需要的开销很大，还未能实现纠错。这个阶段的量子计算机或许可以执行一些超越当今计算机能力的任务，但量子门中的噪声将限制可执行量子电路的大小。这个阶段的量子计算系统更多的是作为探究多体量子物理的有用工具，或者用于量子系统的模拟，这是量子计算机所擅长的，而目前经典计算机尚没有用于模拟量子动力学系统的良好算法。同时，采用混合量子-经典算法解决一些优化问题，例如量子近似优化算法（QAOA）、变分量子特征值求解算法（VQE），也得到了研究者的关注。还有很多NISQ阶段的应用设想，但是受限于量子比特数目和噪声，目前的量子计算平台还不能改变世界，商用化的案例还没有出现，短期的主要目标是为未来的更先进的量子设备铺平道路。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200329191201.jpg" alt=""></p>
+<p>值得注意的是，不应该将量子计算机视为经典计算机的高级替代。John Preskill在提出NISQ概念的论文中指出，“经典计算和量子计算各自难以解决的问题是不同的，不能期望量子计算机可以解决经典计算机难以解决的NP-hard问题”。量子计算和经典计算各有其优势，可以解决的问题的范畴不同，量子计算在未来也许会与经典计算处于互补的状态。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200326154031.png" alt=""></p>
+<p>目前，量子计算的发展专注于构建更低门错误率的量子硬件，这将有助于实现更大规模的量子电路，完成一些NISQ阶段的实用案例演示；同时更精确的量子比特错误率也将减少量子误差校正的开销，向实现量子纠错靠近。随着量子计算实用化进程的演变，量子计算研究成为了一个系统性的问题，既需要底层的物理实现，需要先进的材料和制造工艺，同时也需要精确的电子学控制系统，上层软件系统和量子算法的不断发展，这需要多学科人才的叉合作和更多相关人才的培养。</p>
+<p>量子计算还处于发展开始的阶段，还需要完成更多阶段性的里程碑才能到达最后的终点，要实现量子计算的全部前景(例如使用Shor的因式分解算法)仍然需要技术飞跃来设计容错逻辑量子比特，这需要工程师和科学家继续不断优化芯片和硬件系统的设计。至于其应用，将在不断地在向前发展中涌现出来。各公司在未来将开发更多的云平台接口，完善软件、库、应用程序和用户社区，为算法研究者探索算法应用提供支持。</p>
+<p>因为量子计算的巨大潜力，我国对量子计算的投入也不断增多。中国科学技术大学、清华大学、浙江大学、南京大学等大学，本源量子、阿里巴巴、腾讯、百度、华为等公司，还有鹏城实验室都开展了量子计算研究。但因为起步较晚，与国外还有一些差距。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200329191433.jpg" alt=""></p>
+<p>量子计算机最终会对社会产生变革性的影响，这可能还需要几十年的时间，但近五到十年内，会涌现出越来越多的令人惊喜的结果，显示量子计算的能力。未来是光明的，道路是曲折的。我们还有很长的路要走，新的见解、发展和创新有可能极大地改变我们的前景。</p>
+<p><strong>参考资料</strong></p>
+<p>Preskill J. Quantum computing and the entanglement frontier[J]. arXiv preprint arXiv:1203.5813, 2012.</p>
+<p>Preskill J. Quantum Computing in the NISQ era and beyond[J]. Quantum, 2018, 2: 79.</p>
+<p>Arute F, Arya K, Babbush R, et al. Quantum supremacy using a programmable superconducting processor[J]. Nature, 2019, 574(7779): 505-510.</p>
+<p>Kjaergaard M, Schwartz M E, Braumüller J, et al. Superconducting qubits: Current state of play[J]. Annual Review of Condensed Matter Physics, 2019, 11.</p>
+<p>Nielsen M A, Chuang I. Quantum computation and quantum information[J]. 2002.</p>
+<p><a href="https://quantumcomputingreport.com/our-take/our-take-on-quantum-supremacy/">https://quantumcomputingreport.com/our-take/our-take-on-quantum-supremacy/</a></p>
+<p><a href="https://quantumcomputingreport.com/our-take/after-quantum-supremacy-what-comes-next/">https://quantumcomputingreport.com/our-take/after-quantum-supremacy-what-comes-next/</a></p>
+<p><a href="https://quantumcomputingreport.com/scorecards/qubit-count/">https://quantumcomputingreport.com/scorecards/qubit-count/</a></p>
+<p><a href="http://nautil.us/blog/physicists-say-googles-quantum-computer-is-still-far-from-practical">http://nautil.us/blog/physicists-say-googles-quantum-computer-is-still-far-from-practical</a></p>
+<p><a href="https://www.stevenvanbelleghem.com/blog/what-quantum-computing-could-mean-for-customer-experience/">https://www.stevenvanbelleghem.com/blog/what-quantum-computing-could-mean-for-customer-experience/</a></p>
+<p><a href="https://www.technologyreview.com/lists/technologies/2020/">https://www.technologyreview.com/lists/technologies/2020/</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Quantum_computing">https://en.wikipedia.org/wiki/Quantum_computing</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/27/computational-physics-homework-2/">
+                <span class="level-item">计算物理作业2</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/lm.jpeg" alt="hl">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        hl
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        尽人事，听天命
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hefei,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            34
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            2
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#“量子霸权”">
+        <span class="has-mr-6">1</span>
+        <span>“量子霸权”</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Tensor-Netwowrk/">
+            <span class="level-start">
+                <span class="level-item">Tensor Netwowrk</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+            <span class="level-start">
+                <span class="level-item">计算物理</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Quantum-Volume/" style="font-size: 13.33px;">Quantum Volume</a> <a href="/tags/TFQ/" style="font-size: 10px;">TFQ</a> <a href="/tags/Tensor-Netwowrk/" style="font-size: 20px;">Tensor Netwowrk</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" style="font-size: 16.67px;">计算物理</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 10px;">论文</a> <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/" style="font-size: 10px;">量子线路</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
+                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
+                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理-3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:34:38.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理-3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">19</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">15</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quantum-Volume/">
+                        <span class="tag">Quantum Volume</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+                        <span class="tag">计算物理</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
+                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
+                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/23/computational-physics-3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理-3">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:34:38.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/computational-physics-3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理-3</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">19</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">15</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Quantum-Volume/">
+                        <span class="tag">Quantum Volume</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TFQ/">
+                        <span class="tag">TFQ</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Tensor-Netwowrk/">
+                        <span class="tag">Tensor Netwowrk</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <span class="tag">博客搭建</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
+                        <span class="tag">计算物理</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AE%BA%E6%96%87/">
+                        <span class="tag">论文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%87%8F%E5%AD%90%E7%BA%BF%E8%B7%AF/">
+                        <span class="tag">量子线路</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%93%BE%E6%8E%A5/">
+                        <span class="tag">链接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/hlzone.png" alt="“量子霸权”" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 hl&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
