@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-03-27T02:25:49.000Z">
-<meta property="article:modified_time" content="2020-03-29T08:50:51.295Z">
+<meta property="article:modified_time" content="2020-03-31T04:03:33.957Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="计算物理">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 322 个字)
+                    8 分钟 读完 (大约 1158 个字)
                 </span>
                 
                 
@@ -187,17 +187,138 @@
 \end{aligned}
 \right.</script><p>用$p_\phi,p_\psi,\theta$代替$\dot{\psi},\dot{\phi}$，得到</p>
 <script type="math/tex; mode=display">
-L = \frac{1}{2} I_0 \dot{\theta}^2 - V_{eff}(\theta)</script><p>下面用Mathematica推导上述过程（参考guide/Formula Manipulation）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L &#x3D; 1&#x2F;2*I\[Psi] (\[Psi]&#39; + \[Phi]&#39;*Cos[\[Theta]])^2</span><br></pre></td></tr></table></figure>
+L = \frac{1}{2} I_0 \dot{\theta}^2 - V_{eff}(\theta)</script><p>求使用Lagrange方程求运动方程</p>
+<script type="math/tex; mode=display">
+\frac{d}{dt} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} = 0  \Longrightarrow I_0 \ddot{\theta} = f(\theta)</script><p>下面用Mathematica推导上述过程（参考guide/Formula Manipulation）</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">L = <span class="number">1</span>/<span class="number">2</span>*I\[Psi] (\[Psi]'[t] + \[Phi]'[t]*<span class="keyword">Cos</span>[\[Theta][t]])^<span class="number">2</span> + </span><br><span class="line">  <span class="number">1</span>/<span class="number">2</span> I0 ((\[Theta]'[t])^<span class="number">2</span> + (\[Phi]'[t])^<span class="number">2</span> <span class="keyword">Sin</span>[\[Theta][t]]^<span class="number">2</span>) - </span><br><span class="line">  m*g*l*<span class="keyword">Cos</span>[\[Theta][t]]</span><br><span class="line"></span><br><span class="line">const1 = p\[Psi] == D[L, \[Psi]'[t]]</span><br><span class="line">const2 = p\[Phi] == D[L, \[Phi]'[t]]</span><br><span class="line"><span class="keyword">Solve</span>[const1 &amp;&amp; const2, &#123;\[Psi]'[t], \[Phi]'[t]&#125;]</span><br><span class="line">LNew = <span class="keyword">Simplify</span>[L /. %[[<span class="number">1</span>]]]</span><br><span class="line"></span><br><span class="line">Eq = <span class="keyword">FullSimplify</span>[</span><br><span class="line">  D[D[LNew, \[Theta]'[t]], t] - D[LNew, \[Theta][t]] == <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200330130715.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200330130504.png" alt=""></p>
+<h3 id="数值求解"><a href="#数值求解" class="headerlink" title="数值求解"></a>数值求解</h3><ul>
+<li>用NDSolve求解$\theta(t),\psi(t),\phi(t)$</li>
+</ul>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Const = &#123;p\[Psi] -&gt; <span class="number">1</span>, p\[Phi] -&gt; <span class="number">1</span>, I\[Psi] -&gt; <span class="number">1</span>, I0 -&gt; <span class="number">1</span>, l -&gt; <span class="number">1</span>, </span><br><span class="line">  m -&gt; <span class="number">1</span>, g -&gt; <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line">\[Theta]t = </span><br><span class="line"> <span class="keyword">NDSolve</span>[&#123;Eq, const1, </span><br><span class="line">    const2 , \[Theta][<span class="number">0</span>] == <span class="number">0.1</span>, \[Theta]'[<span class="number">0</span>] == <span class="number">0.1</span>, \[Psi][<span class="number">0</span>] == </span><br><span class="line">     <span class="number">0.1</span>, \[Phi][<span class="number">0</span>] == <span class="number">0.1</span>&#125; /. Const, &#123;\[Theta], \[Psi], \[Phi]&#125;, &#123;t, </span><br><span class="line">   <span class="number">0</span>, <span class="number">2</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200330131201.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200330131551.png" alt=""></p>
 <h2 id="作业6"><a href="#作业6" class="headerlink" title="作业6"></a>作业6</h2><ul>
 <li>用NDSolve研究参数共振问题</li>
 <li>如何取$w$值，使其共振</li>
 </ul>
+<h3 id="理论推导"><a href="#理论推导" class="headerlink" title="理论推导"></a>理论推导</h3><script type="math/tex; mode=display">
+\ddot{\theta}+ w_0^2(t)= 0,w_0(t)=w_0(1+\alpha \cos wt),|\alpha| \ll 1 \\
+w = 2w_0 + \varepsilon  \Longrightarrow \ddot{\theta}+w_0^2[1+2 \alpha \cos(2w_0+\varepsilon)t] \theta = 0\\</script><p>有解为</p>
+<script type="math/tex; mode=display">
+\theta = a(t) \cos (w_0+ \frac{\varepsilon}{2})t + b(t) \sin(w_0+\frac{\varepsilon}{2}t) \\
+\Longrightarrow \ddot{\theta} = \cdots</script><p>$a(t),b(t)$为慢变化项，忽略二阶导数$\ddot{a},\ddot{b}$，有$a \sim e^{\mu t},b \sim e^{\mu t}, a\sim \mu a, b \sim \mu b$</p>
+<script type="math/tex; mode=display">
+\mu = \pm \frac{1}{2} \sqrt{(\alpha w_0)^2-\varepsilon^2}</script><p>共振判断条件</p>
+<ul>
+<li>$|\varepsilon|&lt;|\alpha w_0|$，不稳定</li>
+<li>$|\varepsilon|&gt;|\alpha w_0|$，稳定</li>
+</ul>
+<h3 id="使用NDSolve验证"><a href="#使用NDSolve验证" class="headerlink" title="使用NDSolve验证"></a>使用NDSolve验证</h3><p>取参数如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">$\alpha$</th>
+<th style="text-align:center">$\omega_0$</th>
+<th style="text-align:center">$\varepsilon$</th>
+<th style="text-align:center">$</th>
+<th>\varepsilon</th>
+<th>&lt;</th>
+<th>\alpha \omega_0</th>
+<th>$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">&lt;</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">-4</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">&lt;</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">=</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">0.5</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">&gt;</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">-0.2</td>
+<td style="text-align:center">0.1</td>
+<td style="text-align:center">&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\[Alpha] = <span class="number">0.1</span>;</span><br><span class="line">\[Epsilon] = <span class="number">0.1</span>;</span><br><span class="line">tmax = <span class="number">80</span>;</span><br><span class="line">Parame = &#123;&#123;\[Omega]<span class="number">0</span> -&gt; <span class="number">5</span>&#125;, &#123;\[Omega]<span class="number">0</span> -&gt; <span class="number">-4</span>&#125;, &#123;\[Omega]<span class="number">0</span> -&gt; </span><br><span class="line">    <span class="number">1</span>&#125;, &#123;\[Omega]<span class="number">0</span> -&gt; <span class="number">0.5</span>&#125;, &#123;\[Omega]<span class="number">0</span> -&gt; <span class="number">-0.2</span>&#125;&#125;</span><br><span class="line">PREq = \[Theta]''[</span><br><span class="line">    t] + (\[Omega]<span class="number">0</span>)^<span class="number">2</span> (<span class="number">1</span> + </span><br><span class="line">      <span class="number">2</span> \[Alpha]*<span class="keyword">Cos</span>[<span class="number">2</span> \[Omega]<span class="number">0</span> + \[Epsilon]] t) \[Theta][t] == <span class="number">0</span></span><br><span class="line"><span class="keyword">Table</span>[<span class="keyword">NDSolve</span>[&#123;PREq, \[Theta][<span class="number">0</span>] == <span class="number">0.1</span>, \[Theta]'[<span class="number">0</span>] == <span class="number">0.1</span>&#125; /. </span><br><span class="line">   Parame[[i]], \[Theta], &#123;t, <span class="number">0</span>, tmax&#125;], &#123;i, <span class="number">5</span>&#125;]</span><br><span class="line"><span class="keyword">Table</span>[<span class="keyword">Plot</span>[\[Theta][t] /. %[[i]], &#123;t, <span class="number">0</span>, tmax&#125;], &#123;i, <span class="number">5</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200330193750.png" alt=""></p>
+<p>运行，得到输出</p>
+<p><img src="C:\Users\hlei1\AppData\Roaming\Typora\typora-user-images\image-20200330193930726.png" alt="image-20200330193930726"></p>
+<p>可以看到编号为1，2，3参数所得图像都不稳定，都不收敛，1发散的速度较快，2为震荡发散，速度较慢，这取决于$\mu$参数的大小和幅度项的因子。在编号为3的参数下，$|\varepsilon| = |\alpha \omega_0|$，还是发散了，这是因为近似误差的原因。4，5收敛，都与讨论结果相符。</p>
 <h2 id="作业7"><a href="#作业7" class="headerlink" title="作业7"></a>作业7</h2><ul>
 <li>从无穷矩阵看出，$|k| \leq 1/2$</li>
 <li>计算Bloch能带</li>
 <li>扫描a和q，画出稳定区域</li>
 </ul>
+<h3 id="关于k范围的讨论"><a href="#关于k范围的讨论" class="headerlink" title="关于k范围的讨论"></a>关于k范围的讨论</h3><script type="math/tex; mode=display">
+- \frac{d^2}{dx^2} \phi - 2q \cos x \phi = \varepsilon \phi \\
+\phi _k(x) = e^{ikx} \sum_n C_n e^{inx} \\
+\Longrightarrow (n+k)^2 C_n - q(C_{n+1}+C_{n-1})=\varepsilon C_n</script><script type="math/tex; mode=display">
+\begin{pmatrix}
+\ddots & & & & \\
+-q & (1+k)^2 & -q & & \\
+ & -q & (0+k)^2 & -q & \\
+ & & -q & (-1+k)^2 & -q \\
+ & & & & \ddots
+\end{pmatrix}
+\begin{pmatrix}
+\vdots \\
+C_1 \\
+C_0 \\
+C_{-1} \\
+\vdots
+\end{pmatrix}
+=
+\varepsilon 
+\begin{pmatrix}
+\vdots \\
+C_1 \\
+C_0 \\
+C_{-1} \\
+\vdots
+\end{pmatrix}</script><p>因为存在周期性，假设$k$范围任取，$k$可以表示为$k=m+k’$，其中$m$为整数部分，$k’$为小数部分。代入周期式得</p>
+<script type="math/tex; mode=display">
+(n+k)^2 C_n - q(C_{n+1}+C_{n-1})=\varepsilon C_n \\
+\Longrightarrow(n'+k')^2 C_n' - q(C_{n'+1}+C_{n'-1})=\varepsilon C_n'</script><p>式子并没有改变，对体系的描述并没有变化，存在简并，对$k$的周期为1。</p>
+<p>因此，可以假设$|k|&lt;1/2$。</p>
+<h3 id="计算Bloch能带"><a href="#计算Bloch能带" class="headerlink" title="计算Bloch能带"></a>计算Bloch能带</h3><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">nmax = <span class="number">3</span>;</span><br><span class="line">q = <span class="number">0.5</span>;</span><br><span class="line">f[i_, j_] := </span><br><span class="line">  <span class="keyword">Which</span>[i == j, (i + k)^<span class="number">2</span>, i == j + <span class="number">1</span>, -q, i == j - <span class="number">1</span>, -q, <span class="keyword">True</span>, <span class="number">0</span>]; </span><br><span class="line">matrix = <span class="keyword">Table</span>[f[i, j], &#123;i, nmax, -nmax, <span class="number">-1</span>&#125;, &#123;j, nmax, -nmax, <span class="number">-1</span>&#125;];</span><br><span class="line">step = <span class="number">0.01</span>;</span><br><span class="line"><span class="keyword">Table</span>[<span class="keyword">Eigenvalues</span>[matrix /. k -&gt; r], &#123;r, <span class="number">-0.5</span>, <span class="number">0.5</span>, step&#125;];</span><br><span class="line"></span><br><span class="line"><span class="keyword">Table</span>[&#123;step*(i - <span class="number">1</span>) - <span class="number">0.5</span>, %[[i, j]]&#125;, &#123;i, <span class="number">1</span>/step + <span class="number">1</span>&#125;, &#123;j, </span><br><span class="line">   <span class="number">2</span> nmax + <span class="number">1</span>&#125;];</span><br><span class="line"><span class="keyword">Flatten</span>[%, <span class="number">1</span>];</span><br><span class="line"><span class="keyword">ListPlot</span>[%]</span><br></pre></td></tr></table></figure>
+<p>当q=0时，无能带间隙</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200331115213.png" alt=""></p>
+<p>取q=0.5，得到的图像，可以开到低能级出现能带间隙。<br><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200331114940.png" alt=""></p>
+<p>取nmax=6，q=3，得到得图像</p>
+<p><img src="C:\Users\hlei1\AppData\Roaming\Typora\typora-user-images\image-20200331115553890.png" alt="image-20200331115553890"><br>曲线很直，是因为特征值是根据无穷矩阵的一部分计算出来的，有近似误差。</p>
+<h3 id="Mathieu方程"><a href="#Mathieu方程" class="headerlink" title="Mathieu方程"></a>Mathieu方程</h3><script type="math/tex; mode=display">
+- \frac{d^2}{dt^2} \phi + (a - 2q \cos t) \phi = 0</script><p>扫描a和q，画出稳定区域</p>
 <h2 id="作业8"><a href="#作业8" class="headerlink" title="作业8"></a>作业8</h2><p>参考<a href="[http://home.ustc.edu.cn/~zegang/pic/Compartmental%20models%20in%20epidemiology.pdf](http://home.ustc.edu.cn/~zegang/pic/Compartmental models in epidemiology.pdf">Compartmental models in epidemiology(wiki)</a>)，计算里面所有模型</p>
 <ul>
 <li>The SIR model without vital dynamics</li>

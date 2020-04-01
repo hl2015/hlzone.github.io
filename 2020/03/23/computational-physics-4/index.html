@@ -10,16 +10,16 @@
 <title>computational physics 4 - hlzone</title>
 
 
-    <meta name="description" content="Rigid Body DynamicsLagrange及动量守恒约束条件如下  \left\{ \begin{aligned} &amp;L &#x3D; \frac{1}{2} I_\psi (\dot{\psi}+\dot{\phi} \cos \theta)^2 + \frac{1}{2} I_0 (\dot{\theta}^2+\dot{\phi}^2 \sin \theta^2) -mgl \cos \t">
+    <meta name="description" content="Rigid Body Dynamics">
 <meta property="og:type" content="article">
 <meta property="og:title" content="computational physics 4">
 <meta property="og:url" content="http://yoursite.com/2020/03/23/computational-physics-4/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="Rigid Body DynamicsLagrange及动量守恒约束条件如下  \left\{ \begin{aligned} &amp;L &#x3D; \frac{1}{2} I_\psi (\dot{\psi}+\dot{\phi} \cos \theta)^2 + \frac{1}{2} I_0 (\dot{\theta}^2+\dot{\phi}^2 \sin \theta^2) -mgl \cos \t">
+<meta property="og:description" content="Rigid Body Dynamics">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="article:published_time" content="2020-03-23T11:07:42.000Z">
-<meta property="article:modified_time" content="2020-03-27T03:10:18.774Z">
+<meta property="article:modified_time" content="2020-04-01T00:00:46.898Z">
 <meta property="article:author" content="hl">
 <meta property="article:tag" content="计算物理">
 <meta name="twitter:card" content="summary">
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 667 个字)
+                    4 分钟 读完 (大约 670 个字)
                 </span>
                 
                 
@@ -169,7 +169,8 @@
             
         </h1>
         <div class="content">
-            <h3 id="Rigid-Body-Dynamics"><a href="#Rigid-Body-Dynamics" class="headerlink" title="Rigid Body Dynamics"></a>Rigid Body Dynamics</h3><p>Lagrange及动量守恒约束条件如下</p>
+            <h3 id="Rigid-Body-Dynamics"><a href="#Rigid-Body-Dynamics" class="headerlink" title="Rigid Body Dynamics"></a>Rigid Body Dynamics</h3><a id="more"></a>
+<p>Lagrange及动量守恒约束条件如下</p>
 <script type="math/tex; mode=display">
 \left\{
 \begin{aligned}
@@ -188,7 +189,7 @@
 L = \frac{1}{2} I_0 \dot{\theta}^2 - V_{eff}(\theta)</script><p>求运动方程</p>
 <script type="math/tex; mode=display">
 \frac{d}{dt} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} = 0  \Longrightarrow I_0 \ddot{\theta} = f(\theta)</script><h3 id="Parametric-resonance"><a href="#Parametric-resonance" class="headerlink" title="Parametric resonance"></a>Parametric resonance</h3><script type="math/tex; mode=display">
-\ddot{\theta}+ w_0^2(t)= 0,w_0(t)=w_0(1+\alpha \cos wt),|\alpha| \ll 1 \\
+\ddot{\theta}+ w_0^2(t)\theta= 0,w_0(t)=w_0(1+\alpha \cos wt),|\alpha| \ll 1 \\
 w = 2w_0 + \varepsilon  \Longrightarrow \ddot{\theta}+w_0^2[1+2 \alpha \cos(2w_0+\varepsilon)t] \theta = 0\\</script><p>有解为</p>
 <script type="math/tex; mode=display">
 \theta = a(t) \cos (w_0+ \frac{\varepsilon}{2})t + b(t) \sin(w_0+\frac{\varepsilon}{2}t) \\
@@ -220,7 +221,7 @@ Tr[\ln A] = \ln[Det A],e^B=e^{A_1}e^{A_2} \Rightarrow TrB=TrA_1+TrA_2</script><h
 \begin{pmatrix}
 \ddots & & & & \\
 -q & (1+k)^2 & -q & & \\
- & -q & (0+k)^2 & & \\
+ & -q & (0+k)^2 & -q & \\
  & & -q & (-1+k)^2 & -q \\
  & & & & \ddots
 \end{pmatrix}
