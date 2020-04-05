@@ -7,20 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Hello World - hlzone</title>
+<title>compiling SU(4) quantum circuits - hlzone</title>
 
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+    <meta name="description" content="一篇文章，研究了如何在IBM的设备上实现$SU(4)$门。 Compiling SU(4) Quantum Circuits to IBM QX Architectures. http:&#x2F;&#x2F;iic.jku.at&#x2F;eda&#x2F;research&#x2F;ibm_qx_mapping&#x2F; 这包含两个步骤，先把操作分解到设备提供的基础门操作上，再将操作mapping到实际的物理比特上。已经有了一些分解的方案被提出，更关">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/02/15/hello-world/index.html">
+<meta property="og:title" content="compiling SU(4) quantum circuits">
+<meta property="og:url" content="http://yoursite.com/2020/04/05/compiling-SU-4-quantum-circuits/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="一篇文章，研究了如何在IBM的设备上实现$SU(4)$门。 Compiling SU(4) Quantum Circuits to IBM QX Architectures. http:&#x2F;&#x2F;iic.jku.at&#x2F;eda&#x2F;research&#x2F;ibm_qx_mapping&#x2F; 这包含两个步骤，先把操作分解到设备提供的基础门操作上，再将操作mapping到实际的物理比特上。已经有了一些分解的方案被提出，更关">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-02-15T13:38:19.159Z">
-<meta property="article:modified_time" content="2020-02-17T07:16:27.120Z">
+<meta property="article:published_time" content="2020-04-05T10:59:02.000Z">
+<meta property="article:modified_time" content="2020-04-05T11:01:09.825Z">
 <meta property="article:author" content="hl">
+<meta property="article:tag" content="Quantum Volume">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -80,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="Hello World" height="28">
+                <img src="/images/hlzone.png" alt="compiling SU(4) quantum circuits" height="28">
             
             </a>
         </div>
@@ -116,6 +117,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -136,13 +141,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-15T13:38:19.159Z">2020-02-15</time>
+                <time class="level-item has-text-grey" datetime="2020-04-05T10:59:02.000Z">2020-04-05</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 124 个字)
+                    10 分钟 读完 (大约 1466 个字)
                 </span>
                 
                 
@@ -156,21 +161,67 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hello World
+                compiling SU(4) quantum circuits
             
         </h1>
         <div class="content">
-            <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+            <p>一篇文章，研究了如何在IBM的设备上实现$SU(4)$门。</p>
+<p>Compiling SU(4) Quantum Circuits to IBM QX Architectures.</p>
+<p><a href="http://iic.jku.at/eda/research/ibm_qx_mapping/">http://iic.jku.at/eda/research/ibm_qx_mapping/</a></p>
+<p>这包含两个步骤，先把操作分解到设备提供的基础门操作上，再将操作mapping到实际的物理比特上。已经有了一些分解的方案被提出，更关键也更难的步骤是mapping。</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="IBM的QX芯片结构"><a href="#IBM的QX芯片结构" class="headerlink" title="IBM的QX芯片结构"></a>IBM的QX芯片结构</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200403200751.png" alt=""></p>
+<p>IBM的设备支持两种门</p>
+<ul>
+<li>$U(\theta,\phi,\lambda)=R_z(\phi)R_y(\theta)R_z(\lambda)$</li>
+<li>CNOT</li>
+</ul>
+<p>其它所有操作都由这两种操作构成。</p>
+<p>IBM QX backend information. <a href="https://github.com/QISKit/ibmqx-backend-information">https://github.com/QISKit/ibmqx-backend-information</a>.  </p>
+<p>CNOT门只能应用于由总线谐振器连接的量子位。此外，只有低频的量子位可以作为目标，只有高频的量子位可以作为控制。这些限制在所谓的耦合映射中进行了总结。</p>
+<p>IBM QX Devices. <a href="https://quantumexperience.ng.bluemix.net/qx/devices">https://quantumexperience.ng.bluemix.net/qx/devices</a>.  </p>
+<p>CNOT操作保真度比单个量子门要小10倍。正因为如此，使CNOT门的数量尽可能少是极其重要的。</p>
+<h3 id="分解SU-4"><a href="#分解SU-4" class="headerlink" title="分解SU(4)"></a>分解SU(4)</h3><p>在电路的每一层，可用的量子比特被随机分组成两对一组(如果它们的数目是偶数)。然后对每一对比特，从SU(4)中随机的选择两比特操作执行。因为这些两比特操作在IBM QX架构上是不可执行的，所以需要进行分解。</p>
+<p>文章采用的是KAK-decomposition</p>
+<p>F. Vatan and C. Williams. Optimal quantum circuits for general two-qubit gates.<br>Physical Review A, 69(3):032315, 2004.  </p>
+<p>将这两比特门分解成3个CNOT和7个单比特门的序列。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200403200839.png" alt=""></p>
+<h3 id="考虑的问题"><a href="#考虑的问题" class="headerlink" title="考虑的问题"></a>考虑的问题</h3><p>如何有效的对分解得到的线路进行编译，mapping到IBM QX架构上执行。</p>
+<h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p>量子电路中的操作必须被分解成在目标硬件上可用的基本操作。</p>
+<p>在文献中，有很多这样的方法，分解到一些门集上，例如Clifford+T、NCV library。</p>
+<p>M. Amy, D. Maslov, M. Mosca, and M. Roetteler. A meet-in-the-middle algorithm<br>for fast synthesis of depth-optimal quantum circuits. IEEE Trans. on CAD of<br>Integrated Circuits and Systems, 32(6):18–830, 2013.  </p>
+<p>K. Matsumoto and K. Amano. Representation of quantum circuits with Clifford<br>and π/8 gates. arXiv preprint arXiv:0806.3834, 2008.  </p>
+<p>D. M. Miller, R. Wille, and Z. Sasanian. Elementary quantum gate realizations<br>for multiple-control Toffolli gates. In Int’l Symp. on Multi-Valued Logic, pages<br>288–293, 2011.  </p>
+<p>R. Wille, M. Soeken, C. Otterstedt, and R. Drechsler. Improving the mapping of<br>reversible circuits to quantum circuits using multiple target lines. In Asia and<br>South Pacific Design Automation Conf., pages 85–92, 2013.  </p>
+<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p>就是通常所说的mapping问题，没有较好的通用方法。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>已经有很多文献考虑了将量子线路mapping到实际的物理设备。但是大部分都只考虑到最近邻约束，或者mapping特殊的量子线路。在相应的最近邻体系结构中，2-量子位门可以应用于任何相邻的量子位，也可以应用于任何想要的方向——显然违反了由耦合映射表示的IBM QX体系结构。此外，以前提出的许多方法只适用于数量非常有限的量子位(甚至比IBM已经提供的16个量子位还要少)。</p>
+<p>相比之下，很少有方法能将量子电路的逻辑比特映射到IBM QX架构的物理比特。</p>
+<p>A. Zulehner, A. Paler, and R. Wille. An efficient methodology for mapping<br>quantum circuits to the IBM QX architectures. IEEE Trans. on CAD of Integrated<br>Circuits and Systems, 2018  </p>
+<p>这是他们之前发表的一篇论文，已经可以mapping到IBM QX架构上了，通过更大的搜索空间和附加信息得到比IBM编译器更好的效果。</p>
+<p>然而，这种方法很难适用于SU(4)电路。</p>
+<ul>
+<li>这个解决方案基于这样一个主要思想:首先把电路分成几层gates，然后确定每一层满足所有物理特性的排列。即需要一层一层的考虑。</li>
+<li>SU(4)电路由多层门组成，这些门通常包含$n/2$种不同的CNOT配置(n是比特的数目)。这基本上是最坏的情况，因为层中使用的CNOT门越多，量子比特的排列就必须满足越多的约束。</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>为了克服他们之前提出的方法的局限性，同时保持前瞻性方案的可用性，他们打破了基于分层的方法，并单独考虑每个门。</p>
+<h3 id="Pre-Process-Grouping-Gates"><a href="#Pre-Process-Grouping-Gates" class="headerlink" title="Pre-Process-Grouping Gates"></a>Pre-Process-Grouping Gates</h3><p>可以看到每个SU(4)都一组对一对比特的操作，只要两比特门可以执行，一组操作都可以执行，所以论文采用这样的分组方式，形成有向无环图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200403200625.png" alt=""></p>
+<h3 id="Solving-the-Mapping-Problem"><a href="#Solving-the-Mapping-Problem" class="headerlink" title="Solving the Mapping Problem"></a>Solving the Mapping Problem</h3><p>对于这样的一个有向无环图，没有前驱，第一层即初始mapping可以任取。</p>
+<p>随后的mapping由两个步骤组成</p>
+<p>如果后续的层中，有组可以直接在上面的mapping中执行，也可以直接添加到编译中。</p>
+<p>根据优先级确定接下来可以执行的组$G_{next}$，它们的前驱需要是已经编译的。然后，映射算法的任务是确定一个新的映射(通过插入交换门)以满足$G_{next}$中至少一个门组的物理约束。</p>
+<p>因为mapping搜索空间很大，为$m!$，采用$A^*$搜索算法来避免搜索整个空间。</p>
+<h3 id="Post-Mapping-Optimization"><a href="#Post-Mapping-Optimization" class="headerlink" title="Post-Mapping Optimization"></a>Post-Mapping Optimization</h3><p>在满足目标架构给出的物理约束之后，为了进一步降低编译电路的成本，最后采用了一个专门的后mapping优化。</p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Quantum-Volume/" rel="tag">Quantum Volume</a>
+                </div>
+            </div>
         </div>
         
         
@@ -185,13 +236,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/17/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%96%B9%E6%B3%95/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">本博客的搭建方法</span>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/29/quantum%20supremacy/">
+                <span class="level-item">“量子霸权”</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>
@@ -279,6 +330,66 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#背景">
+        <span class="has-mr-6">1</span>
+        <span>背景</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#IBM的QX芯片结构">
+        <span class="has-mr-6">1.1</span>
+        <span>IBM的QX芯片结构</span>
+        </a></li><li>
+        <a class="is-flex" href="#分解SU-4">
+        <span class="has-mr-6">1.2</span>
+        <span>分解SU(4)</span>
+        </a></li><li>
+        <a class="is-flex" href="#考虑的问题">
+        <span class="has-mr-6">1.3</span>
+        <span>考虑的问题</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#第一步">
+        <span class="has-mr-6">1.3.1</span>
+        <span>第一步</span>
+        </a></li><li>
+        <a class="is-flex" href="#第二步">
+        <span class="has-mr-6">1.3.2</span>
+        <span>第二步</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#思路">
+        <span class="has-mr-6">2</span>
+        <span>思路</span>
+        </a></li><li>
+        <a class="is-flex" href="#方法">
+        <span class="has-mr-6">3</span>
+        <span>方法</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Pre-Process-Grouping-Gates">
+        <span class="has-mr-6">3.1</span>
+        <span>Pre-Process-Grouping Gates</span>
+        </a></li><li>
+        <a class="is-flex" href="#Solving-the-Mapping-Problem">
+        <span class="has-mr-6">3.2</span>
+        <span>Solving the Mapping Problem</span>
+        </a></li><li>
+        <a class="is-flex" href="#Post-Mapping-Optimization">
+        <span class="has-mr-6">3.3</span>
+        <span>Post-Mapping Optimization</span>
+        </a></li><li>
+        <a class="is-flex" href="#">
+        <span class="has-mr-6">3.4</span>
+        <span> </span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -783,7 +894,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="Hello World" height="28">
+                    <img src="/images/hlzone.png" alt="compiling SU(4) quantum circuits" height="28">
                 
                 </a>
                 <p class="is-size-7">
