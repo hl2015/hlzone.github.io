@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 分钟 读完 (大约 1745 个字)
+                    12 分钟 读完 (大约 1746 个字)
                 </span>
                 
                 
@@ -169,169 +169,16 @@
         <div class="content">
             <h2 id="量子化"><a href="#量子化" class="headerlink" title="量子化"></a>量子化</h2><h3 id="一次量子化与二次量子化"><a href="#一次量子化与二次量子化" class="headerlink" title="一次量子化与二次量子化"></a>一次量子化与二次量子化</h3><p><strong>一次量子化</strong>，坐标量子化，$[x,p]=i \hbar$</p>
 <p><strong>二次量子化</strong>，波函数量子化</p>
-<p>与哈密顿正则方程的类比</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{l}
-\frac{d p}{d t}=-\frac{\partial H}{\partial q} \\
-\frac{d q}{d t}=\frac{\partial H}{\partial p}
-\end{array}\right.</script><p>写成泊松括号形式</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{l}
-\frac{d p}{d t}=\{q, H\} \\
-\frac{d q}{d t}=\{p, H\}
-\end{array} \Rightarrow\left\{\begin{array}{c}
-\left\{q_{i}, q_{j}\right\}=0,\left\{p_{i}, p_{j}\right\}=0 \\
-\left\{q_{i}, p_{j}\right\}=\delta_{i, j}
-\end{array}\right.\right.</script><p>对波函数量子化</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{c}
-i \frac{\partial \psi}{\partial t}=H \psi \\
-\psi=\sum_{n} c_{n}(t)\left|\phi_{n}\right\rangle
-\end{array} \Rightarrow\left\{\begin{array}{c}
-E=\langle\psi|H| \psi\rangle=\sum_{n m} t_{n m} c_{n}^{*} c_{m} \\
-i \dot{c}_{n}=\sum_{m} c_{m}\left\langle\phi_{n}|H| \phi_{m}\right\rangle=\sum_{m} t_{n m} c_{m}
-\end{array} \Rightarrow\left\{\begin{array}{l}
-i \dot{c}_{n}=\frac{\partial E}{\partial c_{n}^{*}} \\
-i \dot{c}_{n}^{*}=-\frac{\partial E}{\partial c_{n}}
-\end{array}\right.\right.\right.</script><p>类比有，$c_{n} \sim q, c_{n}^{<em>} \sim p$，将$c_n,c_n^{</em>}$提升到算符$c_n,c_n^{\dagger}$</p>
-<script type="math/tex; mode=display">
-\left\{c_{n}, c_{m}\right\}=\left\{c_{n}^{\dagger}, c_{m}^{\dagger}\right\}=0,\left\{c_{n}, c_{m}^{\dagger}\right\}=\delta_{n m}</script><p>等价描述</p>
-<script type="math/tex; mode=display">
-\{\psi, \psi\}=\left\{\psi^{\dagger}, \psi^{\dagger}\right\}=0,\left\{\psi(x), \psi^{\dagger}(y)\right\}=\delta(x-y)</script><p>波函数量子化和$[x,p]=i \hbar$是同一回事</p>
-<h3 id="二次量子化"><a href="#二次量子化" class="headerlink" title="二次量子化"></a>二次量子化</h3><p>重新表示态，将一个多粒子态定义为</p>
-<script type="math/tex; mode=display">
-\left|n_{1}, n_{2}, \cdots, n_{i}, \cdots\right\rangle</script><p>该空间称为Fock空间，需要关注其置换对称性</p>
-<p>先定义两种特殊情况</p>
-<script type="math/tex; mode=display">
-|0,0, \cdots, 0, \cdots\rangle \equiv|\mathbf{0}\rangle</script><script type="math/tex; mode=display">
-\left|0,0, \cdots, n_{i}=1, \cdots\right\rangle \equiv\left|k_{i}\right\rangle</script><p>再定义“场算符”$a_i^{\dagger}$，它使本征值为$k_i$的态上的粒子数增加一个</p>
-<script type="math/tex; mode=display">
-a_{i}^{\dagger}\left|n_{1}, n_{2}, \cdots, n_{i}, \cdots\right\rangle \propto\left|n_{1}, n_{2}, \cdots, n_{i}+1, \cdots\right\rangle</script><p>假设已经归一化，粒子产生算符作用于真空</p>
-<script type="math/tex; mode=display">
-a_{i}^{\dagger}|\mathbf{0}\rangle=\left|k_{i}\right\rangle</script><p>有</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-1=\left\langle k_{i} | k_{i}\right\rangle &=\left[\langle\mathbf{0}| a_{i}\right]\left[a_{i}^{\dagger}|\mathbf{0}\rangle\right] \\
-&=\left\langle\mathbf{0}\left|\left[a_{i} a_{i}^{\dagger}|\mathbf{0}\rangle\right]=\left\langle\mathbf{0}\left|a_{i}\right| k_{i}\right\rangle\right.\right.
-\end{aligned}</script><p>意味着</p>
-<script type="math/tex; mode=display">
-a_i | k_i \rangle = | \mathbf{0 } \rangle</script><p>$a_i$起到了粒子湮灭算符的作用。</p>
-<p><strong>置换两粒子</strong></p>
-<script type="math/tex; mode=display">
-a_{i}^{\dagger} a_{j}^{\dagger}|\mathbf{0}\rangle=\pm a_{j}^{\dagger} a_{i}^{\dagger}|\mathbf{0}\rangle</script><p>$+(-)$分别对玻色子(费米子)成立。</p>
-<p>因此对玻色子(费米子)分别有</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}
-a_{i}^{\dagger} a_{j}^{\dagger}-a_{j}^{\dagger} a_{i}^{\dagger}=\left[a_{i}^{\dagger} \cdot a_{j}^{\dagger}\right]=0 \\
-a_{i}^{\dagger} a_{j}^{\dagger}+a_{j}^{\dagger} a_{i}^{\dagger}=\left\{a_{i}^{\dagger}, a_{j}^{\dagger}\right\}=0
-\end{array}</script><p>验证所有的对易关系，有表格</p>
-<p>玻色子</p>
-<script type="math/tex; mode=display">
-a_i^{\dagger}a_j^{\dagger}-a_j^{\dagger}a_i^{\dagger} 
-= [a_i^{\dagger},a_j^{\dagger}]=0 \\
-a_i a_j-a_j a_i = [a_i,a_j]=0 \\
-a_i a_j^{\dagger} - a_j^{\dagger} a_i = [a_i,a_j^{\dagger}]=\delta_{ij}</script><p>费米子</p>
-<script type="math/tex; mode=display">
-a_i^{\dagger}a_j^{\dagger}+a_j^{\dagger}a_i^{\dagger} 
-= \{a_i^{\dagger},a_j^{\dagger}\}=0 \\
-a_i a_j+a_j a_i = \{a_i,a_j\}=0 \\
-a_i a_j^{\dagger} + a_j^{\dagger} a_i = \{a_i,a_j^{\dagger}\}=\delta_{ij}</script><p>还可定义粒子数算符</p>
-<script type="math/tex; mode=display">
-N = \sum_i a_i^{\dagger}a_i</script><h3 id="算符的二次量子化"><a href="#算符的二次量子化" class="headerlink" title="算符的二次量子化"></a>算符的二次量子化</h3><p>单粒子算符</p>
-<script type="math/tex; mode=display">
-\boldsymbol{K}=\sum_{m n} b_{m}^{\dagger} b_{n}\left\langle l_{m}|K| l_{n}\right\rangle</script><p>多粒子算符，由于粒子间存在相互作用，设对称实矩阵$V_{ij}$确定处于单粒子态$|k_i \rangle$和$| k_j \rangle$的两个粒子之间的相互作用的本征值。算符的二次量子化版本为</p>
-<script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{i \neq j} V_{i j} N_{i} N_{j}+\frac{1}{2} \sum_{i} V_{i i} N_i\left(N_{i}-1\right)</script><p>第一项为所有两粒子相互作用，第二项为处于相同态粒子间的自相互作用。为$C_n^2$。</p>
-<p>可以更简单的表示为</p>
-<script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{i j} V_{i j}\left(N_{i} N_j-N_{i} \delta_{i j}\right)=\frac{1}{2} \sum_{i j} V_{i j} \Pi_{i j}</script><p>其中$\Pi_{i j}  \equiv N_iN_j - N_i \delta_{ij}$，称为分布算符</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\Pi_{i j} &=a_{i}^{\dagger} a_j a_{j}^{\dagger} a_{j}-a_{i}^{\dagger} a_{i} \delta_{i j} \\
-&=a_{i}^{\dagger}\left(\delta_{i j} \pm a_{j}^{\dagger} a_{i}\right) a_{j}-a_{i}^{\dagger} a_{i} \delta_{i j} \\
-&=\pm a_{i}^{\dagger} a_{j}^{\dagger} a_{i} a_{j}
-\end{aligned}</script><p>所以有</p>
-<script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{i j} V_{i j} a_{i}^{\dagger} a_{j}^{\dagger} a_{j} a_{i}</script><script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{m m pq}\langle m n|V| p q\rangle b_{m}^{\dagger} b_{n}^{\dagger} b_{q} b_{p}</script><p>其中</p>
-<script type="math/tex; mode=display">
-\langle m n|V| p q\rangle \equiv \sum_{i j} V_{i j}\left\langle l_{m} | k_{i}\right\rangle\left\langle k_{i} | l_{p}\right\rangle\left\langle l_{n} | k_{j}\right\rangle\left\langle k_{j} | l_{q}\right\rangle</script><h2 id="Tight-binding-model"><a href="#Tight-binding-model" class="headerlink" title="Tight-binding model"></a>Tight-binding model</h2><script type="math/tex; mode=display">
-H=- \frac{1}{2m} \frac{\partial ^2}{\partial x^2} +V(kx)</script><p>局域波函数</p>
-<script type="math/tex; mode=display">
-| \psi \rangle = \sum_n C_n | \phi(x) \rangle</script><p>周期性</p>
-<script type="math/tex; mode=display">
-| \phi_n (x) \rangle = |\phi(x-na) \rangle</script><p>粒子化有</p>
-<script type="math/tex; mode=display">
-H=\sum_{n} t\left[c_{n}^{\dagger} c_{n+1}+\mathrm{h.c.}\right]+\mu c_{n}^{\dagger} c_{n}</script><script type="math/tex; mode=display">
-\begin{pmatrix}
-\cdots &
-C^{\dagger}_1 &
-C^{\dagger}_0 &
-C^{\dagger}_{-1} &
-\cdots
-\end{pmatrix}
-\begin{pmatrix}
-\ddots & & & & \\
-t & \mu+\varepsilon_{-1} & t & & \\
- & t & \mu+\varepsilon_{-0} & t & \\
- & & t & \mu+\varepsilon_{1} & t \\
- & & & & \ddots
-\end{pmatrix}
-\begin{pmatrix}
-\vdots \\
-C_1 \\
-C_0 \\
-C_{-1} \\
-\vdots
-\end{pmatrix}</script><p>根据平移对称性，做傅里叶变换</p>
-<script type="math/tex; mode=display">
-c_{n}=N^{-1 / 2} \sum_{k} c_{k} e^{i k R_{n}} \Rightarrow H=\sum_{n}(2 t \cos k+\mu) c_{k}^{\dagger} c_{k}</script><p>推导技巧有$\sum_n e^{ikR_n} = N \delta_{k,0}$</p>
-<h2 id="Hubbard-model"><a href="#Hubbard-model" class="headerlink" title="Hubbard model"></a>Hubbard model</h2><script type="math/tex; mode=display">
-H = \frac{p^2}{2m} + \frac12 m \omega^2 x^2 + \alpha x^4   \qquad \alpha \rightarrow 0</script><p>其中假设</p>
-<script type="math/tex; mode=display">
-H_0 = \frac{p^2}{2m} + \frac12 m \omega^2 x^2
-= \hbar \omega(a^{\dagger}a+\frac12)</script><p>反推</p>
-<script type="math/tex; mode=display">
-a^{\dagger}a+\frac12
-= (\sqrt{\frac{m \omega}{2 \hbar}x})^2-(\frac{ip}{\sqrt{2 m \hbar\omega}})^2</script><script type="math/tex; mode=display">
-a =\sqrt{\frac{m \omega}{2 \hbar}x} \pm \frac{ip}{\sqrt{2 m \hbar\omega}} \\
-a^{\dagger} = \sqrt{\frac{m \omega}{2 \hbar}x} \mp \frac{ip}{\sqrt{2 m \hbar\omega}}</script><p>注意，其中蕴含了$[x,p]=i \hbar$。</p>
-<p>有</p>
-<script type="math/tex; mode=display">
-x=\sqrt{\frac{\hbar}{2 m \omega}}(a+a^{\dagger})</script><p>代入$H$</p>
-<script type="math/tex; mode=display">
-H=\hbar \omega(a^{\dagger}a+\frac12)+ \alpha (\frac{\hbar}{2 m \omega})^2(a+a^{\dagger})^4</script><p>位移$x \rightarrow x \sim a+a^{\dagger},H(x) \rightarrow H(a,a^{\dagger})$。</p>
-<p>场$\phi \rightarrow \phi \sim (a,a^{\dagger}),H(\phi) \rightarrow H(a,a^{\dagger})$。</p>
-<script type="math/tex; mode=display">
-a|n \rangle = \sqrt n |n-1 \rangle \\
-a^{\dagger}|n \rangle = \sqrt{n+1} |n+1 \rangle</script><p>注意$x^4 \sim (a+a^{\dagger})^4$项</p>
-<p>展开有几个因子</p>
-<script type="math/tex; mode=display">
-a^4,a^3 a^{\dagger},a^2{a^{\dagger}}^2,a{a^{\dagger}}^3,{a^{\dagger}}^4</script><p>注意项$a^2{a^{\dagger}}^2$</p>
-<script type="math/tex; mode=display">
-a^2{a^{\dagger}}^2=aaa^{\dagger}a^{\dagger}=a(n+1)a^{\dagger}=(n+1)^2=()n^2+()n+c</script><p>$()n^2$即为Hubbard $U$，表示为$Un^2$或$Un_i n_j$</p>
-<h3 id="推导Hubbard-model"><a href="#推导Hubbard-model" class="headerlink" title="推导Hubbard model"></a>推导Hubbard model</h3><p>相互作用$g \delta(x-y)$</p>
-<script type="math/tex; mode=display">
-H= \int \phi^{\dagger}[\frac{p^2}{2m}+u(x)]\phi
- +g \int \phi^{\dagger}\phi^{\dagger}\phi\phi dx</script><p>场量子化$\phi = \sum_n C_n \psi_n$，$\psi_n(x)$位于$x=na$</p>
-<script type="math/tex; mode=display">
-[\phi(x),\phi(y)]=0 \\ 
-[\phi(x),\phi^{\dagger}(y)] = \delta(x,y)</script><h3 id="Fermi-Hubbard-model"><a href="#Fermi-Hubbard-model" class="headerlink" title="Fermi-Hubbard model"></a>Fermi-Hubbard model</h3><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><h3 id="作业11"><a href="#作业11" class="headerlink" title="作业11"></a>作业11</h3><p>计算$H$的本征值</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-H &=H_0+V \\
-H_0 &= \hbar w\left(a^{\dagger} a+\frac{1}{2}\right) \\
-V &=\alpha\left(\frac{\hbar}{2 m w}\right)^{2}\left(a+a^{\dagger}\right)^{4}
-\end{aligned}</script><script type="math/tex; mode=display">
-H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle=\sum_{n} c_{n}|n\rangle</script><h3 id="作业12"><a href="#作业12" class="headerlink" title="作业12"></a>作业12</h3><p>推导Fermi-Hubbard model(spinless)的$Un_i n_{i+1}$项。</p>
-<p>推导Fermi-Hubbard model(spinful)的$U n_{i \uparrow} n_{i \downarrow}$项。</p>
-<h3 id="作业13"><a href="#作业13" class="headerlink" title="作业13"></a>作业13</h3><p>计算Fermi-Hubbard model(spinless)的能谱：</p>
-<p>a.$L=10,N=5$</p>
-<p>b.$L=14,N=5$</p>
-<h3 id="作业14"><a href="#作业14" class="headerlink" title="作业14"></a>作业14</h3><p>计算Bose-Hubbard model的能谱：$L=10,N=5,Q=3$</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/04/12/computational-physics-5/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -771,7 +618,7 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            39
+                            40
                         </p>
                     </a>
                 </div>
@@ -916,6 +763,25 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
         
         <article class="media">
             
+            <a href="/2020/04/12/General-Purpose%20Quantum%20Circuit%20Simulator%20with%20Projected%20Entangled-Pair%20States/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/General-Purpose%20Quantum%20Circuit%20Simulator%20with%20Projected%20Entangled-Pair%20States/" class="title has-link-black-ter is-size-6 has-text-weight-normal">General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/04/12/computational-physics-5/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 5">
@@ -928,25 +794,6 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
                     <a href="/2020/04/12/computational-physics-5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 5</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="compiling SU(4) quantum circuits">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-05T10:59:02.000Z">2020-04-05</time></div>
-                    <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="title has-link-black-ter is-size-6 has-text-weight-normal">compiling SU(4) quantum circuits</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -969,7 +816,7 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
                     <span class="level-item">四月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1146,6 +993,25 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
         
         <article class="media">
             
+            <a href="/2020/04/12/General-Purpose%20Quantum%20Circuit%20Simulator%20with%20Projected%20Entangled-Pair%20States/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/General-Purpose%20Quantum%20Circuit%20Simulator%20with%20Projected%20Entangled-Pair%20States/" class="title has-link-black-ter is-size-6 has-text-weight-normal">General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/04/12/computational-physics-5/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 5">
@@ -1158,25 +1024,6 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
                     <a href="/2020/04/12/computational-physics-5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 5</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="compiling SU(4) quantum circuits">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-05T10:59:02.000Z">2020-04-05</time></div>
-                    <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="title has-link-black-ter is-size-6 has-text-weight-normal">compiling SU(4) quantum circuits</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -1199,7 +1046,7 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
                     <span class="level-item">四月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>

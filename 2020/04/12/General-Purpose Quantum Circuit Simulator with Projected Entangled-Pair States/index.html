@@ -7,21 +7,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Projected entangled pair states - hlzone</title>
+<title>General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States - hlzone</title>
 
 
-    <meta name="description" content="MPS背后的许多思想都是通过投射的纠缠对状态(PEPS)，推广到更高的维度。我们将在两个方面看到这是一个误称，不一定有一个投影仪，也不一定有一对纠缠。 我们首先回顾矩阵积状态的PEPS描述，然后将其推广到二维模型。给出几个例子之后，我们将研究的性质，与MPS的异同。">
+    <meta name="description" content="General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States and the Quantum Supremacy Frontier">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Projected entangled pair states">
-<meta property="og:url" content="http://yoursite.com/2020/02/28/Projected-entangled-pair-states/index.html">
+<meta property="og:title" content="General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States">
+<meta property="og:url" content="http://yoursite.com/2020/04/12/General-Purpose%20Quantum%20Circuit%20Simulator%20with%20Projected%20Entangled-Pair%20States/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="MPS背后的许多思想都是通过投射的纠缠对状态(PEPS)，推广到更高的维度。我们将在两个方面看到这是一个误称，不一定有一个投影仪，也不一定有一对纠缠。 我们首先回顾矩阵积状态的PEPS描述，然后将其推广到二维模型。给出几个例子之后，我们将研究的性质，与MPS的异同。">
+<meta property="og:description" content="General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States and the Quantum Supremacy Frontier">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-02-28T14:22:43.000Z">
-<meta property="article:modified_time" content="2020-02-29T10:04:09.096Z">
+<meta property="article:published_time" content="2020-04-12T11:52:30.000Z">
+<meta property="article:modified_time" content="2020-04-12T12:29:16.700Z">
 <meta property="article:author" content="hl">
-<meta property="article:tag" content="Tensor Netwowrk">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -81,7 +80,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="Projected entangled pair states" height="28">
+                <img src="/images/hlzone.png" alt="General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States" height="28">
             
             </a>
         </div>
@@ -141,17 +140,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-28T14:22:43.000Z">2020-02-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    13 分钟 读完 (大约 1880 个字)
+                    13 分钟 读完 (大约 1997 个字)
                 </span>
                 
                 
@@ -165,87 +160,94 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Projected entangled pair states
+                General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States
             
         </h1>
         <div class="content">
-            <p>MPS背后的许多思想都是通过投射的纠缠对状态(PEPS)，推广到更高的维度。我们将在两个方面看到这是一个误称，不一定有一个投影仪，也不一定有一对纠缠。</p>
-<p>我们首先回顾矩阵积状态的PEPS描述，然后将其推广到二维模型。给出几个例子之后，我们将研究的性质，与MPS的异同。</p>
+            <p>General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States and the Quantum Supremacy Frontier  </p>
 <a id="more"></a>
-<h2 id="One-dimensional-systems-MPS"><a href="#One-dimensional-systems-MPS" class="headerlink" title="One dimensional systems: MPS"></a>One dimensional systems: MPS</h2><p>一维结构的PEPS结构如下。令$|\psi \rangle \in \mathbb{C}^D \otimes \mathbb{C}^D$为纠缠对，$P: \mathbb{C}^D \otimes \mathbb{C}^D \rightarrow \mathbb{C}^d$为线性映射</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200228224333.png" alt=""></p>
-<p>正如我们所看到的，在具体的描述上我们有很大的选择。我们可以通过任意(左)可逆矩阵变换纠缠对中每个自旋的局部基</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>使用PEPS来实现了一个通用的量子算法模拟器。</p>
+<p>该模拟器的经典计算复杂度直接与底层量子电路的纠缠产生有关，而与量子比特或门运算的数目无关。</p>
+<p>将这个方法应用于随机量子电路的研究，能够精确地量化随机量子电路的内存使用量和时间需求。</p>
+<p>在天河2号超级计算机上演示了模拟在7$\times$7的格点排列的量子比特上执行深度为（1+40+1）的线路。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>boson sampling</li>
+<li>instantaneous quantum polynomial protocal</li>
+<li>random quantum circuits</li>
+</ul>
+<p>这些量子霸权的评估标准倾向于使用尽可能少的比特数量和门操作，而不考虑太高的纠错度会导致经典计算机采样和表征遇到的问题。同时，找到在经典计算机上精确模拟量子算法的有效方法也很重要，这些方法可以作为基准，并验证近期的量子器件。</p>
+<p>最近，MPS已经被用于模拟量子线路。然而，如果基础量子系统本质上是二维的，矩阵积态的性能就会大大降低，因为MPS是一维结构。</p>
+<p>因此对于晶格排布的比特结构，考虑使用二维结构PEPS来模拟，这是很自然的想法。</p>
+<h3 id="RQCs"><a href="#RQCs" class="headerlink" title="RQCs"></a>RQCs</h3><p>虽然这个量子电路模拟器可以处理一般线路路，但文章重点研究RQCs（random quantum circuits）。RQCs是量子霸权的标准基准。</p>
+<p>它们由一系列的单比特和两比特门组成，这些门按特定的顺序应用于不同的量子比特。一组可同时应用的交换门构成电路的一层，不交换的操作组越多，电路就越深。</p>
+<p>对于线路的深度，可以用$(1+d+1)$的标记来表示，1表示在计算的开始和结束时，应用于每个位置的Hadamard门，而d是不可交换层的数量，包括CZ门和应用于不同位置的单比特门。</p>
+<p>之前已经有文章显示RQCs的复杂度随$\min(O(dL_h),O(N))$指数级增长。</p>
+<p>RQCs引发了对显示出经典仿真的确切局限性的经典有效算法的探索。</p>
+<p>模拟算法可以分为两类</p>
+<ul>
+<li>状态向量方法将量子态作为向量存储并直接演化。然而，由于希尔伯特空间的指数增长，这种方法受到量子比特数目的限制。</li>
+<li>基于张量的方法，它将量子态表示为张量，并将输入和输出状态指定为一阶的Kronecker projectors。这种方法对量子比特的数目不太敏感，因此被更多的使用。</li>
+</ul>
+<h2 id="基于PEPS的量子线路模拟"><a href="#基于PEPS的量子线路模拟" class="headerlink" title="基于PEPS的量子线路模拟"></a>基于PEPS的量子线路模拟</h2><p>这个基于PEPS的模拟器是一种用于任意量子电路的通用量子电路模拟器:它存储了完整的量子状态，并且可以方便地用于计算单个振幅、可观察值，以及执行量子测量序列。</p>
+<p>这种晶格上的量子态可以表示为PEPS</p>
 <script type="math/tex; mode=display">
-| \phi \rangle \rightarrow (A \otimes B) | \phi \rangle</script><p>因为我们可以修改P来补偿</p>
+|\psi\rangle=\sum_{\sigma_{1}, \ldots, \sigma_{N}} \mathcal{F}\left(\mathbf{A}_{1}^{\sigma_{1}} \mathbf{A}_{2}^{\sigma_{2}} \cdots \mathbf{A}_{N}^{\sigma_{N}}\right)\left|\sigma_{1}, \sigma_{2}, \ldots, \sigma_{N}\right\rangle</script><p>连接维度为</p>
 <script type="math/tex; mode=display">
-P \rightarrow P(B^{-1} \otimes A^{-1})</script><p>$| \phi \rangle$不一定是有效的量子态。为了方便，我们通常不把它正规化。</p>
-<p>除了这个量规的自由，我们有额外描述选择。我们可以用纠缠三态作为例子</p>
-<p>令$|\psi \rangle = |000\rangle +|111\rangle$，可以选择PEPS为</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200228230308.png" alt=""></p>
-<p>显然，这并没有提供比使用纠缠对更强的描述能力。假设我们有一些PEPS的投影放Q作用于一对纠缠态，然后我们可以把它扩展到P作用于纠缠三态</p>
+\chi=\max \{\operatorname{dim}(l), \operatorname{dim}(r), \operatorname{dim}(u), \operatorname{dim}(d)\}</script><p><strong>单比特操作</strong></p>
 <script type="math/tex; mode=display">
-P=Q(1 \otimes (|0\rangle \langle 00| + |1 \rangle \langle 11|))</script><h2 id="Extending-to-higher-dimensions"><a href="#Extending-to-higher-dimensions" class="headerlink" title="Extending to higher dimensions"></a>Extending to higher dimensions</h2><p>从一维系统到高维系统的扩展是直接进行的。我们将讨论超立方晶格的简单情况，但这个框架可以在任何图形上进行。特别地，我们将限制在2维</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229151609.png" alt=""></p>
-<p>其中</p>
+\left[\mathbf{A}_{n}^{\prime \tau_{n}}\right]_{l, r, u, d}=\sum_{\sigma_{n}} U_{\sigma_{n}}^{\tau_{n}}\left[\mathbf{A}_{n}^{\sigma_{n}}\right]_{l, r, u, d}</script><p>局域张量的大小不会受到单比特操作的影响。</p>
+<p>对于<strong>两比特操作</strong>，首先使用奇异值分解(SVD)将其分解成两个局部张量的乘积。辅助指标$s$的维度记为$\chi_0 $，对于两比特控制门，$\chi_0 = 2 $</p>
 <script type="math/tex; mode=display">
-P: (\mathbb{C}^D)^{\otimes 4} \rightarrow \mathbb{C}^d</script><p>是一些从虚空间到物理空间的线性算子。</p>
-<p>显然，在这个描述中有大量的规范自由度，就像在一维情况下一样。每一个虚自旋的任何可逆变换都可以用投影仪P的定义来补偿。</p>
-<p>在MPS中，人们可能会问，使用不同的缠结结构是否会导致更强的描述能力。很容易看出，一般情况并非如此。假设我们选择在GHZ状态下放置plaquettes，然后在plaquettes之间使用PEPS投影。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229152510.png" alt=""></p>
-<p>我们可以使用一个标准的PEPS来准备这个资源状态，因此任何可以从这个“projected entangled plaquette”结构中准备的状态都可以从一个pep中准备，只需要很少的额外成本。</p>
-<h2 id="Some-PEPS-examples"><a href="#Some-PEPS-examples" class="headerlink" title="Some PEPS examples"></a>Some PEPS examples</h2><p>来看几个PEPS的例子。</p>
-<h3 id="Product-state"><a href="#Product-state" class="headerlink" title="Product state"></a>Product state</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229153210.png" alt=""></p>
-<h3 id="GHZ-state"><a href="#GHZ-state" class="headerlink" title="GHZ state"></a>GHZ state</h3><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229153305.png" alt=""></p>
-<h3 id="RVB-state"><a href="#RVB-state" class="headerlink" title="RVB state"></a>RVB state</h3><p>令为键维度为$D=3$</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229155604.png" alt=""></p>
-<p>$\alpha \in {1,2}$为唯一非零元素PEPS张量。假设我们将这些张量压平并投射悬空指标到$|2\rangle$态。结果的物理状态是什么？</p>
-<p>这种状态被称为共振价键态，由晶格中所有完全倾斜的叠加和最大纠缠对组成</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229160750.png" alt=""></p>
-<p><strong>Kitaev’s Toric code</strong></p>
-<h3 id="Toric-code-ground-state"><a href="#Toric-code-ground-state" class="headerlink" title="Toric code ground state"></a>Toric code ground state</h3><h2 id="2D-cluster-state-and-the-complexity-of-PEPS"><a href="#2D-cluster-state-and-the-complexity-of-PEPS" class="headerlink" title="2D cluster state and the complexity of PEPS"></a>2D cluster state and the complexity of PEPS</h2><p>令键维度为$D=2$</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229161349.png" alt=""></p>
-<p>为PEPS中的非零元素。生成的物理状态是2D聚态，是基于测量的量子计算的通用资源。</p>
-<p>如果我们能有效地求出PEPS之间的内积。然后，我们可以通过简单地将秩1投影到这些PEPS张量的物理指标上，来清楚地经典地模拟单个比特后选定的测量值。这告诉我们，即使是简单的PEPS状态，我们也无法有效地收缩，除非后选的量子计算可以经典地模拟出来(Post - BQP = BPP)。</p>
-<h3 id="Numerical-PEPS"><a href="#Numerical-PEPS" class="headerlink" title="Numerical PEPS"></a>Numerical PEPS</h3><p>在许多实际情况下，在有限的和无限的系统大小限制下，都可以实现PEPS网络的近似收缩。</p>
-<h2 id="Properties-of-PEPS"><a href="#Properties-of-PEPS" class="headerlink" title="Properties of PEPS"></a>Properties of PEPS</h2><p>MPS和PEPS这两种张量网络状态在性质上是不同的，无论是在物理上，还是在张量网络的计算能力上</p>
-<p><strong>Aside(Tensor network for classical partition function)</strong></p>
-<p>令$H[s] = \sum_{\langle i ,j \rangle} h [s_i , s_j]$为一个经典的哈密顿量。我们经常计算的是配分函数$Z = \sum_ e^{-\beta H[s]}$，系统的温度为$\beta$。我们可以用一个简单的张量网络来帮忙。</p>
-<p>定义两个张量</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229164341.png" alt=""></p>
-<p>在每个经典自旋上放一个D张量，在每个相互作用上放一个M张量，下面的张量网络可以用来表示配分函数</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229164549.png" alt=""></p>
-<p>通过在网络中插入局部张量，可以计算出热期望值。例如</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229164705.png" alt=""></p>
-<p>注意，通过结合D和M张量，配分函数可以用一个张量来描述</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229165322.png" alt=""></p>
-<p>令</p>
+\operatorname{SVD}\left(O_{\sigma_{n}, \sigma_{m}}^{\tau_{n}, \tau_{m}}\right)=\sum_{s} U_{\sigma_{n}, s}^{\tau_{n}} V_{s, \sigma_{m}}^{\tau_{m}}</script><p>然后分别作用于两个比特</p>
 <script type="math/tex; mode=display">
-H = -J \sum_{\langle i,j \rangle} s_is_j</script><p>其中$s \in { \pm 1 }$，为经典Ising模型。张量Q可以简化为</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229165947.png" alt=""></p>
-<h3 id="Algebraic-decay-of-correlations"><a href="#Algebraic-decay-of-correlations" class="headerlink" title="Algebraic decay of correlations"></a>Algebraic decay of correlations</h3><p>MPS只能捕获具有指数衰减相关性的状态(当然也可以是恒定相关性)。现在我们来看看这是否适用于PEPS。我们可以通过修改上述结构来建立一个与经典配分函数相对应的PEPS状态</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229162456.png" alt=""></p>
-<p>或者等价的整合为</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229170115.png" alt=""></p>
-<p>定义PEPS态为</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229170208.png" alt=""></p>
-<p>注意这是纯态，不是热态。它并没有被归一化，$\langle \psi | \psi \rangle = Z$。用这种状态计算的相关函数与用经典统计物理计算的相关函数相等。假设我们考虑一个具有热相变的经典模型(如上面的伊辛模型)。在临界温度下，该模型的相关系数会出现代数衰减，这意味着对应的PEPS也会出现代数衰减。因此，我们可以看到，与MPS不同，PEPS所描述的状态可以显示出相关的代数衰减。</p>
-<h3 id="Gauge-freedom"><a href="#Gauge-freedom" class="headerlink" title="Gauge freedom"></a>Gauge freedom</h3><p>PEPS张量的规范自由度是MPS自由度的简单概括。和以前一样，我们可以一起阻塞张量而不改变全局状态。此外，我们可以执行以下转换(在平移不变的PEPS上)：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229170912.png" alt=""></p>
-<p>其中$N$和$M$为可逆矩阵。</p>
-<p>回想一下，在MPS的情况下，我们可以利用这种自由把张量变成正则形式。这在PEPS的情况下是不可能完全实现的，尽管有一些数值方法可以将PEPS转换成近似的规范形式。</p>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>1.要在顶点上有自旋的蜂窝晶格上建立GHZ状态，需要什么样的PEPS张量？</p>
-<p>2.通过沿着水平缩并下列张量指标可以得到什么量子操作门？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200229175647.png" alt=""></p>
+\begin{aligned}
+&\left[\mathbf{A}_{n}^{\prime \tau_{n}}\right]_{l, r^{\prime}, u, d}=\sum_{\sigma_{n}} U_{\sigma_{n}, s}^{\tau_{n}}\left[\mathbf{A}_{n}^{\sigma_{n}}\right]_{l, r, u, d}\\
+&\left[\mathbf{A}_{m}^{\prime \tau_{m}}\right]_{l^{\prime}, r, u, d}=\sum_{\sigma_{m}} V_{s, \sigma_{m}}^{\tau_{m}}\left[\mathbf{A}_{m}^{\sigma_{m}}\right]_{l, r, u, d}
+\end{aligned}</script><p>在这里，指标$r’=(r,s),l’=(s,l)$，把两个张量指标捆绑成了一个。这样维度$\chi$会增加$\chi_0$。为了让$\chi$保持在一个可承受的大小，需要使用SVD来压缩结果张量，即丢弃一些低于选择阈值的奇异值。</p>
+<p>然而对于RQCs，不能进行这样的压缩，因为在两比特门操作之后奇异值的分布几乎是平坦的，因此压缩是不可能的(这也表明这个问题在整个电路中有很大的纠缠)。</p>
+<p><strong>计算振幅</strong></p>
+<script type="math/tex; mode=display">
+\langle\vec{\tau} | \psi\rangle=\mathcal{F}\left(\mathbf{E}_{1} \mathbf{E}_{2} \cdots \mathbf{E}_{N}\right)</script><p>其中</p>
+<script type="math/tex; mode=display">
+\left[\mathbf{E}_{n}\right]_{l, r, u, d}=\left[\mathbf{A}_{n}^{\sigma_{n}=\tau_{n}}\right]_{l, r, u, d}</script><p>可以通过复制存储，可以模拟量子测量序列。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200406174250.png" style="zoom: 67%;" /></p>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><p>这个分析的是应用于RQCs的复杂度。</p>
+<p>该电路的仿真分为两部分:</p>
+<ul>
+<li><p>电路演化</p>
+</li>
+<li><p>计算随机选取的自旋构型的重叠，即计算振幅</p>
+</li>
+</ul>
+<h3 id="连接维度"><a href="#连接维度" class="headerlink" title="连接维度"></a>连接维度</h3><p>连接维度可以表示为</p>
+<script type="math/tex; mode=display">
+\chi \leq 2^{\lceil d / 8\rceil}</script><p>因为单比特操作不增加连接维度，而每作用一个两比特操作，连接维度增加2。这里的$d$为电路深度，设定每8个深度作用一个CZ门。</p>
+<p>门操作在PEPS上的开销为$O(\chi^4)$，花费算是较少的，在个人电脑上就可以模拟$12 \times 12$的晶格，深度为$(1+40+1)$的线路。</p>
+<h3 id="振幅计算"><a href="#振幅计算" class="headerlink" title="振幅计算"></a>振幅计算</h3><p>在PEPS中，用于计算振幅的重叠计算是指数级增长的困难问题。虽然存在一些近似算法将复杂度收缩到$\chi$的多项式级，但是并不适用于存在很大纠缠的RQCs。</p>
+<p>其它运算过程的复杂度相较于计算振幅的复杂度基本可以忽略，所以文章专注于讨论计算振幅的复杂度。</p>
+<p>对于一般的晶格排布，假设$L_{v} \geq L_{h}$，可以得到空间复杂度为</p>
+<script type="math/tex; mode=display">
+\mathcal{C}^{s}\left(L_{v} \times L_{h} \times d\right)=2^{\lceil d / 8\rceil\left(L_{h}+1\right)}</script><p>时间复杂度为</p>
+<script type="math/tex; mode=display">
+\mathcal{C}^{t}\left(L_{v} \times L_{h} \times d\right)=\left(L_{h}-2\right)\left(L_{v}-2\right) 2^{\lceil d / 8\rceil\left(L_{h}+3\right)}</script><p>这个怎么计算的还不清楚，补充材料下不下来。</p>
+<h2 id="实验评估"><a href="#实验评估" class="headerlink" title="实验评估"></a>实验评估</h2><h3 id="个人计算机"><a href="#个人计算机" class="headerlink" title="个人计算机"></a>个人计算机</h3><p>计算机性能：两核，2.8GHz，16GB内存</p>
+<p>规模$8 \times 8$，深度$(1+25+1)$的线路计算1个振幅花费小于1小时</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200407171913.png" style="zoom: 50%;" /></p>
+<h3 id="超算"><a href="#超算" class="headerlink" title="超算"></a>超算</h3><p>天河2号上运行</p>
+<p><img src="C:\Users\hlei1\AppData\Roaming\Typora\typora-user-images\image-20200407175607823.png" alt="image-20200407175607823" style="zoom:67%;" /></p>
+<h2 id="一些讨论"><a href="#一些讨论" class="headerlink" title="一些讨论"></a>一些讨论</h2><ul>
+<li>可以对计算结果精确度和开销进行权衡。使用一些近似手段来减少开销。</li>
+<li>张量网络中很多成熟的方法也许可以用于量子线路研究中。</li>
+<li>也许可以考虑在模型中加入噪声和错误率，描述NISQ的实际行为。</li>
+<li>两个阈值，高于经典模拟阈值，容错量子计算阈值</li>
+<li>面积定律？</li>
+</ul>
+<h2 id="噪声传播模拟"><a href="#噪声传播模拟" class="headerlink" title="噪声传播模拟"></a>噪声传播模拟</h2><ol>
+<li>需要先跑通这个模型</li>
+<li>了解线路一般噪声的描述，如何在线路中添加噪声，对于张量网络模型，噪声该如何施加</li>
+<li>用张量网络模型模拟含噪声线路相比于传统的矩阵方法，有什么优势，可以表示相干噪声</li>
+</ol>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Tensor-Netwowrk/" rel="tag">Tensor Netwowrk</a>
-                </div>
-            </div>
         </div>
         
         
@@ -261,16 +263,16 @@ H = -J \sum_{\langle i,j \rangle} s_is_j</script><p>其中$s \in { \pm 1 }$，�
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/02/Multiscale-entanglement-renormalisation-ansatz/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/04/12/%E9%87%8F%E5%AD%90%E7%A0%81%E7%9A%84%E6%9E%84%E9%80%A0/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Multiscale entanglement renormalisation ansatz</span>
+                <span class="level-item">量子码的构造</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/28/Tensor-network-learning-framework/">
-                <span class="level-item">Tensor network learning framework</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/12/computational-physics-5/">
+                <span class="level-item">computational physics 5</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -369,57 +371,53 @@ H = -J \sum_{\langle i,j \rangle} s_is_j</script><p>其中$s \in { \pm 1 }$，�
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#One-dimensional-systems-MPS">
+        <a class="is-flex" href="#概述">
         <span class="has-mr-6">1</span>
-        <span>One dimensional systems: MPS</span>
+        <span>概述</span>
         </a></li><li>
-        <a class="is-flex" href="#Extending-to-higher-dimensions">
+        <a class="is-flex" href="#背景">
         <span class="has-mr-6">2</span>
-        <span>Extending to higher dimensions</span>
-        </a></li><li>
-        <a class="is-flex" href="#Some-PEPS-examples">
+        <span>背景</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#RQCs">
+        <span class="has-mr-6">2.1</span>
+        <span>RQCs</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#基于PEPS的量子线路模拟">
         <span class="has-mr-6">3</span>
-        <span>Some PEPS examples</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Product-state">
-        <span class="has-mr-6">3.1</span>
-        <span>Product state</span>
+        <span>基于PEPS的量子线路模拟</span>
         </a></li><li>
-        <a class="is-flex" href="#GHZ-state">
-        <span class="has-mr-6">3.2</span>
-        <span>GHZ state</span>
-        </a></li><li>
-        <a class="is-flex" href="#RVB-state">
-        <span class="has-mr-6">3.3</span>
-        <span>RVB state</span>
-        </a></li><li>
-        <a class="is-flex" href="#Toric-code-ground-state">
-        <span class="has-mr-6">3.4</span>
-        <span>Toric code ground state</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#2D-cluster-state-and-the-complexity-of-PEPS">
+        <a class="is-flex" href="#复杂度分析">
         <span class="has-mr-6">4</span>
-        <span>2D cluster state and the complexity of PEPS</span>
+        <span>复杂度分析</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Numerical-PEPS">
+        <a class="is-flex" href="#连接维度">
         <span class="has-mr-6">4.1</span>
-        <span>Numerical PEPS</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#Properties-of-PEPS">
-        <span class="has-mr-6">5</span>
-        <span>Properties of PEPS</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Algebraic-decay-of-correlations">
-        <span class="has-mr-6">5.1</span>
-        <span>Algebraic decay of correlations</span>
+        <span>连接维度</span>
         </a></li><li>
-        <a class="is-flex" href="#Gauge-freedom">
-        <span class="has-mr-6">5.2</span>
-        <span>Gauge freedom</span>
+        <a class="is-flex" href="#振幅计算">
+        <span class="has-mr-6">4.2</span>
+        <span>振幅计算</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#Problem">
+        <a class="is-flex" href="#实验评估">
+        <span class="has-mr-6">5</span>
+        <span>实验评估</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#个人计算机">
+        <span class="has-mr-6">5.1</span>
+        <span>个人计算机</span>
+        </a></li><li>
+        <a class="is-flex" href="#超算">
+        <span class="has-mr-6">5.2</span>
+        <span>超算</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#一些讨论">
         <span class="has-mr-6">6</span>
-        <span>Problem</span>
+        <span>一些讨论</span>
+        </a></li><li>
+        <a class="is-flex" href="#噪声传播模拟">
+        <span class="has-mr-6">7</span>
+        <span>噪声传播模拟</span>
         </a></li></ul>
             </div>
         </div>
@@ -929,7 +927,7 @@ H = -J \sum_{\langle i,j \rangle} s_is_j</script><p>其中$s \in { \pm 1 }$，�
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="Projected entangled pair states" height="28">
+                    <img src="/images/hlzone.png" alt="General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States" height="28">
                 
                 </a>
                 <p class="is-size-7">
