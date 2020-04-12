@@ -133,6 +133,543 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    15 分钟 读完 (大约 2288 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/12/%E6%A8%A1%E6%8B%9F%E5%99%A8/">量子线路模拟</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="什么是量子线路模拟？"><a href="#什么是量子线路模拟？" class="headerlink" title="什么是量子线路模拟？"></a>什么是量子线路模拟？</h2><p>这里说的量子线路模拟是指用经典计算机来模拟量子线路。即模拟量子线路运行过程，给出理论计算结果。整个过程可以简单描述为，构建量子线路，输入初态，经过中间的运算模拟，最终采样得到末态。</p>
+<p>一般来说，模拟量子线路是困难的，因为随线路规模指数增加的描述空间，这是由量子计算的基本概念，如叠加、纠缠等带来的，无法避免。</p>
+<p>研究量子线路模拟主要有两个目的。</p>
+<ul>
+<li>给出一个经典计算模拟量子计算所能到达的阈值。在NISQ阶段<code>\cite{preskill2018quantum}</code>，展示“量子霸权”，证明量子计算机具有经典计算机无法处理的计算能力<code>\cite{preskill2012quantum}</code>。常用的评估标准为随机量子线路(RQCs)<code>\cite{boixo2018characterizing,bouland2018quantum}</code>。这样的计算需要在超算上运行，有很多的研究者进行了这样的模拟。<code>\cite{guo2019general,pednault2017breaking,haner20175,chen2018classical,chen201864}</code></li>
+<li>用于开发研究。由于量子计算机的物理实现还处于起步阶段，这一领域的大量研究仍然依赖与传统计算机上的量子计算模拟。模拟平台的建立，允许研究者对算法进行验证和调试，并探索软硬件协同设计，以指导量子硬件和体系结构的开发。<code>\cite{khammassi2017qx,steiger2018projectq,wecker2014liqui}</code></li>
+</ul>
+<h2 id="不同的模拟方法"><a href="#不同的模拟方法" class="headerlink" title="不同的模拟方法"></a>不同的模拟方法</h2><p>模拟量子线路有一些不同的方法。</p>
+<p><strong>基于数组的模拟方法</strong>。这是最早期使用的，也是最直接的方法，使用一维数组和矩阵来描述量子态和操作，线路执行过程就是矩阵的直接运算。这会产生指数级的复杂性，因此需要开发并行性和应用大量的硬件计算能力(如由数千个节点和超过1拍字节的分布式内存组成的超级计算机)来处理。这样的模拟方式会很快的受限于量子系统的大小。</p>
+<p><code>\cite{green2013quipper,haner2016high,khammassi2017qx,pednault2017breaking,smelyanskiy2016qhipster,steiger2018projectq,wecker2014liqui}</code></p>
+<p><strong>基于决策图模型的模拟方法</strong>。在基于数组模拟方法的基础上，观察到一些表示空间上的冗余，考虑利用冗余来解决模拟量子计算的指数复杂性。使用了决策图模型来模拟量子计算，利用性质，给出对矩阵和向量自然的分解方案，让量子态和量子操作的表示更紧凑。得到了相比于基于数组模拟方法更优的模拟器。</p>
+<p><code>\cite{viamontes2009quantum,hiraishi2014bdd,niemann2015qmdds,samoladas2008improved}</code></p>
+<p><strong>基于张量网络模型的模拟方法</strong>。上面的方法都将量子态作为向量储存，由于希尔伯特空间的指数增长，会受限于量子比特数目的限制。而基于张量的方法，将量子态表示为张量，将纠缠信息隐含在网络结构中，模拟器的经典计算复杂度会直接与底层量子电路的纠缠产生相关，而与量子比特或单比特门的运算数目无关。是一种更适合的描述量子线路的方法。</p>
+<p><code>\cite{mccaskey2018validating,guo2019general}</code></p>
+<p>量子计算模拟技术的提升也带来了“量子霸权”标准的提高，量子计算机也需要与不断发展的经典计算竞争。</p>
+<h2 id="模拟平台"><a href="#模拟平台" class="headerlink" title="模拟平台"></a>模拟平台</h2><p>对于经典计算机所能模拟的量子线路上限，即“量子霸权”边界的探究，需要用于经典计算的强大算力-超算。但一般的研究者还用不到这样昂贵且不方便使用的计算资源。</p>
+<p>如今虽然不是所有的量子软件平台都提供与真正量子计算机的连接，但许多平台都包含了量子线路模拟器。这是一个运行在经典CPU上的模拟程序，模拟器的性能参数为可模拟的量子比特状态数、执行时间、可添加的噪声等。</p>
+<p>下面简单介绍几个常见的模拟器平台：</p>
+<p><strong>pyQuil</strong>：它是Rigetti提供的量子计算编程框架，其中的模拟器叫量子虚拟机（QVM），不运行在用户本机计算机上，而是为用户提供一个API接口，利用云上的计算资源来运行。QVM的特点是包含复杂灵活的噪声模型，用户可以定义任意的噪声模型来测试程序，特别是定义噪声门、添加退相干噪声和模型读出噪声。<code>\cite{computing2019pyquil}</code></p>
+<p><strong>Qiskit</strong>: Qiskit可以有多个量子模拟器作为后端选择，分别集成了不同的模拟技术。酉模拟器实现了基本的(酉)矩阵乘法，直接储存完整的信息，内存增长很快。状态矢量模拟器不存储完整的酉矩阵，只存储状态矢量和单/多量子位门。适用于不同的线路模拟。<code>\cite{aleksandrowicz2019qiskit}</code></p>
+<p><strong>ProjectQ</strong>: ProjectQ，一个用于量子计算的开源软件。该框架能够针对各种类型的硬件，并具有仿真功能的高性能模拟器。它的高性能量子模拟器可以在单个门级上模拟量子程序。因为较好的优化，是表现较好的c++模拟器。</p>
+<p><code>\cite{steiger2018projectq}</code></p>
+<h2 id="文章列表"><a href="#文章列表" class="headerlink" title="文章列表"></a>文章列表</h2><p>@article{preskill2018quantum,<br>  title={Quantum Computing in the NISQ era and beyond},<br>  author={Preskill, John},<br>  journal={Quantum},<br>  volume={2},<br>  pages={79},<br>  year={2018},<br>  publisher={Verein zur F{\”o}rderung des Open Access Publizierens in den Quantenwissenschaften}<br>}</p>
+<p>@article{preskill2012quantum,<br>  title={Quantum computing and the entanglement frontier},<br>  author={Preskill, John},<br>  journal={arXiv preprint arXiv:1203.5813},<br>  year={2012}<br>}</p>
+<p>@article{boixo2018characterizing,<br>  title={Characterizing quantum supremacy in near-term devices},<br>  author={Boixo, Sergio and Isakov, Sergei V and Smelyanskiy, Vadim N and Babbush, Ryan and Ding, Nan and Jiang, Zhang and Bremner, Michael J and Martinis, John M and Neven, Hartmut},<br>  journal={Nature Physics},<br>  volume={14},<br>  number={6},<br>  pages={595—600},<br>  year={2018},<br>  publisher={Nature Publishing Group}<br>}</p>
+<p>@article{bouland2018quantum,<br>  title={Quantum supremacy and the complexity of random circuit sampling},<br>  author={Bouland, Adam and Fefferman, Bill and Nirkhe, Chinmay and Vazirani, Umesh},<br>  journal={arXiv preprint arXiv:1803.04402},<br>  year={2018}<br>}</p>
+<p>@inproceedings{green2013quipper,<br>  title={Quipper: a scalable quantum programming language},<br>  author={Green, Alexander S and Lumsdaine, Peter LeFanu and Ross, Neil J and Selinger, Peter and Valiron, Beno{\^\i}t},<br>  booktitle={Proceedings of the 34th ACM SIGPLAN conference on Programming language design and implementation},<br>  pages={333—342},<br>  year={2013}<br>}</p>
+<p>@inproceedings{haner2016high,<br>  title={High performance emulation of quantum circuits},<br>  author={H{\”a}ner, Thomas and Steiger, Damian S and Smelyanskiy, Mikhail and Troyer, Matthias},<br>  booktitle={SC’16: Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},<br>  pages={866—874},<br>  year={2016},<br>  organization={IEEE}<br>}</p>
+<p>@inproceedings{khammassi2017qx,<br>  title={QX: A high-performance quantum computer simulation platform},<br>  author={Khammassi, Nader and Ashraf, Imran and Fu, Xiang and Almudever, Carmen G and Bertels, Koen},<br>  booktitle={Design, Automation \&amp; Test in Europe Conference \&amp; Exhibition (DATE), 2017},<br>  pages={464—469},<br>  year={2017},<br>  organization={IEEE}<br>}</p>
+<p>@article{steiger2018projectq,<br>  title={ProjectQ: an open source software framework for quantum computing},<br>  author={Steiger, Damian S and H{\”a}ner, Thomas and Troyer, Matthias},<br>  journal={Quantum},<br>  volume={2},<br>  pages={49},<br>  year={2018},<br>  publisher={Verein zur F{\”o}rderung des Open Access Publizierens in den Quantenwissenschaften}<br>}</p>
+<p>@article{wecker2014liqui,<br>  title={LIQUi|&gt;: A software design architecture and domain-specific language for quantum computing},<br>  author={Wecker, Dave and Svore, Krysta M},<br>  journal={arXiv preprint arXiv:1402.4467},<br>  year={2014}<br>}</p>
+<p>@inproceedings{haner20175,<br>  title={5 petabyte simulation of a 45-qubit quantum circuit},<br>  author={H{\”a}ner, Thomas and Steiger, Damian S},<br>  booktitle={Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},<br>  pages={1—10},<br>  year={2017}<br>}</p>
+<p>@article{chen2018classical,<br>  title={Classical simulation of intermediate-size quantum circuits},<br>  author={Chen, Jianxin and Zhang, Fang and Huang, Cupjin and Newman, Michael and Shi, Yaoyun},<br>  journal={arXiv preprint arXiv:1805.01450},<br>  year={2018}<br>}</p>
+<p>@article{li2018quantum,<br>  title={Quantum supremacy circuit simulation on Sunway TaihuLight},<br>  author={Li, Riling and Wu, Bujiao and Ying, Mingsheng and Sun, Xiaoming and Yang, Guangwen},<br>  journal={arXiv preprint arXiv:1804.04797},<br>  year={2018}<br>}</p>
+<p>@article{chen201864,<br>  title={64-qubit quantum circuit simulation},<br>  author={Chen, Zhao-Yun and Zhou, Qi and Xue, Cheng and Yang, Xia and Guo, Guang-Can and Guo, Guo-Ping},<br>  journal={Science Bulletin},<br>  volume={63},<br>  number={15},<br>  pages={964—971},<br>  year={2018},<br>  publisher={Elsevier}<br>}</p>
+<p>@article{guo2019general,<br>  title={General-purpose quantum circuit simulator with projected entangled-pair states and the quantum supremacy frontier},<br>  author={Guo, Chu and Liu, Yong and Xiong, Min and Xue, Shichuan and Fu, Xiang and Huang, Anqi and Qiang, Xiaogang and Xu, Ping and Liu, Junhua and Zheng, Shenggen and others},<br>  journal={Physical review letters},<br>  volume={123},<br>  number={19},<br>  pages={190501},<br>  year={2019},<br>  publisher={APS}<br>}</p>
+<p>@book{viamontes2009quantum,<br>  title={Quantum circuit simulation},<br>  author={Viamontes, George F and Markov, Igor L and Hayes, John P},<br>  year={2009},<br>  publisher={Springer Science \&amp; Business Media}<br>}</p>
+<p>@inproceedings{hiraishi2014bdd,<br>  title={BDD operations for quantum graph states},<br>  author={Hiraishi, Hidefumi and Imai, Hiroshi},<br>  booktitle={International Conference on Reversible Computation},<br>  pages={216—229},<br>  year={2014},<br>  organization={Springer}<br>}</p>
+<p>@inproceedings{samoladas2008improved,<br>  title={Improved bdd algorithms for the simulation of quantum circuits},<br>  author={Samoladas, Vasilis},<br>  booktitle={European Symposium on Algorithms},<br>  pages={720—731},<br>  year={2008},<br>  organization={Springer}<br>}</p>
+<p>@article{zulehner2018advanced,<br>  title={Advanced simulation of quantum computations},<br>  author={Zulehner, Alwin and Wille, Robert},<br>  journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},<br>  volume={38},<br>  number={5},<br>  pages={848—859},<br>  year={2018},<br>  publisher={IEEE}<br>}</p>
+<p>@article{niemann2015qmdds,<br>  title={QMDDs: Efficient quantum function representation and manipulation},<br>  author={Niemann, Philipp and Wille, Robert and Miller, David Michael and Thornton, Mitchell A and Drechsler, Rolf},<br>  journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},<br>  volume={35},<br>  number={1},<br>  pages={86—99},<br>  year={2015},<br>  publisher={IEEE}<br>}</p>
+<p>@article{mccaskey2018validating,<br>  title={Validating quantum-classical programming models with tensor network simulations},<br>  author={McCaskey, Alexander and Dumitrescu, Eugene and Chen, Mengsu and Lyakh, Dmitry and Humble, Travis},<br>  journal={PloS one},<br>  volume={13},<br>  number={12},<br>  year={2018},<br>  publisher={Public Library of Science}<br>}</p>
+<p>@misc{computing2019pyquil,<br>  title={pyQuil Documentation Release 2.4. 0},<br>  author={Computing, Rigetti},<br>  year={2019}<br>}</p>
+<p>@article{aleksandrowicz2019qiskit,<br>  title={Qiskit: An open-source framework for quantum computing},<br>  author={Aleksandrowicz, Gadi and Alexander, Thomas and Barkoutsos, Panagiotis and Bello, Luciano and Ben-Haim, Yael and Bucher, D and Cabrera-Hern{\’a}ndez, FJ and Carballo-Franquis, J and Chen, A and Chen, CF and others},<br>  journal={Accessed on: Mar},<br>  volume={16},<br>  year={2019}<br>}</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 分钟 读完 (大约 2101 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/12/%E7%BA%A0%E9%94%99%E7%90%86%E8%AE%BA/">纠错理论</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="量子纠错初步"><a href="#量子纠错初步" class="headerlink" title="量子纠错初步"></a>量子纠错初步</h2><h3 id="困难"><a href="#困难" class="headerlink" title="困难"></a>困难</h3><ul>
+<li>不可克隆</li>
+<li>差错连续</li>
+<li>测量会破坏量子态</li>
+</ul>
+<h3 id="差错分析"><a href="#差错分析" class="headerlink" title="差错分析"></a>差错分析</h3><p>差错对于量子力学中的状态影响不同，量子状态处于连续空间中，有的差错只会使状态造成轻微破坏，而有的差错会使状态完全混乱。</p>
+<p>例如，$X$对于状态$(|0 \rangle+|1 \rangle)/ \sqrt{2}$没有影响，但是会使$|0 \rangle$翻转变为$|1 \rangle$。</p>
+<p>考虑保真度</p>
+<script type="math/tex; mode=display">
+F(|\psi\rangle, \rho)=\sqrt{\langle\psi|\rho| \phi\rangle}</script><p>量子纠错的目标就是提高保真度，以接近最大保真度的状态来存储（或传送）量子信息。</p>
+<p>考虑一个例子，比较三量子比特反转码能达到的最小保真度和当不执行纠错时的保真度来作比较。设所感兴趣的量子状态为$| \psi \rangle$，经过信道之后，变为</p>
+<script type="math/tex; mode=display">
+\rho=(1-p)|\psi\rangle\langle\psi|+p X| \psi\rangle\langle\psi| X</script><p>保真度为</p>
+<script type="math/tex; mode=display">
+F=\sqrt{\langle\psi|\rho| \psi\rangle}=\sqrt{(1-p)+p\langle\psi|X| \psi\rangle\langle\psi|X| \psi\rangle}</script><p>可以看到，第二项非负，所以最小保真度为$F= \sqrt{(1-p)}$。</p>
+<p>设使用三量子比特纠错码来编码状态$|\psi\rangle=a\left|0_{L}\right\rangle+b\left|1_{L}\right\rangle$。噪声和纠错两者作用之后的量子状态为</p>
+<script type="math/tex; mode=display">
+\rho=\left[(1-p)^{3}+3 p(1-p)^{2}\right]|\psi\rangle\langle\psi|+\cdots</script><p>系数$(1-p)^{3}+3 p(1-p)^{2}$表示不出现翻转或只出现一次翻转时，可纠错。省略项都是半正定算子。</p>
+<p>所以有</p>
+<script type="math/tex; mode=display">
+F=\sqrt{\langle\psi|\rho| \psi\rangle} \geq \sqrt{(1-p)^{3}+3 p(1-p)^{2}}</script><p>所以量子状态的保真度会在$p &lt; 1/2$下被改善。</p>
+<h3 id="Shor码"><a href="#Shor码" class="headerlink" title="Shor码"></a>Shor码</h3><script type="math/tex; mode=display">
+\begin{aligned}&|0\rangle \rightarrow\left|0_{L}\right\rangle \equiv \frac{(|000\rangle+|111\rangle)(|000\rangle+|111\rangle)(|000\rangle+|111\rangle)}{2 \sqrt{2}}\\&|1\rangle \rightarrow\left|1_{L}\right\rangle \equiv \frac{(|000\rangle-|111\rangle)(|000\rangle-|111\rangle)(|000\rangle-|111\rangle)}{2 \sqrt{2}}\end{aligned}</script><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200408172236.png" style="zoom:67%;" /></p>
+<p>可以保护比特翻转或者相位翻转，甚至更多*。</p>
+<h2 id="纠错理论"><a href="#纠错理论" class="headerlink" title="纠错理论"></a>纠错理论</h2><p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200407195427.png" style="zoom: 33%;" /></p>
+<p>噪声描述为量子运算$\mathcal{E}$，纠错运算表示为一个保迹量子运算$\mathcal{R}$，为确保纠错是成功的，状态$\rho$需要位于码空间$C$中</p>
+<script type="math/tex; mode=display">
+(\mathcal{R} \circ \mathcal{E})(\rho) \propto \rho</script><p><strong>量子纠错条件</strong></p>
+<p>令$C$为一个量子码，令$P$为到$C$的投影算子。设$\mathcal{E}$为具有运算元${E_i}$的量子运算。则纠正$C$上$\mathcal{E}$的纠错运算$\mathcal{R}$存在的充分必要条件为，对某个复数Hermite矩阵$\alpha$成立</p>
+<script type="math/tex; mode=display">
+P E_{i}^{\dagger} E_{j} P=\alpha_{i j} P</script><p>称运算元${E_i}$为噪声$\mathcal{E}$的差错，如果$\mathcal{R}$存在，则${E_i}$构成一个可纠错的差错集合。</p>
+<h3 id="差错离散化"><a href="#差错离散化" class="headerlink" title="差错离散化"></a>差错离散化</h3><p><strong>定理，差错的线性组合也可纠正</strong></p>
+<p>设$C$为量子码，$\mathcal{R}$为构造的纠错运算，用以从具有算子元${E_i}$的噪声过程中恢复。设$\mathcal{F}$为具有运算元${F_i}$的量子运算，运算元${F_i}$为$E_i$的线性组合，$F_i = \sum_i m_{ji} E_i$，$m_{ji}$为复数矩阵。那么纠错运算$\mathcal{R}$也可以纠正量子码$C$上的量子运算$\mathcal{F}$。</p>
+<p><strong>差错离散化的例子</strong></p>
+<p>设$\mathcal{E}$为作用于单量子比特上的量子运算。那么，其每个运算元${E_i}$都可以写成Pauli矩阵$\sigma_{0}, \sigma_{1}, \sigma_{2}, \sigma_{3}$的线性组合。那么检验Shor码能对第一量子比特上的单量子比特差错进行纠错，只需要验证满足方程</p>
+<script type="math/tex; mode=display">
+P \sigma_{i}^{1} \sigma_{j}^{1} P=\alpha_{i j} P</script><p>就可以了，其中$\sigma_{i}^{1}$为作用于第一量子比特上的Pauli矩阵$(I,X,Y,Z)$。</p>
+<p>所以对退极化信道</p>
+<script type="math/tex; mode=display">
+\mathcal{E}(\rho) = (1-p) \rho+\frac{p}{3}(X \rho X+Y \rho Y+Z \rho Z)</script><p>纠错的能力自动地暗含了对任意单量子比特地量子运算地纠错能力。</p>
+<h3 id="独立差错模型"><a href="#独立差错模型" class="headerlink" title="独立差错模型"></a>独立差错模型</h3><p>假设噪声独立的作用于码中的不同量子比特上。</p>
+<p>还是考虑退极化噪声</p>
+<script type="math/tex; mode=display">
+\mathcal{E}(\rho) = (1-p) \rho+\frac{p}{3}(X \rho X+Y \rho Y+Z \rho Z)</script><p>其最小保真度为</p>
+<script type="math/tex; mode=display">
+F=\sqrt{1-2 p / 3}=1-p / 3+O\left(p^{2}\right)</script><p>假设用能纠正任何单量子比特上差错的一个$n$量子比特码来对单比特进行编码。设具有参数$p$的退极化噪声独立地作用于这个量子比特地每一个，则在所有$n$个量子比特上的联合作用为</p>
+<script type="math/tex; mode=display">
+\mathcal{E}^{\otimes n}(\rho)=(1-p)^{n} \rho+\sum_{j=1}^{n} \sum_{k=1}^{3}(1-p)^{n-1} \frac{p}{3} \sigma_{k}^{j} \rho \sigma_{k}^{j}+\cdots</script><p>那么执行纠错后</p>
+<script type="math/tex; mode=display">
+\left(\mathcal{R} \otimes \mathcal{E}^{\otimes n}\right)(\rho)=\left[(1-p)^{n}+n(1-p)^{n-1} p\right] \rho+\cdots</script><p>保真度满足</p>
+<script type="math/tex; mode=display">
+F \geq \sqrt{(1-p)^{n-1}(1-p+n p)}=1-\frac{\left(\begin{array}{l}n \\2\end{array}\right)}{2} p^{2}+O\left(p^{3}\right)</script><h3 id="振幅阻尼"><a href="#振幅阻尼" class="headerlink" title="振幅阻尼"></a>振幅阻尼</h3><p>并非所有噪声污染的信道都可以解释为由无差错、比特翻转、相位翻转及两两组合的随机组合。许多自然出现的量子信道都不具备这样的解释。</p>
+<p>考虑振幅阻尼的例子，其具有运算元$E_0$和$E_1$</p>
+<script type="math/tex; mode=display">
+E_{0}=\left[\begin{array}{cc}1 & 0 \\0 & \sqrt{1-\gamma}\end{array}\right] ; \quad E_{1}=\left[\begin{array}{cc}0 & \sqrt{\gamma} \\0 & 0\end{array}\right]</script><p>${\gamma}$为表征振幅阻尼过程强度的一个小正参数，${\gamma}$越大，噪声强度越大。</p>
+<p>因为对于$\gamma&gt;0$，没有一个$E_0$和$E_1$的线性组合可以在任何时候都正比于单位阵，所有对幅值阻尼信道没有一组运算元可以在任何时候都包含正比于单位阵的项。</p>
+<p>用$E_{j,k}$表示$E_j$在第$j$个量子比特上的作用，则噪声在编码后量子比特上的影响可写为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}\mathcal{E}^{\otimes n}(\rho)=\left(E_{0,1} \otimes E_{0,2} \otimes \cdots \otimes E_{0, n}\right) \rho\left(E_{0,1}^{\dagger} \otimes E_{0,2}^{\dagger} \otimes \cdots \otimes E_{0, n}^{\dagger}\right) \\+\sum_{j=1}^{n}\left[E_{1, j} \otimes\left(\bigotimes_{k \neq j} E_{0, k}\right)\right] \rho\left[E_{1, j}^{\dagger} \otimes\left(\bigotimes_{k \neq j} E_{0, k}^{\dagger}\right)\right] \\+O\left(\gamma^{2}\right)\end{aligned}</script><p>设$E_{0}=(1-\gamma / 4) I+\gamma Z / 4+O\left(\gamma^{2}\right)$，$E_{1}=\sqrt{\gamma}(X+i Y) / 2$</p>
+<p>有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}\mathcal{E}^{\otimes n}(\rho)=(1-&\left.\frac{\gamma}{4}\right)^{2 n} \rho+\frac{\gamma}{4}\left(1-\frac{\gamma}{4}\right)^{2 n-1} \sum_{j=1}^{n}\left(Z_{j} \rho+\rho Z_{j}\right) \\&+\frac{\gamma}{4}\left(1-\frac{\gamma}{4}\right)^{2 n-2} \sum_{j=1}^{n}\left(X_{j}+i Y_{j}\right) \rho\left(X_{j}-i Y_{j}\right)+O\left(\gamma^{2}\right)\end{aligned}</script><p>考虑同上面相似的纠错过程，$Z_j \rho$，$X_j \rho Y_j$和$Y_j \rho X_j$这样的项会消失。$X_j \rho X_j$和$Y_j \rho Y_j$会会到$\rho$，所有纠错后系统的状态为</p>
+<script type="math/tex; mode=display">
+\left(1-\frac{\gamma}{4}\right)^{2 n} \rho+2 n \frac{\gamma}{4}\left(1-\frac{\gamma}{4}\right)^{2 n-2} \rho+O\left(\gamma^{2}\right)=\rho+O\left(\gamma^{2}\right)</script><p>因此，准确到阶$\gamma^2$，纠错会使量子系统返回到它原始的状态$\rho$，而对弱噪声(小$\gamma$)，如同退极化信道一样，纠错会对差错产生净抑制。</p>
+<h3 id="量子Hamming界"><a href="#量子Hamming界" class="headerlink" title="量子Hamming界"></a>量子Hamming界</h3><p>设想，以能纠正$t$或更少数目的量子比特上差错的方式，一个非简并编码将$k$量子比特编码为$n$量子比特。设出现$j$个差错，其中$j \leq t$。总共有$\left(\begin{array}{l}<br>n \<br>j<br>\end{array}\right)$组差错的可能出现位置。对应每组这样的位置，会有三个可能的差错$(X,Y,Z)$，总共有$3^j$个可能的差错。</p>
+<p>在$t$或更少比特上出现差错的总个数为</p>
+<script type="math/tex; mode=display">
+\sum_{j=0}^{t}\left(\begin{array}{c}n \\j\end{array}\right) 3^{j}</script><p>为了以非简并编码方式来编码$k$个量子比特，这些差错的每一个都必须对应于一个正交空间$2^k$维子空间。所有这些子空间必须置于对$n$个量子比特可利用的整个$2^n$维空间中，从而有不等式</p>
+<script type="math/tex; mode=display">
+\sum_{j=0}^{t}\left(\begin{array}{c}n \\j\end{array}\right) 3^{j} 2^{k} \leq 2^{n}</script><p>这就是量子Hamming界。</p>
+<p>考虑用$n$个量子比特来编码一个量子比特，在这种情况下，量子Hamming界为</p>
+<script type="math/tex; mode=display">
+2(1+3 n) \leq 2^{n}</script><p>可以看到$n \geq 5$才能满足，因此不存在用少于$5$个量子比特对一个量子比特编码的非简并编码。其实对于任意量子码都要符合这个规定*。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    16 分钟 读完 (大约 2445 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/12/%E9%87%8F%E5%AD%90%E7%A0%81%E7%9A%84%E6%9E%84%E9%80%A0/">量子码的构造</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="量子码的构造"><a href="#量子码的构造" class="headerlink" title="量子码的构造"></a>量子码的构造</h2><h3 id="经典线性码"><a href="#经典线性码" class="headerlink" title="经典线性码"></a>经典线性码</h3><p>编码$k$个量子比特信息到$n$个比特码空间的一个线性码$C$，可由一个$n \times k$生成矩阵$G$来指定，$G$的所有元属于$\mathbf{Z}_2$，即0和1。$k$个比特消息$x$被编码为$Gx$，其中消息$x$被显式地写为一个列向量。</p>
+<p>例如，将单比特映射到三个重复比特地重复码可由如下生成矩阵来给定</p>
+<script type="math/tex; mode=display">
+G=\left[\begin{array}{l}
+1 \\
+1 \\
+1
+\end{array}\right]</script><p>有$G[0]=(0,0,0)$和$G[1]=(1,1,1)$。</p>
+<p>用$n$个比特编码$k$个比特信息地码为$[n,k]$码。</p>
+<p>一个$[6,2]$码可以表示为</p>
+<script type="math/tex; mode=display">
+G=\left[\begin{array}{ll}
+1 & 0 \\
+1 & 0 \\
+1 & 0 \\
+0 & 1 \\
+0 & 1 \\
+0 & 1
+\end{array}\right]</script><p>有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&G(0,0)=(0,0,0,0,0,0) ; \quad G(0,1)=(0,0,0,1,1,1)\\
+&G(1,0)=(1,1,1,0,0,0) ; \quad G(1,1)=(1,1,1,1,1,1)
+\end{aligned}</script><p>线性码相比于一般纠错码的一大优点是它们的紧凑表示。</p>
+<p>按线性码的另一种替代的奇偶校验矩阵形式，可以容易的理解线性码。在这个定义中，一个$[n,k]$码定义为由$\mathbf{Z}_2$上使</p>
+<script type="math/tex; mode=display">
+Hx=0</script><p>成立的所有$n$元向量$x$来组成。其中$H$称为奇偶校验矩阵，为一个$(n-k) \times n$矩阵，其元均为0和1。一个编码$k$比特的码具有$2^k$个可能的码字。所有$H$的核必须是$k$维的，因此要求$H$为行线性无关。</p>
+<p>奇偶校验矩阵具有标准形$[A|I_{n-k}]$，其中$A$为$(n-k) \times k$矩阵。</p>
+<p>从奇偶校验矩阵$H$到生成矩阵$G$，挑选$k$个线性无关的向量$y_1,\cdots,y_k$来张成$H$的核，并使$G$具有列$y_1$直到$y_k$。</p>
+<p>从生成矩阵$G$到奇偶校验矩阵$H$，挑选$n-k$个正交于$G$各列的线性无关的向量$y_1,\cdots,y_{n-k}$，并使$H$的行为$y_{1}^{T}, \ldots, y_{n-k}^{T}$。（这里正交指模2内积必须为0）</p>
+<p>例子，考虑$[3,1]$重复码，为构造$H$，挑选$3-1=2$个正交于$G$各列的线性无关向量，例如$(1,1,0)$和$(0,1,1)$，则奇偶校验矩阵为</p>
+<script type="math/tex; mode=display">
+H \equiv\left[\begin{array}{lll}
+1 & 1 & 0 \\
+0 & 1 & 1
+\end{array}\right]</script><p>容易检验，$Hx=0$仅对码字$x=(0,0,0)$和$x=(1,1,1)$成立。</p>
+<p>奇偶校验矩阵使得差错检测和恢复变得十分明显。设编码消息$x$为$y=Gx$，但由噪声引起的一个差错$e$使$y$受到污染，并给出污染后的码字为$y’=y+e$。因为对所有码字$Hy=0$，有$Hy’=He$，为差错症状，将$Hy’$与不同的$He_j$值进行比较，便可以确定哪个比特需要被纠正。</p>
+<p>为了更深入了解线性码如何被执行，引入距离的概念。设$x$和$y$各为$n$比特的字，$x$和$y$之间的Hamming距离$d(x,y)$定义为$x$和$y$有差异的位置数目。例如，$d((1,1,0,0),(0,1,0,1))=2$。字$x$的Hamming权重定义为全零字串到其的距离$\operatorname{wt}(x) \equiv d(x, 0)$。注意$d(x,y)=\operatorname{wt}(x+y)$。</p>
+<p>一个码的全局性质可以用Hamming距离来理解。定义一个码的距离为其任意两个码字之间的最小距离：</p>
+<script type="math/tex; mode=display">
+d(C) \equiv \min _{x, y \in C, x \neq y} d(x, y)</script><p>但是$d(x,y)=\operatorname{wt}(x+y)$。由于码是线性的，若$x$和$y$为码字，则$x+y$也是码字，所以可以看到</p>
+<script type="math/tex; mode=display">
+d(C) \equiv \min _{x \in C, x \neq 0} \operatorname{wt}(x)</script><p>令$d \equiv d(C)$，则$C$为一个$[n,k,d]$码。距离的重要性在于，对某个整数$t$，简单地通过解码受污染地编码消息$y’$为满足$d(y,y’) \leq t$的唯一码字$y$，具有距离至少为$2t+1$的一个码就可以纠正最多$t$个比特上的差错。</p>
+<p><strong>对偶构造</strong>。设$C$为一个$[n,k]$码，其具有生成矩阵$G$和奇偶校验矩阵$H$，那么，可定义另一个码，$C$的对偶码并记为$C^{\perp}$，其具有生成矩阵$G^{T}$和奇偶校验矩阵$H^{T}$。等价的，$C$的对偶码由正交于$C$中所有码字的全部码字$y$组成。如果$C \subseteq C^{\perp}$，称一个码为弱自对偶；如果$C=C^{\perp}$，称为严格自对偶。</p>
+<h3 id="CSS码"><a href="#CSS码" class="headerlink" title="CSS码"></a>CSS码</h3><p>设$C_1$和$C_2$为$[n,k_1]$和$[n,k_2]$经典线性码，使$C \subset C_1$，且$C_1$和$C_2^{\perp}$，两者可纠正$t$个差错。通过下面的构造，将要定义能纠正$t$个量子比特上差错的一个$[n,k_1-k_2]$量子码$CSS(C_1,C_2)$，即$C_2$上$C_1$的CSS码。设$x \in C_1$为$C_1$中的任一量子码，那么，定义量子状态$|x+C_2 \rangle$为</p>
+<script type="math/tex; mode=display">
+\left|x+C_{2}\right\rangle \equiv \frac{1}{\sqrt{\left|C_{2}\right|}} \sum_{y \in C_{2}}|x+y\rangle</script><p>其中，$+$为按比特的模2加。设$x’$为$C_1$的一个元，使得$x-x’ \in C_2$。那么，容易看到$|x+C_2 \rangle = |x’=C_2 \rangle$，因此状态$|x+C_2 \rangle $只依赖于$x$所在的陪集$C_1 / C_2$。如果$x$和$x’$属于$C_2$的不同陪集，那么不存在$y,y’ \in C_2$，使得$x+y=x’+y’$，因而$|x+C_2 \rangle$和$| x’ +C_2 \rangle$为正交状态。量子码$CSS(C_1,C_2)$定义为所有$x \in C_1$的状态$| x+C_2 \rangle$所张成的向量空间，维数为$|C_1|/|C_2|=2^{k_1-k_2}$，因此其为一个$[n,k_1-k_2]$量子码。</p>
+<p><strong>纠错过程</strong></p>
+<p>设比特翻转差错由$n$比特向量$e_1$来描述，且在比特翻转出现的比特上为1，在其它比特上为0。相位翻转差错由$n$比特向量$e_2$来描述，且在相位翻转出现的比特上为1，在其它比特上为0。那么受到污染的状态为</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{\left|C_{2}\right|}} \sum_{y \in C_{2}}(-1)^{(x+y) \cdot e_{2}}\left|x+y+e_{1}\right\rangle</script><p>为检测比特翻转出现在什么地方，方便的做法是引入一个辅助码，包含足够多的量子比特来存储码$C_1$的差错症状，且初始处于全0状态$|0 \rangle$。采用可逆计算，即对码$C_1$应用奇偶矩阵$H_1$，把$|x+y+e_1 \rangle$变为$\left|x+y+e_{1}\right\rangle\left|H_{1}\left(x+y+e_{1}\right)\right\rangle=|x+y+e\rangle\left|H_{1} e_{1}\right\rangle$，产生状态</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{\left|C_{2}\right|}} \sum_{y \in C_{2}}(-1)^{(x+y) e_{2}}\left|x+y+e_{1}\right\rangle\left|H_{1} e_{1}\right\rangle</script><p>对比特翻转差错的差错检测时通过测量辅助码得到结果$H_1 e_1$，并消去辅助码而完成，并给出状态为</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{\left|C_{2}\right|}} \sum_{y \in C_{2}}(-1)^{(x+y) e_{2}}\left|x+y+e_{1}\right\rangle</script><p>得到差错症状$H_1 e_1$后，就可以推断差错$e_1$。恢复可简单地通过对差错$e_1$中出现比特翻转地位置上应用非门而执行，消去所有比特翻转差错后给出状态</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{\left|C_{2}\right|}} \sum_{y \in C_{2}}(-1)^{(x+y) e_{2}}\left|x+y\right\rangle</script><p>为检测相位翻转差错，对每个量子比特应用Hadamard门，把状态变为</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{\left|C_{2}\right| 2^{n}}} \sum_{z} \sum_{y \in C_{2}}(-1)^{(x+y) \cdot\left(e_{2}+z\right)}|z\rangle</script><p>令$z’ \equiv z+e_2$，这个状态可重写为</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{\left|C_{2}\right| 2^{n}}} \sum_{z^{\prime}} \sum_{y \in C_{2}}(-1)^{(x+y) \cdot z^{\prime}}\left|z^{\prime}+e_{2}\right\rangle</script><p>如$z’ \in C_2^{\perp}$，有$\sum_{y \in C_2} (-1)^{y \cdot z’}=|C_2|$；如$z’ \notin C_2^{\perp}$，有$\sum_{y \in C_2} (-1)^{y \cdot z’}=0$，所有状态重写为</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{2^{n} /\left|C_{2}\right|}} \sum_{z^{\prime} \in C_{2}^{\perp}}(-1)^{x \cdot z^{\prime}}\left|z^{\prime}+e_{2}\right\rangle</script><p>这与比特翻转差错类似，引入辅助码并对$C_2^{\perp}$逆向地应用奇偶校验矩阵$H_2$以得到$H_2 e_2$，并纠正比特翻转差错$e_2$，得到状态为</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{2^{n} /\left|C_{2}\right|}} \sum_{z^{\prime} \in C_{2}^{\perp}}(-1)^{x \cdot z^{\prime}}\left|z^{\prime}\right\rangle</script><p>纠错可通过再次对每个量子比特应用Hadamard门来完成。最后得到初始的编码状态。</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{\left|C_{2}\right|}} \sum_{y \in C_{2}}|x+y\rangle</script><h3 id="Steane码"><a href="#Steane码" class="headerlink" title="Steane码"></a>Steane码</h3><p>一个$[7,4,3]$的Hamming码，其奇偶校验矩阵为</p>
+<script type="math/tex; mode=display">
+H=\left[\begin{array}{lllllll}
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+1 & 0 & 1 & 0 & 1 & 0 & 1
+\end{array}\right]</script><p>标记这个码为$C$，定义$C_1 \equiv C$和$C_2 \equiv C^{\perp}$。为了使用这些码来定义一个CSS码，需要检查$C_2 \subset C_1$。根据定义，$C_2 = C^{\perp}$的奇偶效验矩阵等于$C_1 = C$的生成矩阵的转置</p>
+<script type="math/tex; mode=display">
+H\left[C_{2}\right]=G\left[C_{1}\right]^{T}=\left[\begin{array}{lllllll}
+1 & 0 & 0 & 0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 1 & 1 & 1
+\end{array}\right]</script><p>可以看到$H[C_2]$的行张成的空间严格包含$H[C_1]$的行张成的空间，且由于相应的码是$H[C_2]$和$H[C_1]$的核，因此可以得出结论$C_2 \subset C_1$。进而$C_2^{\perp}=(C^{\perp})^{\perp}=C$，所以$C_1$和$C_2$两均为距离为3的码，可以用来纠正1比特上的差错。因为$C_1$是$[7,4]$码，$C_2$是$[7,3]$码，所以$CSS(C_1,C_2)$是能纠正单比特上差错的一个$[7,1]$量子码。</p>
+<p>这个码就是Steane码，现在非显式地写出，如对其逻辑单元$|0_L \rangle$元$| 0 + C_2 \rangle$有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\left|0_{L}\right\rangle=\frac{1}{\sqrt{8}}[|0000000\rangle+|1010101\rangle+|0110011\rangle+|1100110\rangle& \\
++|0001111\rangle+|1011010\rangle+|0111100\rangle+|1101001\rangle]
+\end{aligned}</script><p>为确定其他逻辑码字，需要找出$C_1$的一个不在$C_2$中的一个元，这样元的一个例子为$(1,1,1,1,1,1,1)$，给出</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\left|1_{L}\right\rangle=\frac{1}{\sqrt{8}}[|1111111\rangle+|0101010\rangle+|1001100\rangle+|0011001\rangle& \\
++|1110000\rangle+|0100101\rangle+|1000011\rangle+|0010110\rangle]
+\end{aligned}</script><h2 id="稳定子码"><a href="#稳定子码" class="headerlink" title="稳定子码"></a>稳定子码</h2><h3 id="稳定子体系"><a href="#稳定子体系" class="headerlink" title="稳定子体系"></a>稳定子体系</h3><h3 id="酉门和稳定子体系"><a href="#酉门和稳定子体系" class="headerlink" title="酉门和稳定子体系"></a>酉门和稳定子体系</h3><h3 id="稳定子体系中的测量"><a href="#稳定子体系中的测量" class="headerlink" title="稳定子体系中的测量"></a>稳定子体系中的测量</h3><h3 id="Gottesman-Knill定理"><a href="#Gottesman-Knill定理" class="headerlink" title="Gottesman-Knill定理"></a>Gottesman-Knill定理</h3><h3 id="稳定子码构造"><a href="#稳定子码构造" class="headerlink" title="稳定子码构造"></a>稳定子码构造</h3><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><h3 id="稳定子码的标准形"><a href="#稳定子码的标准形" class="headerlink" title="稳定子码的标准形"></a>稳定子码的标准形</h3><h3 id="纠错线路"><a href="#纠错线路" class="headerlink" title="纠错线路"></a>纠错线路</h3><h2 id="容错量子计算"><a href="#容错量子计算" class="headerlink" title="容错量子计算"></a>容错量子计算</h2>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-12T11:07:42.000Z">2020-04-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 分钟 读完 (大约 1745 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/12/computational-physics-5/">computational physics 5</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="量子化"><a href="#量子化" class="headerlink" title="量子化"></a>量子化</h2><h3 id="一次量子化与二次量子化"><a href="#一次量子化与二次量子化" class="headerlink" title="一次量子化与二次量子化"></a>一次量子化与二次量子化</h3><p><strong>一次量子化</strong>，坐标量子化，$[x,p]=i \hbar$</p>
+<p><strong>二次量子化</strong>，波函数量子化</p>
+<p>与哈密顿正则方程的类比</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+\frac{d p}{d t}=-\frac{\partial H}{\partial q} \\
+\frac{d q}{d t}=\frac{\partial H}{\partial p}
+\end{array}\right.</script><p>写成泊松括号形式</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+\frac{d p}{d t}=\{q, H\} \\
+\frac{d q}{d t}=\{p, H\}
+\end{array} \Rightarrow\left\{\begin{array}{c}
+\left\{q_{i}, q_{j}\right\}=0,\left\{p_{i}, p_{j}\right\}=0 \\
+\left\{q_{i}, p_{j}\right\}=\delta_{i, j}
+\end{array}\right.\right.</script><p>对波函数量子化</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{c}
+i \frac{\partial \psi}{\partial t}=H \psi \\
+\psi=\sum_{n} c_{n}(t)\left|\phi_{n}\right\rangle
+\end{array} \Rightarrow\left\{\begin{array}{c}
+E=\langle\psi|H| \psi\rangle=\sum_{n m} t_{n m} c_{n}^{*} c_{m} \\
+i \dot{c}_{n}=\sum_{m} c_{m}\left\langle\phi_{n}|H| \phi_{m}\right\rangle=\sum_{m} t_{n m} c_{m}
+\end{array} \Rightarrow\left\{\begin{array}{l}
+i \dot{c}_{n}=\frac{\partial E}{\partial c_{n}^{*}} \\
+i \dot{c}_{n}^{*}=-\frac{\partial E}{\partial c_{n}}
+\end{array}\right.\right.\right.</script><p>类比有，$c_{n} \sim q, c_{n}^{<em>} \sim p$，将$c_n,c_n^{</em>}$提升到算符$c_n,c_n^{\dagger}$</p>
+<script type="math/tex; mode=display">
+\left\{c_{n}, c_{m}\right\}=\left\{c_{n}^{\dagger}, c_{m}^{\dagger}\right\}=0,\left\{c_{n}, c_{m}^{\dagger}\right\}=\delta_{n m}</script><p>等价描述</p>
+<script type="math/tex; mode=display">
+\{\psi, \psi\}=\left\{\psi^{\dagger}, \psi^{\dagger}\right\}=0,\left\{\psi(x), \psi^{\dagger}(y)\right\}=\delta(x-y)</script><p>波函数量子化和$[x,p]=i \hbar$是同一回事</p>
+<h3 id="二次量子化"><a href="#二次量子化" class="headerlink" title="二次量子化"></a>二次量子化</h3><p>重新表示态，将一个多粒子态定义为</p>
+<script type="math/tex; mode=display">
+\left|n_{1}, n_{2}, \cdots, n_{i}, \cdots\right\rangle</script><p>该空间称为Fock空间，需要关注其置换对称性</p>
+<p>先定义两种特殊情况</p>
+<script type="math/tex; mode=display">
+|0,0, \cdots, 0, \cdots\rangle \equiv|\mathbf{0}\rangle</script><script type="math/tex; mode=display">
+\left|0,0, \cdots, n_{i}=1, \cdots\right\rangle \equiv\left|k_{i}\right\rangle</script><p>再定义“场算符”$a_i^{\dagger}$，它使本征值为$k_i$的态上的粒子数增加一个</p>
+<script type="math/tex; mode=display">
+a_{i}^{\dagger}\left|n_{1}, n_{2}, \cdots, n_{i}, \cdots\right\rangle \propto\left|n_{1}, n_{2}, \cdots, n_{i}+1, \cdots\right\rangle</script><p>假设已经归一化，粒子产生算符作用于真空</p>
+<script type="math/tex; mode=display">
+a_{i}^{\dagger}|\mathbf{0}\rangle=\left|k_{i}\right\rangle</script><p>有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+1=\left\langle k_{i} | k_{i}\right\rangle &=\left[\langle\mathbf{0}| a_{i}\right]\left[a_{i}^{\dagger}|\mathbf{0}\rangle\right] \\
+&=\left\langle\mathbf{0}\left|\left[a_{i} a_{i}^{\dagger}|\mathbf{0}\rangle\right]=\left\langle\mathbf{0}\left|a_{i}\right| k_{i}\right\rangle\right.\right.
+\end{aligned}</script><p>意味着</p>
+<script type="math/tex; mode=display">
+a_i | k_i \rangle = | \mathbf{0 } \rangle</script><p>$a_i$起到了粒子湮灭算符的作用。</p>
+<p><strong>置换两粒子</strong></p>
+<script type="math/tex; mode=display">
+a_{i}^{\dagger} a_{j}^{\dagger}|\mathbf{0}\rangle=\pm a_{j}^{\dagger} a_{i}^{\dagger}|\mathbf{0}\rangle</script><p>$+(-)$分别对玻色子(费米子)成立。</p>
+<p>因此对玻色子(费米子)分别有</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+a_{i}^{\dagger} a_{j}^{\dagger}-a_{j}^{\dagger} a_{i}^{\dagger}=\left[a_{i}^{\dagger} \cdot a_{j}^{\dagger}\right]=0 \\
+a_{i}^{\dagger} a_{j}^{\dagger}+a_{j}^{\dagger} a_{i}^{\dagger}=\left\{a_{i}^{\dagger}, a_{j}^{\dagger}\right\}=0
+\end{array}</script><p>验证所有的对易关系，有表格</p>
+<p>玻色子</p>
+<script type="math/tex; mode=display">
+a_i^{\dagger}a_j^{\dagger}-a_j^{\dagger}a_i^{\dagger} 
+= [a_i^{\dagger},a_j^{\dagger}]=0 \\
+a_i a_j-a_j a_i = [a_i,a_j]=0 \\
+a_i a_j^{\dagger} - a_j^{\dagger} a_i = [a_i,a_j^{\dagger}]=\delta_{ij}</script><p>费米子</p>
+<script type="math/tex; mode=display">
+a_i^{\dagger}a_j^{\dagger}+a_j^{\dagger}a_i^{\dagger} 
+= \{a_i^{\dagger},a_j^{\dagger}\}=0 \\
+a_i a_j+a_j a_i = \{a_i,a_j\}=0 \\
+a_i a_j^{\dagger} + a_j^{\dagger} a_i = \{a_i,a_j^{\dagger}\}=\delta_{ij}</script><p>还可定义粒子数算符</p>
+<script type="math/tex; mode=display">
+N = \sum_i a_i^{\dagger}a_i</script><h3 id="算符的二次量子化"><a href="#算符的二次量子化" class="headerlink" title="算符的二次量子化"></a>算符的二次量子化</h3><p>单粒子算符</p>
+<script type="math/tex; mode=display">
+\boldsymbol{K}=\sum_{m n} b_{m}^{\dagger} b_{n}\left\langle l_{m}|K| l_{n}\right\rangle</script><p>多粒子算符，由于粒子间存在相互作用，设对称实矩阵$V_{ij}$确定处于单粒子态$|k_i \rangle$和$| k_j \rangle$的两个粒子之间的相互作用的本征值。算符的二次量子化版本为</p>
+<script type="math/tex; mode=display">
+\mathcal{V}=\frac{1}{2} \sum_{i \neq j} V_{i j} N_{i} N_{j}+\frac{1}{2} \sum_{i} V_{i i} N_i\left(N_{i}-1\right)</script><p>第一项为所有两粒子相互作用，第二项为处于相同态粒子间的自相互作用。为$C_n^2$。</p>
+<p>可以更简单的表示为</p>
+<script type="math/tex; mode=display">
+\mathcal{V}=\frac{1}{2} \sum_{i j} V_{i j}\left(N_{i} N_j-N_{i} \delta_{i j}\right)=\frac{1}{2} \sum_{i j} V_{i j} \Pi_{i j}</script><p>其中$\Pi_{i j}  \equiv N_iN_j - N_i \delta_{ij}$，称为分布算符</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\Pi_{i j} &=a_{i}^{\dagger} a_j a_{j}^{\dagger} a_{j}-a_{i}^{\dagger} a_{i} \delta_{i j} \\
+&=a_{i}^{\dagger}\left(\delta_{i j} \pm a_{j}^{\dagger} a_{i}\right) a_{j}-a_{i}^{\dagger} a_{i} \delta_{i j} \\
+&=\pm a_{i}^{\dagger} a_{j}^{\dagger} a_{i} a_{j}
+\end{aligned}</script><p>所以有</p>
+<script type="math/tex; mode=display">
+\mathcal{V}=\frac{1}{2} \sum_{i j} V_{i j} a_{i}^{\dagger} a_{j}^{\dagger} a_{j} a_{i}</script><script type="math/tex; mode=display">
+\mathcal{V}=\frac{1}{2} \sum_{m m pq}\langle m n|V| p q\rangle b_{m}^{\dagger} b_{n}^{\dagger} b_{q} b_{p}</script><p>其中</p>
+<script type="math/tex; mode=display">
+\langle m n|V| p q\rangle \equiv \sum_{i j} V_{i j}\left\langle l_{m} | k_{i}\right\rangle\left\langle k_{i} | l_{p}\right\rangle\left\langle l_{n} | k_{j}\right\rangle\left\langle k_{j} | l_{q}\right\rangle</script><h2 id="Tight-binding-model"><a href="#Tight-binding-model" class="headerlink" title="Tight-binding model"></a>Tight-binding model</h2><script type="math/tex; mode=display">
+H=- \frac{1}{2m} \frac{\partial ^2}{\partial x^2} +V(kx)</script><p>局域波函数</p>
+<script type="math/tex; mode=display">
+| \psi \rangle = \sum_n C_n | \phi(x) \rangle</script><p>周期性</p>
+<script type="math/tex; mode=display">
+| \phi_n (x) \rangle = |\phi(x-na) \rangle</script><p>粒子化有</p>
+<script type="math/tex; mode=display">
+H=\sum_{n} t\left[c_{n}^{\dagger} c_{n+1}+\mathrm{h.c.}\right]+\mu c_{n}^{\dagger} c_{n}</script><script type="math/tex; mode=display">
+\begin{pmatrix}
+\cdots &
+C^{\dagger}_1 &
+C^{\dagger}_0 &
+C^{\dagger}_{-1} &
+\cdots
+\end{pmatrix}
+\begin{pmatrix}
+\ddots & & & & \\
+t & \mu+\varepsilon_{-1} & t & & \\
+ & t & \mu+\varepsilon_{-0} & t & \\
+ & & t & \mu+\varepsilon_{1} & t \\
+ & & & & \ddots
+\end{pmatrix}
+\begin{pmatrix}
+\vdots \\
+C_1 \\
+C_0 \\
+C_{-1} \\
+\vdots
+\end{pmatrix}</script><p>根据平移对称性，做傅里叶变换</p>
+<script type="math/tex; mode=display">
+c_{n}=N^{-1 / 2} \sum_{k} c_{k} e^{i k R_{n}} \Rightarrow H=\sum_{n}(2 t \cos k+\mu) c_{k}^{\dagger} c_{k}</script><p>推导技巧有$\sum_n e^{ikR_n} = N \delta_{k,0}$</p>
+<h2 id="Hubbard-model"><a href="#Hubbard-model" class="headerlink" title="Hubbard model"></a>Hubbard model</h2><script type="math/tex; mode=display">
+H = \frac{p^2}{2m} + \frac12 m \omega^2 x^2 + \alpha x^4   \qquad \alpha \rightarrow 0</script><p>其中假设</p>
+<script type="math/tex; mode=display">
+H_0 = \frac{p^2}{2m} + \frac12 m \omega^2 x^2
+= \hbar \omega(a^{\dagger}a+\frac12)</script><p>反推</p>
+<script type="math/tex; mode=display">
+a^{\dagger}a+\frac12
+= (\sqrt{\frac{m \omega}{2 \hbar}x})^2-(\frac{ip}{\sqrt{2 m \hbar\omega}})^2</script><script type="math/tex; mode=display">
+a =\sqrt{\frac{m \omega}{2 \hbar}x} \pm \frac{ip}{\sqrt{2 m \hbar\omega}} \\
+a^{\dagger} = \sqrt{\frac{m \omega}{2 \hbar}x} \mp \frac{ip}{\sqrt{2 m \hbar\omega}}</script><p>注意，其中蕴含了$[x,p]=i \hbar$。</p>
+<p>有</p>
+<script type="math/tex; mode=display">
+x=\sqrt{\frac{\hbar}{2 m \omega}}(a+a^{\dagger})</script><p>代入$H$</p>
+<script type="math/tex; mode=display">
+H=\hbar \omega(a^{\dagger}a+\frac12)+ \alpha (\frac{\hbar}{2 m \omega})^2(a+a^{\dagger})^4</script><p>位移$x \rightarrow x \sim a+a^{\dagger},H(x) \rightarrow H(a,a^{\dagger})$。</p>
+<p>场$\phi \rightarrow \phi \sim (a,a^{\dagger}),H(\phi) \rightarrow H(a,a^{\dagger})$。</p>
+<script type="math/tex; mode=display">
+a|n \rangle = \sqrt n |n-1 \rangle \\
+a^{\dagger}|n \rangle = \sqrt{n+1} |n+1 \rangle</script><p>注意$x^4 \sim (a+a^{\dagger})^4$项</p>
+<p>展开有几个因子</p>
+<script type="math/tex; mode=display">
+a^4,a^3 a^{\dagger},a^2{a^{\dagger}}^2,a{a^{\dagger}}^3,{a^{\dagger}}^4</script><p>注意项$a^2{a^{\dagger}}^2$</p>
+<script type="math/tex; mode=display">
+a^2{a^{\dagger}}^2=aaa^{\dagger}a^{\dagger}=a(n+1)a^{\dagger}=(n+1)^2=()n^2+()n+c</script><p>$()n^2$即为Hubbard $U$，表示为$Un^2$或$Un_i n_j$</p>
+<h3 id="推导Hubbard-model"><a href="#推导Hubbard-model" class="headerlink" title="推导Hubbard model"></a>推导Hubbard model</h3><p>相互作用$g \delta(x-y)$</p>
+<script type="math/tex; mode=display">
+H= \int \phi^{\dagger}[\frac{p^2}{2m}+u(x)]\phi
+ +g \int \phi^{\dagger}\phi^{\dagger}\phi\phi dx</script><p>场量子化$\phi = \sum_n C_n \psi_n$，$\psi_n(x)$位于$x=na$</p>
+<script type="math/tex; mode=display">
+[\phi(x),\phi(y)]=0 \\ 
+[\phi(x),\phi^{\dagger}(y)] = \delta(x,y)</script><h3 id="Fermi-Hubbard-model"><a href="#Fermi-Hubbard-model" class="headerlink" title="Fermi-Hubbard model"></a>Fermi-Hubbard model</h3><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><h3 id="作业11"><a href="#作业11" class="headerlink" title="作业11"></a>作业11</h3><p>计算$H$的本征值</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+H &=H_0+V \\
+H_0 &= \hbar w\left(a^{\dagger} a+\frac{1}{2}\right) \\
+V &=\alpha\left(\frac{\hbar}{2 m w}\right)^{2}\left(a+a^{\dagger}\right)^{4}
+\end{aligned}</script><script type="math/tex; mode=display">
+H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle=\sum_{n} c_{n}|n\rangle</script><h3 id="作业12"><a href="#作业12" class="headerlink" title="作业12"></a>作业12</h3><p>推导Fermi-Hubbard model(spinless)的$Un_i n_{i+1}$项。</p>
+<p>推导Fermi-Hubbard model(spinful)的$U n_{i \uparrow} n_{i \downarrow}$项。</p>
+<h3 id="作业13"><a href="#作业13" class="headerlink" title="作业13"></a>作业13</h3><p>计算Fermi-Hubbard model(spinless)的能谱：</p>
+<p>a.$L=10,N=5$</p>
+<p>b.$L=14,N=5$</p>
+<h3 id="作业14"><a href="#作业14" class="headerlink" title="作业14"></a>作业14</h3><p>计算Bose-Hubbard model的能谱：$L=10,N=5,Q=3$</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-04-05T10:59:02.000Z">2020-04-05</time>
                 
                 
@@ -436,212 +973,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-21T14:24:18.000Z">2020-03-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Tensor-Netwowrk/">Tensor Netwowrk</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    11 分钟 读完 (大约 1585 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/21/Tensor-Network-Contractions/">Tensor Network Contractions</a>
-            
-        </h1>
-        <div class="content">
-            <p>Tensor Network Contractions: Methods and Applications to Quantum Many-Body Systems</p>
-<p>翻阅一下本书的目录，看看自己学了哪些内容，本书还有哪些内容值得学习，还没有细看。</p>
-<p>这本书把张量网络各类模型和算法应用大概的描述了一遍，理清张量网络的发展历程，描绘了张量网络领域的轮廓，是不错的综述教程。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/21/Tensor-Network-Contractions/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-20T11:21:38.000Z">2020-03-20</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    19 分钟 读完 (大约 2781 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/20/Linear-algebra/">Linear algebra</a>
-            
-        </h1>
-        <div class="content">
-            <p>线性代数复习总结</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/20/Linear-algebra/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-18T15:19:56.000Z">2020-03-18</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 175 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/">Lecture Notes on Quantum Algorithms</a>
-            
-        </h1>
-        <div class="content">
-            <p>Andrew M. Childs 的量子算法教程</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/18/Lecture-Notes-on-Quantum-Algorithms/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-17T08:28:27.000Z">2020-03-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    20 分钟 读完 (大约 3062 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/17/Classical-Mechanics/">Classical Mechanics</a>
-            
-        </h1>
-        <div class="content">
-            <p>经典力学复习总结</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/17/Classical-Mechanics/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -710,7 +1041,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            35
+                            39
                         </p>
                     </a>
                 </div>
@@ -770,7 +1101,7 @@
                 <span class="level-item">计算物理</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a></li>
             </ul>
@@ -798,6 +1129,82 @@
         
         <article class="media">
             
+            <a href="/2020/04/12/%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="量子线路模拟">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">量子线路模拟</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/12/%E7%BA%A0%E9%94%99%E7%90%86%E8%AE%BA/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="纠错理论">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/%E7%BA%A0%E9%94%99%E7%90%86%E8%AE%BA/" class="title has-link-black-ter is-size-6 has-text-weight-normal">纠错理论</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/12/%E9%87%8F%E5%AD%90%E7%A0%81%E7%9A%84%E6%9E%84%E9%80%A0/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="量子码的构造">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/%E9%87%8F%E5%AD%90%E7%A0%81%E7%9A%84%E6%9E%84%E9%80%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">量子码的构造</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/12/computational-physics-5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 5">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:07:42.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/computational-physics-5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 5</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="compiling SU(4) quantum circuits">
@@ -810,82 +1217,6 @@
                     <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="title has-link-black-ter is-size-6 has-text-weight-normal">compiling SU(4) quantum circuits</a>
                     <p class="is-size-7 is-uppercase">
                         
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
-                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
-                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
-                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/23/computational-physics-4/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
-                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
                     </p>
                 </div>
             </div>
@@ -908,7 +1239,7 @@
                     <span class="level-item">四月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -979,7 +1310,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
                         <span class="tag">计算物理</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1028,6 +1359,82 @@
         
         <article class="media">
             
+            <a href="/2020/04/12/%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="量子线路模拟">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">量子线路模拟</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/12/%E7%BA%A0%E9%94%99%E7%90%86%E8%AE%BA/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="纠错理论">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/%E7%BA%A0%E9%94%99%E7%90%86%E8%AE%BA/" class="title has-link-black-ter is-size-6 has-text-weight-normal">纠错理论</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/12/%E9%87%8F%E5%AD%90%E7%A0%81%E7%9A%84%E6%9E%84%E9%80%A0/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="量子码的构造">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:52:30.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/%E9%87%8F%E5%AD%90%E7%A0%81%E7%9A%84%E6%9E%84%E9%80%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">量子码的构造</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/12/computational-physics-5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 5">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-12T11:07:42.000Z">2020-04-12</time></div>
+                    <a href="/2020/04/12/computational-physics-5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 5</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="compiling SU(4) quantum circuits">
@@ -1040,82 +1447,6 @@
                     <a href="/2020/04/05/compiling-SU-4-quantum-circuits/" class="title has-link-black-ter is-size-6 has-text-weight-normal">compiling SU(4) quantum circuits</a>
                     <p class="is-size-7 is-uppercase">
                         
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/29/quantum%20supremacy/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“量子霸权”">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T11:52:30.000Z">2020-03-29</time></div>
-                    <a href="/2020/03/29/quantum%20supremacy/" class="title has-link-black-ter is-size-6 has-text-weight-normal">“量子霸权”</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/27/computational-physics-homework-2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="计算物理作业2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T02:25:49.000Z">2020-03-27</time></div>
-                    <a href="/2020/03/27/computational-physics-homework-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">计算物理作业2</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="统计学习方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T15:03:55.000Z">2020-03-23</time></div>
-                    <a href="/2020/03/23/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">统计学习方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/23/computational-physics-4/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="computational physics 4">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T11:07:42.000Z">2020-03-23</time></div>
-                    <a href="/2020/03/23/computational-physics-4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">computational physics 4</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
                     </p>
                 </div>
             </div>
@@ -1138,7 +1469,7 @@
                     <span class="level-item">四月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1209,7 +1540,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">
                         <span class="tag">计算物理</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
