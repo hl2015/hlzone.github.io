@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>computational physics 5 - hlzone</title>
+<title>Fortran - hlzone</title>
 
 
-    <meta name="description" content="量子化一次量子化与二次量子化一次量子化，坐标量子化，$[x,p]&#x3D;i \hbar$ 二次量子化，波函数量子化">
+    <meta name="description" content="Fortran基础知识Fortran字符集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="computational physics 5">
-<meta property="og:url" content="http://yoursite.com/2020/04/12/computational-physics-5/index.html">
+<meta property="og:title" content="Fortran">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/Fortran/index.html">
 <meta property="og:site_name" content="hlzone">
-<meta property="og:description" content="量子化一次量子化与二次量子化一次量子化，坐标量子化，$[x,p]&#x3D;i \hbar$ 二次量子化，波函数量子化">
+<meta property="og:description" content="Fortran基础知识Fortran字符集">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="article:published_time" content="2020-04-12T11:07:42.000Z">
-<meta property="article:modified_time" content="2020-04-12T12:26:44.296Z">
+<meta property="article:published_time" content="2020-04-19T11:52:30.000Z">
+<meta property="article:modified_time" content="2020-04-19T09:33:47.559Z">
 <meta property="article:author" content="hl">
-<meta property="article:tag" content="计算物理">
+<meta property="article:tag" content="Fortran">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -81,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/hlzone.png" alt="computational physics 5" height="28">
+                <img src="/images/hlzone.png" alt="Fortran" height="28">
             
             </a>
         </div>
@@ -141,17 +141,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-12T11:07:42.000Z">2020-04-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/">计算物理</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2020-04-19T11:52:30.000Z">2020-04-19</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    12 分钟 读完 (大约 1746 个字)
+                    12 分钟 读完 (大约 1810 个字)
                 </span>
                 
                 
@@ -165,173 +161,137 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                computational physics 5
+                Fortran
             
         </h1>
         <div class="content">
-            <h2 id="量子化"><a href="#量子化" class="headerlink" title="量子化"></a>量子化</h2><h3 id="一次量子化与二次量子化"><a href="#一次量子化与二次量子化" class="headerlink" title="一次量子化与二次量子化"></a>一次量子化与二次量子化</h3><p><strong>一次量子化</strong>，坐标量子化，$[x,p]=i \hbar$</p>
-<p><strong>二次量子化</strong>，波函数量子化</p>
+            <h3 id="Fortran基础知识"><a href="#Fortran基础知识" class="headerlink" title="Fortran基础知识"></a>Fortran基础知识</h3><p><strong>Fortran字符集</strong></p>
 <a id="more"></a>
-<p>与哈密顿正则方程的类比</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{l}
-\frac{d p}{d t}=-\frac{\partial H}{\partial q} \\
-\frac{d q}{d t}=\frac{\partial H}{\partial p}
-\end{array}\right.</script><p>写成泊松括号形式</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{l}
-\frac{d p}{d t}=\{q, H\} \\
-\frac{d q}{d t}=\{p, H\}
-\end{array} \Rightarrow\left\{\begin{array}{c}
-\left\{q_{i}, q_{j}\right\}=0,\left\{p_{i}, p_{j}\right\}=0 \\
-\left\{q_{i}, p_{j}\right\}=\delta_{i, j}
-\end{array}\right.\right.</script><p>对波函数量子化</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{c}
-i \frac{\partial \psi}{\partial t}=H \psi \\
-\psi=\sum_{n} c_{n}(t)\left|\phi_{n}\right\rangle
-\end{array} \Rightarrow\left\{\begin{array}{c}
-E=\langle\psi|H| \psi\rangle=\sum_{n m} t_{n m} c_{n}^{*} c_{m} \\
-i \dot{c}_{n}=\sum_{m} c_{m}\left\langle\phi_{n}|H| \phi_{m}\right\rangle=\sum_{m} t_{n m} c_{m}
-\end{array} \Rightarrow\left\{\begin{array}{l}
-i \dot{c}_{n}=\frac{\partial E}{\partial c_{n}^{*}} \\
-i \dot{c}_{n}^{*}=-\frac{\partial E}{\partial c_{n}}
-\end{array}\right.\right.\right.</script><p>类比有，$c_{n} \sim q, c_{n}^{<em>} \sim p$，将$c_n,c_n^{</em>}$提升到算符$c_n,c_n^{\dagger}$</p>
-<script type="math/tex; mode=display">
-\left\{c_{n}, c_{m}\right\}=\left\{c_{n}^{\dagger}, c_{m}^{\dagger}\right\}=0,\left\{c_{n}, c_{m}^{\dagger}\right\}=\delta_{n m}</script><p>等价描述</p>
-<script type="math/tex; mode=display">
-\{\psi, \psi\}=\left\{\psi^{\dagger}, \psi^{\dagger}\right\}=0,\left\{\psi(x), \psi^{\dagger}(y)\right\}=\delta(x-y)</script><p>波函数量子化和$[x,p]=i \hbar$是同一回事</p>
-<h3 id="二次量子化"><a href="#二次量子化" class="headerlink" title="二次量子化"></a>二次量子化</h3><p>重新表示态，将一个多粒子态定义为</p>
-<script type="math/tex; mode=display">
-\left|n_{1}, n_{2}, \cdots, n_{i}, \cdots\right\rangle</script><p>该空间称为Fock空间，需要关注其置换对称性</p>
-<p>先定义两种特殊情况</p>
-<script type="math/tex; mode=display">
-|0,0, \cdots, 0, \cdots\rangle \equiv|\mathbf{0}\rangle</script><script type="math/tex; mode=display">
-\left|0,0, \cdots, n_{i}=1, \cdots\right\rangle \equiv\left|k_{i}\right\rangle</script><p>再定义“场算符”$a_i^{\dagger}$，它使本征值为$k_i$的态上的粒子数增加一个</p>
-<script type="math/tex; mode=display">
-a_{i}^{\dagger}\left|n_{1}, n_{2}, \cdots, n_{i}, \cdots\right\rangle \propto\left|n_{1}, n_{2}, \cdots, n_{i}+1, \cdots\right\rangle</script><p>假设已经归一化，粒子产生算符作用于真空</p>
-<script type="math/tex; mode=display">
-a_{i}^{\dagger}|\mathbf{0}\rangle=\left|k_{i}\right\rangle</script><p>有</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-1=\left\langle k_{i} | k_{i}\right\rangle &=\left[\langle\mathbf{0}| a_{i}\right]\left[a_{i}^{\dagger}|\mathbf{0}\rangle\right] \\
-&=\left\langle\mathbf{0}\left|\left[a_{i} a_{i}^{\dagger}|\mathbf{0}\rangle\right]=\left\langle\mathbf{0}\left|a_{i}\right| k_{i}\right\rangle\right.\right.
-\end{aligned}</script><p>意味着</p>
-<script type="math/tex; mode=display">
-a_i | k_i \rangle = | \mathbf{0 } \rangle</script><p>$a_i$起到了粒子湮灭算符的作用。</p>
-<p><strong>置换两粒子</strong></p>
-<script type="math/tex; mode=display">
-a_{i}^{\dagger} a_{j}^{\dagger}|\mathbf{0}\rangle=\pm a_{j}^{\dagger} a_{i}^{\dagger}|\mathbf{0}\rangle</script><p>$+(-)$分别对玻色子(费米子)成立。</p>
-<p>因此对玻色子(费米子)分别有</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}
-a_{i}^{\dagger} a_{j}^{\dagger}-a_{j}^{\dagger} a_{i}^{\dagger}=\left[a_{i}^{\dagger} \cdot a_{j}^{\dagger}\right]=0 \\
-a_{i}^{\dagger} a_{j}^{\dagger}+a_{j}^{\dagger} a_{i}^{\dagger}=\left\{a_{i}^{\dagger}, a_{j}^{\dagger}\right\}=0
-\end{array}</script><p>验证所有的对易关系，有表格</p>
-<p>玻色子</p>
-<script type="math/tex; mode=display">
-a_i^{\dagger}a_j^{\dagger}-a_j^{\dagger}a_i^{\dagger} 
-= [a_i^{\dagger},a_j^{\dagger}]=0 \\
-a_i a_j-a_j a_i = [a_i,a_j]=0 \\
-a_i a_j^{\dagger} - a_j^{\dagger} a_i = [a_i,a_j^{\dagger}]=\delta_{ij}</script><p>费米子</p>
-<script type="math/tex; mode=display">
-a_i^{\dagger}a_j^{\dagger}+a_j^{\dagger}a_i^{\dagger} 
-= \{a_i^{\dagger},a_j^{\dagger}\}=0 \\
-a_i a_j+a_j a_i = \{a_i,a_j\}=0 \\
-a_i a_j^{\dagger} + a_j^{\dagger} a_i = \{a_i,a_j^{\dagger}\}=\delta_{ij}</script><p>还可定义粒子数算符</p>
-<script type="math/tex; mode=display">
-N = \sum_i a_i^{\dagger}a_i</script><h3 id="算符的二次量子化"><a href="#算符的二次量子化" class="headerlink" title="算符的二次量子化"></a>算符的二次量子化</h3><p>单粒子算符</p>
-<script type="math/tex; mode=display">
-\boldsymbol{K}=\sum_{m n} b_{m}^{\dagger} b_{n}\left\langle l_{m}|K| l_{n}\right\rangle</script><p>多粒子算符，由于粒子间存在相互作用，设对称实矩阵$V_{ij}$确定处于单粒子态$|k_i \rangle$和$| k_j \rangle$的两个粒子之间的相互作用的本征值。算符的二次量子化版本为</p>
-<script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{i \neq j} V_{i j} N_{i} N_{j}+\frac{1}{2} \sum_{i} V_{i i} N_i\left(N_{i}-1\right)</script><p>第一项为所有两粒子相互作用，第二项为处于相同态粒子间的自相互作用。为$C_n^2$。</p>
-<p>可以更简单的表示为</p>
-<script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{i j} V_{i j}\left(N_{i} N_j-N_{i} \delta_{i j}\right)=\frac{1}{2} \sum_{i j} V_{i j} \Pi_{i j}</script><p>其中$\Pi_{i j}  \equiv N_iN_j - N_i \delta_{ij}$，称为分布算符</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\Pi_{i j} &=a_{i}^{\dagger} a_j a_{j}^{\dagger} a_{j}-a_{i}^{\dagger} a_{i} \delta_{i j} \\
-&=a_{i}^{\dagger}\left(\delta_{i j} \pm a_{j}^{\dagger} a_{i}\right) a_{j}-a_{i}^{\dagger} a_{i} \delta_{i j} \\
-&=\pm a_{i}^{\dagger} a_{j}^{\dagger} a_{i} a_{j}
-\end{aligned}</script><p>所以有</p>
-<script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{i j} V_{i j} a_{i}^{\dagger} a_{j}^{\dagger} a_{j} a_{i}</script><script type="math/tex; mode=display">
-\mathcal{V}=\frac{1}{2} \sum_{m m pq}\langle m n|V| p q\rangle b_{m}^{\dagger} b_{n}^{\dagger} b_{q} b_{p}</script><p>其中</p>
-<script type="math/tex; mode=display">
-\langle m n|V| p q\rangle \equiv \sum_{i j} V_{i j}\left\langle l_{m} | k_{i}\right\rangle\left\langle k_{i} | l_{p}\right\rangle\left\langle l_{n} | k_{j}\right\rangle\left\langle k_{j} | l_{q}\right\rangle</script><h2 id="Tight-binding-model"><a href="#Tight-binding-model" class="headerlink" title="Tight-binding model"></a>Tight-binding model</h2><script type="math/tex; mode=display">
-H=- \frac{1}{2m} \frac{\partial ^2}{\partial x^2} +V(kx)</script><p>局域波函数</p>
-<script type="math/tex; mode=display">
-| \psi \rangle = \sum_n C_n | \phi(x) \rangle</script><p>周期性</p>
-<script type="math/tex; mode=display">
-| \phi_n (x) \rangle = |\phi(x-na) \rangle</script><p>粒子化有</p>
-<script type="math/tex; mode=display">
-H=\sum_{n} t\left[c_{n}^{\dagger} c_{n+1}+\mathrm{h.c.}\right]+\mu c_{n}^{\dagger} c_{n}</script><script type="math/tex; mode=display">
-\begin{pmatrix}
-\cdots &
-C^{\dagger}_1 &
-C^{\dagger}_0 &
-C^{\dagger}_{-1} &
-\cdots
-\end{pmatrix}
-\begin{pmatrix}
-\ddots & & & & \\
-t & \mu+\varepsilon_{-1} & t & & \\
- & t & \mu+\varepsilon_{-0} & t & \\
- & & t & \mu+\varepsilon_{1} & t \\
- & & & & \ddots
-\end{pmatrix}
-\begin{pmatrix}
-\vdots \\
-C_1 \\
-C_0 \\
-C_{-1} \\
-\vdots
-\end{pmatrix}</script><p>根据平移对称性，做傅里叶变换</p>
-<script type="math/tex; mode=display">
-c_{n}=N^{-1 / 2} \sum_{k} c_{k} e^{i k R_{n}} \Rightarrow H=\sum_{n}(2 t \cos k+\mu) c_{k}^{\dagger} c_{k}</script><p>推导技巧有$\sum_n e^{ikR_n} = N \delta_{k,0}$</p>
-<h2 id="Hubbard-model"><a href="#Hubbard-model" class="headerlink" title="Hubbard model"></a>Hubbard model</h2><script type="math/tex; mode=display">
-H = \frac{p^2}{2m} + \frac12 m \omega^2 x^2 + \alpha x^4   \qquad \alpha \rightarrow 0</script><p>其中假设</p>
-<script type="math/tex; mode=display">
-H_0 = \frac{p^2}{2m} + \frac12 m \omega^2 x^2
-= \hbar \omega(a^{\dagger}a+\frac12)</script><p>反推</p>
-<script type="math/tex; mode=display">
-a^{\dagger}a+\frac12
-= (\sqrt{\frac{m \omega}{2 \hbar}x})^2-(\frac{ip}{\sqrt{2 m \hbar\omega}})^2</script><script type="math/tex; mode=display">
-a =\sqrt{\frac{m \omega}{2 \hbar}x} \pm \frac{ip}{\sqrt{2 m \hbar\omega}} \\
-a^{\dagger} = \sqrt{\frac{m \omega}{2 \hbar}x} \mp \frac{ip}{\sqrt{2 m \hbar\omega}}</script><p>注意，其中蕴含了$[x,p]=i \hbar$。</p>
-<p>有</p>
-<script type="math/tex; mode=display">
-x=\sqrt{\frac{\hbar}{2 m \omega}}(a+a^{\dagger})</script><p>代入$H$</p>
-<script type="math/tex; mode=display">
-H=\hbar \omega(a^{\dagger}a+\frac12)+ \alpha (\frac{\hbar}{2 m \omega})^2(a+a^{\dagger})^4</script><p>位移$x \rightarrow x \sim a+a^{\dagger},H(x) \rightarrow H(a,a^{\dagger})$。</p>
-<p>场$\phi \rightarrow \phi \sim (a,a^{\dagger}),H(\phi) \rightarrow H(a,a^{\dagger})$。</p>
-<script type="math/tex; mode=display">
-a|n \rangle = \sqrt n |n-1 \rangle \\
-a^{\dagger}|n \rangle = \sqrt{n+1} |n+1 \rangle</script><p>注意$x^4 \sim (a+a^{\dagger})^4$项</p>
-<p>展开有几个因子</p>
-<script type="math/tex; mode=display">
-a^4,a^3 a^{\dagger},a^2{a^{\dagger}}^2,a{a^{\dagger}}^3,{a^{\dagger}}^4</script><p>注意项$a^2{a^{\dagger}}^2$</p>
-<script type="math/tex; mode=display">
-a^2{a^{\dagger}}^2=aaa^{\dagger}a^{\dagger}=a(n+1)a^{\dagger}=(n+1)^2=()n^2+()n+c</script><p>$()n^2$即为Hubbard $U$，表示为$Un^2$或$Un_i n_j$</p>
-<h3 id="推导Hubbard-model"><a href="#推导Hubbard-model" class="headerlink" title="推导Hubbard model"></a>推导Hubbard model</h3><p>相互作用$g \delta(x-y)$</p>
-<script type="math/tex; mode=display">
-H= \int \phi^{\dagger}[\frac{p^2}{2m}+u(x)]\phi
- +g \int \phi^{\dagger}\phi^{\dagger}\phi\phi dx</script><p>场量子化$\phi = \sum_n C_n \psi_n$，$\psi_n(x)$位于$x=na$</p>
-<script type="math/tex; mode=display">
-[\phi(x),\phi(y)]=0 \\ 
-[\phi(x),\phi^{\dagger}(y)] = \delta(x,y)</script><h3 id="Fermi-Hubbard-model"><a href="#Fermi-Hubbard-model" class="headerlink" title="Fermi-Hubbard model"></a>Fermi-Hubbard model</h3><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><h3 id="作业11"><a href="#作业11" class="headerlink" title="作业11"></a>作业11</h3><p>计算$H$的本征值</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-H &=H_0+V \\
-H_0 &= \hbar w\left(a^{\dagger} a+\frac{1}{2}\right) \\
-V &=\alpha\left(\frac{\hbar}{2 m w}\right)^{2}\left(a+a^{\dagger}\right)^{4}
-\end{aligned}</script><script type="math/tex; mode=display">
-H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle=\sum_{n} c_{n}|n\rangle</script><h3 id="作业12"><a href="#作业12" class="headerlink" title="作业12"></a>作业12</h3><p>推导Fermi-Hubbard model(spinless)的$Un_i n_{i+1}$项。</p>
-<p>推导Fermi-Hubbard model(spinful)的$U n_{i \uparrow} n_{i \downarrow}$项。</p>
-<h3 id="作业13"><a href="#作业13" class="headerlink" title="作业13"></a>作业13</h3><p>计算Fermi-Hubbard model(spinless)的能谱：</p>
-<p>a.$L=10,N=5$</p>
-<p>b.$L=14,N=5$</p>
-<h3 id="作业14"><a href="#作业14" class="headerlink" title="作业14"></a>作业14</h3><p>计算Bose-Hubbard model的能谱：$L=10,N=5,Q=3$</p>
+<p>在Fortran中可以使用的符号。</p>
+<p>Fortran对字母大小写不敏感。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200416102606.png" alt=""></p>
+<p><strong>Fortran语句结构</strong></p>
+<p>分为可执行语句和不可执行语句。</p>
+<p>Fortran语句可以放在书写行的任意位置，每行可以长达132个字符。如果语句太长，不适合放在一行，可以使用&amp;符号标记，在下一行继续书写。</p>
+<p>语句标号，可以是$1 \sim 99999$之间的任何数字，它是Fortran语句的“名字”，使用它可以在程序的其他部分引用这条语句。在现代Fortran程序中很少使用语句标号，在Fortran95/2003的语句没有语句标号。</p>
+<p><strong>Fortran程序结构</strong></p>
+<ul>
+<li>声明部分。定义程序名和程序引用的数据以及变量的类型。</li>
+<li>执行部分。语句描述程序完成的操作。</li>
+<li>终止部分。告诉编译器程序结束。</li>
+</ul>
+<p>程序的书写格式</p>
+<ul>
+<li>保留字和常量大写</li>
+<li>变量名、过程名等小写</li>
+</ul>
+<p><strong>常数与变量</strong></p>
+<p>在编写的程序的开头包含数据字典非常重要。列出程序中每个变量的定义，数据项内容和数据项占用几个存储单元的描述。</p>
+<p>Fortran自带5种数据类型，INTEGRE，REAL，COMPLEX，LOGICAL，CHARACTER</p>
+<p><strong>变量初始化</strong></p>
+<p>记得在使用变量前，一定要初始化</p>
+<p><strong>赋值语句和算数运算</strong></p>
+<p>整型运算，注意除法</p>
+<p>实数运算，注意精度限制</p>
+<p>操作顺序，与一般规则相同</p>
+<p>混合运算，整数转换为实数</p>
+<p>尽量使用整型指数，而不是实型指数</p>
+<p><strong>内置函数</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200416115225.png" alt=""></p>
+<p><strong>表控输入和输出语句</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">READ (*.*) input_list</span><br></pre></td></tr></table></figure>
+<p>记得回显从键盘输入到程序的变量</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">WRITE</span> (*.*) output_list</span><br></pre></td></tr></table></figure>
+<p><strong>IMPLICIT NONE语句</strong></p>
+<p>当程序含有IMPLICIT NONE语句时，没有出现在显式类型声明语句中的变量被认为是错的。</p>
+<p><strong>字符赋值和字符操作</strong></p>
+<h3 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h3><h4 id="逻辑常量"><a href="#逻辑常量" class="headerlink" title="逻辑常量"></a>逻辑常量</h4><p><strong>逻辑常量</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.TRUE.</span><br><span class="line">.FALSE.</span><br></pre></td></tr></table></figure>
+<p><strong>关系运算符</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200416153245.png" alt=""></p>
+<p><strong>组合逻辑运算符</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200416153558.png" alt=""></p>
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><p><strong>IF</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">IF</span> (logical_expr) <span class="keyword">THEN</span></span><br><span class="line">	Statement <span class="number">1</span></span><br><span class="line">	Statement <span class="number">2</span></span><br><span class="line">	...</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">IF</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">IF</span> (logical_expr1) <span class="keyword">THEN</span></span><br><span class="line">	Statement <span class="number">1</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="keyword">IF</span> (logical_expr2) <span class="keyword">THEN</span></span><br><span class="line">	Statement <span class="number">2</span></span><br><span class="line"><span class="keyword">ELSE</span> </span><br><span class="line">	Statement <span class="number">3</span></span><br><span class="line"><span class="keyword">END</span> <span class="keyword">IF</span></span><br></pre></td></tr></table></figure>
+<p><strong>SELECT CASE</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">name</span>: ] <span class="keyword">SELECT</span> <span class="keyword">CASE</span> (case_expr)</span><br><span class="line"><span class="keyword">CASE</span> (case1) [<span class="keyword">name</span>]</span><br><span class="line">	Statement <span class="number">1</span></span><br><span class="line"><span class="keyword">CASE</span> (case2) [<span class="keyword">name</span>]</span><br><span class="line">	Statement <span class="number">2</span></span><br><span class="line"><span class="keyword">CASE</span> <span class="keyword">DEFAULT</span> [<span class="keyword">name</span>]</span><br><span class="line">	Statement <span class="number">3</span></span><br><span class="line"><span class="keyword">END</span> <span class="keyword">SELECT</span> [<span class="keyword">name</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><p><strong>DO</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DO</span></span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">IF</span>(expr) <span class="keyword">EXIT</span></span><br><span class="line">	...</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">DO</span></span><br></pre></td></tr></table></figure>
+<p><strong>WHILE</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WHILE</span></span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">IF</span> logical_expr <span class="keyword">EXIT</span></span><br><span class="line">	...</span><br><span class="line"><span class="keyword">END</span> of <span class="keyword">WHILE</span></span><br></pre></td></tr></table></figure>
+<p><strong>DO WHILE</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DO WHILE(expr)</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">END DO</span><br></pre></td></tr></table></figure>
+<p><strong>迭代或计数循环</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DO index&#x3D;istart,iend,incr</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">END DO</span><br></pre></td></tr></table></figure>
+<h3 id="基本的I-O概念"><a href="#基本的I-O概念" class="headerlink" title="基本的I/O概念"></a>基本的I/O概念</h3><p><strong>自由格式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">READ (*.*)</span><br><span class="line">WRITE (*.*)</span><br></pre></td></tr></table></figure>
+<p>自由格式由语句中的第二个星号确定。</p>
+<h4 id="格式和格式化WRITE语句"><a href="#格式和格式化WRITE语句" class="headerlink" title="格式和格式化WRITE语句"></a>格式和格式化WRITE语句</h4><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">WRITE</span> (*,<span class="number">100</span>) i, result</span><br><span class="line"><span class="number">100</span> <span class="keyword">FORMAT</span> (<span class="string">'The result for iteration'</span>, I3, <span class="string">'Is'</span>, F7<span class="number">.3</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="声明数组"><a href="#声明数组" class="headerlink" title="声明数组"></a>声明数组</h4><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REAL</span>, <span class="keyword">DIMENSION</span>(<span class="number">16</span>) :: voltage</span><br><span class="line"><span class="keyword">CHARACTER</span> (len=<span class="number">20</span>), <span class="keyword">DIMENSION</span>(<span class="number">50</span>) :: last_name</span><br><span class="line">(/ <span class="number">1</span>, <span class="number">2</span> ,<span class="number">3</span> ,<span class="number">4</span> ,<span class="number">5</span> /)</span><br><span class="line">[ <span class="number">1</span>, <span class="number">2</span> ,<span class="number">3</span> ,<span class="number">4</span> ,<span class="number">5</span> ]</span><br></pre></td></tr></table></figure>
+<p><strong>二维数组</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REAL</span>, DIMENTION (<span class="number">3</span>,<span class="number">6</span>) :: <span class="built_in">sum</span></span><br><span class="line"><span class="keyword">INTEGER</span>, DIMENTION (<span class="number">0</span>:<span class="number">100</span>, <span class="number">0</span>:<span class="number">20</span>) :: hist</span><br></pre></td></tr></table></figure>
+<h4 id="数组元素初始化"><a href="#数组元素初始化" class="headerlink" title="数组元素初始化"></a>数组元素初始化</h4><p><strong>直接赋值</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REAL</span>, DIMENTION(<span class="number">10</span>) :: array1</span><br><span class="line"><span class="keyword">DO</span> i=<span class="number">1</span>, <span class="number">10</span></span><br><span class="line">	array1(i) = <span class="keyword">REAL</span>(i)</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">DO</span></span><br></pre></td></tr></table></figure>
+<p><strong>数组构建器</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REAL</span>, DIMENTION(<span class="number">10</span>) :: array1</span><br><span class="line">array1 = (/<span class="number">1.</span>,<span class="number">2.</span>,<span class="number">3.</span>,<span class="number">4.</span>,<span class="number">5.</span>,<span class="number">6.</span>,<span class="number">7.</span>,<span class="number">8.</span>,<span class="number">9.</span>,<span class="number">10.</span>/)</span><br></pre></td></tr></table></figure>
+<p><strong>在声明中初始化</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INTEGER</span>, DIMENTION(<span class="number">5</span>) :: array2 = (/ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> /)</span><br></pre></td></tr></table></figure>
+<p><strong>隐式DO</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INTEGER</span>, DIMENTION(<span class="number">5</span>) :: array2 = (/ (i, i=<span class="number">1</span>, <span class="number">5</span>) /)</span><br><span class="line"><span class="keyword">INTEGER</span>, DIMENTION(<span class="number">25</span>) :: array4 = (/ ((i, i=<span class="number">1</span>, <span class="number">4</span>), <span class="number">5</span>*j, j=<span class="number">1</span>, <span class="number">5</span>) /)</span><br></pre></td></tr></table></figure>
+<p><strong>改变数组下标的取值范围</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REAL</span>, DIMENTION(<span class="number">5</span>) :: a1</span><br><span class="line"><span class="keyword">REAL</span>, DIMENTION(-<span class="number">2</span>:<span class="number">2</span>) :: b1</span><br><span class="line"><span class="keyword">REAL</span>, DIMENTION(<span class="number">5</span>:<span class="number">9</span>) :: c1</span><br></pre></td></tr></table></figure>
+<h4 id="操作整个数组"><a href="#操作整个数组" class="headerlink" title="操作整个数组"></a>操作整个数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c&#x3D;a+b</span><br><span class="line">c&#x3D;a*b</span><br></pre></td></tr></table></figure>
+<p>同时，许多可用于数值上的Fortran95/2003内置函数也可以接受数组作为输入参数。</p>
+<p><strong>指定部分数组</strong></p>
+<p>使用三元组</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subscript_1 : subscript_2 : stride</span><br><span class="line">a(i : j : k)</span><br></pre></td></tr></table></figure>
+<p><strong>FORALL结构</strong></p>
+<p>允许一系列操作作用于数组中部分元素，且是逐个用到数组元素上。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FORALL</span>(i=<span class="number">1</span>:n, j=<span class="number">1</span>:m)</span><br><span class="line">	i_matrix(i,j) = <span class="number">1.0</span></span><br><span class="line"><span class="keyword">END</span> <span class="keyword">FORALL</span></span><br></pre></td></tr></table></figure>
+<h4 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h4><p><strong>查询内置函数</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200416215841.png" alt=""></p>
+<p><strong>变换内置函数</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200416220232.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hlzone/PicBed/20200416220409.png" alt=""></p>
+<h4 id="动态分配"><a href="#动态分配" class="headerlink" title="动态分配"></a>动态分配</h4><p>可分配数组</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REAL</span>, <span class="keyword">ALLOCATABLE</span>, <span class="keyword">DIMENSION</span>(:,:) :: arr1</span><br><span class="line"><span class="built_in">ALLOCATE</span>(arr1(<span class="number">100</span>,<span class="number">0</span>:<span class="number">10</span>),STAT=<span class="keyword">status</span>)</span><br></pre></td></tr></table></figure>
+<p>Fortran 2003为可分配数组添加了很多特性。使用赋值语句可以自动分配或释放可分配数组。</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>Fortran95/2003 的两类过程：子程序和函数</p>
+<p>在实际编程时，应把一个大程序任务分解为若干个子过程，这样有很多好处：独立测试组件、复用子过程，还可以进行封装（只通过参数影响子过程）。</p>
+<h4 id="子程序"><a href="#子程序" class="headerlink" title="子程序"></a>子程序</h4><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">SUBROUTINE</span></span> subroutine_name (argument_list)</span><br><span class="line">	...</span><br><span class="line">		(Declaration section)</span><br><span class="line">	...</span><br><span class="line">		(Execution section)</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">END</span> <span class="function"><span class="keyword">SUBROUTINE</span></span> [<span class="keyword">name</span>]</span><br></pre></td></tr></table></figure>
+<p>子程序可以调用另一个子程序，但是不能调用自身，除非被定义为递归（recursive）。使用CALL语句来调用。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CALL</span> subroutine_name (argument_list)</span><br></pre></td></tr></table></figure>
+<p><strong>INTENT</strong></p>
+<p>用来声明形参的类型</p>
+<p><strong>变量传递：地址传递方案</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">PROGRAM</span></span> test</span><br><span class="line"><span class="keyword">REAL</span> :: a, b(<span class="number">4</span>)</span><br><span class="line"><span class="keyword">INTEGER</span> :: next</span><br><span class="line">...</span><br><span class="line"><span class="keyword">CALL</span> sub1(a,b,next)</span><br><span class="line">...</span><br><span class="line"><span class="keyword">END</span> <span class="function"><span class="keyword">PROGRAM</span></span> test</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">SUBROUTINE</span></span> sub1 (x,y,i)</span><br><span class="line"><span class="keyword">REAL</span>, <span class="keyword">INTENT</span>(<span class="keyword">OUT</span>) :: X</span><br><span class="line"><span class="keyword">REAL</span>, <span class="keyword">INTENT</span>(<span class="keyword">IN</span>) :: y(*)</span><br><span class="line"><span class="keyword">INTEGER</span> :: i</span><br><span class="line">...</span><br><span class="line"><span class="keyword">END</span> <span class="function"><span class="keyword">SUBROUTINE</span></span> sub1</span><br></pre></td></tr></table></figure>
+<p><strong>传递数组给子程序</strong></p>
+<p>直接指明参数组大小是一种方法。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">SUBROUTINE</span></span> process (data1, data2, n, nvals)</span><br><span class="line"><span class="keyword">INTEGER</span>, <span class="keyword">INTENT</span>(<span class="keyword">IN</span>) :: n, nvals</span><br><span class="line"><span class="keyword">REAL</span>, <span class="keyword">INTENT</span>(<span class="keyword">IN</span>), <span class="keyword">DIMENSION</span>(n) :: data1</span><br><span class="line"><span class="keyword">REAL</span>, <span class="keyword">INTENT</span>(<span class="keyword">OUT</span>), <span class="keyword">DIMENSION</span>(n) :: data2</span><br><span class="line">...</span><br><span class="line"><span class="keyword">END</span> <span class="function"><span class="keyword">SUBROUTINE</span></span> process</span><br></pre></td></tr></table></figure>
+<p>不定结构的形参数组</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">SUBROUTINE</span></span> process (data1, data2)</span><br><span class="line"><span class="keyword">REAL</span>, <span class="keyword">INTENT</span>(<span class="keyword">IN</span>), <span class="keyword">DIMENSION</span>(:,:) :: data1</span><br><span class="line"><span class="keyword">REAL</span>, <span class="keyword">INTENT</span>(<span class="keyword">OUT</span>), <span class="keyword">DIMENSION</span>(:,:) :: data2</span><br><span class="line">data2 = <span class="number">3.</span>*data1</span><br><span class="line"><span class="keyword">END</span> <span class="function"><span class="keyword">SUBROUTINE</span></span> process</span><br></pre></td></tr></table></figure>
+<h4 id="用模块共享数据"><a href="#用模块共享数据" class="headerlink" title="用模块共享数据"></a>用模块共享数据</h4><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MODULE</span> shared_data</span><br><span class="line"><span class="keyword">IMPLICIT</span> <span class="keyword">NONE</span></span><br><span class="line"><span class="keyword">SAVE</span></span><br><span class="line"><span class="keyword">INTEGER</span>, <span class="keyword">PARAMETER</span> :: num_vals = <span class="number">5</span></span><br><span class="line"><span class="keyword">REAL</span>, <span class="keyword">DIMENSION</span>(num_vals) :: values</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">MODULE</span> shared_data</span><br></pre></td></tr></table></figure>
+<p>使用模块中的数值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE model_name</span><br></pre></td></tr></table></figure>
+<h4 id="模块过程"><a href="#模块过程" class="headerlink" title="模块过程"></a>模块过程</h4><p>除了数据，模块还可以包含完整的子程序和函数。包含在模块中的过程必须跟在模块的数据声明后面，前面加上CONTAINS语句。</p>
+<h4 id="Fortran函数"><a href="#Fortran函数" class="headerlink" title="Fortran函数"></a>Fortran函数</h4><p>它的结果是单个数值、逻辑值、字符串或数组之一。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION name (argument_list)</span><br><span class="line">	...</span><br><span class="line">	name &#x3D; expr</span><br><span class="line">	RETURN</span><br><span class="line">END FUNCTION [name]</span><br></pre></td></tr></table></figure>
+<h4 id="SAVE"><a href="#SAVE" class="headerlink" title="SAVE"></a>SAVE</h4><p>用来保存局部变量</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">REAL</span>, <span class="keyword">SAVE</span> :: sums</span><br><span class="line"><span class="keyword">SAVE</span> :: var1,var2,...</span><br><span class="line"><span class="keyword">SAVE</span></span><br></pre></td></tr></table></figure>
+<p>如果一个过程需要的局部变量值在连续调用时不被修改，那么应该在变量的类型声明语句中使用SAVE属性。</p>
+<h3 id="派生数据类型"><a href="#派生数据类型" class="headerlink" title="派生数据类型"></a>派生数据类型</h3><h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">TYPE</span> :: person</span><br><span class="line">	<span class="keyword">CHARACTER</span>(len=<span class="number">14</span>) :: first_name</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">INTEGER</span> :: age</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">TYPE</span> person</span><br><span class="line"></span><br><span class="line"><span class="keyword">TYPE</span> (person) :: john, jane</span><br><span class="line"><span class="keyword">TYPE</span> (person), <span class="keyword">DIMENSION</span>(<span class="number">100</span>) :: people</span><br><span class="line"></span><br><span class="line">john = person(<span class="string">'John'</span>,...,<span class="string">'21'</span>,...)</span><br><span class="line">jane = person(<span class="string">'Jane'</span>,...,<span class="string">'17'</span>,...)</span><br></pre></td></tr></table></figure>
+<p><strong>派生数据类型的使用</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">john%age=<span class="number">35</span></span><br><span class="line"><span class="keyword">Class</span>(<span class="number">5</span>)%student%age=<span class="number">23</span></span><br></pre></td></tr></table></figure>
+<p>类似于C++中的<code>.</code>符号</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>Fortran还保留了一些汇编语言的特点</strong></p>
+<p>例如语句编号，跳转，但在现代Fortran程序95/03中也不推荐使用了，这会使程序逻辑混乱。</p>
+<p>它还保留了Module，这在C++中是没有的。而常用的SUBROUTINE与一般语言的函数类似。并在03中支持了递归特性。</p>
+<p><strong>Fortran2003支持派生数据类型</strong></p>
+<p>可以像C++一样定义类，在这里称为派生数据类型TYPE。</p>
+<p><strong>Fortran对数组计算的支持</strong></p>
+<p>因为Fortran作为科学计算语言，自带了对数组计算的高级特性，包含了很多用于矩阵计算的内置函数。类似于在matlab中一些矩阵函数。这可能是Fortran方便的地方，但是在C++或python中可以调用矩阵运算库，可以有更好的优化，更灵活。</p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>MinGW w64 + VScode</p>
 
         </div>
         
@@ -339,7 +299,7 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86/" rel="tag">计算物理</a>
+                    <a class="has-link-grey -link" href="/tags/Fortran/" rel="tag">Fortran</a>
                 </div>
             </div>
         </div>
@@ -356,17 +316,10 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/04/12/General-Purpose%20Quantum%20Circuit%20Simulator%20with%20Projected%20Entangled-Pair%20States/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">General-Purpose Quantum Circuit Simulator with Projected Entangled-Pair States</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/05/compiling-SU-4-quantum-circuits/">
-                <span class="level-item">compiling SU(4) quantum circuits</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/12/%E6%A8%A1%E6%8B%9F%E5%99%A8/">
+                <span class="level-item">量子线路模拟</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -465,58 +418,102 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#量子化">
+        <a class="is-flex" href="#Fortran基础知识">
         <span class="has-mr-6">1</span>
-        <span>量子化</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#一次量子化与二次量子化">
-        <span class="has-mr-6">1.1</span>
-        <span>一次量子化与二次量子化</span>
+        <span>Fortran基础知识</span>
         </a></li><li>
-        <a class="is-flex" href="#二次量子化">
-        <span class="has-mr-6">1.2</span>
-        <span>二次量子化</span>
-        </a></li><li>
-        <a class="is-flex" href="#算符的二次量子化">
-        <span class="has-mr-6">1.3</span>
-        <span>算符的二次量子化</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#Tight-binding-model">
+        <a class="is-flex" href="#控制结构">
         <span class="has-mr-6">2</span>
-        <span>Tight-binding model</span>
-        </a></li><li>
-        <a class="is-flex" href="#Hubbard-model">
-        <span class="has-mr-6">3</span>
-        <span>Hubbard model</span>
+        <span>控制结构</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#推导Hubbard-model">
-        <span class="has-mr-6">3.1</span>
-        <span>推导Hubbard model</span>
+        <a class="is-flex" href="#逻辑常量">
+        <span class="has-mr-6">2.1</span>
+        <span>逻辑常量</span>
         </a></li><li>
-        <a class="is-flex" href="#Fermi-Hubbard-model">
-        <span class="has-mr-6">3.2</span>
-        <span>Fermi-Hubbard model</span>
+        <a class="is-flex" href="#分支">
+        <span class="has-mr-6">2.2</span>
+        <span>分支</span>
+        </a></li><li>
+        <a class="is-flex" href="#循环">
+        <span class="has-mr-6">2.3</span>
+        <span>循环</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#作业">
-        <span class="has-mr-6">4</span>
-        <span>作业</span>
+        <a class="is-flex" href="#基本的I-O概念">
+        <span class="has-mr-6">3</span>
+        <span>基本的I/O概念</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#作业11">
+        <a class="is-flex" href="#格式和格式化WRITE语句">
+        <span class="has-mr-6">3.1</span>
+        <span>格式和格式化WRITE语句</span>
+        </a></li><li>
+        <a class="is-flex" href="#文件">
+        <span class="has-mr-6">3.2</span>
+        <span>文件</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#数组">
+        <span class="has-mr-6">4</span>
+        <span>数组</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#声明数组">
         <span class="has-mr-6">4.1</span>
-        <span>作业11</span>
+        <span>声明数组</span>
         </a></li><li>
-        <a class="is-flex" href="#作业12">
+        <a class="is-flex" href="#数组元素初始化">
         <span class="has-mr-6">4.2</span>
-        <span>作业12</span>
+        <span>数组元素初始化</span>
         </a></li><li>
-        <a class="is-flex" href="#作业13">
+        <a class="is-flex" href="#操作整个数组">
         <span class="has-mr-6">4.3</span>
-        <span>作业13</span>
+        <span>操作整个数组</span>
         </a></li><li>
-        <a class="is-flex" href="#作业14">
+        <a class="is-flex" href="#内置函数">
         <span class="has-mr-6">4.4</span>
-        <span>作业14</span>
-        </a></li></ul></li></ul>
+        <span>内置函数</span>
+        </a></li><li>
+        <a class="is-flex" href="#动态分配">
+        <span class="has-mr-6">4.5</span>
+        <span>动态分配</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#过程">
+        <span class="has-mr-6">5</span>
+        <span>过程</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#子程序">
+        <span class="has-mr-6">5.1</span>
+        <span>子程序</span>
+        </a></li><li>
+        <a class="is-flex" href="#用模块共享数据">
+        <span class="has-mr-6">5.2</span>
+        <span>用模块共享数据</span>
+        </a></li><li>
+        <a class="is-flex" href="#模块过程">
+        <span class="has-mr-6">5.3</span>
+        <span>模块过程</span>
+        </a></li><li>
+        <a class="is-flex" href="#Fortran函数">
+        <span class="has-mr-6">5.4</span>
+        <span>Fortran函数</span>
+        </a></li><li>
+        <a class="is-flex" href="#SAVE">
+        <span class="has-mr-6">5.5</span>
+        <span>SAVE</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#派生数据类型">
+        <span class="has-mr-6">6</span>
+        <span>派生数据类型</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#例子">
+        <span class="has-mr-6">6.1</span>
+        <span>例子</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#总结">
+        <span class="has-mr-6">7</span>
+        <span>总结</span>
+        </a></li><li>
+        <a class="is-flex" href="#环境配置">
+        <span class="has-mr-6">8</span>
+        <span>环境配置</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
@@ -1039,7 +1036,7 @@ H|\phi\rangle=E|\phi\rangle,H_{0}|n\rangle=\varepsilon_{n}|n\rangle,|\phi\rangle
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/hlzone.png" alt="computational physics 5" height="28">
+                    <img src="/images/hlzone.png" alt="Fortran" height="28">
                 
                 </a>
                 <p class="is-size-7">
